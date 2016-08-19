@@ -6,18 +6,19 @@ BIO 770 – Data Visualization Using R – Fall 2016
 Course information
 ==================
 
-|                    |                      |
-|--------------------|----------------------|
-| **Instructor**     | Dr. Jeremy Van Cleve |
-| **E-mail**         | <jvancleve@uky.edu>  |
-| **Phone**          | (859) 218-3020       |
-| **Office**         | 105A MDR3            |
-| **Office**         | T 2–4 PM             |
-| **Hours**          | or by appointment    |
-|                    |                      |
-| **Class Time**     | W 12 PM – 1 PM       |
-| **Class Location** | ASB 213              |
-| **Website**        | <http://website.tba> |
+|                    |                                                               |
+|--------------------|---------------------------------------------------------------|
+| **Instructor**     | Dr. Jeremy Van Cleve                                          |
+| **E-mail**         | <jvancleve@uky.edu>                                           |
+| **Phone**          | (859) 218-3020                                                |
+| **Office**         | 105A MDR3                                                     |
+| **Office**         | T 2–4 PM                                                      |
+| **Hours**          | or by appointment                                             |
+|                    |                                                               |
+| **Class Time**     | W 12 PM – 1 PM                                                |
+| **Class Location** | ASB 213                                                       |
+| **Website**        | <https://github.com/vancleve/BIO770-DVR> (github website)     |
+|                    | <https://uk.instructure.com/courses/1843807> (Canvas website) |
 
 Course description
 ==================
