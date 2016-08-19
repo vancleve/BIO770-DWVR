@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="bio-770-data-visualization-using-r-fall-2016">BIO 770 – Data Visualization Using R – Fall 2016</h1>
+<p></p>
+<p><img src="images/us_unemployment.png" style="width:50.0%" /> </p>
+<h1 id="course-information">Course information</h1>
+<table>
+<tbody>
+<tr class="odd">
+<td><strong>Instructor</strong></td>
+<td>Dr. Jeremy Van Cleve</td>
+</tr>
+<tr class="even">
+<td><strong>E-mail</strong></td>
+<td><a href="mailto:jvancleve@uky.edu">jvancleve@uky.edu</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Phone</strong></td>
+<td>(859) 218-3020</td>
+</tr>
+<tr class="even">
+<td><strong>Office</strong></td>
+<td>105A MDR3</td>
+</tr>
+<tr class="odd">
+<td><strong>Office</strong></td>
+<td>T 2–4 PM</td>
+</tr>
+<tr class="even">
+<td><strong>Hours</strong></td>
+<td>or by appointment</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Class Time</strong></td>
+<td>W 12 PM – 1 PM</td>
+</tr>
+<tr class="odd">
+<td><strong>Class Location</strong></td>
+<td>ASB 213</td>
+</tr>
+<tr class="even">
+<td><strong>Website</strong></td>
+<td><a href="http://website.tba" class="uri">http://website.tba</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="course-description">Course description</h1>
+<p>The last 15 years have seen the <a href="https://www.r-project.org/">R programming language</a> rise in popularity from a language used and developed primarily by statisticians to one used and developed by anyone interested in analyzing and visualizing data from scientists and engineers to historians and journalists. This <strong>one-credit</strong> seminar aims to provide a brief introduction (i.e., <em>crash course</em>) to using R for analyzing and visualizing data. As R and other scripting languages become more popular, so do tools the tools required to document, maintain, share, and replicate analyses and visualization. These activities constitute the notions of &quot;literate programming&quot; and &quot;reproducible research&quot;, and we will use some of these tools, which include <a href="https://daringfireball.net/projects/markdown/"><code>markdown</code></a>, <a href="https://git-scm.com/"><code>git</code></a>, and others.</p>
+<p>Prerequisites: None.</p>
+<h1 id="student-learning-outcomes">Student learning outcomes</h1>
+<ol style="list-style-type: decimal">
+<li>Execute commands in R</li>
+<li>Create <a href="http://rmarkdown.rstudio.com/">R Markdown</a> documents that explain and reproduce analyses</li>
+<li>Wrangle and manipulate data by slicing matrices and by using the <code>dplyr</code> and <code>tidyr</code> packages</li>
+<li>Plotting using the <a href="http://ggplot2.org/"><code>ggplot2</code></a> package</li>
+<li>Visualize multidimensional data using 2D/3D plots, networks, and other tools</li>
+<li>Create easily reproducible publication quality figures without expensive applications</li>
+</ol>
+<h1 id="course-format">Course format</h1>
+<p>Each week will consist of a short introduction and interactive demonstration of the concepts and tools for that week followed a short lab where students apply the concepts and tools. There will be preliminary readings (see &quot;Topic schedule&quot; below) for many weeks so that we make the most of time in class.</p>
+<h1 id="assessment">Assessment</h1>
+<table>
+<tbody>
+<tr class="odd">
+<td>Attendance</td>
+<td>20%</td>
+<td>Two absences permitted for full credit</td>
+</tr>
+<tr class="even">
+<td>Lab work</td>
+<td>40%</td>
+<td>Submitted as R Markdown before next class</td>
+</tr>
+<tr class="odd">
+<td>Lightning talk</td>
+<td>40%</td>
+<td>4 min presentation and source for figures</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Due by end of last day of class (12/7)</td>
+</tr>
+</tbody>
+</table>
+<p>The assessment portion of the course has three components. 1. Class attendance. 2. Completion of the lab component that we will begin in class. This must be turned in as an R Markdown document. If there are datasets that are required for the analysis (including datasets provided as part of the lab or your own datasets), these should be provided along with the R Markdown file by adding all the files to a single compressed <code>zip</code> file. The <code>Rmd</code> or <code>zip</code> file should then be uploaded to the Canvas course website: <a href="https://uk.instructure.com/courses/1843807" class="uri">https://uk.instructure.com/courses/1843807</a>. 3. Lightning talk final presentation. The last class will be devoted to short four minute presentations of <strong>three</strong> figures that present data from a single dataset of your choice. The figures should be &quot;publication quality&quot; in terms of aesthetics (labeling, font size, colors, etc) but do not need a caption (that's what the talk is for!). The R Markdown source code and any necessary data files must be submitted to the Canvas website as a <code>zip</code> file; compiling the R Markdown file should produce the figures as they were presented during the lightning talk.</p>
+<h1 id="getting-help-i.e.-uh-how-do-i...">Getting help (i.e., uh, how do I...?)</h1>
+<h2 id="classmates-and-instructor">Classmates and instructor</h2>
+<ol style="list-style-type: decimal">
+<li>Start a discussion on the Canvas website. This will allow everyone to benefit from the questions and answers posed. I will monitor this discussion and post replies as necessary. Please also post your own replies too!</li>
+<li>Instructor office hours.</li>
+</ol>
+<h2 id="internet">Internet</h2>
+<ol style="list-style-type: decimal">
+<li>Stack Overflow (<a href="http://stackoverflow.com/" class="uri">http://stackoverflow.com/</a>). Programming and developer Q&amp;A site. Search as normal for keywords, add tags enclosed in square brackets, e.g. [ggplot] or [git], to restrict results to the library or language you want answers in.</li>
+<li>Cross Validated (<a href="http://stats.stackexchange.com/" class="uri">http://stats.stackexchange.com/</a>). A site in the same family as Stack Overflow. Focused on conceptual and procedural questions in statistics (less on implementation in R or other languages).</li>
+<li>Google. The oldie but the goodie.</li>
+</ol>
+<h1 id="useful-resources">Useful resources</h1>
+<h2 id="books">Books</h2>
+<p>The following are some popular books on R. PDFs are available on the Canvas website.</p>
+<ul>
+<li>Crawley, Michael J.. 2005. Statistics: An Introduction using R. Wiley</li>
+<li>Dalgaard, Peter. 2008. Introductory Statistics with R. Springer</li>
+<li>Murrell, Paul. 2011. R Graphics. CRC Press</li>
+<li>Chang, Winston. 2013. R Graphics Cookbook. O’Reilly</li>
+<li>Zelterman, Daniel. 2015. Applied Multivariate Statistics with R. Springer</li>
+<li>Wickham, Hadley. 2016. ggplot2. Springer</li>
+</ul>
+<h2 id="internet-1">Internet</h2>
+<ul>
+<li>RStudio Cheatsheets (<a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a>). Cheatsheets for working with <code>ggplot2</code>, R Markdown, and other R packages.</li>
+<li>Try R (<a href="http://tryr.codeschool.com/" class="uri">http://tryr.codeschool.com/</a>). An interactive online R tutorial.</li>
+<li>FlowingData (<a href="http://flowingdata.com/" class="uri">http://flowingdata.com/</a>). Articles, examples, and tutorials on data visualization by Nathan Yau.</li>
+<li>Other data visualization and wrangling courses:</li>
+<li>&quot;Data Visualization&quot; by Kieran Healy (Duke): <a href="http://vissoc.co/" class="uri">http://vissoc.co/</a></li>
+<li>&quot;Visualizing Data&quot; by Chris Adolph (UWashington): <a href="http://faculty.washington.edu/cadolph/index.php?page=22" class="uri">http://faculty.washington.edu/cadolph/index.php?page=22</a></li>
+<li>&quot;Data wrangling, exploration, and analysis with R&quot; by Jenny Bryan (UBC): <a href="http://stat545.com/" class="uri">http://stat545.com/</a></li>
+</ul>
+
+<h1 id="topic-schedule">Topic schedule</h1>
+<p>The following is the preliminary schedule of topics and will be adjusted as the semester progress.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Class Dates (W)</th>
+<th>Topic</th>
+<th>Notes</th>
+<th>Reading</th>
+<th>Brainstorming</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>8/24</td>
+<td></td>
+<td></td>
+<td></td>
+<td>Intro to R / installing R / RStudio</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8/31</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>9/7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>9/14</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>9/21</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>9/28</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>10/5</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>10/12</td>
+<td><strong>No class</strong></td>
+<td>(Van Cleve at Georgia Tech)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>10/19</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>10/26</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>11/2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>11/9</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>11/16</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>11/16</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>11/23</td>
+<td><strong>No class</strong></td>
+<td>Thanksgiving Break</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>11/30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>12/7</td>
+<td>Presentations</td>
+<td>Lighting talks</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>12/15 Th 3:30pm</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Final Time</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="course-policies">Course policies</h1>
+<h2 id="excused-absences">Excused Absences</h2>
+<p>Students need to notify the professor or instructor of absences prior to class when possible. Senate Rule 5.2.4.2 defines the following as acceptable reasons for excused absences: (a) serious illness, (b) illness or death of family member, (c) University-related trips, (d) major religious holidays, and (e) other circumstances found to fit “reasonable cause for nonattendance” by the professor. Students anticipating an absence for a major religious holiday are responsible for notifying the instructor in writing of anticipated absences due to their observance of such holidays no later than the last day in the semester to add a class. Information regarding major religious holidays may be obtained through the Ombud (859-257-3737, <a href="http://www.uky.edu/Ombud/ForStudents_ExcusedAbsences.php" class="uri">http://www.uky.edu/Ombud/ForStudents_ExcusedAbsences.php</a>). Students are expected to withdraw from the class if more than 20% of the classes scheduled for the semester are missed (excused or unexcused) per university policy.</p>
+<h2 id="verification-of-absences">Verification of Absences</h2>
+<p>Students may be asked to verify their absences in order for them to be considered excused. Senate Rule 5.2.4.2 states that faculty have the right to request “appropriate verification” when students claim an excused absence because of illness or death in the family. Appropriate notification of absences due to university-related trips is required prior to the absence.</p>
+<h2 id="academic-integrity">Academic Integrity</h2>
+<p>Per university policy, students shall not plagiarize, cheat, or falsify or misuse academic records. Students are expected to adhere to University policy on cheating and plagiarism in all courses. The minimum penalty for a first offense is a zero on the assignment on which the offense occurred. If the offense is considered severe or the student has other academic offenses on their record, more serious penalties, up to suspension from the university may be imposed.</p>
+<p>Plagiarism and cheating are serious breaches of academic conduct. Each student is advised to become familiar with the various forms of academic dishonesty as explained in the Code of Student Rights and Responsibilities. Complete information can be found at the following website: <a href="http://www.uky.edu/Ombud" class="uri">http://www.uky.edu/Ombud</a>. A plea of ignorance is not acceptable as a defense against the charge of academic dishonesty. It is important that you review this information as all ideas borrowed from others need to be properly credited.</p>
+<p>Please see Section 6.3 &quot;Academic Offenses and Procedures&quot; of the <a href="http://www.uky.edu/StudentAffairs/Code/Section%20VI.pdf">University Senate Rules</a> for UK's policy on academic integrity</p>
+<h2 id="accommodations-due-to-disability">Accommodations due to disability</h2>
+<p>If you have a documented disability that requires academic accommodations, please see me as soon as possible during scheduled office hours. In order to receive accommodations in this course, you must provide me with a Letter of Accommodation from the Disability Resource Center for coordination of campus disability services available to students with disabilities.</p>
+<p>Disability Resource Center: <a href="http://www.uky.edu/StudentAffairs/DisabilityResourceCenter/index.html" class="uri">http://www.uky.edu/StudentAffairs/DisabilityResourceCenter/index.html</a>. Suite 407 Multidisciplinary Science Building (physical address: 725 Rose Street); Phone: 257‐2754; Email: <a href="mailto:dtbeach1@uky.edu">dtbeach1@uky.edu</a></p>
+</body>
+</html>
