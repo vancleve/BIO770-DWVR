@@ -12,10 +12,10 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 |       3 | 9/7             | Getting data into R with data.frames                |                                                                                   |
 |       4 | 9/14            | Vectors, slicing, and map (apply)                   |                                                                                   |
 |       5 | 9/21            | `dplyr` and tidy data                               |                                                                                   |
-|       6 | 9/28            | ggplot2: intro                                      |                                                                                   |
-|       7 | 10/5            | ggplot2: plot types                                 |                                                                                   |
+|       6 | 9/28            | `ggplot2`: intro                                    |                                                                                   |
+|       7 | 10/5            | `ggplot2`: plot types                               |                                                                                   |
 |         | 10/12           | **No class**                                        | (Van Cleve at Georgia Tech)                                                       |
-|       8 | 10/19           | ggplot2: finessing figures                          |                                                                                   |
+|       8 | 10/19           | `ggplot2`: finessing figures                        |                                                                                   |
 |       9 | 10/26           | Colors and heatmaps                                 |                                                                                   |
 |      10 | 11/2            | Networks                                            |                                                                                   |
 |      11 | 11/9            | Text manipulation: regular expressions              |                                                                                   |
