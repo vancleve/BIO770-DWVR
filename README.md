@@ -12,8 +12,7 @@ Course information
 | **E-mail**         | <jvancleve@uky.edu>                                           |
 | **Phone**          | (859) 218-3020                                                |
 | **Office**         | 105A MDR3                                                     |
-| **Office**         | T 2–4 PM                                                      |
-| **Hours**          | or by appointment                                             |
+| **Office hours**   | By appointment                                                |
 |                    |                                                               |
 | **Class Time**     | W 12 – 1 PM                                                   |
 | **Class Location** | ASB 231                                                       |
@@ -116,7 +115,7 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 | 8       | 10/19           | ggplot2: finessing figures                          |                                                                                   |
 | 9       | 10/26           | Colors and heatmaps                                 |                                                                                   |
 | 10      | 11/2            | Networks                                            |                                                                                   |
-| 11      | 11/9            |                                                     |                                                                                   |
+| 11      | 11/9            | Text manipulation: regular expressions              |                                                                                   |
 | 12      | 11/16           | Work on your own data / figures                     |                                                                                   |
 | 13      | 11/16           | Work on your own data / figures                     |                                                                                   |
 |         | 11/23           | **No class**                                        | Thanksgiving Break                                                                |

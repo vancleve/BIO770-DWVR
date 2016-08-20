@@ -18,7 +18,7 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 |       8 | 10/19           | ggplot2: finessing figures                          |                                                                                   |
 |       9 | 10/26           | Colors and heatmaps                                 |                                                                                   |
 |      10 | 11/2            | Networks                                            |                                                                                   |
-|      11 | 11/9            |                                                     |                                                                                   |
+|      11 | 11/9            | Text manipulation: regular expressions              |                                                                                   |
 |      12 | 11/16           | Work on your own data / figures                     |                                                                                   |
 |      13 | 11/16           | Work on your own data / figures                     |                                                                                   |
 |         | 11/23           | **No class**                                        | Thanksgiving Break                                                                |

@@ -11,8 +11,7 @@
 | **E-mail**         | <jvancleve@uky.edu>                                           |
 | **Phone**          | (859) 218-3020                                                |
 | **Office**         | 105A MDR3                                                     |
-| **Office**         | T 2–4 PM                                                      |
-| **Hours**          | or by appointment                                             |
+| **Office hours**   | By appointment                                                |
 |                    |                                                               |
 | **Class Time**     | W 12 – 1 PM                                                   |
 | **Class Location** | ASB 231                                                       |
