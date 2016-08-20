@@ -1,5 +1,5 @@
-BIO 770 – Data Visualization Using R – Fall 2016
-================================================
+BIO 770 – Data Wrangling and Visualization Using R – Fall 2016
+==============================================================
 
 <img src="images/us_unemployment.png" style="width:50.0%" /> 
 
@@ -15,9 +15,9 @@ Course information
 | **Office**         | T 2–4 PM                                                      |
 | **Hours**          | or by appointment                                             |
 |                    |                                                               |
-| **Class Time**     | W 12 PM – 1 PM                                                |
-| **Class Location** | ASB 213                                                       |
-| **Website**        | <https://github.com/vancleve/BIO770-DVR> (github website)     |
+| **Class Time**     | W 12 – 1 PM                                                   |
+| **Class Location** | ASB 231                                                       |
+| **Website**        | <https://github.com/vancleve/BIO770-DWVR> (github website)    |
 |                    | <https://uk.instructure.com/courses/1843807> (Canvas website) |
 
 Course description
@@ -102,166 +102,27 @@ Topic schedule
 
 The following is the preliminary schedule of topics and will be adjusted as the semester progress.
 
-<table>
-<colgroup>
-<col width="5%" />
-<col width="10%" />
-<col width="14%" />
-<col width="20%" />
-<col width="48%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Session</th>
-<th>Class Dates (W)</th>
-<th>Topic</th>
-<th>Notes</th>
-<th>Reading</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>8/24</td>
-<td>Intro to R and RStudo</td>
-<td>Install R &amp; RStudio before class</td>
-<td><a href="http://stat545.com/block000_r-rstudio-install.html">Installation instructions</a></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>8/31</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>9/7</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>9/14</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>9/21</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>9/28</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>10/5</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>10/12</td>
-<td><strong>No class</strong></td>
-<td>(Van Cleve at Georgia Tech)</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>10/19</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>10/26</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>11/2</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>11/9</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>11/16</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>11/16</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>11/23</td>
-<td><strong>No class</strong></td>
-<td>Thanksgiving Break</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>11/30</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td>12/7</td>
-<td>Presentations</td>
-<td>Lighting talks</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>12/15 Th 3:30pm</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Final Time</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Session | Class Dates (W) | Topic                                               | Notes                                                                             |
+|---------|-----------------|-----------------------------------------------------|-----------------------------------------------------------------------------------|
+| 1       | 8/24            | Intro to course and R Markdown                      | Install R & RStudio before class                                                  |
+|         |                 |                                                     | ([Installation instructions](http://stat545.com/block000_r-rstudio-install.html)) |
+| 2       | 8/31            | Intro to R: data types, flow control, and functions |                                                                                   |
+| 3       | 9/7             | Getting data into R with data.frames                |                                                                                   |
+| 4       | 9/14            | Vectors, slicing, and map (apply)                   |                                                                                   |
+| 5       | 9/21            | `dplyr` and tidy data                               |                                                                                   |
+| 6       | 9/28            | ggplot2: intro                                      |                                                                                   |
+| 7       | 10/5            | ggplot2: plot types                                 |                                                                                   |
+|         | 10/12           | **No class**                                        | (Van Cleve at Georgia Tech)                                                       |
+| 8       | 10/19           | ggplot2: finessing figures                          |                                                                                   |
+| 9       | 10/26           | Colors and heatmaps                                 |                                                                                   |
+| 10      | 11/2            | Networks                                            |                                                                                   |
+| 11      | 11/9            |                                                     |                                                                                   |
+| 12      | 11/16           | Work on your own data / figures                     |                                                                                   |
+| 13      | 11/16           | Work on your own data / figures                     |                                                                                   |
+|         | 11/23           | **No class**                                        | Thanksgiving Break                                                                |
+| 14      | 11/30           | Lighting talks                                      |                                                                                   |
+| 15      | 12/7            | Lighting talks                                      |                                                                                   |
+|         |                 |                                                     |                                                                                   |
 
 Course policies
 ===============
