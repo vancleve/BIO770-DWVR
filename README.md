@@ -23,7 +23,7 @@ Course information
 Course description
 ==================
 
-The last 15 years have seen the [R programming language](https://www.r-project.org/) rise in popularity from a language used and developed primarily by statisticians to one used and developed by anyone interested in analyzing and visualizing data from scientists and engineers to historians and journalists. This **one-credit** seminar aims to provide a brief introduction (i.e., *crash course*) to using R for analyzing and visualizing data. As R and other scripting languages become more popular, so do tools the tools required to document, maintain, share, and replicate analyses and visualization. These activities constitute the notions of "literate programming" and "reproducible research", and we will use some of these tools, which include [`markdown`](https://daringfireball.net/projects/markdown/), [`git`](https://git-scm.com/), and others.
+The last 15 years have seen the [R programming language](https://www.r-project.org/) rise in popularity from a language used and developed primarily by statisticians to one used and developed by anyone interested in analyzing and visualizing data from scientists and engineers to historians and journalists. This **one-credit** seminar aims to provide a brief introduction (i.e., a *crash course*) to using R for analyzing and visualizing data. As R and other scripting languages become more popular, so do tools the tools required to document, maintain, share, and replicate analyses and visualization. These activities constitute the notions of "literate programming" and "reproducible research", and we will use some of these tools, which include [`markdown`](https://daringfireball.net/projects/markdown/), [`git`](https://git-scm.com/), and others.
 
 Prerequisites: None.
 
@@ -40,7 +40,7 @@ Student learning outcomes
 Course format
 =============
 
-Each week will consist of a short introduction and interactive demonstration of the concepts and tools for that week followed a short lab where students apply the concepts and tools. There will be preliminary readings (see "Topic schedule" below) for many weeks so that we make the most of time in class.
+Each week will consist of a short introduction and interactive demonstration of the concepts and tools for that week followed a short lab where students apply the concepts and tools. There may be preliminary readings to do before class for some weeks (see "Topic schedule" below); please make sure to do those so that we make the most of time in class.
 
 Assessment
 ==========
@@ -82,6 +82,7 @@ The following are some popular books on R. PDFs are available on the Canvas webs
 -   Dalgaard, Peter. 2008. Introductory Statistics with R. Springer
 -   Murrell, Paul. 2011. R Graphics. CRC Press
 -   Chang, Winston. 2013. R Graphics Cookbook. O’Reilly
+-   Gandrud, Christopher. 2015. Reproducible Research with R and R Studio. CRC Press.
 -   Zelterman, Daniel. 2015. Applied Multivariate Statistics with R. Springer
 -   Wickham, Hadley. 2016. ggplot2. Springer
 
@@ -92,41 +93,175 @@ Internet
 -   Try R (<http://tryr.codeschool.com/>). An interactive online R tutorial.
 -   FlowingData (<http://flowingdata.com/>). Articles, examples, and tutorials on data visualization by Nathan Yau.
 -   Other data visualization and wrangling courses:
--   "Data Visualization" by Kieran Healy (Duke): <http://vissoc.co/>
--   "Visualizing Data" by Chris Adolph (UWashington): <http://faculty.washington.edu/cadolph/index.php?page=22>
--   "Data wrangling, exploration, and analysis with R" by Jenny Bryan (UBC): <http://stat545.com/>
-
-\newpage
+    -   "Data Visualization" by Kieran Healy (Duke): <http://vissoc.co/>
+    -   "Visualizing Data" by Chris Adolph (UWashington): <http://faculty.washington.edu/cadolph/index.php?page=22>
+    -   "Data wrangling, exploration, and analysis with R" by Jenny Bryan (UBC): <http://stat545.com/>
 
 Topic schedule
 ==============
 
 The following is the preliminary schedule of topics and will be adjusted as the semester progress.
 
-| Session | Class Dates (W) | Topic         | Notes                       | Reading | Brainstorming                       |
-|---------|-----------------|---------------|-----------------------------|---------|-------------------------------------|
-| 1       | 8/24            |               |                             |         | Intro to R / installing R / RStudio |
-| 2       | 8/31            |               |                             |         |                                     |
-| 3       | 9/7             |               |                             |         |                                     |
-| 4       | 9/14            |               |                             |         |                                     |
-| 5       | 9/21            |               |                             |         |                                     |
-| 6       | 9/28            |               |                             |         |                                     |
-| 7       | 10/5            |               |                             |         |                                     |
-|         | 10/12           | **No class**  | (Van Cleve at Georgia Tech) |         |                                     |
-| 8       | 10/19           |               |                             |         |                                     |
-| 9       | 10/26           |               |                             |         |                                     |
-| 10      | 11/2            |               |                             |         |                                     |
-| 11      | 11/9            |               |                             |         |                                     |
-| 12      | 11/16           |               |                             |         |                                     |
-| 13      | 11/16           |               |                             |         |                                     |
-|         | 11/23           | **No class**  | Thanksgiving Break          |         |                                     |
-| 14      | 11/30           |               |                             |         |                                     |
-| 15      | 12/7            | Presentations | Lighting talks              |         |                                     |
-|         |                 |               |                             |         |                                     |
-|         | 12/15 Th 3:30pm |               |                             |         |                                     |
-|         | Final Time      |               |                             |         |                                     |
-
-\newpage
+<table>
+<colgroup>
+<col width="5%" />
+<col width="10%" />
+<col width="14%" />
+<col width="20%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Session</th>
+<th>Class Dates (W)</th>
+<th>Topic</th>
+<th>Notes</th>
+<th>Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>8/24</td>
+<td>Intro to R and RStudo</td>
+<td>Install R &amp; RStudio before class</td>
+<td><a href="http://stat545.com/block000_r-rstudio-install.html">Installation instructions</a></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>8/31</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>9/7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>9/14</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>9/21</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>9/28</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>10/5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>10/12</td>
+<td><strong>No class</strong></td>
+<td>(Van Cleve at Georgia Tech)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>10/19</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>10/26</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>11/2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>11/9</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>11/16</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>11/16</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>11/23</td>
+<td><strong>No class</strong></td>
+<td>Thanksgiving Break</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>11/30</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>12/7</td>
+<td>Presentations</td>
+<td>Lighting talks</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>12/15 Th 3:30pm</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Final Time</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 Course policies
 ===============
