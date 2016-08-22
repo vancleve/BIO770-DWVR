@@ -84,6 +84,7 @@ The following are some popular books on R. PDFs are available on the Canvas webs
 -   Gandrud, Christopher. 2015. Reproducible Research with R and R Studio. CRC Press.
 -   Zelterman, Daniel. 2015. Applied Multivariate Statistics with R. Springer
 -   Wickham, Hadley. 2016. ggplot2. Springer
+-   Phillips, Nathaniel. 2016. YaRrr! The Pirate’s Guide to R. <http://nathanieldphillips.com/thepiratesguidetor/>
 
 Internet
 --------
