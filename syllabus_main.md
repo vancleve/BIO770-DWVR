@@ -72,7 +72,7 @@ The assessment portion of the course has three components.
 
 ## Classmates and instructor
 
-1. Start a discussion on the Canvas website. This will allow everyone to benefit from the questions and answers posed. I will monitor this discussion and post replies as necessary. Please also post your own replies too!
+1. Start a discussion on the [Canvas website](https://uk.instructure.com/courses/1843807). This will allow everyone to benefit from the questions and answers posed. I will monitor this discussion and post replies as necessary. Please also post your own replies too!
 2. Instructor office hours.
 
 ## Internet
@@ -85,7 +85,7 @@ The assessment portion of the course has three components.
 
 ## Books ##
 
-The following are some popular books on R. PDFs are available on the Canvas website.
+The following are some popular books on R. PDFs are available on the [Canvas website](https://uk.instructure.com/courses/1843807).
 
 - Crawley, Michael J.. 2005. Statistics: An Introduction using R. Wiley
 - Dalgaard, Peter. 2008. Introductory Statistics with R. Springer
