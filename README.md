@@ -75,7 +75,7 @@ Useful resources
 Books
 -----
 
-The following are some popular books on R. PDFs are available on the [Canvas website](https://uk.instructure.com/courses/1843807/modules) under "Modules: References".
+The following are some popular books on R. PDFs are available for "check out" on the [Canvas website](https://uk.instructure.com/courses/1843807/modules) under "Modules: References".
 
 -   Crawley, Michael J.. 2005. Statistics: An Introduction using R. Wiley
 -   Dalgaard, Peter. 2008. Introductory Statistics with R. Springer
