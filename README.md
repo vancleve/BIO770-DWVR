@@ -1,7 +1,7 @@
 BIO 770 – Data Wrangling and Visualization Using R – Fall 2016
 ==============================================================
 
-<img src="images/us_unemployment.png" style="width:50.0%" /> 
+<img src="assets/us_unemployment.png" style="width:50.0%" /> 
 
 Course information
 ==================

@@ -1,7 +1,7 @@
 # BIO 770 – Data Wrangling and Visualization Using R – Fall 2016 #
 \setlength{\LTleft}{0pt}
 
-![](images/us_unemployment.png){ width=50% }\	
+![](assets/us_unemployment.png){ width=50% }\	
 
 # Course information #
 
