@@ -104,8 +104,7 @@ For a cheatsheet on RStudio, go here:
 - Often used in code documentation
 - Increasingly used in full document preparation (journal article, books, etc)
 
-Ok, let's get Markdown!
-
+Ok, let's get Markdown!  
 ![](assets/dancing.gif)
 
 First, this whole document is R Markdown, so you can quickly see examples of the following:

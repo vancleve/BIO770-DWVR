@@ -1,0 +1,8 @@
+html_document:
+  self_contained: false
+  lib_dir: libs
+  md_extensions: +implicit_figures
+  theme: spacelab
+  fig_caption: true
+  highlight: tango
+  css: styles.css
