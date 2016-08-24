@@ -46,8 +46,9 @@ Assessment
 
 |                |     |                                           |
 |----------------|-----|-------------------------------------------|
-| Attendance     | 20% | Two absences permitted for full credit    |
+| Attendance     | 20% | One absence permitted without penalty     |
 | Lab work       | 40% | Submitted as R Markdown before next class |
+|                |     | One missing lab permitted without penalty |
 | Lightning talk | 40% | 4 min presentation and source for figures |
 |                |     | Due by end of last day of class (12/7)    |
 

@@ -1,7 +1,7 @@
 ---
-title: "BIO 770: Data Wrangling and Analysis Using R"
+title: 'BIO 770: Data Wrangling and Analysis Using R'
+author: "Jeremy Van Cleve"
 output: html_document
-author: Jeremy Van Cleve
 ---
 
 ```{r setup, include=FALSE}
@@ -43,9 +43,9 @@ Otherwise, proceed with your installing normal if you haven't already.
 
 ### What is RStudio?
 
-RStudio is an Integrated Development Environment (IDE) for the R progamming language. While you can write R code in any text editor you like and then run that code with the R interpreter, there are many things that an IDE can do that help you be more efficient when programming.
+RStudio is an Integrated Development Environment (IDE) for the R programming language. While you can write R code in any text editor you like and then run that code with the R interpreter, there are many things that an IDE can do that help you be more efficient when programming.
 
-1. Synatx highlighting (e.g., see the markdow!)
+1. Syntax highlighting (e.g., see the markdown!)
 2. File/project organization (see "Files" pane)
 3. Examining variables that you've set (see the "Environment" pane)
 4. Easily execute code and examine its text output (see "Console") or graphical output (see "Viewer")
@@ -69,7 +69,7 @@ For example, to generate 10 random numbers between 0 and 1 we can easily run the
 runif(10)
 ```
 
-To make sure you can do run the above, you want to run the folowing code that installs R Markdown:
+To make sure you can do run the above, you want to run the following code that installs R Markdown:
 
 ```{r eval=FALSE}
 install.packages("rmarkdown", dependencies = TRUE)
@@ -84,7 +84,7 @@ For a cheatsheet on RStudio, go here:
 ### First, there was "S". 
 
 - S was designed by John Chambers and others at Bell Labs in the 1970s specifically for data analysis and statistics.
-- R was developed in 1991 by **R**oss Ihaka and **R**obert Gentleman and reimplemented much of S after S became licensed software.
+- R was developed in 1991 by **R**oss Ihaka and **R**obert Gentleman and re-implemented much of S after S became licensed software.
 
 ### Then there was "R"
 
@@ -102,7 +102,7 @@ For a cheatsheet on RStudio, go here:
 - Designed for simplicity and readability
 - No need to "view" Markdown to read it easily
 - Often used in code documentation
-- Increasingly used in full document prepartion (journal article, books, etc)
+- Increasingly used in full document preparation (journal article, books, etc)
 
 Ok, let's get Markdown!
 
@@ -152,3 +152,13 @@ plot(rnorm(1000, 0, 1))
 ```
 
 More about R Markdown can be found in the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
+
+# Lab ![](assets/beaker.png)
+
+#### Write a few sentences about what kind of data you are thinking of analyzing and visualizing
+
++ Create your own R Markdown document.
++ Use some Markdown elements to structure your document.
++ Give the document a title and author.
++ Make sure you can get proper HTML in RStudio.
++ Remember to upload the file with a ".Rmd" suffix to Canvas.
