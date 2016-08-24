@@ -49,6 +49,41 @@ RStudio is an Integrated Development Environment (IDE) for the R progamming lang
 3. Examining variables that you've set (see the "Environment" pane)
 4. Easily execute code and examine its text output (see "Console") or graphical output (see "Viewer")
 5. View help files (see "Help")
+6. Installing/updating R packages (see "Tools" menu)
+7. Debugging (see "Debug" menu)
+
+When using RStudio, I encourage you to:
+
+1. Play around with different arrangements for the windows/panes
+2. **LEARN KEYBOARD SHORTCUTS**. They can make you much, much more efficient.
+    - Shift+Alt+K (MAC/PC):  Keyboard shortcut quick reference.
+    - Shift+Command/Control+K (MAC/PC): Knit current document (i.e., turn in HTML/DOCX/PDF)
+    - Command/Control+Enter (MAC/PC): Run selected lines
+    - Shift+Command/Control+Enter: Run current "chunk" (R Notebook only)
+    - etc
+
+For example, to generate 10 random numbers between 0 and 1 we can easily run the following code:
+ 
+```{r}
+runif(10)
+```
+
+To make sure you can do run the above, you want to run the folowing code that installs R Markdown:
+
+```{r eval=FALSE}
+install.packages("rmarkdown", dependencies = TRUE)
+```
+
+For a cheatsheet on RStudio, go here:
+
+<https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf>
+
+## What is R?
+
+First, there was "S". 
+
+- S was designed by John Chambers and others at Bell Labs in the 1970s specifically for data analysis and statistics.
+- R was developed in 1991 by **R**oss Ihaka and **R**obert Gentleman
 
 ```{r cars}
 summary(cars)

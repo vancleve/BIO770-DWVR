@@ -83,8 +83,9 @@ The following are some popular books on R. PDFs are available for "check out" on
 -   Chang, Winston. 2013. R Graphics Cookbook. O’Reilly
 -   Gandrud, Christopher. 2015. Reproducible Research with R and R Studio. CRC Press.
 -   Zelterman, Daniel. 2015. Applied Multivariate Statistics with R. Springer
--   Wickham, Hadley. 2016. ggplot2. Springer
 -   Phillips, Nathaniel. 2016. YaRrr! The Pirate’s Guide to R. <http://nathanieldphillips.com/thepiratesguidetor/>
+-   Wickham, Hadley. 2016. ggplot2. Springer
+-   Wickham, Hadley and Grolemund, Garrett. 2016. R for Data Science. O'Reilly. <http://r4ds.had.co.nz/> (no PDF but full book on website)
 
 Internet
 --------
