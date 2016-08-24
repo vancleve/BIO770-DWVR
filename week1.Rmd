@@ -1,0 +1,65 @@
+---
+title: "BIO 777: Data Wrangling and Analysis Using R"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Outline for today
+
+0. Caveats: I'm an R newbie too! Mostly. Sorta?
+1. Go over syllabus
+2. Install R and RStudio
+3. What is R?
+4. What are Markdown and R Markdown?
+
+# Syllabus
+
+- The syllabus will be located here: <https://github.com/vancleve/BIO770-DWVR>. 
+- This is also where R and R Markdown documents will be located. The only files that will be kept on the [Canvas site](https://uk.instructure.com/courses/1843807) are the PDF copies of the reference books and the completed labs and figures that you submit.
+- I'll update the syllabus and schedule of topics as necessary.
+
+# Install R and RStudio
+
+## Downloading
+
+If you haven't already, download R and R studio
+
+- To download R, go here: <https://mirrors.nics.utk.edu/cran/>
+- To download RStudio, go here <https://www.rstudio.com/products/rstudio/download/preview/>
+    - Note: this is the "preview version", which is preferable. The "preview version" includes something called an "R Notebook", which is basically a more interactive way to use R Markdown. I'll be using this during the class.
+
+## Installing
+
+If you need directions, especially for how update your packages if you already have R, go here:
+<http://stat545.com/block000_r-rstudio-install.html>
+
+Otherwise, proceed with your installing normal if you haven't already.
+
+## Running RStudio
+
+### What is RStudio?
+
+RStudio is an Integrated Development Environment (IDE) for the R progamming language. While you can write R code in any text editor you like and then run that code with the R interpreter, there are many things that an IDE can do that help you be more efficient when programming.
+
+1. Synatx highlighting (e.g., see the markdow!)
+2. File/project organization (see "Files" pane)
+3. Examining variables that you've set (see the "Environment" pane)
+4. Easily execute code and examine its text output (see "Console") or graphical output (see "Viewer")
+5. View help files (see "Help")
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
