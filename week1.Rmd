@@ -1,6 +1,7 @@
 ---
-title: "BIO 777: Data Wrangling and Analysis Using R"
+title: "BIO 770: Data Wrangling and Analysis Using R"
 output: html_document
+author: Jeremy Van Cleve
 ---
 
 ```{r setup, include=FALSE}
@@ -80,21 +81,74 @@ For a cheatsheet on RStudio, go here:
 
 ## What is R?
 
-First, there was "S". 
+### First, there was "S". 
 
 - S was designed by John Chambers and others at Bell Labs in the 1970s specifically for data analysis and statistics.
-- R was developed in 1991 by **R**oss Ihaka and **R**obert Gentleman
+- R was developed in 1991 by **R**oss Ihaka and **R**obert Gentleman and reimplemented much of S after S became licensed software.
 
-```{r cars}
-summary(cars)
+### Then there was "R"
+
+- R was open-sourced in 1995 and John Chambers and other statisticians are part of its core development team.
+- R is object-oriented (i.e., you can build containers of variables and the like), like Java.
+- R is interpreted (i.e., the interpreter turns interprets your text code immediately and runs it), like Python.
+- R has a tonne of packages for statistics and biology.
+- More on the basics of R next time.
+
+# What are Markdown and R Markdown?
+
+## Markdown: a plain text (i.e., just characters) way of "formatting" text
+
+- Markdown is a kind of "markup" language (e.g., HTML).
+- Designed for simplicity and readability
+- No need to "view" Markdown to read it easily
+- Often used in code documentation
+- Increasingly used in full document prepartion (journal article, books, etc)
+
+Ok, let's get Markdown!
+
+![](assets/dancing.gif)
+
+First, this whole document is R Markdown, so you can quickly see examples of the following:
+
+- Headings are created with hash symbols "#"
+    - "#" is the "first" heading
+    - "##" is the "second" heading, which is smaller (how much smaller? set by the "stylesheet")
+    - etc
+- *Italic text* in encapsulated by one \* or asterisk, **Bold text** by two asterisks.
+- Lists can start with \-, \*, or \+.
+    - Sublists are indented with four spaces.
+- New paragraphs are separated by blank lines.
+
+    Line breaks, without a new paragraph, need two spaces  
+    in order to be recognized. These can be used in lists too.
+- Links use angle brackets \<\>: <https://www.r-project.org/>
+- Links with different text use `[text](http://link.to.something)`
+- Images use `![](path.to.image)`
+- For more details, see [R Markdown cheat sheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+
+
+## R Markdown: a way to mix text (Markdown) and R code (R)
+
+Ok, lets put some R in this thing.
+
+Make a code "**chunk**"" with three back ticks followed by an r in braces. End the chunk with three back ticks:
+
+```{r}
+paste("Hello", "World!")
 ```
 
-## Including Plots
+Place code inline with a single back ticks. The first back tick must be followed by an R, like this: `r paste("Hello", "World!")`.
 
-You can also embed plots, for example:
+You can control how the **chunks** work by adding options like `echo=FALSE` to hide the code when you create the HTML
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r echo=TRUE}
+runif(10)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+You can do plots too. Let's do one whose "name" is "cool_plot" and is just a bunch (1000) of normally distributed numbers (mean=0, std=1):
+
+```{r cool_plot, echo=TRUE}
+plot(rnorm(1000, 0, 1))
+```
+
+More about R Markdown can be found in the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
