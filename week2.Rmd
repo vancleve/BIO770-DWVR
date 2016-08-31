@@ -1,0 +1,242 @@
+---
+title: 'Intro to R: Data types, flow control, and functions'
+author: "Jeremy Van Cleve"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Outline for today
+
+- Objects and functions
+- Statements and style
+- Types of objects
+- Flow control
+- Loops
+- More on functions
+
+# Obejcts are functions and functions are objects
+
+Everything in R is either a function or an object (actually functions are objects too!). For example numbers are objects,
+```{r}
+a_number = 10
+```
+strings of characters, AKA "strings", are objects,
+```{r}
+a_string = "hello world\n"
+```
+and even functions, like `print`, which prints a string, is an object,
+```{r}
+a_function = print
+a_function("hello world")
+```
+What is an object then? It is just something stored in memory with a name.
+
+# Statements and style
+
+## Assignment statements
+To create an object, you perform an "assignment statement" where the name of the object is on the left, the value of the object is on the right, and in the middle is the assignment operator, "=",
+```{r}
+an_object = "a string object"
+```
+or "<-"
+```{r}
+an_object <- "a string object"
+```
+Either "<-" or "=" works as the assignment operator though most R aficionados will use "<-". However, I prefer (strongly) the "=" operator since that's what almost **every other language** uses. No R, you're not that special.
+
+## Style of statements
+
+- Every command in R must end in a "newline" or semicolon. Newlines are the norm in most R code.
+- If an R statement is incomplete and you enter a newline, R will let you continue the statement: 
+```{r}
+new_statement = print("this continues on the
+next line")
+```
+- Use plenty of space in your statements to help readability.
+- This is more readable
+```{r}
+a = (100 + 3) - 2
+mean(c(a / 100, 642564624.34))
+```
+- than this
+```{r}
+a=(100+3)-2
+mean(c(a/100,642564624.34))
+```
+
+## Naming conventions
+
+Now that you can create objects using statements, you have to know how to name them. R has some simple rules for this:
+
+> A syntactically valid name consists of letters, numbers and the dot or underline characters and starts with a letter or the dot not followed by a number. Names such as ".2way" are not valid, and neither are the reserved words
+
+This information comes from the help for the `make.names` command, which you can get type typing `?makes.names` where "?" before a function gives you the help page:
+```{r}
+?make.names
+```
+Then, you convert any string into a valid R variable name using the `make.names` command:
+```{r}
+not_valid_name = "1 way to not be a valid name"
+valid_name = make.names(not_valid_name)
+print(valid_name)
+```
+
+A couple tips for naming objects:
+
+- Err on the side of using longer object names that describe what that object stores: e.g., `populationSize` is often better than `N`. Note that R itself doesn't always obey this rule; e.g., the function `c` combines values. **Never** name a function a single letter.
+- Maintain a convention for using multiple words in object names. E.g., underscores or periods for spaces or capitalize every word
+- Remember that R is case sensitive, so `populationSize` is a different object from `populationsize`.
+- Don't use object names that differ only case; this will almost certainly lead to user created bugs.
+
+# Types of objects
+
+## Scalars
+
+Scalars are the simplest object in R. They hold a single value like a number (called "numeric" by R) or a string (called "character" by R)
+```{r}
+number = 3.1459
+string = "hello again world"
+```
+How do you know these objects are the types you think they are? You can check with the function `class`:
+```{r}
+class(number)
+class(string)
+```
+You can ask for a little more by getting the "structure" of the object using the function `str` (by the way, this function is another example of a name that is too short).
+```{r}
+str(number)
+str(string)
+```
+These commands may not be super useful now, but R has enough different types of object that you'll want to be able to ask an object about itself at some point.
+
+## Vectors
+
+Vectors are everywhere in R. They are simply lists of objects of a common type, like numeric or character. Actually our scalars were just vectors with a single element. To create a vector, use the poorly named `c` function.
+```{r}
+number_vector = c(1,10,100,1000)
+number_vector
+string_vector = c("hello", "world", "for", "yet", "another", "time")
+string_vector
+```
+To find out the length of the vectors you just created, use the function `length`
+```{r}
+length(number_vector)
+length(string_vector)
+```
+
+Accessing elements of a vector is accomplishing using "indexing". Vectors are index from 1 to the number of elements in the vector. To access an element, use braces after the object name; printing the second element of `string_vector` looks like this:
+```{r}
+print(string_vector[2])
+```
+
+## Lists
+
+Suppose that you want a vector that mixes numbers and strings. You could try
+```{r}
+mixed = c(1,2,3,"one","two","three")
+```
+but looking at the result
+```{r}
+mixed
+```
+you find that R converted the numbers to strings. That's because vectors only contain a single object type.
+
+Lists however can contain multiple types. Thus, using the `list` function works:
+```{r}
+mixed = list(1,2,3,"one","two","three")
+str(mixed)
+```
+
+# Flow control and logical tests
+
+Flow control is a technical term for telling a program which statements or blocks of code to execute. In R, you use "if-else" statements to accomplish this. For example, you can print a statement only if a variable takes a certain value:
+```{r}
+test = -10
+if (test > 0) {
+  print("test is greater than zero")
+} else {
+  print ("test is not greater than zero")
+}
+```
+The brackets enclose the block of statements that get executed if the condition is true or not. Note that the else is on the same line as the final bracket of the "if". The ">" (greater than) symbol is an example of a "relational operator"; others include equals, "==", not equals, "!=", and "greater than or equal", ">=" (likewise, less than operators exist too).
+
+The outcome of a comparison with a relational operator is a "TRUE" or "FALSE" value, which are "Booleans". You can combine TRUE and FALSE values with "Boolean operators" like "and", "&&", "or", "||", and "not", "!". For example, you can check our whether our test variable is greater than zero or less than -1:
+```{r}
+test = -10
+if (test > 0 || test < -1) {
+  print("test is greater than zero or less than -1")
+} else {
+  print ("test is between zero and -1")
+}
+```
+
+# Loops
+
+Loops are ways to tell R to perform a block of commands repeatedly. The most useful kind of loop is the "for" loop. First, you create an empty vector. Then, you use the for loop to fill its elements.
+```{r}
+vec = c()
+for (i in 1:100) {
+  vec[i] = i*i
+}
+str(vec) 
+```
+The structure of the for loop is `for (index.object in index.value) { code block }`. The first run of the loop sets `index.object` to the first element of `index.value` and executes the code block. The next run sets the `index.object` to the second value of `index.value`, executes the code block, and so on until the loop has run as many times as there are elements in `index.value`.
+
+# More on functions
+
+Functions are important so we will discuss them in more detail. Functions take "arguments" between the parentheses and these arguments are the data you want the function to use. For example, the `runif` generates uniformly distributed random numbers. There are three arguments to the function:
+```{r}
+str(runif)
+```
+The first argument is how many numbers we want, the second is the minimum value for them, and the third is the maximum value. Thus, to create 10 random numbers between -1 and 1, you do this:
+```{r}
+print(runif(10, -1, 1))
+```
+
+In RStudio, a handy way to see what functions are available or to jog your memory about a function's name is to begin typing the name and then hit "tab" when you have a few characters. RStudio will show you a list of possible functions and if you hit "tab" again it will complete your typing with the highlighted name. If you're typing inside the parenthesis, hitting "tab" will help remind you what the arguments to the function are.
+
+In R, the arguments to functions often have "names". If they do, you can give the argument with it's name
+```{r}
+print(runif(min = -1, max = 1, n = 10))
+```
+Notice that giving the name of the argument allows us to give the arguments in any order. If an arguments doesn't have a name, then you must give the arguments in the order they are listed in the definition of the function (see the function help with "?function_name").
+
+One of the most powerful parts of programming in any language is writing your own functions. To do this, you start with a name for the function and assign the object to `function(arg1, arg2, ...) { function body }`. For example, the function
+```{r}
+runit = function(n = 1) {
+  return(runif(n, max = 1, min = 0))
+}
+```
+generates a random number in the unit interval (0,1) where the number of values you want is the only argument. We can exclude that argument since it has a "default" value of 1 or give the argument explicitly, with or without a name:
+```{r}
+print(runit())
+print(runit(n = 2))
+print(runit(5))
+```
+Finally, the function returns whatever is in the "return" function or the last value in the function body. Thus, we can capture our random numbers, or the output from any function, easily:
+```{r}
+rvals = runit(5)
+print(rvals)
+```
+
+# Lab ![](assets/beaker.png)
+
+#### Write a function that plots a line with different levels of "noise"
+
+1. Use the following to create 100 points of "data". Note how we "named" each of the elements in our list ("x" and "y"). This will be important for much of what we do in R.
+```{r}
+data = list(x = 1:100, y = 1:100 + runif(100, max = 10))
+```
+
+2. Try plotting the data
+
+```{r}
+plot(data)
+```
+
+3. Now, write a function that plots data with more or less "noise" by changing the argument given to the `runif`
+
+4. If you're feeling adventurous, use a different random number distribution (like a normal distribution) and add parameters to control the shape of the noise added to the plot.
