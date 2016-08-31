@@ -37,6 +37,7 @@ What is an object then? It is just something stored in memory with a name.
 # Statements and style
 
 ## Assignment statements
+
 To create an object, you perform an "assignment statement" where the name of the object is on the left, the value of the object is on the right, and in the middle is the assignment operator, "=",
 ```{r}
 an_object = "a string object"
@@ -49,7 +50,7 @@ Either "<-" or "=" works as the assignment operator though most R aficionados wi
 
 ## Style of statements
 
-- Every command in R must end in a "newline" or semicolon. Newlines are the norm in most R code.
+- Every command in R must end in a "newline" or semicolon. Newlines are the norm in most R code and I will use them too.
 - If an R statement is incomplete and you enter a newline, R will let you continue the statement: 
 ```{r}
 new_statement = print("this continues on the
@@ -66,6 +67,7 @@ mean(c(a / 100, 642564624.34))
 a=(100+3)-2
 mean(c(a/100,642564624.34))
 ```
+- Use "tabs" to set off blocks of code like loops and function definition. Good coding style will make these blocks look obvious since they are indented and spaced nicely. This makes understanding which parts of the code are run when much easier.
 
 ## Naming conventions
 
@@ -105,7 +107,7 @@ How do you know these objects are the types you think they are? You can check wi
 class(number)
 class(string)
 ```
-You can ask for a little more by getting the "structure" of the object using the function `str` (by the way, this function is another example of a name that is too short).
+You can ask for a little more by getting the "structure" of the object using the function `str` (by the way, this function is another example of a name that is too short; strike two R).
 ```{r}
 str(number)
 str(string)
@@ -114,7 +116,7 @@ These commands may not be super useful now, but R has enough different types of 
 
 ## Vectors
 
-Vectors are everywhere in R. They are simply lists of objects of a common type, like numeric or character. Actually our scalars were just vectors with a single element. To create a vector, use the poorly named `c` function.
+Vectors are everywhere in R. They are simply lists of objects of a common type, like numeric or character. Actually our scalars were just vectors with a single element. To create a vector, use the poorly named `c` or combine function.
 ```{r}
 number_vector = c(1,10,100,1000)
 number_vector
@@ -142,7 +144,7 @@ but looking at the result
 ```{r}
 mixed
 ```
-you find that R converted the numbers to strings. That's because vectors only contain a single object type.
+you will find that R converted the numbers to strings. That's because vectors only contain a single object type.
 
 Lists however can contain multiple types. Thus, using the `list` function works:
 ```{r}
@@ -161,9 +163,9 @@ if (test > 0) {
   print ("test is not greater than zero")
 }
 ```
-The brackets enclose the block of statements that get executed if the condition is true or not. Note that the else is on the same line as the final bracket of the "if". The ">" (greater than) symbol is an example of a "relational operator"; others include equals, "==", not equals, "!=", and "greater than or equal", ">=" (likewise, less than operators exist too).
+The brackets enclose the block of statements that get executed if the condition is true or not. Note that the else is on the same line as the final bracket of the "if". The ">" (greater than) symbol is an example of a *relational operator*; others include equals, "==", not equals, "!=", and "greater than or equal", ">=" (likewise, less than operators exist too).
 
-The outcome of a comparison with a relational operator is a "TRUE" or "FALSE" value, which are "Booleans". You can combine TRUE and FALSE values with "Boolean operators" like "and", "&&", "or", "||", and "not", "!". For example, you can check our whether our test variable is greater than zero or less than -1:
+The outcome of a comparison with a relational operator is a "TRUE" or "FALSE" value, which are "Booleans". You can combine TRUE and FALSE values with *Boolean operators* like "and", "&&", "or", "||", and "not", "!". For example, you can check our whether our test variable is greater than zero or less than -1:
 ```{r}
 test = -10
 if (test > 0 || test < -1) {
@@ -185,6 +187,8 @@ str(vec)
 ```
 The structure of the for loop is `for (index.object in index.value) { code block }`. The first run of the loop sets `index.object` to the first element of `index.value` and executes the code block. The next run sets the `index.object` to the second value of `index.value`, executes the code block, and so on until the loop has run as many times as there are elements in `index.value`.
 
+Note that the above loops shows you something else about vectors. You can build them dynamically by just assigning values to their elements. This is a very convenient thing that R lets you do, but many other languages will not (and sometimes for good reasons). 
+
 # More on functions
 
 Functions are important so we will discuss them in more detail. Functions take "arguments" between the parentheses and these arguments are the data you want the function to use. For example, the `runif` generates uniformly distributed random numbers. There are three arguments to the function:
@@ -198,7 +202,7 @@ print(runif(10, -1, 1))
 
 In RStudio, a handy way to see what functions are available or to jog your memory about a function's name is to begin typing the name and then hit "tab" when you have a few characters. RStudio will show you a list of possible functions and if you hit "tab" again it will complete your typing with the highlighted name. If you're typing inside the parenthesis, hitting "tab" will help remind you what the arguments to the function are.
 
-In R, the arguments to functions often have "names". If they do, you can give the argument with it's name
+In R, the arguments to functions often have "names". If they do, you can give the argument with it's name:
 ```{r}
 print(runif(min = -1, max = 1, n = 10))
 ```
@@ -216,7 +220,7 @@ print(runit())
 print(runit(n = 2))
 print(runit(5))
 ```
-Finally, the function returns whatever is in the "return" function or the last value in the function body. Thus, we can capture our random numbers, or the output from any function, easily:
+Finally, the function returns whatever is in the "return" function or the last value in the function body. Thus, we can easily capture our random numbers or the output from any function:
 ```{r}
 rvals = runit(5)
 print(rvals)
@@ -227,6 +231,7 @@ print(rvals)
 #### Write a function that plots a line with different levels of "noise"
 
 1. Use the following to create 100 points of "data". Note how we "named" each of the elements in our list ("x" and "y"). This will be important for much of what we do in R.
+
 ```{r}
 data = list(x = 1:100, y = 1:100 + runif(100, max = 10))
 ```
