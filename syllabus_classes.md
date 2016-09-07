@@ -9,7 +9,7 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 |    1 | 8/24            | Intro to course and R Markdown                      | Install R & RStudio before class                                                  |
 |      |                 |                                                     | ([Installation instructions](http://stat545.com/block000_r-rstudio-install.html)) |
 |    2 | 8/31            | Intro to R: data types, flow control, and functions |                                                                                   |
-|    3 | 9/7             | Vectors, slicing, and map (apply)                   |                                                                                   |
+|    3 | 9/7             | Vectors, slicing, and map(ping)                     |                                                                                   |
 |    4 | 9/14            | Getting data into R with data.frames                |                                                                                   |
 |    5 | 9/21            | `dplyr` and tidy data                               |                                                                                   |
 |    6 | 9/28            | `ggplot2`: intro                                    |                                                                                   |

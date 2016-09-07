@@ -60,7 +60,7 @@ next line")
 - This is more readable
 ```{r}
 a = (100 + 3) - 2
-mean(c(a / 100, 642564624.34))
+mean( c( a / 100, 642564624.34 ) )
 ```
 - than this
 ```{r}

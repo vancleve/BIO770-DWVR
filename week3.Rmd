@@ -1,0 +1,192 @@
+---
+title: 'Vectors, slicing, and map(ping)'
+author: "Jeremy Van Cleve"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Outline for today
+
+- Matrices and arrays
+- Indexing and slicing
+- Mapping and applying
+
+# Matrices and arrays
+
+Previously, you have seen vectors, which are just lists of objects of a single type. However, you often want a matrix of objects of a single (or multiple!) types or even a higher dimensions group of objects. The two dimensional version of a vector is called a **`matrix`** and the *n*-dimensional version is called an **`array`**.
+
+You can think of a matrix as a vector,
+```{r}
+vec = 1:16
+vec
+```
+except you've specified that there are a certain number of rows and columns:
+```{r}
+matx = matrix(vec, nrow = 4, ncol = 4)
+matx
+```
+Notice how the vector "filled" each column of the matrix. This is because R is a "column-major" language. Some languages, such as C and Python, and have row-major order.
+
+Since you often deal with matrices and matrix-like objects, R has two functions to give you the number of rows and columns. Also, the length of the matrix is just the rows times the columns.
+```{r}
+nrow(matx)
+ncol(matx)
+length(matx)
+```
+
+Likewise, you can convert the vector to a 2x2 array:
+```{r}
+arr = array(vec, dim = c(4,4))
+arr
+```
+Two-dimensional arrays are exactly the same as matrices. 
+
+In the above, the `dim` argument specifies the dimensionality of the array. Thus, you can convert the vector to a multidimensional array of 2x2x2x2 as well:
+```{r}
+arr = array(vec, dim = c(2,2,2,2))
+arr
+```
+Note that this is a four-dimensional object, so you can't print it without having to "flatten" it in some way.
+
+# Indexing and slicing
+
+Indexing matrices works similarly to indexing vectors except that you give a list of the elements you want from each dimension. First, suppose that you roll a twenty-sided die 100 times (because you are a super nerd) and you collect the results in a 10x10 matrix:
+```{r}
+set.seed(100) # this gives us the same "random" matrix each time
+rmatx = matrix(sample(1:20, 100, replace = TRUE), nrow = 10, ncol = 10)
+rmatx
+```
+To obtain the element in the second row, eighth column,
+```{r}
+rmatx[2,8]
+```
+You can also get a *"slice"* of the matrix by using the colon operator:
+```{r}
+rmatx[2,1:5]
+```
+yields the first five elements of the second row. Note that within the entry for the column element, you actually gave R a vector. Thus, you can give any list of indices in any order you choose. For example,
+```{r}
+rmatx[c(1,3,5,7,9),c(2,4,6,8,10)]
+```
+returns a slice of the matrix with only the odd rows and even columns. You can keep all the elements in a specific dimension by just leaving that spot blank. For example, to get the fourth row,
+```{r}
+rmatx[4,]
+```
+
+In general, slicing an array involves giving a list of indices for each dimension of the array. The magic of data wrangling comes in the many creative ways one can create these lists of indices and thus the slices that contain exactly the subset of the data that you want.
+
+## Slicing lists
+
+Recall that lists are like vectors but with potentially multiple types of objects. Thus, they are a little bit more complicated to slice. Take the following list,
+```{r}
+x = list(1:3, 4:6, 7:9)
+```
+which is a list of three vectors each three elements long. To get the first element of the list, you would do normally do
+```{r}
+str(x[1])
+```
+but (using the `str` function) you can see that actually returned the first vector as a list of length one. Thus, the single brackets simply return another list that contains the elements requested. To get the component of the list itself, you must use double brackets:
+```{r}
+str(x[[1]])
+```
+Another useful thing with lists (and other objects as we'll see next week) is that you can name the elements with strings (that satisfy R objects naming rules!). This allows you to access elements of the list using the name instead of the index. For example, if
+```{r}
+x = list(a = 1:3, b = 4:6, c = 7:9)
+```
+then we can access the first element using its name "a" and the "$" operator:
+```{r}
+x$a
+```
+which is equivalent to
+```{r}
+x[[1]]
+x[["a"]]
+x$a
+```
+
+## Other ways to slice
+
+- Negative integers omit the specified positions:
+  
+    ```{r}
+    rmatx[-c(1,3,5,7,9),c(2,4,6,8,10)]
+    ```
+    gives the even rows and even columns.
+    
+- Logical vectors selects elements of the matrix where the index vector is TRUE. **This is one of the most useful ways to index.** If you want to get only the rolls of the die that were less than 10, then you create a matrix of logicals
+    ```{r}
+    rmatx < 10
+    ```
+    and use it to index the matrix:
+    ```{r}
+    rmatx[rmatx < 10]
+    ```
+    Notice here that you get a vector back, not a matrix. This is because when you give a single index to a matrix, it treats the matrix like a vector with the first column first, then the second column, etc. It also makes sense that you don't get a matrix back since the "< 10" condition could be met anywhere any number of times in the matrix (no guarantee that the result would be square like a matrix).
+    
+    You could also just slice rows based on columns. For example, to get all rows with a fourth column whose roll is less than 10.
+    ```{r}
+    rmatx[rmatx[,4] < 10,]
+    ```
+    
+# Mapping and applying
+
+Given that you can slice matrices now, you will at some point want to apply some function to each element of that slice or to each row or column of the matrix. This can be done with a `for` loop, but there are functions that simply this. Such functions are `apply` functions in R and `map` functions in Python and Mathematica.
+
+In R, there are actually many `apply` functions since there are different types of list objects. To see them all, you type where
+```{r}
+??base::apply
+```
+searches for all functions with "apply" in the description in the "base" package. The easiest one to start with is `sapply`, which applies a function to each element of a vector or list and returns the output as a vector or matrix if possible. For example, you could sum each vector in the list you created above.
+```{r}
+str(sapply(x, sum))
+```
+Note that `sapply` gave you back a vector but with each element named according to the names of the list elements (handy!). 
+
+If you want to use apply over a matrix, the `apply` function is required. The number of die rolls less than 10 in each row of your die roll matrix would then be
+```{r}
+apply(rmatx, 1, function(x) sum(x < 10))
+```
+where you actually have a small "anonymous" (unnamed) function here that gets a logical vector for each row, TRUE for > 10 and FALSE for <= 10, and sums that vector (TRUE = 1 and FALSE = 0).
+
+# Lab ![](assets/beaker.png)
+
+Now let's slice some real DATA. The following blog post and Rmd file  
+<https://www.r-statistics.com/2016/08/presidential-election-predictions-2016/>  
+<https://github.com/hardin47/prediction2016/blob/master/predblog.Rmd>  
+describe how to get national polling data from the site <http://www.fivethirtyeight.com/> for the purpose of a competition run by the American Statistical Association. Using the methods there, you can get those data by downloading the files `USPresPolls_538dotcom_07Sep2016_D.csv` and `USPresPolls_538dotcom_07Sep2016_R.csv` and importing them:
+```{r}
+dpolls = read.csv("USPresPolls_538dotcom_07Sep2016_D.csv", as.is = TRUE)
+rpolls = read.csv("USPresPolls_538dotcom_07Sep2016_R.csv", as.is = TRUE)
+```
+
+Let's see what these data are.
+```{r}
+str(dpolls)
+```
+You can get the first few rows with
+```{r, eval=FALSE}
+head(dpolls)
+```
+or the last few rows with
+```{r, eval=FALSE}
+tail(dpolls)
+```
+
+The data are saved as a `data.frame`, which is a special kind of list that we will discuss in more detail next week. For the moment, you can practice slicing the data.frame as if it were a matrix. 
+
+Keep in mind that each row is a different poll (i.e., a poll by some agency at a specific date) that measures the support for the Democratic candidate (Clinton, "_D" file) or the Republication candidate (Trump, "_R" file) under the fivethirtyeight.com "now-case" model that tries to predict "who would win an election today".
+
+### Problems
+
+Load the `.csv` file and show the R code in your `.Rmd` file for each of the following problems.
+
+1. How many polls have a sample size greater than 1000? (hint: slice rows based on columns)
+
+2. Which pollster has the largest sample size? (hint: use the `max` function and slice the rows with that value)
+
+3. How many polls show Hillary with more than 40% of the vote if people voted today? (use the "adj_pct" column, which is the fivethirtyeight.com "now-cast" prediction)
+
+4. How many polls show Hillary leading Trump? (hint: comparing vectors and matrices is just like comparing numbers: use >, <, etc)
