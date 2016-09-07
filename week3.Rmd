@@ -156,7 +156,7 @@ where you actually have a small "anonymous" (unnamed) function here that gets a 
 Now let's slice some real DATA. The following blog post and Rmd file  
 <https://www.r-statistics.com/2016/08/presidential-election-predictions-2016/>  
 <https://github.com/hardin47/prediction2016/blob/master/predblog.Rmd>  
-describe how to get national polling data from the site <http://www.fivethirtyeight.com/> for the purpose of a competition run by the American Statistical Association. Using the methods there, you can get those data by downloading the files `USPresPolls_538dotcom_07Sep2016_D.csv` and `USPresPolls_538dotcom_07Sep2016_R.csv` and importing them:
+describe how to get national polling data from the site <http://www.fivethirtyeight.com/> for the purpose of a competition run by the American Statistical Association. Using the methods there, you can get those data by downloading the files `USPresPolls_538dotcom_07Sep2016_D.csv` and `USPresPolls_538dotcom_07Sep2016_R.csv` from the course github site and importing them:
 ```{r}
 dpolls = read.csv("USPresPolls_538dotcom_07Sep2016_D.csv", as.is = TRUE)
 rpolls = read.csv("USPresPolls_538dotcom_07Sep2016_R.csv", as.is = TRUE)
