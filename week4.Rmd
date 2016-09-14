@@ -1,0 +1,237 @@
+---
+title: 'Getting data into R with data.frames'
+author: "Jeremy Van Cleve"
+output: html_document
+date: 14th September 2016
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Outline for today
+
+- Another slice of slicing
+- Names and attributes
+- Factors
+- Data frames: a special kind of list
+- Reading data tables
+
+# Another slice of slicing
+
+Last time, we covered much of the basics of slicing matrices but there are still some topics and some helper functions that will be useful to know when trying to accomplish certain tasks.
+
+## Assigning to a slice
+
+Not only can you extract a slice of a matrix to analyze or plot but you can also assign values to that slice. First, create a matrix of all zeros to manipulate:
+```{r}
+allz = matrix(0, nrow = 6, ncol = 6)
+```
+As before, you slice the first row.
+```{r}
+allz[1,]
+```
+However, you can also assign values to it.
+```{r}
+allz[1,] = 1:6
+allz
+```
+Note that when assigning to a slice, the right-hand side must be of the same dimensionality as the left-hand side. For example, the following will not work:
+```{r, eval = FALSE}
+allz[1,] = 1:4
+```
+The one exception to this rule is when the number of items on the right hand side is a multiple of the number of elements in the slice. The simplest example is 
+```{r}
+allz[1,] = 1
+allz
+```
+but you can also do
+```{r}
+allz[1,] = 1:3
+allz
+```
+where the right hand side is use as many times as necessary to fill the slice.
+
+## Sorting
+
+Sorting numeric and character values is an important task that comes up in many applications. The `sort` function has reasonable defaults where it produces increasing numeric values
+```{r}
+set.seed(100)
+rvec = sample(1:100, 20, replace = TRUE)
+rvec
+sort(rvec)
+```
+or character values
+```{r}
+svec = c("hello", "world", "goodbye", "grand", "planet")
+sort(svec)
+```
+You can reverse the sort order by setting the argument `decreasing = TRUE`.
+
+## Getting the indices from slices
+
+### Sorting
+
+Often, you will want to sort not only a vector by the rows of a data matrix based on some column of the matrix. Thus, you need the list of positions each row will go to (e.g., row 1 to row 10, etc). To obtain this, you can use the `order` function
+```{r}
+order(svec)
+```
+which output precisely that list of indices. If you stick these indices back into the vector, you will obtain the original `sort` operation
+```{r}
+svec[ order(svec) ]
+sort(svec)
+```
+If you have a matrix of random values, 
+```{r}
+rmatx = matrix(sample(1:20, 36, replace = TRUE), nrow = 6, ncol = 6)
+rmatx
+```
+you could then sort the rows based on elements in the first column by first obtaining the indices used to sort that column
+```{r}
+order(rmatx[,1])
+```
+and using the indices to order the rows
+```{r}
+rmatx[ order(rmatx[,1]), ]
+```
+
+### Boolean (logical) slicing
+
+Recall that you can slice by creating a logical condition (generating `TRUE` and `FALSE` values) and use that in the index of a matrix. Sometimes, you want the actual indices of the elements of that matrix that are sliced; i.e., you want the indices of the elements where the conditions is `TRUE`. To get these indices, you use the `which` function. For example, the logical and index vectors are
+```{r}
+rmatx[,1] > 10
+which(rmatx[,1] > 10)
+```
+and the slices are
+```{r}
+rmatx[ rmatx[,1] > 10, ]
+rmatx[ which( rmatx[,1] > 10 ), ]
+```
+
+Finally, there some special versions of the `which` function that give you the first index of the max or min element of a vector, `which.max` and `which.min`. Those would have been helpful last week. Doh!
+
+# Names and attributes
+
+One topic to cover before introducing data frames concerns names and attributes. Attributes are "metadata" attached to an object where that data has a name and value. The only attributes that you need to consider now are "names" that are strings that give the names of each element in a vector. You have already seen with lists how each element can be given a name. More generally, vectors can have names for each element and matrices can have names for each row and each column.
+
+To give a vector names, simply assign the name when creating the vector
+```{r}
+named_svec = c(s1 = "hello", s2 = "world", s3 = "goodbye", s4 = "grand", s5 = "planet")
+named_svec
+```
+and you can recover those names with the `names` function
+```{r}
+names(named_svec)
+```
+You can also set the names afterwards by assigning to `names`:
+```{r}
+names(svec) = c("s1", "s2", "s3", "s4", "s5")
+svec
+```
+Finally, you can return a version of the vector with the names stripped using the function `uname`
+```{r}
+unname(svec)
+```
+or get rid of them entirely by assigning `names` to `NULL`
+```{r}
+names(svec) = NULL
+svec
+```
+
+# Factors
+
+A special object that you will see when dealing with data frames is called a "factor". A factor is a vector that can contain only predefined values and essentially stores categorical data (e.g., "tall", "medium", and "short" for plant height). Factors have a "levels" attribute that lists the allowable values. For example
+```{r}
+fac_factor = factor(c("Van Cleve", "Seifert", "Linnen", "Weisrock", "Smith", "Santollo"))
+fac_factor
+```
+If you try to set an element of the factor object to a value outside of `levels`, you will receive a warning
+```{r}
+fac_factor[1] = "Jones"
+fac_factor
+```
+and the element will be converted to the `NA` value, which is used for missing data. 
+
+Many R functions that read data tables take advantage of this behavior of factors so that columns may only contain certain values and the other values are missing data. This occurs when the function runs into a column with string data and the R function will often convert that column to a factor. Some of the functions that read data tables have nice arguments that let you tell them that specific strings, say "-", represent missing data and should be be converted to `NA`. 
+
+# Data frames
+
+Finally we have reached data frames. Data frames are the most common way of storing data in R. Essentially, a data frame is a list object containing vectors of equal length (i.e., the number of rows of the table). Thus, data frames have properties such as `length()`, `rnow()`, `ncol()` `colnames()`, and `rownames`.
+
+Creating a data frame is like creating a list:
+```{r}
+dframe = data.frame(height_rank = 1:4, last_name = c("Van Cleve", "Linnen", "Seifert", "Pendergast"), first_name = c("Jeremy", "Catherine", "Ashley", "Julie"))
+dframe
+```
+Slicing a data frame works like slicing a matrix or a list. Often, we will use the list convention where columns can be obtained with `$`. For example,
+```{r}
+dframe$first_name
+dframe$last_name
+```
+
+Adding columns to a data frame is done with `cbind` (column bind)
+```{r}
+cbind(dframe, building = c("MDR3", "THM", "THM", "THM"))
+```
+and adding rows with `rbind`
+```{r}
+rbind(dframe, data.frame(height_rank = 0, last_name = "Smith", first_name = "Jeramiah"))
+```
+
+# Reading data tables
+
+Now that you know about data frames, you can start using some nice R functions to read in data. You have already done this with the polling data from last week. Before loading in these data, obtain the following packages (they are nice for reading csv and excel files)
+```{r, eval = FALSE}
+install.packages("readr")
+install.packages("readxl")
+```
+and load them
+```{r}
+library(readr)
+library(readxl)
+```
+
+Now, you can use the `read_csv` function to get the data table. Instead of loading the two separate tables from last week, load the single master table that generated each of the those prior tables:
+```{r}
+polls = read_csv("USPresPolls_538dotcom_07Sep2016.csv")
+```
+Notice that `read_csv` gives you some nice output telling us about the table you just read. This master table has the polling data for both Hillary and Trump. To see this, check out the "party" and "choice" columns:
+```{r}
+str(polls$party)
+str(polls$choice)
+```
+
+Finally, loading excel files in no harder. To load some data from a RNA-seq paper on genomic imprinting (Babak et al. 2015. Nat Gen, <http://dx.doi.org/10.1038/ng.3274>), get the `babak-etal-2015_imprinted-mouse.xlsx` file and load it with `read_excel`
+```{r}
+imprint = read_excel("babak-etal-2015_imprinted-mouse.xlsx", na = "NaN")
+```
+Note that you have to tell the function what strings correspond to `NA` ("NaN" in this case). The first column are the gene names for each row
+```{r}
+imprint$Genes
+```
+and the column names are the tissue type that RNA expression was measured in
+```{r}
+colnames(imprint)[-1]
+```
+where the first element is dropped because it is the column name of the "Genes" column. You will manipulate these data later when we talk about tidy data and `dplyr`.
+
+# Lab ![](assets/beaker.png)
+
+Now that you have all the essential elements of slicing (more elements require specialized functions in packages like `dplyr`), you can do more sophisticated things with the polling data.
+
+### Problems
+
+1. The polling data from last week was separated into two files, one for Hillary and one for Trump, and each file only contained data for the "now" poll type, which is one of the predictive models that the website [FiveThirtyEight](http://fivethirtyeight.com/features/a-users-guide-to-fivethirtyeights-2016-general-election-forecast/) uses to "adjust" the polling data. 
+
+    Create a slice of the `polls` data frame that only contains rows with results for Hillary and for the polling model "now". This should be exactly the data in the file `USPresPolls_538dotcom_07Sep2016_D.csv`. Do the same thing for results for Trump and the "now" polling model. Save both slices for later use. Hint: use the "&" operator to combine logical statements.
+    
+2. Sort the Hillary data from Problem 1 according to the name of the pollster.
+
+3. Sort the Hillary and Trump data from Problem 1 according to the "end date"", earliest to latest.
+
+4. Plot the margin between Hillary and Trump percentages (use the column "adj_pct") with the polls sorted according to "end date"", earliest to latest.
+
+* Challenge problem (+3 extra credit)
+
+    Plot a heatmap of the imprinting data using the `heatmap` function. The rows and columns of the heatmap should be labeled properly with the gene names (rows) and tissue names (columns). The Babak et al. (2015) paper has a similar heatmap in Fig 1. Hint: read carefully the help for the `heatmap` function and know that you can convert data frames to matrices with `as.matrix`.
+
