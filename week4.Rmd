@@ -234,3 +234,4 @@ Now that you have all the essential elements of slicing (more elements require s
 * Challenge problem (+3 extra credit)
 
     Plot a heatmap of the imprinting data using the `heatmap` function. The rows and columns of the heatmap should be labeled properly with the gene names (rows) and tissue names (columns). The Babak et al. (2015) paper has a similar heatmap in Fig 1. Hint: read carefully the help for the `heatmap` function and know that you can convert data frames to matrices with `as.matrix`.
+    
