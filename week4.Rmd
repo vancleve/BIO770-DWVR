@@ -130,11 +130,11 @@ svec
 ```
 Finally, you can return a version of the vector with the names stripped using the function `uname`
 ```{r}
-unname(svec)
+unname(named_svec)
 ```
 or get rid of them entirely by assigning `names` to `NULL`
 ```{r}
-names(svec) = NULL
+names(named_svec) = NULL
 svec
 ```
 
@@ -156,7 +156,7 @@ Many R functions that read data tables take advantage of this behavior of factor
 
 # Data frames
 
-Finally we have reached data frames. Data frames are the most common way of storing data in R. Essentially, a data frame is a list object containing vectors of equal length (i.e., the number of rows of the table). Thus, data frames have properties such as `length()`, `rnow()`, `ncol()` `colnames()`, and `rownames`.
+Finally we have reached data frames. Data frames are the most common way of storing data in R. Essentially, a data frame is a list object containing vectors of equal length (i.e., the number of rows of the table). Thus, data frames have properties such as `length()`, `rnow()`, `ncol()` `colnames()`, and `rownames()`.
 
 Creating a data frame is like creating a list:
 ```{r}
