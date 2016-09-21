@@ -230,7 +230,7 @@ summarize(grouped_polls, mean_pct = mean(adj_pct))
     
     The answer will be deceivingly simple! This is the elegance / frustration of R. 
     
-3. Using the tidy data from Problem 2, find the number of genes (across all tissue types) that have an expression value <= 10 and  > 2. These genes are "paternally imprinted" in the Babak et al. dataset, which means they are only expressed from the maternal copy of the gene. 
+3. Using the tidy data from Problem 2, find the **number of genes** (across all tissue types) that have an **expression value <= 10 and  > 2**. These genes are "paternally imprinted" in the Babak et al. dataset, which means they are only expressed from the maternal copy of the gene. 
 
     Hint: you will need to count each gene once even if it appears in multiple rows, which can be done with the `distinct` function.
 
