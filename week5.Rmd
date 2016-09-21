@@ -1,0 +1,90 @@
+---
+title: 'Tidy Data'
+author: "Jeremy Van Cleve"
+output: html_document
+date: 21th September 2016
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Outline for today
+
+- So many data formats, so little time
+- One format to rule them all: tidy data
+- Making tidy data
+- Slicing tidy data with `dplyr`
+
+# So many data formats, so little time
+
+> Happy families are all alike;  
+> every unhappy family is unhappy in its own way.
+>
+> Leo Tolstoy (first line of "Anna Karenina")
+
+Hadley Wickham points out the nice connection between the above quote and data formats [^1]. While data formatting might seem esoteric and boring, paying attention to it early on can pay off a great deal in the long term, which hopefully leads to a happy scientist. If one were to break data formatting into two phases, they might be these:
+
+    Phase 1. The literal production of data itself from your experiment since you must choose a format and medium in which to record the data. 
+    
+    Phase 2. The input and formatting of data into your analysis tool (e.g., R). This might involve minimal changing of the "format" or a great deal of reshaping of the data.
+    
+Working backward, you do the least work on data formatting if you choose to save your data initially in a format that is easiest to analyze with R. Since we will use the graphing package, `ggplot2`, by Hadley Wickham, we will use the data format, **tidy data**, that he advocates. To get a sense for what his format is and why it might be useful, consider some different ways to organize data on tuberculosis (TB) cases where you have three variables, *country*, *year*, and *population*, for each measurement of *cases*. First, each variable including *cases* could have its own column:
+```{r}
+library(tidyr)
+table1
+```
+Here, each row represents one time you measured the TB cases. Alternatively, you could have each row represent a country with columns for different years. This means you need a table that measures the *cases* and one that measures the *population*:
+```{r}
+table4a # cases
+table4b # population
+```
+
+The latter format is actually the way we formatted the polling data from week 3 where we had one table for Hillary polls and one for Trump polls. The former format is the one we had for week 4 where a single table had both Hillary and Trump data. To see why the latter format might get cumbersome, suppose that we had polling data for all the candidates from the 2016 Republican primary, which started with 17 candidates (!). Using the latter format, we would need 17 tables to contain all the data, and would have to juggle between them as we compared polls between different candidates. With the first format, we can include all the candidates in a single table. The first format is the **tidy** format. 
+
+# One format to rule them all: tidy data
+
+The tidy format has the following three rules:
+
+1. Each variable must have its own column.
+2. Each observation must have its own row.
+3. Each value must have its own cell.
+
+Visually, this looks like
+![](assets/tidy.png)
+
+The primary benefit of tidy data is that every variable is a vector (column), which means that slicing data is just slicing columns. Though this may become complicated when the number of variables is large, there are some helper functions that will make slicing tidy data much easier. The slicing functions come from the package `dplyr` and the plotting package `ggplot2` assumes tidy data.
+
+To give a flavor of the power of tidy data and `ggplot2`, you can easily (once you know more about ggplot2 andn dplyr!) plot the polling data for Clinton and Trump (note that we are using 'up-to-date' date) on the same figure:
+```{r}
+library(readr)
+library(ggplot2)
+
+polls = read_csv("USPresPolls_538dotcom_21Sep2016.csv")
+
+ggplot(subset(polls, ((polltypeA == "now") & (endDate > "2016-08-01"))), 
+                         aes(y=adj_pct, x=endDate, group=choice, color=choice)) + 
+  geom_point() + geom_line() +
+  labs(title = "Vote percentage by date\n", 
+     y = "Percent Vote if Election Today", x = "Poll Date", 
+     color = "Candidate")
+```
+
+# Making tidy data
+
+Often, data will not be in the tidy format by default, so it will be necessary to format it. The first step is to figure out what the "variables" and "observations" are. Sometimes this may require carefully thinking about the experimental design used to create the data. Two common problems with data that are *untidy* are:
+
+1. One variable might be spread across multiple columns.
+2. One observation might be scattered across multiple rows.
+
+
+
+# Lab ![](assets/beaker.png)
+
+
+
+### Problems
+
+1. 
+
+[^1]: Wickham, Hadley. 2014. J Stat Softw, 59:1--23. DOI: [10.18637/jss.v059.i10](http://dx.doi.org/10.18637/jss.v059.i10)
