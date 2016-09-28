@@ -209,7 +209,7 @@ Here, `facet_grid` arranges the plots nicely in a grid. Positive values of expre
 
 ### Problems
 
-1. Use the polling data (`USPresPolls_538dotcom_21Sep2016.csv` or `USPresPolls_538dotcom_28Sep2016.csv`): 
+1. Use recent polling data (`USPresPolls_538dotcom_28Sep2016.csv`): 
     - Create a plot with `ggplot()` that shows the `adj_pct` for both Clinton and Trump for the "now" `polltypeA`
     - Use both points and lines connecting those points
     - Make Clinton and Trump data each a different color
