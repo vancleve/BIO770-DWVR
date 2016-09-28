@@ -11,8 +11,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Outline for today
 
+- Reminders
 - Plotting with R `base` graphics (sucks!)
 - Basic plotting with `ggplot2`
+
+# Reminders
+
+For the Lab Problems
+
+1. Don't print long data tables. Check your knit html for this.
+2. When loading files, put the data file is in the same directory as the `.Rmd`. Don't put any other directory information. That is:
+    - **this**: `dpolls = read.csv("USPresPolls_538dotcom_07Sep2016_D.csv")`
+    - *not this*: `dpolls = read.csv("my/home/folder/USPresPolls_538dotcom_07Sep2016_D.csv")`
 
 # Plotting with R `base` graphics
 
