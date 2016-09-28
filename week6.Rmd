@@ -29,7 +29,9 @@ For the Lab Problems
 Why do you even want to plot things?
 
 <!-- Crowdsource! -->
-- 
+- See patterns / do comparisons
+- Data presentation
+
 
 The base package (basic functions included with R and automatically loaded) includes plotting functions that can be useful. As you will quickly see however, the limits of these functions become evident quickly and more advanced plotting functions are required. The package of functions we will use come from Hadley Wickham's `ggplot2`.
 
