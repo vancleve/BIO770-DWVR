@@ -1,0 +1,4126 @@
+"Genes","tissue","expression"
+"PEC3","Preoptic Area (ref)",-10
+"UBE2NL","Preoptic Area (ref)",-10
+"TRAPPC9","Preoptic Area (ref)",10
+"EIF2C2","Preoptic Area (ref)",10
+"MIR344D-3","Preoptic Area (ref)",-10
+"MIR344G","Preoptic Area (ref)",-10
+"A930009L07RIK","Preoptic Area (ref)",10
+"KCNK9","Preoptic Area (ref)",10
+"RASGRF1","Preoptic Area (ref)",-10
+"INPP5F","Preoptic Area (ref)",-10
+"NAP1L5","Preoptic Area (ref)",-12
+"USP29","Preoptic Area (ref)",-10
+"HERC3-new","Preoptic Area (ref)",10
+"GM9801-new","Preoptic Area (ref)",-3.5
+"BEGAIN","Preoptic Area (ref)",-10
+"PX00010K13","Preoptic Area (ref)",-10
+"PEG13","Preoptic Area (ref)",-10
+"1110006E14RIK","Preoptic Area (ref)",10
+"MBII-343","Preoptic Area (ref)",10
+"MIRG","Preoptic Area (ref)",10
+"ZDBF2","Preoptic Area (ref)",-10
+"IMPACT","Preoptic Area (ref)",-10
+"NDN","Preoptic Area (ref)",-10
+"NIBP","Preoptic Area (ref)",-10
+"AK139287","Preoptic Area (ref)",11.2413
+"CCDC40-AS","Preoptic Area (ref)",-0.4
+"PX00113D24","Preoptic Area (ref)",-4.8
+"PEC2","Preoptic Area (ref)",-12
+"ZIM3","Preoptic Area (ref)",-12
+"AK142849","Preoptic Area (ref)",1.26
+"MKRN3","Preoptic Area (ref)",-2.4
+"IPW","Preoptic Area (ref)",-1.7
+"B830012L14RIK","Preoptic Area (ref)",2.7
+"ADAM23","Preoptic Area (ref)",-5.6
+"COMMD1","Preoptic Area (ref)",-10
+"UBE3A","Preoptic Area (ref)",-9.8
+"WARS","Preoptic Area (ref)",-1.1
+"BCL2L1","Preoptic Area (ref)",-2.2
+"BLCAP","Preoptic Area (ref)",8.29
+"CALCR","Preoptic Area (ref)",10
+"MAGEL2","Preoptic Area (ref)",-10
+"CDH15","Preoptic Area (ref)",-10
+"COPG2","Preoptic Area (ref)",-10
+"U80893","Preoptic Area (ref)",-10
+"NR_015479-new","Preoptic Area (ref)",5.11
+"GRB10","Preoptic Area (ref)",-10
+"PEG10","Preoptic Area (ref)",-10
+"SGCE","Preoptic Area (ref)",-10
+"PEG1","Preoptic Area (ref)",13.3883
+"MCTS2","Preoptic Area (ref)",-6.3
+"H13","Preoptic Area (ref)",10
+"SNRPN","Preoptic Area (ref)",-10
+"ZRSR1","Preoptic Area (ref)",-10
+"MEG3","Preoptic Area (ref)",10
+"RIAN","Preoptic Area (ref)",10
+"PEG3","Preoptic Area (ref)",-10
+"PLAGL1","Preoptic Area (ref)",-10
+"1110014L15RIK-new","Preoptic Area (ref)",10
+"ASB4","Preoptic Area (ref)",10
+"ZIM1","Preoptic Area (ref)",10
+"KLHDC10","Preoptic Area (ref)",1.23
+"DLK1","Preoptic Area (ref)",-10
+"GNAS","Preoptic Area (ref)",10
+"PPP1R9A","Preoptic Area (ref)",10
+"PDE4D","Preoptic Area (ref)",0.87
+"A19","Preoptic Area (ref)",-12
+"ZFP264","Preoptic Area (ref)",-12
+"KCNQ1OT1","Preoptic Area (ref)",-4.9
+"AK050713","Preoptic Area (ref)",-12
+"RTL1","Preoptic Area (ref)",-8.6
+"CDKN1C","Preoptic Area (ref)",0.4
+"PEG12","Preoptic Area (ref)",11
+"KCNQ1","Preoptic Area (ref)",-9.2
+"NESPAS","Preoptic Area (ref)",-1.8
+"SLC38A4","Preoptic Area (ref)",11
+"H19","Preoptic Area (ref)",-12
+"IGF2","Preoptic Area (ref)",5.21
+"INS1","Preoptic Area (ref)",-12
+"TFPI2","Preoptic Area (ref)",-12
+"AK043599","Preoptic Area (ref)",0.96
+"EDN3-new","Preoptic Area (ref)",12.0112
+"TMEM106A-new","Preoptic Area (ref)",0.35
+"DDC","Preoptic Area (ref)",0.72
+"RDM1","Preoptic Area (ref)",12.6094
+"TNK1-new","Preoptic Area (ref)",11.6994
+"TREM1-new","Preoptic Area (ref)",-12
+"2400006E01RIK-new","Preoptic Area (ref)",-12
+"IGF2AS","Preoptic Area (ref)",-12
+"UC008IHS.1-new","Preoptic Area (ref)",-12
+"5133400J02RIK-new","Preoptic Area (ref)",-12
+"PHLDA2","Preoptic Area (ref)",-12
+"AF357359","Preoptic Area (ref)",1.5
+"GAB1","Preoptic Area (ref)",13.1799
+"SFMBT2","Preoptic Area (ref)",-0.5
+"CD81","Preoptic Area (ref)",16.3169
+"PHF17","Preoptic Area (ref)",12.7728
+"TSSC4","Preoptic Area (ref)",13.6834
+"DACT2-new","Preoptic Area (ref)",12.2244
+"SLC22A2","Preoptic Area (ref)",-12
+"TSSC5","Preoptic Area (ref)",-12
+"SLC22A3","Preoptic Area (ref)",11
+"KLF14","Preoptic Area (ref)",NA
+"ATP10A","Preoptic Area (ref)",12.1562
+"DCN","Preoptic Area (ref)",13.2672
+"PON2","Preoptic Area (ref)",13.3491
+"PON3","Preoptic Area (ref)",11.3954
+"AMPD3","Preoptic Area (ref)",-0.3
+"GABRB3","Preoptic Area (ref)",-1.8
+"GATM","Preoptic Area (ref)",14.0721
+"TBC1D12","Preoptic Area (ref)",0.47
+"DIO3","Preoptic Area (ref)",-3
+"NAP1L4","Preoptic Area (ref)",1.06
+"MSUIT","Preoptic Area (ref)",-12
+"ASCL2","Preoptic Area (ref)",-12
+"OSBPL5","Preoptic Area (ref)",12.4792
+"TNFRSF23","Preoptic Area (ref)",11
+"AIRN","Preoptic Area (ref)",12.6812
+"HTR2A","Preoptic Area (ref)",11.1261
+"MAPT","Preoptic Area (ref)",15.9355
+"MKRN1-PS1","Preoptic Area (ref)",11.8964
+"DLX5","Preoptic Area (ref)",11
+"IGF2R","Preoptic Area (ref)",1.4
+"TRY4-new","Preoptic Area (ref)",-12
+"TSPAN32","Preoptic Area (ref)",11
+"ZIM2","Preoptic Area (ref)",-12
+"PEC3","e17.5 Brain",-10
+"UBE2NL","e17.5 Brain",-10
+"TRAPPC9","e17.5 Brain",10
+"EIF2C2","e17.5 Brain",10
+"MIR344D-3","e17.5 Brain",-10
+"MIR344G","e17.5 Brain",-10
+"A930009L07RIK","e17.5 Brain",10
+"KCNK9","e17.5 Brain",10
+"RASGRF1","e17.5 Brain",-10
+"INPP5F","e17.5 Brain",-10
+"NAP1L5","e17.5 Brain",-10
+"USP29","e17.5 Brain",-10
+"HERC3-new","e17.5 Brain",4.3563
+"GM9801-new","e17.5 Brain",-10
+"BEGAIN","e17.5 Brain",-3.9764
+"PX00010K13","e17.5 Brain",-10
+"PEG13","e17.5 Brain",-10
+"1110006E14RIK","e17.5 Brain",10
+"MBII-343","e17.5 Brain",10
+"MIRG","e17.5 Brain",10
+"ZDBF2","e17.5 Brain",-10
+"IMPACT","e17.5 Brain",-10
+"NDN","e17.5 Brain",-10
+"NIBP","e17.5 Brain",-10
+"AK139287","e17.5 Brain",-9.0309
+"CCDC40-AS","e17.5 Brain",-10
+"PX00113D24","e17.5 Brain",-10
+"PEC2","e17.5 Brain",-10
+"ZIM3","e17.5 Brain",-10
+"AK142849","e17.5 Brain",10
+"MKRN3","e17.5 Brain",-10
+"IPW","e17.5 Brain",-10
+"B830012L14RIK","e17.5 Brain",10
+"ADAM23","e17.5 Brain",-2.3625
+"COMMD1","e17.5 Brain",0.59229
+"UBE3A","e17.5 Brain",-0.85767
+"WARS","e17.5 Brain",13.767
+"BCL2L1","e17.5 Brain",-0.35194
+"BLCAP","e17.5 Brain",10
+"CALCR","e17.5 Brain",10
+"MAGEL2","e17.5 Brain",-10
+"CDH15","e17.5 Brain",-10
+"COPG2","e17.5 Brain",10
+"U80893","e17.5 Brain",-3.6124
+"NR_015479-new","e17.5 Brain",10
+"GRB10","e17.5 Brain",10
+"PEG10","e17.5 Brain",-10
+"SGCE","e17.5 Brain",-10
+"PEG1","e17.5 Brain",-10
+"MCTS2","e17.5 Brain",-2.8079
+"H13","e17.5 Brain",10
+"SNRPN","e17.5 Brain",-10
+"ZRSR1","e17.5 Brain",-10
+"MEG3","e17.5 Brain",10
+"RIAN","e17.5 Brain",10
+"PEG3","e17.5 Brain",-10
+"PLAGL1","e17.5 Brain",-10
+"1110014L15RIK-new","e17.5 Brain",11.8626
+"ASB4","e17.5 Brain",10
+"ZIM1","e17.5 Brain",10
+"KLHDC10","e17.5 Brain",4.726
+"DLK1","e17.5 Brain",-10
+"GNAS","e17.5 Brain",10
+"PPP1R9A","e17.5 Brain",1.9837
+"PDE4D","e17.5 Brain",-2.2054
+"A19","e17.5 Brain",-12
+"ZFP264","e17.5 Brain",-12
+"KCNQ1OT1","e17.5 Brain",-10
+"AK050713","e17.5 Brain",7.2247
+"RTL1","e17.5 Brain",9.7975
+"CDKN1C","e17.5 Brain",10
+"PEG12","e17.5 Brain",-10
+"KCNQ1","e17.5 Brain",0.81325
+"NESPAS","e17.5 Brain",-12
+"SLC38A4","e17.5 Brain",-10
+"H19","e17.5 Brain",10
+"IGF2","e17.5 Brain",-10
+"INS1","e17.5 Brain",-12
+"TFPI2","e17.5 Brain",0.46376
+"AK043599","e17.5 Brain",1.8113
+"EDN3-new","e17.5 Brain",11.128
+"TMEM106A-new","e17.5 Brain",-11
+"DDC","e17.5 Brain",12.2097
+"RDM1","e17.5 Brain",-0.37552
+"TNK1-new","e17.5 Brain",-0.19605
+"TREM1-new","e17.5 Brain",-12
+"2400006E01RIK-new","e17.5 Brain",-12
+"IGF2AS","e17.5 Brain",-2.8405
+"UC008IHS.1-new","e17.5 Brain",-12
+"5133400J02RIK-new","e17.5 Brain",-12
+"PHLDA2","e17.5 Brain",-11
+"AF357359","e17.5 Brain",6.0206
+"GAB1","e17.5 Brain",12.4941
+"SFMBT2","e17.5 Brain",-0.37051
+"CD81","e17.5 Brain",14.9479
+"PHF17","e17.5 Brain",11.6466
+"TSSC4","e17.5 Brain",0.80918
+"DACT2-new","e17.5 Brain",0.63047
+"SLC22A2","e17.5 Brain",0.67372
+"TSSC5","e17.5 Brain",0.60206
+"SLC22A3","e17.5 Brain",-11
+"KLF14","e17.5 Brain",0.30103
+"ATP10A","e17.5 Brain",-1.8849
+"DCN","e17.5 Brain",12.3812
+"PON2","e17.5 Brain",11.8464
+"PON3","e17.5 Brain",0.84004
+"AMPD3","e17.5 Brain",12.1701
+"GABRB3","e17.5 Brain",14.0611
+"GATM","e17.5 Brain",12.8086
+"TBC1D12","e17.5 Brain",11.6972
+"DIO3","e17.5 Brain",-1.8113
+"NAP1L4","e17.5 Brain",0.3375
+"MSUIT","e17.5 Brain",0.30103
+"ASCL2","e17.5 Brain",-12
+"OSBPL5","e17.5 Brain",1.2911
+"TNFRSF23","e17.5 Brain",1.5723
+"AIRN","e17.5 Brain",-3.586
+"HTR2A","e17.5 Brain",-11
+"MAPT","e17.5 Brain",16
+"MKRN1-PS1","e17.5 Brain",-11
+"DLX5","e17.5 Brain",13.2539
+"IGF2R","e17.5 Brain",3.8998
+"TRY4-new","e17.5 Brain",-12
+"TSPAN32","e17.5 Brain",-0.19605
+"ZIM2","e17.5 Brain",-12
+"PEC3","Hypothalamus",-10
+"UBE2NL","Hypothalamus",-10
+"TRAPPC9","Hypothalamus",9.3686
+"EIF2C2","Hypothalamus",10
+"MIR344D-3","Hypothalamus",-10
+"MIR344G","Hypothalamus",-10
+"A930009L07RIK","Hypothalamus",10
+"KCNK9","Hypothalamus",7.5257
+"RASGRF1","Hypothalamus",-10
+"INPP5F","Hypothalamus",-10
+"NAP1L5","Hypothalamus",-10
+"USP29","Hypothalamus",-10
+"HERC3-new","Hypothalamus",10
+"GM9801-new","Hypothalamus",-10
+"BEGAIN","Hypothalamus",-10
+"PX00010K13","Hypothalamus",-10
+"PEG13","Hypothalamus",-10
+"1110006E14RIK","Hypothalamus",9.6362
+"MBII-343","Hypothalamus",10
+"MIRG","Hypothalamus",10
+"ZDBF2","Hypothalamus",-10
+"IMPACT","Hypothalamus",-10
+"NDN","Hypothalamus",-10
+"NIBP","Hypothalamus",-10
+"AK139287","Hypothalamus",-12
+"CCDC40-AS","Hypothalamus",-1.8
+"PX00113D24","Hypothalamus",-10
+"PEC2","Hypothalamus",-3.8622
+"ZIM3","Hypothalamus",-10
+"AK142849","Hypothalamus",0.30103
+"MKRN3","Hypothalamus",-0.60206
+"IPW","Hypothalamus",-1.024
+"B830012L14RIK","Hypothalamus",1.2041
+"ADAM23","Hypothalamus",-3.3418
+"COMMD1","Hypothalamus",13.4105
+"UBE3A","Hypothalamus",13.4968
+"WARS","Hypothalamus",13.9438
+"BCL2L1","Hypothalamus",-4.0345
+"BLCAP","Hypothalamus",1.601
+"CALCR","Hypothalamus",9.633
+"MAGEL2","Hypothalamus",-10
+"CDH15","Hypothalamus",-0.67372
+"COPG2","Hypothalamus",10
+"U80893","Hypothalamus",-6.6807
+"NR_015479-new","Hypothalamus",1.9075
+"GRB10","Hypothalamus",-10
+"PEG10","Hypothalamus",-10
+"SGCE","Hypothalamus",-10
+"PEG1","Hypothalamus",-1.4513
+"MCTS2","Hypothalamus",-0.87477
+"H13","Hypothalamus",10
+"SNRPN","Hypothalamus",-10
+"ZRSR1","Hypothalamus",-10
+"MEG3","Hypothalamus",10
+"RIAN","Hypothalamus",10
+"PEG3","Hypothalamus",-12
+"PLAGL1","Hypothalamus",-12
+"1110014L15RIK-new","Hypothalamus",10
+"ASB4","Hypothalamus",10
+"ZIM1","Hypothalamus",10
+"KLHDC10","Hypothalamus",3.4916
+"DLK1","Hypothalamus",-10
+"GNAS","Hypothalamus",10
+"PPP1R9A","Hypothalamus",10
+"PDE4D","Hypothalamus",-0.64566
+"A19","Hypothalamus",-12
+"ZFP264","Hypothalamus",-12
+"KCNQ1OT1","Hypothalamus",-10
+"AK050713","Hypothalamus",-12
+"RTL1","Hypothalamus",-1.0781
+"CDKN1C","Hypothalamus",2.7093
+"PEG12","Hypothalamus",-11
+"KCNQ1","Hypothalamus",-11
+"NESPAS","Hypothalamus",-12
+"SLC38A4","Hypothalamus",-11
+"H19","Hypothalamus",0.727
+"IGF2","Hypothalamus",2.1357
+"INS1","Hypothalamus",-12
+"TFPI2","Hypothalamus",-12
+"AK043599","Hypothalamus",3.9134
+"EDN3-new","Hypothalamus",-11
+"TMEM106A-new","Hypothalamus",-12
+"DDC","Hypothalamus",3.4848
+"RDM1","Hypothalamus",-12
+"TNK1-new","Hypothalamus",-12
+"TREM1-new","Hypothalamus",-12
+"2400006E01RIK-new","Hypothalamus",-12
+"IGF2AS","Hypothalamus",-12
+"UC008IHS.1-new","Hypothalamus",-12
+"5133400J02RIK-new","Hypothalamus",-12
+"PHLDA2","Hypothalamus",-12
+"AF357359","Hypothalamus",4.2144
+"GAB1","Hypothalamus",1.0096
+"SFMBT2","Hypothalamus",-0.33822
+"CD81","Hypothalamus",0.3551
+"PHF17","Hypothalamus",12.7973
+"TSSC4","Hypothalamus",13.5512
+"DACT2-new","Hypothalamus",12.3202
+"SLC22A2","Hypothalamus",-12
+"TSSC5","Hypothalamus",-11
+"SLC22A3","Hypothalamus",-11
+"KLF14","Hypothalamus",-12
+"ATP10A","Hypothalamus",-0.42798
+"DCN","Hypothalamus",0.38981
+"PON2","Hypothalamus",12.8839
+"PON3","Hypothalamus",0.30103
+"AMPD3","Hypothalamus",12.993
+"GABRB3","Hypothalamus",14.2974
+"GATM","Hypothalamus",13.7326
+"TBC1D12","Hypothalamus",11.9916
+"DIO3","Hypothalamus",-11
+"NAP1L4","Hypothalamus",14.6526
+"MSUIT","Hypothalamus",-12
+"ASCL2","Hypothalamus",-12
+"OSBPL5","Hypothalamus",12.8488
+"TNFRSF23","Hypothalamus",-11
+"AIRN","Hypothalamus",-0.90309
+"HTR2A","Hypothalamus",11.5613
+"MAPT","Hypothalamus",15.3253
+"MKRN1-PS1","Hypothalamus",-11
+"DLX5","Hypothalamus",-0.12494
+"IGF2R","Hypothalamus",1.0058
+"TRY4-new","Hypothalamus",-12
+"TSPAN32","Hypothalamus",-11
+"ZIM2","Hypothalamus",-12
+"PEC3","e15 Brain (ref)",-10
+"UBE2NL","e15 Brain (ref)",-10
+"TRAPPC9","e15 Brain (ref)",10
+"EIF2C2","e15 Brain (ref)",10
+"MIR344D-3","e15 Brain (ref)",-10
+"MIR344G","e15 Brain (ref)",-10
+"A930009L07RIK","e15 Brain (ref)",10
+"KCNK9","e15 Brain (ref)",6.02
+"RASGRF1","e15 Brain (ref)",-10
+"INPP5F","e15 Brain (ref)",-10
+"NAP1L5","e15 Brain (ref)",-10
+"USP29","e15 Brain (ref)",-10
+"HERC3-new","e15 Brain (ref)",-3.4
+"GM9801-new","e15 Brain (ref)",-10
+"BEGAIN","e15 Brain (ref)",-6.4
+"PX00010K13","e15 Brain (ref)",-10
+"PEG13","e15 Brain (ref)",-10
+"1110006E14RIK","e15 Brain (ref)",10
+"MBII-343","e15 Brain (ref)",10
+"MIRG","e15 Brain (ref)",10
+"ZDBF2","e15 Brain (ref)",-10
+"IMPACT","e15 Brain (ref)",-10
+"NDN","e15 Brain (ref)",-10
+"NIBP","e15 Brain (ref)",-10
+"AK139287","e15 Brain (ref)",-1.8
+"CCDC40-AS","e15 Brain (ref)",11.2521
+"PX00113D24","e15 Brain (ref)",-8.1
+"PEC2","e15 Brain (ref)",NA
+"ZIM3","e15 Brain (ref)",-12
+"AK142849","e15 Brain (ref)",9.33
+"MKRN3","e15 Brain (ref)",-10
+"IPW","e15 Brain (ref)",-10
+"B830012L14RIK","e15 Brain (ref)",6.09
+"ADAM23","e15 Brain (ref)",-10
+"COMMD1","e15 Brain (ref)",-10
+"UBE3A","e15 Brain (ref)",-10
+"WARS","e15 Brain (ref)",-10
+"BCL2L1","e15 Brain (ref)",-3.3
+"BLCAP","e15 Brain (ref)",10
+"CALCR","e15 Brain (ref)",9.63
+"MAGEL2","e15 Brain (ref)",-10
+"CDH15","e15 Brain (ref)",-4.2
+"COPG2","e15 Brain (ref)",-10
+"U80893","e15 Brain (ref)",-10
+"NR_015479-new","e15 Brain (ref)",10
+"GRB10","e15 Brain (ref)",3.51
+"PEG10","e15 Brain (ref)",-10
+"SGCE","e15 Brain (ref)",-10
+"PEG1","e15 Brain (ref)",-10
+"MCTS2","e15 Brain (ref)",-8
+"H13","e15 Brain (ref)",7.95
+"SNRPN","e15 Brain (ref)",-10
+"ZRSR1","e15 Brain (ref)",-10
+"MEG3","e15 Brain (ref)",10
+"RIAN","e15 Brain (ref)",10
+"PEG3","e15 Brain (ref)",-10
+"PLAGL1","e15 Brain (ref)",-10
+"1110014L15RIK-new","e15 Brain (ref)",7.98
+"ASB4","e15 Brain (ref)",10
+"ZIM1","e15 Brain (ref)",10
+"KLHDC10","e15 Brain (ref)",2.31
+"DLK1","e15 Brain (ref)",-10
+"GNAS","e15 Brain (ref)",0.9
+"PPP1R9A","e15 Brain (ref)",13.8063
+"PDE4D","e15 Brain (ref)",12.2137
+"A19","e15 Brain (ref)",-12
+"ZFP264","e15 Brain (ref)",NA
+"KCNQ1OT1","e15 Brain (ref)",-10
+"AK050713","e15 Brain (ref)",2.4
+"RTL1","e15 Brain (ref)",0.76
+"CDKN1C","e15 Brain (ref)",10
+"PEG12","e15 Brain (ref)",-10
+"KCNQ1","e15 Brain (ref)",-10
+"NESPAS","e15 Brain (ref)",-4.41
+"SLC38A4","e15 Brain (ref)",-10
+"H19","e15 Brain (ref)",10
+"IGF2","e15 Brain (ref)",-10
+"INS1","e15 Brain (ref)",-12
+"TFPI2","e15 Brain (ref)",-12
+"AK043599","e15 Brain (ref)",-12
+"EDN3-new","e15 Brain (ref)",0.55
+"TMEM106A-new","e15 Brain (ref)",13.0977
+"DDC","e15 Brain (ref)",1.21
+"RDM1","e15 Brain (ref)",13.2501
+"TNK1-new","e15 Brain (ref)",11
+"TREM1-new","e15 Brain (ref)",-12
+"2400006E01RIK-new","e15 Brain (ref)",-12
+"IGF2AS","e15 Brain (ref)",-0.3
+"UC008IHS.1-new","e15 Brain (ref)",-12
+"5133400J02RIK-new","e15 Brain (ref)",-12
+"PHLDA2","e15 Brain (ref)",-12
+"AF357359","e15 Brain (ref)",0.6
+"GAB1","e15 Brain (ref)",12.3884
+"SFMBT2","e15 Brain (ref)",0.32
+"CD81","e15 Brain (ref)",2.32
+"PHF17","e15 Brain (ref)",13.4857
+"TSSC4","e15 Brain (ref)",13.9728
+"DACT2-new","e15 Brain (ref)",11
+"SLC22A2","e15 Brain (ref)",11.03
+"TSSC5","e15 Brain (ref)",11.6467
+"SLC22A3","e15 Brain (ref)",11
+"KLF14","e15 Brain (ref)",-12
+"ATP10A","e15 Brain (ref)",14.9647
+"DCN","e15 Brain (ref)",16.3843
+"PON2","e15 Brain (ref)",13.6065
+"PON3","e15 Brain (ref)",13.3827
+"AMPD3","e15 Brain (ref)",13.4317
+"GABRB3","e15 Brain (ref)",12.71
+"GATM","e15 Brain (ref)",12.3004
+"TBC1D12","e15 Brain (ref)",12.5794
+"DIO3","e15 Brain (ref)",11.9765
+"NAP1L4","e15 Brain (ref)",0.54
+"MSUIT","e15 Brain (ref)",-12
+"ASCL2","e15 Brain (ref)",-12
+"OSBPL5","e15 Brain (ref)",12.8144
+"TNFRSF23","e15 Brain (ref)",11.3259
+"AIRN","e15 Brain (ref)",-10
+"HTR2A","e15 Brain (ref)",0.77
+"MAPT","e15 Brain (ref)",10
+"MKRN1-PS1","e15 Brain (ref)",0.51
+"DLX5","e15 Brain (ref)",NA
+"IGF2R","e15 Brain (ref)",13.1517
+"TRY4-new","e15 Brain (ref)",-12
+"TSPAN32","e15 Brain (ref)",11.1042
+"ZIM2","e15 Brain (ref)",-12
+"PEC3","e9.5 Yolk Sac",-12
+"UBE2NL","e9.5 Yolk Sac",-12
+"TRAPPC9","e9.5 Yolk Sac",-11
+"EIF2C2","e9.5 Yolk Sac",13.0447
+"MIR344D-3","e9.5 Yolk Sac",-12
+"MIR344G","e9.5 Yolk Sac",-12
+"A930009L07RIK","e9.5 Yolk Sac",-12
+"KCNK9","e9.5 Yolk Sac",-12
+"RASGRF1","e9.5 Yolk Sac",-12
+"INPP5F","e9.5 Yolk Sac",13.2006
+"NAP1L5","e9.5 Yolk Sac",0.30103
+"USP29","e9.5 Yolk Sac",-4.2144
+"HERC3-new","e9.5 Yolk Sac",12.0829
+"GM9801-new","e9.5 Yolk Sac",-12
+"BEGAIN","e9.5 Yolk Sac",-1.581
+"PX00010K13","e9.5 Yolk Sac",-7.0322
+"PEG13","e9.5 Yolk Sac",-2.6798
+"1110006E14RIK","e9.5 Yolk Sac",10
+"MBII-343","e9.5 Yolk Sac",10
+"MIRG","e9.5 Yolk Sac",10
+"ZDBF2","e9.5 Yolk Sac",-9.6362
+"IMPACT","e9.5 Yolk Sac",-10
+"NDN","e9.5 Yolk Sac",-7.0322
+"NIBP","e9.5 Yolk Sac",-1.0929
+"AK139287","e9.5 Yolk Sac",-12
+"CCDC40-AS","e9.5 Yolk Sac",-11
+"PX00113D24","e9.5 Yolk Sac",-1.5051
+"PEC2","e9.5 Yolk Sac",-12
+"ZIM3","e9.5 Yolk Sac",-12
+"AK142849","e9.5 Yolk Sac",2.1891
+"MKRN3","e9.5 Yolk Sac",-12
+"IPW","e9.5 Yolk Sac",-12
+"B830012L14RIK","e9.5 Yolk Sac",7.8268
+"ADAM23","e9.5 Yolk Sac",12.0349
+"COMMD1","e9.5 Yolk Sac",15.0487
+"UBE3A","e9.5 Yolk Sac",12.5558
+"WARS","e9.5 Yolk Sac",13.7785
+"BCL2L1","e9.5 Yolk Sac",14.102
+"BLCAP","e9.5 Yolk Sac",13.246
+"CALCR","e9.5 Yolk Sac",0.30103
+"MAGEL2","e9.5 Yolk Sac",-1.2041
+"CDH15","e9.5 Yolk Sac",11.7719
+"COPG2","e9.5 Yolk Sac",13.2597
+"U80893","e9.5 Yolk Sac",-12
+"NR_015479-new","e9.5 Yolk Sac",12.0978
+"GRB10","e9.5 Yolk Sac",10
+"PEG10","e9.5 Yolk Sac",-10
+"SGCE","e9.5 Yolk Sac",-10
+"PEG1","e9.5 Yolk Sac",-10
+"MCTS2","e9.5 Yolk Sac",-3.6124
+"H13","e9.5 Yolk Sac",6.7436
+"SNRPN","e9.5 Yolk Sac",-10
+"ZRSR1","e9.5 Yolk Sac",-4.5154
+"MEG3","e9.5 Yolk Sac",10
+"RIAN","e9.5 Yolk Sac",10
+"PEG3","e9.5 Yolk Sac",-10
+"PLAGL1","e9.5 Yolk Sac",-10
+"1110014L15RIK-new","e9.5 Yolk Sac",5.0154
+"ASB4","e9.5 Yolk Sac",10
+"ZIM1","e9.5 Yolk Sac",10
+"KLHDC10","e9.5 Yolk Sac",4.4687
+"DLK1","e9.5 Yolk Sac",-10
+"GNAS","e9.5 Yolk Sac",10
+"PPP1R9A","e9.5 Yolk Sac",7.5328
+"PDE4D","e9.5 Yolk Sac",-11
+"A19","e9.5 Yolk Sac",-12
+"ZFP264","e9.5 Yolk Sac",-0.30103
+"KCNQ1OT1","e9.5 Yolk Sac",-10
+"AK050713","e9.5 Yolk Sac",1.2041
+"RTL1","e9.5 Yolk Sac",2.4468
+"CDKN1C","e9.5 Yolk Sac",10
+"PEG12","e9.5 Yolk Sac",-3.0103
+"KCNQ1","e9.5 Yolk Sac",0.30103
+"NESPAS","e9.5 Yolk Sac",-12
+"SLC38A4","e9.5 Yolk Sac",-10
+"H19","e9.5 Yolk Sac",10
+"IGF2","e9.5 Yolk Sac",-10
+"INS1","e9.5 Yolk Sac",-12
+"TFPI2","e9.5 Yolk Sac",11.1897
+"AK043599","e9.5 Yolk Sac",-12
+"EDN3-new","e9.5 Yolk Sac",0.30103
+"TMEM106A-new","e9.5 Yolk Sac",13.1732
+"DDC","e9.5 Yolk Sac",13.3351
+"RDM1","e9.5 Yolk Sac",0.3765
+"TNK1-new","e9.5 Yolk Sac",12.5285
+"TREM1-new","e9.5 Yolk Sac",-11
+"2400006E01RIK-new","e9.5 Yolk Sac",-11
+"IGF2AS","e9.5 Yolk Sac",-10
+"UC008IHS.1-new","e9.5 Yolk Sac",-6.3954
+"5133400J02RIK-new","e9.5 Yolk Sac",-4.5154
+"PHLDA2","e9.5 Yolk Sac",10
+"AF357359","e9.5 Yolk Sac",9.8481
+"GAB1","e9.5 Yolk Sac",-10
+"SFMBT2","e9.5 Yolk Sac",-10
+"CD81","e9.5 Yolk Sac",10
+"PHF17","e9.5 Yolk Sac",-4.1527
+"TSSC4","e9.5 Yolk Sac",3.1631
+"DACT2-new","e9.5 Yolk Sac",7.9668
+"SLC22A2","e9.5 Yolk Sac",10
+"TSSC5","e9.5 Yolk Sac",10
+"SLC22A3","e9.5 Yolk Sac",3.7995
+"KLF14","e9.5 Yolk Sac",2.3206
+"ATP10A","e9.5 Yolk Sac",-11
+"DCN","e9.5 Yolk Sac",-0.4264
+"PON2","e9.5 Yolk Sac",12.5513
+"PON3","e9.5 Yolk Sac",0.30103
+"AMPD3","e9.5 Yolk Sac",-11
+"GABRB3","e9.5 Yolk Sac",-12
+"GATM","e9.5 Yolk Sac",11.648
+"TBC1D12","e9.5 Yolk Sac",-11
+"DIO3","e9.5 Yolk Sac",-1.6203
+"NAP1L4","e9.5 Yolk Sac",1.6098
+"MSUIT","e9.5 Yolk Sac",-12
+"ASCL2","e9.5 Yolk Sac",-12
+"OSBPL5","e9.5 Yolk Sac",1.1997
+"TNFRSF23","e9.5 Yolk Sac",0.30103
+"AIRN","e9.5 Yolk Sac",-2.2321
+"HTR2A","e9.5 Yolk Sac",-12
+"MAPT","e9.5 Yolk Sac",0.19605
+"MKRN1-PS1","e9.5 Yolk Sac",-0.30103
+"DLX5","e9.5 Yolk Sac",-12
+"IGF2R","e9.5 Yolk Sac",10
+"TRY4-new","e9.5 Yolk Sac",-12
+"TSPAN32","e9.5 Yolk Sac",11.8239
+"ZIM2","e9.5 Yolk Sac",-12
+"PEC3","Prefrontal Cortex (ref)",-10
+"UBE2NL","Prefrontal Cortex (ref)",-10
+"TRAPPC9","Prefrontal Cortex (ref)",10
+"EIF2C2","Prefrontal Cortex (ref)",5.86
+"MIR344D-3","Prefrontal Cortex (ref)",-10
+"MIR344G","Prefrontal Cortex (ref)",-10
+"A930009L07RIK","Prefrontal Cortex (ref)",10
+"KCNK9","Prefrontal Cortex (ref)",7.54
+"RASGRF1","Prefrontal Cortex (ref)",-10
+"INPP5F","Prefrontal Cortex (ref)",-10
+"NAP1L5","Prefrontal Cortex (ref)",-10
+"USP29","Prefrontal Cortex (ref)",-10
+"HERC3-new","Prefrontal Cortex (ref)",-0.7
+"GM9801-new","Prefrontal Cortex (ref)",-2.2
+"BEGAIN","Prefrontal Cortex (ref)",-2.7
+"PX00010K13","Prefrontal Cortex (ref)",-10
+"PEG13","Prefrontal Cortex (ref)",-10
+"1110006E14RIK","Prefrontal Cortex (ref)",10
+"MBII-343","Prefrontal Cortex (ref)",10
+"MIRG","Prefrontal Cortex (ref)",10
+"ZDBF2","Prefrontal Cortex (ref)",-10
+"IMPACT","Prefrontal Cortex (ref)",-10
+"NDN","Prefrontal Cortex (ref)",-10
+"NIBP","Prefrontal Cortex (ref)",-10
+"AK139287","Prefrontal Cortex (ref)",11
+"CCDC40-AS","Prefrontal Cortex (ref)",11
+"PX00113D24","Prefrontal Cortex (ref)",-3
+"PEC2","Prefrontal Cortex (ref)",12.9526
+"ZIM3","Prefrontal Cortex (ref)",-12
+"AK142849","Prefrontal Cortex (ref)",3.91
+"MKRN3","Prefrontal Cortex (ref)",11.1358
+"IPW","Prefrontal Cortex (ref)",-6.1
+"B830012L14RIK","Prefrontal Cortex (ref)",3.01
+"ADAM23","Prefrontal Cortex (ref)",-4
+"COMMD1","Prefrontal Cortex (ref)",-10
+"UBE3A","Prefrontal Cortex (ref)",-10
+"WARS","Prefrontal Cortex (ref)",-5.3
+"BCL2L1","Prefrontal Cortex (ref)",-2.3
+"BLCAP","Prefrontal Cortex (ref)",0.93
+"CALCR","Prefrontal Cortex (ref)",-12
+"MAGEL2","Prefrontal Cortex (ref)",11
+"CDH15","Prefrontal Cortex (ref)",-8.9
+"COPG2","Prefrontal Cortex (ref)",-10
+"U80893","Prefrontal Cortex (ref)",-10
+"NR_015479-new","Prefrontal Cortex (ref)",10
+"GRB10","Prefrontal Cortex (ref)",-10
+"PEG10","Prefrontal Cortex (ref)",-10
+"SGCE","Prefrontal Cortex (ref)",-10
+"PEG1","Prefrontal Cortex (ref)",-6.7
+"MCTS2","Prefrontal Cortex (ref)",-5.7
+"H13","Prefrontal Cortex (ref)",12.656
+"SNRPN","Prefrontal Cortex (ref)",-10
+"ZRSR1","Prefrontal Cortex (ref)",-10
+"MEG3","Prefrontal Cortex (ref)",10
+"RIAN","Prefrontal Cortex (ref)",10
+"PEG3","Prefrontal Cortex (ref)",-10
+"PLAGL1","Prefrontal Cortex (ref)",-10
+"1110014L15RIK-new","Prefrontal Cortex (ref)",0.94
+"ASB4","Prefrontal Cortex (ref)",11
+"ZIM1","Prefrontal Cortex (ref)",0.39
+"KLHDC10","Prefrontal Cortex (ref)",13.6117
+"DLK1","Prefrontal Cortex (ref)",-0.3
+"GNAS","Prefrontal Cortex (ref)",-0.7
+"PPP1R9A","Prefrontal Cortex (ref)",1.76
+"PDE4D","Prefrontal Cortex (ref)",13.2206
+"A19","Prefrontal Cortex (ref)",-12
+"ZFP264","Prefrontal Cortex (ref)",-12
+"KCNQ1OT1","Prefrontal Cortex (ref)",-10
+"AK050713","Prefrontal Cortex (ref)",11
+"RTL1","Prefrontal Cortex (ref)",1.45
+"CDKN1C","Prefrontal Cortex (ref)",2.97
+"PEG12","Prefrontal Cortex (ref)",-12
+"KCNQ1","Prefrontal Cortex (ref)",-10
+"NESPAS","Prefrontal Cortex (ref)",NA
+"SLC38A4","Prefrontal Cortex (ref)",11
+"H19","Prefrontal Cortex (ref)",-12
+"IGF2","Prefrontal Cortex (ref)",5.88
+"INS1","Prefrontal Cortex (ref)",-12
+"TFPI2","Prefrontal Cortex (ref)",-12
+"AK043599","Prefrontal Cortex (ref)",1.04
+"EDN3-new","Prefrontal Cortex (ref)",-0.4
+"TMEM106A-new","Prefrontal Cortex (ref)",-0.3
+"DDC","Prefrontal Cortex (ref)",-0.3
+"RDM1","Prefrontal Cortex (ref)",11.9127
+"TNK1-new","Prefrontal Cortex (ref)",11.672
+"TREM1-new","Prefrontal Cortex (ref)",-12
+"2400006E01RIK-new","Prefrontal Cortex (ref)",-12
+"IGF2AS","Prefrontal Cortex (ref)",-12
+"UC008IHS.1-new","Prefrontal Cortex (ref)",-12
+"5133400J02RIK-new","Prefrontal Cortex (ref)",-12
+"PHLDA2","Prefrontal Cortex (ref)",-12
+"AF357359","Prefrontal Cortex (ref)",-12
+"GAB1","Prefrontal Cortex (ref)",0.32
+"SFMBT2","Prefrontal Cortex (ref)",11.4211
+"CD81","Prefrontal Cortex (ref)",15.7044
+"PHF17","Prefrontal Cortex (ref)",12.6979
+"TSSC4","Prefrontal Cortex (ref)",-0.3
+"DACT2-new","Prefrontal Cortex (ref)",14.2684
+"SLC22A2","Prefrontal Cortex (ref)",-12
+"TSSC5","Prefrontal Cortex (ref)",11
+"SLC22A3","Prefrontal Cortex (ref)",11.288
+"KLF14","Prefrontal Cortex (ref)",-12
+"ATP10A","Prefrontal Cortex (ref)",-0.6
+"DCN","Prefrontal Cortex (ref)",0.3
+"PON2","Prefrontal Cortex (ref)",13.3129
+"PON3","Prefrontal Cortex (ref)",11.3866
+"AMPD3","Prefrontal Cortex (ref)",12.5719
+"GABRB3","Prefrontal Cortex (ref)",14.6459
+"GATM","Prefrontal Cortex (ref)",14.1101
+"TBC1D12","Prefrontal Cortex (ref)",-0.6
+"DIO3","Prefrontal Cortex (ref)",11.0369
+"NAP1L4","Prefrontal Cortex (ref)",14.3327
+"MSUIT","Prefrontal Cortex (ref)",-12
+"ASCL2","Prefrontal Cortex (ref)",11
+"OSBPL5","Prefrontal Cortex (ref)",12.9982
+"TNFRSF23","Prefrontal Cortex (ref)",11.0832
+"AIRN","Prefrontal Cortex (ref)",11.1078
+"HTR2A","Prefrontal Cortex (ref)",12.2549
+"MAPT","Prefrontal Cortex (ref)",15.4131
+"MKRN1-PS1","Prefrontal Cortex (ref)",0.47
+"DLX5","Prefrontal Cortex (ref)",11.739
+"IGF2R","Prefrontal Cortex (ref)",12.5278
+"TRY4-new","Prefrontal Cortex (ref)",-12
+"TSPAN32","Prefrontal Cortex (ref)",11
+"ZIM2","Prefrontal Cortex (ref)",-12
+"PEC3","e9.5 Placenta",0
+"UBE2NL","e9.5 Placenta",-12
+"TRAPPC9","e9.5 Placenta",-11
+"EIF2C2","e9.5 Placenta",-11
+"MIR344D-3","e9.5 Placenta",-12
+"MIR344G","e9.5 Placenta",-12
+"A930009L07RIK","e9.5 Placenta",-12
+"KCNK9","e9.5 Placenta",-12
+"RASGRF1","e9.5 Placenta",-12
+"INPP5F","e9.5 Placenta",-11
+"NAP1L5","e9.5 Placenta",-11
+"USP29","e9.5 Placenta",-4.5154
+"HERC3-new","e9.5 Placenta",-11
+"GM9801-new","e9.5 Placenta",-12
+"BEGAIN","e9.5 Placenta",-11
+"PX00010K13","e9.5 Placenta",-0.90695
+"PEG13","e9.5 Placenta",-11
+"1110006E14RIK","e9.5 Placenta",-11
+"MBII-343","e9.5 Placenta",-11
+"MIRG","e9.5 Placenta",-11
+"ZDBF2","e9.5 Placenta",-1.2041
+"IMPACT","e9.5 Placenta",-11
+"NDN","e9.5 Placenta",-0.90695
+"NIBP","e9.5 Placenta",-11
+"AK139287","e9.5 Placenta",-12
+"CCDC40-AS","e9.5 Placenta",-11
+"PX00113D24","e9.5 Placenta",-2.7093
+"PEC2","e9.5 Placenta",-12
+"ZIM3","e9.5 Placenta",-0.30103
+"AK142849","e9.5 Placenta",-11
+"MKRN3","e9.5 Placenta",-11
+"IPW","e9.5 Placenta",-12
+"B830012L14RIK","e9.5 Placenta",-11
+"ADAM23","e9.5 Placenta",-0.16273
+"COMMD1","e9.5 Placenta",-11
+"UBE3A","e9.5 Placenta",-11
+"WARS","e9.5 Placenta",-11
+"BCL2L1","e9.5 Placenta",-11
+"BLCAP","e9.5 Placenta",-11
+"CALCR","e9.5 Placenta",-12
+"MAGEL2","e9.5 Placenta",-4.1065
+"CDH15","e9.5 Placenta",-11
+"COPG2","e9.5 Placenta",-11
+"U80893","e9.5 Placenta",-12
+"NR_015479-new","e9.5 Placenta",-11
+"GRB10","e9.5 Placenta",-11
+"PEG10","e9.5 Placenta",-10
+"SGCE","e9.5 Placenta",-10
+"PEG1","e9.5 Placenta",-10
+"MCTS2","e9.5 Placenta",-0.82137
+"H13","e9.5 Placenta",-11
+"SNRPN","e9.5 Placenta",-10
+"ZRSR1","e9.5 Placenta",-11
+"MEG3","e9.5 Placenta",-11
+"RIAN","e9.5 Placenta",-11
+"PEG3","e9.5 Placenta",-10
+"PLAGL1","e9.5 Placenta",-10
+"1110014L15RIK-new","e9.5 Placenta",-11
+"ASB4","e9.5 Placenta",-11
+"ZIM1","e9.5 Placenta",-11
+"KLHDC10","e9.5 Placenta",-11
+"DLK1","e9.5 Placenta",-10
+"GNAS","e9.5 Placenta",-11
+"PPP1R9A","e9.5 Placenta",-11
+"PDE4D","e9.5 Placenta",-11
+"A19","e9.5 Placenta",-12
+"ZFP264","e9.5 Placenta",-12
+"KCNQ1OT1","e9.5 Placenta",-10
+"AK050713","e9.5 Placenta",-11
+"RTL1","e9.5 Placenta",11.5819
+"CDKN1C","e9.5 Placenta",-11
+"PEG12","e9.5 Placenta",-0.37736
+"KCNQ1","e9.5 Placenta",-11
+"NESPAS","e9.5 Placenta",-12
+"SLC38A4","e9.5 Placenta",-10
+"H19","e9.5 Placenta",-11
+"IGF2","e9.5 Placenta",-10
+"INS1","e9.5 Placenta",-12
+"TFPI2","e9.5 Placenta",-11
+"AK043599","e9.5 Placenta",-12
+"EDN3-new","e9.5 Placenta",-11
+"TMEM106A-new","e9.5 Placenta",-11
+"DDC","e9.5 Placenta",-0.30103
+"RDM1","e9.5 Placenta",-11
+"TNK1-new","e9.5 Placenta",-11
+"TREM1-new","e9.5 Placenta",-11
+"2400006E01RIK-new","e9.5 Placenta",-10
+"IGF2AS","e9.5 Placenta",-10
+"UC008IHS.1-new","e9.5 Placenta",-10
+"5133400J02RIK-new","e9.5 Placenta",-2.8405
+"PHLDA2","e9.5 Placenta",-11
+"AF357359","e9.5 Placenta",-11
+"GAB1","e9.5 Placenta",-10
+"SFMBT2","e9.5 Placenta",-10
+"CD81","e9.5 Placenta",-11
+"PHF17","e9.5 Placenta",-11
+"TSSC4","e9.5 Placenta",-11
+"DACT2-new","e9.5 Placenta",-11
+"SLC22A2","e9.5 Placenta",-12
+"TSSC5","e9.5 Placenta",-11
+"SLC22A3","e9.5 Placenta",-11
+"KLF14","e9.5 Placenta",-11
+"ATP10A","e9.5 Placenta",-11
+"DCN","e9.5 Placenta",-11
+"PON2","e9.5 Placenta",-11
+"PON3","e9.5 Placenta",-11
+"AMPD3","e9.5 Placenta",-11
+"GABRB3","e9.5 Placenta",-12
+"GATM","e9.5 Placenta",-11
+"TBC1D12","e9.5 Placenta",-11
+"DIO3","e9.5 Placenta",-11
+"NAP1L4","e9.5 Placenta",-11
+"MSUIT","e9.5 Placenta",-12
+"ASCL2","e9.5 Placenta",-11
+"OSBPL5","e9.5 Placenta",-11
+"TNFRSF23","e9.5 Placenta",-11
+"AIRN","e9.5 Placenta",-0.50515
+"HTR2A","e9.5 Placenta",-11
+"MAPT","e9.5 Placenta",-11
+"MKRN1-PS1","e9.5 Placenta",-11
+"DLX5","e9.5 Placenta",-12
+"IGF2R","e9.5 Placenta",-11
+"TRY4-new","e9.5 Placenta",-12
+"TSPAN32","e9.5 Placenta",-11
+"ZIM2","e9.5 Placenta",-12
+"PEC3","Whole Brain",-10
+"UBE2NL","Whole Brain",-10
+"TRAPPC9","Whole Brain",9.2453
+"EIF2C2","Whole Brain",10
+"MIR344D-3","Whole Brain",-7.5395
+"MIR344G","Whole Brain",-4.6984
+"A930009L07RIK","Whole Brain",10
+"KCNK9","Whole Brain",5.5435
+"RASGRF1","Whole Brain",-10
+"INPP5F","Whole Brain",-10
+"NAP1L5","Whole Brain",-10
+"USP29","Whole Brain",-10
+"HERC3-new","Whole Brain",8.028
+"GM9801-new","Whole Brain",-3.9134
+"BEGAIN","Whole Brain",-9.3369
+"PX00010K13","Whole Brain",-10
+"PEG13","Whole Brain",-10
+"1110006E14RIK","Whole Brain",10
+"MBII-343","Whole Brain",10
+"MIRG","Whole Brain",10
+"ZDBF2","Whole Brain",-10
+"IMPACT","Whole Brain",-10
+"NDN","Whole Brain",-10
+"NIBP","Whole Brain",-10
+"AK139287","Whole Brain",-11
+"CCDC40-AS","Whole Brain",-11
+"PX00113D24","Whole Brain",-3.3113
+"PEC2","Whole Brain",-3.8622
+"ZIM3","Whole Brain",-10
+"AK142849","Whole Brain",1.9689
+"MKRN3","Whole Brain",-0.30103
+"IPW","Whole Brain",-2.4327
+"B830012L14RIK","Whole Brain",5.8268
+"ADAM23","Whole Brain",-0.85067
+"COMMD1","Whole Brain",0.96108
+"UBE3A","Whole Brain",0.69523
+"WARS","Whole Brain",13.6871
+"BCL2L1","Whole Brain",14.3142
+"BLCAP","Whole Brain",0.25794
+"CALCR","Whole Brain",2.7093
+"MAGEL2","Whole Brain",-3.6124
+"CDH15","Whole Brain",12.2402
+"COPG2","Whole Brain",3.7031
+"U80893","Whole Brain",-1.5051
+"NR_015479-new","Whole Brain",4.9689
+"GRB10","Whole Brain",-10
+"PEG10","Whole Brain",-10
+"SGCE","Whole Brain",-10
+"PEG1","Whole Brain",-7.1929
+"MCTS2","Whole Brain",-1.1367
+"H13","Whole Brain",10
+"SNRPN","Whole Brain",-10
+"ZRSR1","Whole Brain",-10
+"MEG3","Whole Brain",10
+"RIAN","Whole Brain",10
+"PEG3","Whole Brain",-10
+"PLAGL1","Whole Brain",-10
+"1110014L15RIK-new","Whole Brain",-11
+"ASB4","Whole Brain",0.30103
+"ZIM1","Whole Brain",2.0105
+"KLHDC10","Whole Brain",0.43794
+"DLK1","Whole Brain",-10
+"GNAS","Whole Brain",10
+"PPP1R9A","Whole Brain",13.328
+"PDE4D","Whole Brain",12.2318
+"A19","Whole Brain",-12
+"ZFP264","Whole Brain",-12
+"KCNQ1OT1","Whole Brain",-10
+"AK050713","Whole Brain",0.90309
+"RTL1","Whole Brain",4.251
+"CDKN1C","Whole Brain",0.96108
+"PEG12","Whole Brain",-0.30103
+"KCNQ1","Whole Brain",0.30103
+"NESPAS","Whole Brain",-12
+"SLC38A4","Whole Brain",-11
+"H19","Whole Brain",2.4082
+"IGF2","Whole Brain",10
+"INS1","Whole Brain",-12
+"TFPI2","Whole Brain",-12
+"AK043599","Whole Brain",4.9792
+"EDN3-new","Whole Brain",0.30103
+"TMEM106A-new","Whole Brain",-11
+"DDC","Whole Brain",12.7361
+"RDM1","Whole Brain",12.1873
+"TNK1-new","Whole Brain",-0.30103
+"TREM1-new","Whole Brain",-12
+"2400006E01RIK-new","Whole Brain",-12
+"IGF2AS","Whole Brain",-11
+"UC008IHS.1-new","Whole Brain",-12
+"5133400J02RIK-new","Whole Brain",-12
+"PHLDA2","Whole Brain",-12
+"AF357359","Whole Brain",3.3113
+"GAB1","Whole Brain",12.4931
+"SFMBT2","Whole Brain",-0.53681
+"CD81","Whole Brain",15.991
+"PHF17","Whole Brain",11.7366
+"TSSC4","Whole Brain",13.2774
+"DACT2-new","Whole Brain",13.5734
+"SLC22A2","Whole Brain",-12
+"TSSC5","Whole Brain",-11
+"SLC22A3","Whole Brain",-11
+"KLF14","Whole Brain",-12
+"ATP10A","Whole Brain",11.1586
+"DCN","Whole Brain",0.26049
+"PON2","Whole Brain",12.8142
+"PON3","Whole Brain",-0.20548
+"AMPD3","Whole Brain",12.2472
+"GABRB3","Whole Brain",13.6845
+"GATM","Whole Brain",14.1294
+"TBC1D12","Whole Brain",11.0457
+"DIO3","Whole Brain",-0.18293
+"NAP1L4","Whole Brain",14.467
+"MSUIT","Whole Brain",-12
+"ASCL2","Whole Brain",-12
+"OSBPL5","Whole Brain",0.71606
+"TNFRSF23","Whole Brain",0.43976
+"AIRN","Whole Brain",-2.4082
+"HTR2A","Whole Brain",11.3869
+"MAPT","Whole Brain",14.9334
+"MKRN1-PS1","Whole Brain",-11
+"DLX5","Whole Brain",-0.56763
+"IGF2R","Whole Brain",0.30103
+"TRY4-new","Whole Brain",-12
+"TSPAN32","Whole Brain",-12
+"ZIM2","Whole Brain",-12
+"PEC3","Adrenal Gland",-12
+"UBE2NL","Adrenal Gland",-12
+"TRAPPC9","Adrenal Gland",-12
+"EIF2C2","Adrenal Gland",1.1443
+"MIR344D-3","Adrenal Gland",-0.60206
+"MIR344G","Adrenal Gland",-12
+"A930009L07RIK","Adrenal Gland",10
+"KCNK9","Adrenal Gland",9.0309
+"RASGRF1","Adrenal Gland",-10
+"INPP5F","Adrenal Gland",-0.924
+"NAP1L5","Adrenal Gland",-0.60206
+"USP29","Adrenal Gland",-5.1175
+"HERC3-new","Adrenal Gland",11.9219
+"GM9801-new","Adrenal Gland",-12
+"BEGAIN","Adrenal Gland",-1.5051
+"PX00010K13","Adrenal Gland",-12
+"PEG13","Adrenal Gland",-12
+"1110006E14RIK","Adrenal Gland",10
+"MBII-343","Adrenal Gland",10
+"MIRG","Adrenal Gland",10
+"ZDBF2","Adrenal Gland",-10
+"IMPACT","Adrenal Gland",-10
+"NDN","Adrenal Gland",-10
+"NIBP","Adrenal Gland",-10
+"AK139287","Adrenal Gland",-12
+"CCDC40-AS","Adrenal Gland",-11
+"PX00113D24","Adrenal Gland",-0.30103
+"PEC2","Adrenal Gland",-12
+"ZIM3","Adrenal Gland",-12
+"AK142849","Adrenal Gland",2.4082
+"MKRN3","Adrenal Gland",-12
+"IPW","Adrenal Gland",-12
+"B830012L14RIK","Adrenal Gland",3.9134
+"ADAM23","Adrenal Gland",-0.86766
+"COMMD1","Adrenal Gland",0.96108
+"UBE3A","Adrenal Gland",13.2721
+"WARS","Adrenal Gland",-0.46095
+"BCL2L1","Adrenal Gland",0.7633
+"BLCAP","Adrenal Gland",-0.55502
+"CALCR","Adrenal Gland",-12
+"MAGEL2","Adrenal Gland",-1.2041
+"CDH15","Adrenal Gland",-0.76479
+"COPG2","Adrenal Gland",0.69211
+"U80893","Adrenal Gland",-12
+"NR_015479-new","Adrenal Gland",-12
+"GRB10","Adrenal Gland",10
+"PEG10","Adrenal Gland",-10
+"SGCE","Adrenal Gland",-10
+"PEG1","Adrenal Gland",-10
+"MCTS2","Adrenal Gland",-6.9095
+"H13","Adrenal Gland",3.2736
+"SNRPN","Adrenal Gland",-10
+"ZRSR1","Adrenal Gland",-10
+"MEG3","Adrenal Gland",10
+"RIAN","Adrenal Gland",10
+"PEG3","Adrenal Gland",-10
+"PLAGL1","Adrenal Gland",-10
+"1110014L15RIK-new","Adrenal Gland",0.16273
+"ASB4","Adrenal Gland",7.5796
+"ZIM1","Adrenal Gland",0.50515
+"KLHDC10","Adrenal Gland",13.6464
+"DLK1","Adrenal Gland",-10
+"GNAS","Adrenal Gland",2.853
+"PPP1R9A","Adrenal Gland",10
+"PDE4D","Adrenal Gland",0.63856
+"A19","Adrenal Gland",-12
+"ZFP264","Adrenal Gland",-12
+"KCNQ1OT1","Adrenal Gland",-10
+"AK050713","Adrenal Gland",-12
+"RTL1","Adrenal Gland",-0.50515
+"CDKN1C","Adrenal Gland",8.7299
+"PEG12","Adrenal Gland",-12
+"KCNQ1","Adrenal Gland",11.55
+"NESPAS","Adrenal Gland",-12
+"SLC38A4","Adrenal Gland",-6.3625
+"H19","Adrenal Gland",-12
+"IGF2","Adrenal Gland",-0.30103
+"INS1","Adrenal Gland",-12
+"TFPI2","Adrenal Gland",-12
+"AK043599","Adrenal Gland",10
+"EDN3-new","Adrenal Gland",4.8313
+"TMEM106A-new","Adrenal Gland",4.9333
+"DDC","Adrenal Gland",-4.5108
+"RDM1","Adrenal Gland",0.41402
+"TNK1-new","Adrenal Gland",-12
+"TREM1-new","Adrenal Gland",-12
+"2400006E01RIK-new","Adrenal Gland",-12
+"IGF2AS","Adrenal Gland",-0.30103
+"UC008IHS.1-new","Adrenal Gland",-12
+"5133400J02RIK-new","Adrenal Gland",-12
+"PHLDA2","Adrenal Gland",-12
+"AF357359","Adrenal Gland",0.60206
+"GAB1","Adrenal Gland",-1.123
+"SFMBT2","Adrenal Gland",-11
+"CD81","Adrenal Gland",0.84497
+"PHF17","Adrenal Gland",13.3184
+"TSSC4","Adrenal Gland",13.4815
+"DACT2-new","Adrenal Gland",-12
+"SLC22A2","Adrenal Gland",-12
+"TSSC5","Adrenal Gland",0.90309
+"SLC22A3","Adrenal Gland",-12
+"KLF14","Adrenal Gland",-12
+"ATP10A","Adrenal Gland",14.3472
+"DCN","Adrenal Gland",16
+"PON2","Adrenal Gland",13.3295
+"PON3","Adrenal Gland",13.282
+"AMPD3","Adrenal Gland",13.2918
+"GABRB3","Adrenal Gland",12.1224
+"GATM","Adrenal Gland",11.7549
+"TBC1D12","Adrenal Gland",11.9638
+"DIO3","Adrenal Gland",11.0105
+"NAP1L4","Adrenal Gland",14.0932
+"MSUIT","Adrenal Gland",-12
+"ASCL2","Adrenal Gland",-12
+"OSBPL5","Adrenal Gland",12.393
+"TNFRSF23","Adrenal Gland",0.46376
+"AIRN","Adrenal Gland",-4.5154
+"HTR2A","Adrenal Gland",-12
+"MAPT","Adrenal Gland",14.2483
+"MKRN1-PS1","Adrenal Gland",-12
+"DLX5","Adrenal Gland",-12
+"IGF2R","Adrenal Gland",10
+"TRY4-new","Adrenal Gland",-12
+"TSPAN32","Adrenal Gland",-11
+"ZIM2","Adrenal Gland",-12
+"PEC3","Olfactory Bulb",-10
+"UBE2NL","Olfactory Bulb",-10
+"TRAPPC9","Olfactory Bulb",10
+"EIF2C2","Olfactory Bulb",8.1534
+"MIR344D-3","Olfactory Bulb",-10
+"MIR344G","Olfactory Bulb",-10
+"A930009L07RIK","Olfactory Bulb",10
+"KCNK9","Olfactory Bulb",8.1278
+"RASGRF1","Olfactory Bulb",-10
+"INPP5F","Olfactory Bulb",-10
+"NAP1L5","Olfactory Bulb",-10
+"USP29","Olfactory Bulb",-10
+"HERC3-new","Olfactory Bulb",2.0238
+"GM9801-new","Olfactory Bulb",-10
+"BEGAIN","Olfactory Bulb",-4.3145
+"PX00010K13","Olfactory Bulb",-10
+"PEG13","Olfactory Bulb",-10
+"1110006E14RIK","Olfactory Bulb",10
+"MBII-343","Olfactory Bulb",10
+"MIRG","Olfactory Bulb",10
+"ZDBF2","Olfactory Bulb",-10
+"IMPACT","Olfactory Bulb",-10
+"NDN","Olfactory Bulb",-10
+"NIBP","Olfactory Bulb",-10
+"AK139287","Olfactory Bulb",-1.8062
+"CCDC40-AS","Olfactory Bulb",-1.8
+"PX00113D24","Olfactory Bulb",-10
+"PEC2","Olfactory Bulb",-8.691
+"ZIM3","Olfactory Bulb",-10
+"AK142849","Olfactory Bulb",6.6227
+"MKRN3","Olfactory Bulb",-7.5395
+"IPW","Olfactory Bulb",-3.1994
+"B830012L14RIK","Olfactory Bulb",10
+"ADAM23","Olfactory Bulb",-5.2647
+"COMMD1","Olfactory Bulb",0.30103
+"UBE3A","Olfactory Bulb",-2.9496
+"WARS","Olfactory Bulb",13.7041
+"BCL2L1","Olfactory Bulb",-0.84301
+"BLCAP","Olfactory Bulb",14.5099
+"CALCR","Olfactory Bulb",-12
+"MAGEL2","Olfactory Bulb",-12
+"CDH15","Olfactory Bulb",-1.7484
+"COPG2","Olfactory Bulb",0.89648
+"U80893","Olfactory Bulb",-2.1072
+"NR_015479-new","Olfactory Bulb",12.9514
+"GRB10","Olfactory Bulb",-10
+"PEG10","Olfactory Bulb",-10
+"SGCE","Olfactory Bulb",-10
+"PEG1","Olfactory Bulb",-10
+"MCTS2","Olfactory Bulb",-1.0009
+"H13","Olfactory Bulb",10
+"SNRPN","Olfactory Bulb",-10
+"ZRSR1","Olfactory Bulb",-10
+"MEG3","Olfactory Bulb",10
+"RIAN","Olfactory Bulb",10
+"PEG3","Olfactory Bulb",-10
+"PLAGL1","Olfactory Bulb",-10
+"1110014L15RIK-new","Olfactory Bulb",-11
+"ASB4","Olfactory Bulb",-11
+"ZIM1","Olfactory Bulb",0.30103
+"KLHDC10","Olfactory Bulb",13.2641
+"DLK1","Olfactory Bulb",-1.0568
+"GNAS","Olfactory Bulb",7.8439
+"PPP1R9A","Olfactory Bulb",13.1778
+"PDE4D","Olfactory Bulb",13.4123
+"A19","Olfactory Bulb",-12
+"ZFP264","Olfactory Bulb",-0.90309
+"KCNQ1OT1","Olfactory Bulb",-10
+"AK050713","Olfactory Bulb",3.3113
+"RTL1","Olfactory Bulb",7.8085
+"CDKN1C","Olfactory Bulb",1.6105
+"PEG12","Olfactory Bulb",-0.90309
+"KCNQ1","Olfactory Bulb",-11
+"NESPAS","Olfactory Bulb",-12
+"SLC38A4","Olfactory Bulb",-11
+"H19","Olfactory Bulb",10
+"IGF2","Olfactory Bulb",10
+"INS1","Olfactory Bulb",-0.4387
+"TFPI2","Olfactory Bulb",-12
+"AK043599","Olfactory Bulb",7.9105
+"EDN3-new","Olfactory Bulb",0.30103
+"TMEM106A-new","Olfactory Bulb",-11
+"DDC","Olfactory Bulb",12.1879
+"RDM1","Olfactory Bulb",11.9063
+"TNK1-new","Olfactory Bulb",0.30103
+"TREM1-new","Olfactory Bulb",-11
+"2400006E01RIK-new","Olfactory Bulb",-12
+"IGF2AS","Olfactory Bulb",-11
+"UC008IHS.1-new","Olfactory Bulb",-12
+"5133400J02RIK-new","Olfactory Bulb",-12
+"PHLDA2","Olfactory Bulb",-12
+"AF357359","Olfactory Bulb",2.7093
+"GAB1","Olfactory Bulb",-0.51717
+"SFMBT2","Olfactory Bulb",-11
+"CD81","Olfactory Bulb",15.6614
+"PHF17","Olfactory Bulb",0.48959
+"TSSC4","Olfactory Bulb",13.2756
+"DACT2-new","Olfactory Bulb",11.9736
+"SLC22A2","Olfactory Bulb",0.23846
+"TSSC5","Olfactory Bulb",0.59533
+"SLC22A3","Olfactory Bulb",-11
+"KLF14","Olfactory Bulb",-12
+"ATP10A","Olfactory Bulb",12.158
+"DCN","Olfactory Bulb",12.9537
+"PON2","Olfactory Bulb",12.8109
+"PON3","Olfactory Bulb",-11
+"AMPD3","Olfactory Bulb",12.6546
+"GABRB3","Olfactory Bulb",14.464
+"GATM","Olfactory Bulb",13.6555
+"TBC1D12","Olfactory Bulb",-0.50936
+"DIO3","Olfactory Bulb",-11
+"NAP1L4","Olfactory Bulb",14.3662
+"MSUIT","Olfactory Bulb",-12
+"ASCL2","Olfactory Bulb",-12
+"OSBPL5","Olfactory Bulb",12.3484
+"TNFRSF23","Olfactory Bulb",-11
+"AIRN","Olfactory Bulb",-10
+"HTR2A","Olfactory Bulb",0.47378
+"MAPT","Olfactory Bulb",-0.64229
+"MKRN1-PS1","Olfactory Bulb",-11
+"DLX5","Olfactory Bulb",-1.0752
+"IGF2R","Olfactory Bulb",10
+"TRY4-new","Olfactory Bulb",-12
+"TSPAN32","Olfactory Bulb",-11
+"ZIM2","Olfactory Bulb",-12
+"PEC3","Cortex",-10
+"UBE2NL","Cortex",-10
+"TRAPPC9","Cortex",10
+"EIF2C2","Cortex",10
+"MIR344D-3","Cortex",-10
+"MIR344G","Cortex",-10
+"A930009L07RIK","Cortex",10
+"KCNK9","Cortex",9.6653
+"RASGRF1","Cortex",-10
+"INPP5F","Cortex",-10
+"NAP1L5","Cortex",-10
+"USP29","Cortex",-10
+"HERC3-new","Cortex",10
+"GM9801-new","Cortex",-10
+"BEGAIN","Cortex",-1.8819
+"PX00010K13","Cortex",-10
+"PEG13","Cortex",-10
+"1110006E14RIK","Cortex",6.9446
+"MBII-343","Cortex",10
+"MIRG","Cortex",10
+"ZDBF2","Cortex",-10
+"IMPACT","Cortex",-10
+"NDN","Cortex",-10
+"NIBP","Cortex",-10
+"AK139287","Cortex",-12
+"CCDC40-AS","Cortex",-2.4
+"PX00113D24","Cortex",-10
+"PEC2","Cortex",-4.8165
+"ZIM3","Cortex",-10
+"AK142849","Cortex",0.30103
+"MKRN3","Cortex",-0.30103
+"IPW","Cortex",13.9503
+"B830012L14RIK","Cortex",1.5051
+"ADAM23","Cortex",-2.6518
+"COMMD1","Cortex",-12
+"UBE3A","Cortex",12.84
+"WARS","Cortex",13.8616
+"BCL2L1","Cortex",14.1663
+"BLCAP","Cortex",13.7954
+"CALCR","Cortex",-12
+"MAGEL2","Cortex",-12
+"CDH15","Cortex",-0.96108
+"COPG2","Cortex",9.106
+"U80893","Cortex",-3.1454
+"NR_015479-new","Cortex",1.2044
+"GRB10","Cortex",-10
+"PEG10","Cortex",-10
+"SGCE","Cortex",-10
+"PEG1","Cortex",-10
+"MCTS2","Cortex",-3.7904
+"H13","Cortex",2.9689
+"SNRPN","Cortex",-10
+"ZRSR1","Cortex",-10
+"MEG3","Cortex",10
+"RIAN","Cortex",10
+"PEG3","Cortex",-10
+"PLAGL1","Cortex",-10
+"1110014L15RIK-new","Cortex",-11
+"ASB4","Cortex",0.12494
+"ZIM1","Cortex",-0.41206
+"KLHDC10","Cortex",0.71776
+"DLK1","Cortex",-0.30103
+"GNAS","Cortex",1.444
+"PPP1R9A","Cortex",14.2269
+"PDE4D","Cortex",13.0992
+"A19","Cortex",-12
+"ZFP264","Cortex",-12
+"KCNQ1OT1","Cortex",-10
+"AK050713","Cortex",-12
+"RTL1","Cortex",11.1769
+"CDKN1C","Cortex",2.7093
+"PEG12","Cortex",-12
+"KCNQ1","Cortex",-0.60206
+"NESPAS","Cortex",-12
+"SLC38A4","Cortex",-11
+"H19","Cortex",-12
+"IGF2","Cortex",0.76479
+"INS1","Cortex",-12
+"TFPI2","Cortex",-12
+"AK043599","Cortex",3.3656
+"EDN3-new","Cortex",-0.53681
+"TMEM106A-new","Cortex",-11
+"DDC","Cortex",0.42371
+"RDM1","Cortex",-0.59229
+"TNK1-new","Cortex",11.1662
+"TREM1-new","Cortex",-12
+"2400006E01RIK-new","Cortex",-12
+"IGF2AS","Cortex",-12
+"UC008IHS.1-new","Cortex",-12
+"5133400J02RIK-new","Cortex",-12
+"PHLDA2","Cortex",-12
+"AF357359","Cortex",3.9134
+"GAB1","Cortex",0.34606
+"SFMBT2","Cortex",-11
+"CD81","Cortex",15.4885
+"PHF17","Cortex",0.44078
+"TSSC4","Cortex",13.2563
+"DACT2-new","Cortex",-0.39263
+"SLC22A2","Cortex",-12
+"TSSC5","Cortex",-11
+"SLC22A3","Cortex",-11
+"KLF14","Cortex",-12
+"ATP10A","Cortex",11.0736
+"DCN","Cortex",-11
+"PON2","Cortex",13.1113
+"PON3","Cortex",-11
+"AMPD3","Cortex",0.62088
+"GABRB3","Cortex",-0.39315
+"GATM","Cortex",13.9278
+"TBC1D12","Cortex",11.8203
+"DIO3","Cortex",-11
+"NAP1L4","Cortex",14.1276
+"MSUIT","Cortex",-12
+"ASCL2","Cortex",-12
+"OSBPL5","Cortex",12.7438
+"TNFRSF23","Cortex",-11
+"AIRN","Cortex",-0.90309
+"HTR2A","Cortex",11.9969
+"MAPT","Cortex",0.38636
+"MKRN1-PS1","Cortex",-11
+"DLX5","Cortex",11.2376
+"IGF2R","Cortex",1.0325
+"TRY4-new","Cortex",-12
+"TSPAN32","Cortex",-11
+"ZIM2","Cortex",-12
+"PEC3","e9.5 Embryo (ref)",-12
+"UBE2NL","e9.5 Embryo (ref)",-12
+"TRAPPC9","e9.5 Embryo (ref)",0.84
+"EIF2C2","e9.5 Embryo (ref)",1.05
+"MIR344D-3","e9.5 Embryo (ref)",-1.9
+"MIR344G","e9.5 Embryo (ref)",-12
+"A930009L07RIK","e9.5 Embryo (ref)",-12
+"KCNK9","e9.5 Embryo (ref)",-12
+"RASGRF1","e9.5 Embryo (ref)",-12
+"INPP5F","e9.5 Embryo (ref)",13.5257
+"NAP1L5","e9.5 Embryo (ref)",-12
+"USP29","e9.5 Embryo (ref)",-5.8
+"HERC3-new","e9.5 Embryo (ref)",12.596
+"GM9801-new","e9.5 Embryo (ref)",-10
+"BEGAIN","e9.5 Embryo (ref)",11.0951
+"PX00010K13","e9.5 Embryo (ref)",-12
+"PEG13","e9.5 Embryo (ref)",-10
+"1110006E14RIK","e9.5 Embryo (ref)",-12
+"MBII-343","e9.5 Embryo (ref)",4.97
+"MIRG","e9.5 Embryo (ref)",10
+"ZDBF2","e9.5 Embryo (ref)",-10
+"IMPACT","e9.5 Embryo (ref)",-10
+"NDN","e9.5 Embryo (ref)",-12
+"NIBP","e9.5 Embryo (ref)",12.7936
+"AK139287","e9.5 Embryo (ref)",11
+"CCDC40-AS","e9.5 Embryo (ref)",11
+"PX00113D24","e9.5 Embryo (ref)",-1.5
+"PEC2","e9.5 Embryo (ref)",-12
+"ZIM3","e9.5 Embryo (ref)",-12
+"AK142849","e9.5 Embryo (ref)",0.3
+"MKRN3","e9.5 Embryo (ref)",-12
+"IPW","e9.5 Embryo (ref)",-12
+"B830012L14RIK","e9.5 Embryo (ref)",0.6
+"ADAM23","e9.5 Embryo (ref)",13.0481
+"COMMD1","e9.5 Embryo (ref)",15.1332
+"UBE3A","e9.5 Embryo (ref)",13.9337
+"WARS","e9.5 Embryo (ref)",14.0957
+"BCL2L1","e9.5 Embryo (ref)",14.4235
+"BLCAP","e9.5 Embryo (ref)",-12
+"CALCR","e9.5 Embryo (ref)",-12
+"MAGEL2","e9.5 Embryo (ref)",-12
+"CDH15","e9.5 Embryo (ref)",-12
+"COPG2","e9.5 Embryo (ref)",14.7958
+"U80893","e9.5 Embryo (ref)",-12
+"NR_015479-new","e9.5 Embryo (ref)",NA
+"GRB10","e9.5 Embryo (ref)",10
+"PEG10","e9.5 Embryo (ref)",-10
+"SGCE","e9.5 Embryo (ref)",-10
+"PEG1","e9.5 Embryo (ref)",-6.6
+"MCTS2","e9.5 Embryo (ref)",-12
+"H13","e9.5 Embryo (ref)",1.26
+"SNRPN","e9.5 Embryo (ref)",-12
+"ZRSR1","e9.5 Embryo (ref)",-12
+"MEG3","e9.5 Embryo (ref)",10
+"RIAN","e9.5 Embryo (ref)",10
+"PEG3","e9.5 Embryo (ref)",-10
+"PLAGL1","e9.5 Embryo (ref)",-10
+"1110014L15RIK-new","e9.5 Embryo (ref)",-12
+"ASB4","e9.5 Embryo (ref)",10
+"ZIM1","e9.5 Embryo (ref)",10
+"KLHDC10","e9.5 Embryo (ref)",6.01
+"DLK1","e9.5 Embryo (ref)",-7.5
+"GNAS","e9.5 Embryo (ref)",16.0336
+"PPP1R9A","e9.5 Embryo (ref)",0.31
+"PDE4D","e9.5 Embryo (ref)",13.4644
+"A19","e9.5 Embryo (ref)",-12
+"ZFP264","e9.5 Embryo (ref)",-12
+"KCNQ1OT1","e9.5 Embryo (ref)",-12
+"AK050713","e9.5 Embryo (ref)",5.41
+"RTL1","e9.5 Embryo (ref)",8.12
+"CDKN1C","e9.5 Embryo (ref)",10
+"PEG12","e9.5 Embryo (ref)",-12
+"KCNQ1","e9.5 Embryo (ref)",-10
+"NESPAS","e9.5 Embryo (ref)",-2.1
+"SLC38A4","e9.5 Embryo (ref)",-8.3
+"H19","e9.5 Embryo (ref)",10
+"IGF2","e9.5 Embryo (ref)",-10
+"INS1","e9.5 Embryo (ref)",-12
+"TFPI2","e9.5 Embryo (ref)",-12
+"AK043599","e9.5 Embryo (ref)",-12
+"EDN3-new","e9.5 Embryo (ref)",-12
+"TMEM106A-new","e9.5 Embryo (ref)",-12
+"DDC","e9.5 Embryo (ref)",12.5414
+"RDM1","e9.5 Embryo (ref)",-12
+"TNK1-new","e9.5 Embryo (ref)",-12
+"TREM1-new","e9.5 Embryo (ref)",-12
+"2400006E01RIK-new","e9.5 Embryo (ref)",-12
+"IGF2AS","e9.5 Embryo (ref)",-1.2
+"UC008IHS.1-new","e9.5 Embryo (ref)",-12
+"5133400J02RIK-new","e9.5 Embryo (ref)",-12
+"PHLDA2","e9.5 Embryo (ref)",-12
+"AF357359","e9.5 Embryo (ref)",0.9
+"GAB1","e9.5 Embryo (ref)",12.9091
+"SFMBT2","e9.5 Embryo (ref)",11.6355
+"CD81","e9.5 Embryo (ref)",-12
+"PHF17","e9.5 Embryo (ref)",13.6469
+"TSSC4","e9.5 Embryo (ref)",14.5999
+"DACT2-new","e9.5 Embryo (ref)",-12
+"SLC22A2","e9.5 Embryo (ref)",-12
+"TSSC5","e9.5 Embryo (ref)",-12
+"SLC22A3","e9.5 Embryo (ref)",-12
+"KLF14","e9.5 Embryo (ref)",-12
+"ATP10A","e9.5 Embryo (ref)",-0.6
+"DCN","e9.5 Embryo (ref)",-12
+"PON2","e9.5 Embryo (ref)",0.8
+"PON3","e9.5 Embryo (ref)",-12
+"AMPD3","e9.5 Embryo (ref)",-12
+"GABRB3","e9.5 Embryo (ref)",11.4819
+"GATM","e9.5 Embryo (ref)",-12
+"TBC1D12","e9.5 Embryo (ref)",12.683
+"DIO3","e9.5 Embryo (ref)",11.1931
+"NAP1L4","e9.5 Embryo (ref)",15.6128
+"MSUIT","e9.5 Embryo (ref)",-12
+"ASCL2","e9.5 Embryo (ref)",-12
+"OSBPL5","e9.5 Embryo (ref)",14.0452
+"TNFRSF23","e9.5 Embryo (ref)",-12
+"AIRN","e9.5 Embryo (ref)",-10
+"HTR2A","e9.5 Embryo (ref)",-12
+"MAPT","e9.5 Embryo (ref)",12.3452
+"MKRN1-PS1","e9.5 Embryo (ref)",-12
+"DLX5","e9.5 Embryo (ref)",-12
+"IGF2R","e9.5 Embryo (ref)",2.12
+"TRY4-new","e9.5 Embryo (ref)",-12
+"TSPAN32","e9.5 Embryo (ref)",11.2922
+"ZIM2","e9.5 Embryo (ref)",-12
+"PEC3","Hippocampus",-10
+"UBE2NL","Hippocampus",-10
+"TRAPPC9","Hippocampus",10
+"EIF2C2","Hippocampus",8.53
+"MIR344D-3","Hippocampus",-3.6124
+"MIR344G","Hippocampus",-2.7673
+"A930009L07RIK","Hippocampus",6.1108
+"KCNK9","Hippocampus",2.2321
+"RASGRF1","Hippocampus",-10
+"INPP5F","Hippocampus",-10
+"NAP1L5","Hippocampus",-10
+"USP29","Hippocampus",-10
+"HERC3-new","Hippocampus",2.9637
+"GM9801-new","Hippocampus",-4.2144
+"BEGAIN","Hippocampus",-4.7366
+"PX00010K13","Hippocampus",-10
+"PEG13","Hippocampus",-10
+"1110006E14RIK","Hippocampus",10
+"MBII-343","Hippocampus",10
+"MIRG","Hippocampus",10
+"ZDBF2","Hippocampus",-5.4185
+"IMPACT","Hippocampus",-10
+"NDN","Hippocampus",-10
+"NIBP","Hippocampus",-10
+"AK139287","Hippocampus",-0.30103
+"CCDC40-AS","Hippocampus",-2.1
+"PX00113D24","Hippocampus",-6.3216
+"PEC2","Hippocampus",-1.8062
+"ZIM3","Hippocampus",-10
+"AK142849","Hippocampus",0.30103
+"MKRN3","Hippocampus",-0.60206
+"IPW","Hippocampus",-2.4238
+"B830012L14RIK","Hippocampus",1.5051
+"ADAM23","Hippocampus",13.4392
+"COMMD1","Hippocampus",1.6841
+"UBE3A","Hippocampus",12.796
+"WARS","Hippocampus",13.6154
+"BCL2L1","Hippocampus",14.343
+"BLCAP","Hippocampus",14.1472
+"CALCR","Hippocampus",-12
+"MAGEL2","Hippocampus",-0.90309
+"CDH15","Hippocampus",-5.6337
+"COPG2","Hippocampus",2.143
+"U80893","Hippocampus",-0.90309
+"NR_015479-new","Hippocampus",5.9833
+"GRB10","Hippocampus",-2.2321
+"PEG10","Hippocampus",-7.8268
+"SGCE","Hippocampus",-10
+"PEG1","Hippocampus",-2.2489
+"MCTS2","Hippocampus",-2.0175
+"H13","Hippocampus",8.4168
+"SNRPN","Hippocampus",-10
+"ZRSR1","Hippocampus",-10
+"MEG3","Hippocampus",10
+"RIAN","Hippocampus",10
+"PEG3","Hippocampus",-10
+"PLAGL1","Hippocampus",-10
+"1110014L15RIK-new","Hippocampus",-11
+"ASB4","Hippocampus",-11
+"ZIM1","Hippocampus",-11
+"KLHDC10","Hippocampus",13.0463
+"DLK1","Hippocampus",-1.9689
+"GNAS","Hippocampus",15.3091
+"PPP1R9A","Hippocampus",13.5096
+"PDE4D","Hippocampus",12.2241
+"A19","Hippocampus",-12
+"ZFP264","Hippocampus",-0.30103
+"KCNQ1OT1","Hippocampus",-10
+"AK050713","Hippocampus",0.30103
+"RTL1","Hippocampus",2.4984
+"CDKN1C","Hippocampus",-12
+"PEG12","Hippocampus",-0.30103
+"KCNQ1","Hippocampus",0.30103
+"NESPAS","Hippocampus",-12
+"SLC38A4","Hippocampus",-11
+"H19","Hippocampus",0.30103
+"IGF2","Hippocampus",10
+"INS1","Hippocampus",-12
+"TFPI2","Hippocampus",-12
+"AK043599","Hippocampus",1.5051
+"EDN3-new","Hippocampus",0.54395
+"TMEM106A-new","Hippocampus",-0.96108
+"DDC","Hippocampus",11.2508
+"RDM1","Hippocampus",11.8048
+"TNK1-new","Hippocampus",-11
+"TREM1-new","Hippocampus",-12
+"2400006E01RIK-new","Hippocampus",-12
+"IGF2AS","Hippocampus",0.30103
+"UC008IHS.1-new","Hippocampus",-12
+"5133400J02RIK-new","Hippocampus",-12
+"PHLDA2","Hippocampus",-12
+"AF357359","Hippocampus",0.90309
+"GAB1","Hippocampus",-0.48086
+"SFMBT2","Hippocampus",-11
+"CD81","Hippocampus",15.6454
+"PHF17","Hippocampus",11.4232
+"TSSC4","Hippocampus",-0.81142
+"DACT2-new","Hippocampus",13.0325
+"SLC22A2","Hippocampus",-12
+"TSSC5","Hippocampus",-12
+"SLC22A3","Hippocampus",-0.30103
+"KLF14","Hippocampus",-12
+"ATP10A","Hippocampus",0.882
+"DCN","Hippocampus",12.0152
+"PON2","Hippocampus",12.5332
+"PON3","Hippocampus",0.50515
+"AMPD3","Hippocampus",0.65499
+"GABRB3","Hippocampus",14.5367
+"GATM","Hippocampus",-0.28167
+"TBC1D12","Hippocampus",11.1334
+"DIO3","Hippocampus",0.30103
+"NAP1L4","Hippocampus",14.1802
+"MSUIT","Hippocampus",-12
+"ASCL2","Hippocampus",-12
+"OSBPL5","Hippocampus",11.6653
+"TNFRSF23","Hippocampus",-11
+"AIRN","Hippocampus",-12
+"HTR2A","Hippocampus",0.30103
+"MAPT","Hippocampus",14.9053
+"MKRN1-PS1","Hippocampus",-11
+"DLX5","Hippocampus",11.1904
+"IGF2R","Hippocampus",11.8056
+"TRY4-new","Hippocampus",-12
+"TSPAN32","Hippocampus",-12
+"ZIM2","Hippocampus",-12
+"PEC3","TSCs (ref)",-12
+"UBE2NL","TSCs (ref)",-12
+"TRAPPC9","TSCs (ref)",11
+"EIF2C2","TSCs (ref)",12.1818
+"MIR344D-3","TSCs (ref)",-12
+"MIR344G","TSCs (ref)",-12
+"A930009L07RIK","TSCs (ref)",-12
+"KCNK9","TSCs (ref)",-12
+"RASGRF1","TSCs (ref)",-12
+"INPP5F","TSCs (ref)",13.3267
+"NAP1L5","TSCs (ref)",-12
+"USP29","TSCs (ref)",-12
+"HERC3-new","TSCs (ref)",0.6
+"GM9801-new","TSCs (ref)",-12
+"BEGAIN","TSCs (ref)",-12
+"PX00010K13","TSCs (ref)",-12
+"PEG13","TSCs (ref)",-12
+"1110006E14RIK","TSCs (ref)",-12
+"MBII-343","TSCs (ref)",-12
+"MIRG","TSCs (ref)",2.4
+"ZDBF2","TSCs (ref)",-12
+"IMPACT","TSCs (ref)",-0.5
+"NDN","TSCs (ref)",-12
+"NIBP","TSCs (ref)",-0.8
+"AK139287","TSCs (ref)",-12
+"CCDC40-AS","TSCs (ref)",-12
+"PX00113D24","TSCs (ref)",-10
+"PEC2","TSCs (ref)",-12
+"ZIM3","TSCs (ref)",-12
+"AK142849","TSCs (ref)",-12
+"MKRN3","TSCs (ref)",-0.3
+"IPW","TSCs (ref)",-12
+"B830012L14RIK","TSCs (ref)",-12
+"ADAM23","TSCs (ref)",-12
+"COMMD1","TSCs (ref)",-12
+"UBE3A","TSCs (ref)",13.0068
+"WARS","TSCs (ref)",-0.5
+"BCL2L1","TSCs (ref)",-0.4
+"BLCAP","TSCs (ref)",14.7147
+"CALCR","TSCs (ref)",-12
+"MAGEL2","TSCs (ref)",-12
+"CDH15","TSCs (ref)",-12
+"COPG2","TSCs (ref)",-12
+"U80893","TSCs (ref)",-12
+"NR_015479-new","TSCs (ref)",12.6591
+"GRB10","TSCs (ref)",10
+"PEG10","TSCs (ref)",-10
+"SGCE","TSCs (ref)",-10
+"PEG1","TSCs (ref)",-12
+"MCTS2","TSCs (ref)",-3
+"H13","TSCs (ref)",0.33
+"SNRPN","TSCs (ref)",-12
+"ZRSR1","TSCs (ref)",-12
+"MEG3","TSCs (ref)",-12
+"RIAN","TSCs (ref)",-12
+"PEG3","TSCs (ref)",-12
+"PLAGL1","TSCs (ref)",-12
+"1110014L15RIK-new","TSCs (ref)",-12
+"ASB4","TSCs (ref)",-12
+"ZIM1","TSCs (ref)",-12
+"KLHDC10","TSCs (ref)",-12
+"DLK1","TSCs (ref)",-12
+"GNAS","TSCs (ref)",-3.9
+"PPP1R9A","TSCs (ref)",12.8573
+"PDE4D","TSCs (ref)",-12
+"A19","TSCs (ref)",-12
+"ZFP264","TSCs (ref)",-12
+"KCNQ1OT1","TSCs (ref)",-12
+"AK050713","TSCs (ref)",-12
+"RTL1","TSCs (ref)",1.5
+"CDKN1C","TSCs (ref)",-12
+"PEG12","TSCs (ref)",0.46
+"KCNQ1","TSCs (ref)",-9.9
+"NESPAS","TSCs (ref)",-9.9
+"SLC38A4","TSCs (ref)",-10
+"H19","TSCs (ref)",-12
+"IGF2","TSCs (ref)",-12
+"INS1","TSCs (ref)",-12
+"TFPI2","TSCs (ref)",-12
+"AK043599","TSCs (ref)",-12
+"EDN3-new","TSCs (ref)",-12
+"TMEM106A-new","TSCs (ref)",14.1389
+"DDC","TSCs (ref)",15.6899
+"RDM1","TSCs (ref)",14.6233
+"TNK1-new","TSCs (ref)",-0.4
+"TREM1-new","TSCs (ref)",-12
+"2400006E01RIK-new","TSCs (ref)",-12
+"IGF2AS","TSCs (ref)",11
+"UC008IHS.1-new","TSCs (ref)",-1.5
+"5133400J02RIK-new","TSCs (ref)",-4.7
+"PHLDA2","TSCs (ref)",10
+"AF357359","TSCs (ref)",10
+"GAB1","TSCs (ref)",-10
+"SFMBT2","TSCs (ref)",-10
+"CD81","TSCs (ref)",9.7
+"PHF17","TSCs (ref)",-10
+"TSSC4","TSCs (ref)",2.52
+"DACT2-new","TSCs (ref)",1.91
+"SLC22A2","TSCs (ref)",-12
+"TSSC5","TSCs (ref)",0.76
+"SLC22A3","TSCs (ref)",-12
+"KLF14","TSCs (ref)",-12
+"ATP10A","TSCs (ref)",-12
+"DCN","TSCs (ref)",-12
+"PON2","TSCs (ref)",-12
+"PON3","TSCs (ref)",-12
+"AMPD3","TSCs (ref)",-12
+"GABRB3","TSCs (ref)",-12
+"GATM","TSCs (ref)",-12
+"TBC1D12","TSCs (ref)",-0.6
+"DIO3","TSCs (ref)",11
+"NAP1L4","TSCs (ref)",15.2339
+"MSUIT","TSCs (ref)",-12
+"ASCL2","TSCs (ref)",1.2
+"OSBPL5","TSCs (ref)",1.02
+"TNFRSF23","TSCs (ref)",-12
+"AIRN","TSCs (ref)",-3
+"HTR2A","TSCs (ref)",-12
+"MAPT","TSCs (ref)",12.7038
+"MKRN1-PS1","TSCs (ref)",-12
+"DLX5","TSCs (ref)",-12
+"IGF2R","TSCs (ref)",10
+"TRY4-new","TSCs (ref)",-12
+"TSPAN32","TSCs (ref)",-12
+"ZIM2","TSCs (ref)",-12
+"PEC3","Cerebellum",-2.4082
+"UBE2NL","Cerebellum",-1.8062
+"TRAPPC9","Cerebellum",5.1017
+"EIF2C2","Cerebellum",6.5755
+"MIR344D-3","Cerebellum",-10
+"MIR344G","Cerebellum",-10
+"A930009L07RIK","Cerebellum",10
+"KCNK9","Cerebellum",2.4238
+"RASGRF1","Cerebellum",-10
+"INPP5F","Cerebellum",-10
+"NAP1L5","Cerebellum",-10
+"USP29","Cerebellum",-10
+"HERC3-new","Cerebellum",4.1529
+"GM9801-new","Cerebellum",-3.9134
+"BEGAIN","Cerebellum",13.0333
+"PX00010K13","Cerebellum",-10
+"PEG13","Cerebellum",-10
+"1110006E14RIK","Cerebellum",10
+"MBII-343","Cerebellum",10
+"MIRG","Cerebellum",10
+"ZDBF2","Cerebellum",-5.7196
+"IMPACT","Cerebellum",-10
+"NDN","Cerebellum",-10
+"NIBP","Cerebellum",-10
+"AK139287","Cerebellum",-0.30103
+"CCDC40-AS","Cerebellum",-11
+"PX00113D24","Cerebellum",-7.8268
+"PEC2","Cerebellum",-12
+"ZIM3","Cerebellum",-10
+"AK142849","Cerebellum",2.7093
+"MKRN3","Cerebellum",-1.2041
+"IPW","Cerebellum",-7.9105
+"B830012L14RIK","Cerebellum",5.7196
+"ADAM23","Cerebellum",13.9998
+"COMMD1","Cerebellum",0.30103
+"UBE3A","Cerebellum",12.9994
+"WARS","Cerebellum",13.7571
+"BCL2L1","Cerebellum",14.9215
+"BLCAP","Cerebellum",14.7926
+"CALCR","Cerebellum",-12
+"MAGEL2","Cerebellum",-0.30103
+"CDH15","Cerebellum",14.1367
+"COPG2","Cerebellum",0.91793
+"U80893","Cerebellum",-12
+"NR_015479-new","Cerebellum",4.5393
+"GRB10","Cerebellum",-8.013
+"PEG10","Cerebellum",-10
+"SGCE","Cerebellum",-10
+"PEG1","Cerebellum",-1.9507
+"MCTS2","Cerebellum",-0.90309
+"H13","Cerebellum",0.84109
+"SNRPN","Cerebellum",-10
+"ZRSR1","Cerebellum",-10
+"MEG3","Cerebellum",10
+"RIAN","Cerebellum",10
+"PEG3","Cerebellum",-10
+"PLAGL1","Cerebellum",-10
+"1110014L15RIK-new","Cerebellum",-11
+"ASB4","Cerebellum",-11
+"ZIM1","Cerebellum",-11
+"KLHDC10","Cerebellum",13.4266
+"DLK1","Cerebellum",-1.2041
+"GNAS","Cerebellum",1.2207
+"PPP1R9A","Cerebellum",12.865
+"PDE4D","Cerebellum",12.5351
+"A19","Cerebellum",-12
+"ZFP264","Cerebellum",-12
+"KCNQ1OT1","Cerebellum",-10
+"AK050713","Cerebellum",1.5051
+"RTL1","Cerebellum",3.4385
+"CDKN1C","Cerebellum",2.4082
+"PEG12","Cerebellum",-12
+"KCNQ1","Cerebellum",0.30103
+"NESPAS","Cerebellum",-12
+"SLC38A4","Cerebellum",-12
+"H19","Cerebellum",7.2247
+"IGF2","Cerebellum",10
+"INS1","Cerebellum",-12
+"TFPI2","Cerebellum",-12
+"AK043599","Cerebellum",2.6632
+"EDN3-new","Cerebellum",0.63696
+"TMEM106A-new","Cerebellum",-11
+"DDC","Cerebellum",0.40311
+"RDM1","Cerebellum",11.9118
+"TNK1-new","Cerebellum",-12
+"TREM1-new","Cerebellum",-12
+"2400006E01RIK-new","Cerebellum",-12
+"IGF2AS","Cerebellum",-0.727
+"UC008IHS.1-new","Cerebellum",-12
+"5133400J02RIK-new","Cerebellum",-12
+"PHLDA2","Cerebellum",-12
+"AF357359","Cerebellum",0.60206
+"GAB1","Cerebellum",12.5852
+"SFMBT2","Cerebellum",-0.41206
+"CD81","Cerebellum",15.9168
+"PHF17","Cerebellum",0.79548
+"TSSC4","Cerebellum",-0.93101
+"DACT2-new","Cerebellum",11.4992
+"SLC22A2","Cerebellum",-12
+"TSSC5","Cerebellum",-11
+"SLC22A3","Cerebellum",-0.12494
+"KLF14","Cerebellum",-12
+"ATP10A","Cerebellum",11.472
+"DCN","Cerebellum",12.7536
+"PON2","Cerebellum",12.8133
+"PON3","Cerebellum",-11
+"AMPD3","Cerebellum",12.35
+"GABRB3","Cerebellum",13.7262
+"GATM","Cerebellum",13.8799
+"TBC1D12","Cerebellum",11.5741
+"DIO3","Cerebellum",0.12494
+"NAP1L4","Cerebellum",-0.60139
+"MSUIT","Cerebellum",-12
+"ASCL2","Cerebellum",-12
+"OSBPL5","Cerebellum",11.6659
+"TNFRSF23","Cerebellum",0.50515
+"AIRN","Cerebellum",-10
+"HTR2A","Cerebellum",-0.18293
+"MAPT","Cerebellum",15.2773
+"MKRN1-PS1","Cerebellum",-0.37416
+"DLX5","Cerebellum",-12
+"IGF2R","Cerebellum",10
+"TRY4-new","Cerebellum",-12
+"TSPAN32","Cerebellum",-12
+"ZIM2","Cerebellum",-12
+"PEC3","Striatum",-5.1175
+"UBE2NL","Striatum",-9.2689
+"TRAPPC9","Striatum",-12
+"EIF2C2","Striatum",2.7378
+"MIR344D-3","Striatum",-9.2689
+"MIR344G","Striatum",-6.9237
+"A930009L07RIK","Striatum",0.60206
+"KCNK9","Striatum",0.90309
+"RASGRF1","Striatum",-10
+"INPP5F","Striatum",-10
+"NAP1L5","Striatum",-9.633
+"USP29","Striatum",-10
+"HERC3-new","Striatum",5.3839
+"GM9801-new","Striatum",-2.4327
+"BEGAIN","Striatum",-2.778
+"PX00010K13","Striatum",-12
+"PEG13","Striatum",-12
+"1110006E14RIK","Striatum",10
+"MBII-343","Striatum",10
+"MIRG","Striatum",10
+"ZDBF2","Striatum",-10
+"IMPACT","Striatum",-10
+"NDN","Striatum",-10
+"NIBP","Striatum",-10
+"AK139287","Striatum",-0.60206
+"CCDC40-AS","Striatum",-11
+"PX00113D24","Striatum",-3.3113
+"PEC2","Striatum",-0.30103
+"ZIM3","Striatum",-12
+"AK142849","Striatum",1.2041
+"MKRN3","Striatum",-12
+"IPW","Striatum",-0.84004
+"B830012L14RIK","Striatum",5.7196
+"ADAM23","Striatum",-3.754
+"COMMD1","Striatum",0.60206
+"UBE3A","Striatum",3.8063
+"WARS","Striatum",-0.31874
+"BCL2L1","Striatum",-0.23613
+"BLCAP","Striatum",12.2659
+"CALCR","Striatum",0.30103
+"MAGEL2","Striatum",-4.2144
+"CDH15","Striatum",-0.41206
+"COPG2","Striatum",1.5715
+"U80893","Striatum",-12
+"NR_015479-new","Striatum",-3.6124
+"GRB10","Striatum",-6.3954
+"PEG10","Striatum",-10
+"SGCE","Striatum",-10
+"PEG1","Striatum",-10
+"MCTS2","Striatum",-6.3954
+"H13","Striatum",2.4551
+"SNRPN","Striatum",-10
+"ZRSR1","Striatum",-10
+"MEG3","Striatum",10
+"RIAN","Striatum",10
+"PEG3","Striatum",-10
+"PLAGL1","Striatum",-10
+"1110014L15RIK-new","Striatum",-11
+"ASB4","Striatum",0.30103
+"ZIM1","Striatum",-11
+"KLHDC10","Striatum",0.43062
+"DLK1","Striatum",-10
+"GNAS","Striatum",1.4938
+"PPP1R9A","Striatum",14.9307
+"PDE4D","Striatum",-1.3822
+"A19","Striatum",-12
+"ZFP264","Striatum",-12
+"KCNQ1OT1","Striatum",-10
+"AK050713","Striatum",-12
+"RTL1","Striatum",-12
+"CDKN1C","Striatum",-12
+"PEG12","Striatum",-12
+"KCNQ1","Striatum",0.30103
+"NESPAS","Striatum",-12
+"SLC38A4","Striatum",0.30103
+"H19","Striatum",-12
+"IGF2","Striatum",0.60206
+"INS1","Striatum",-12
+"TFPI2","Striatum",-12
+"AK043599","Striatum",1.8062
+"EDN3-new","Striatum",-0.30103
+"TMEM106A-new","Striatum",-11
+"DDC","Striatum",0.43976
+"RDM1","Striatum",12.029
+"TNK1-new","Striatum",0.30103
+"TREM1-new","Striatum",-12
+"2400006E01RIK-new","Striatum",-12
+"IGF2AS","Striatum",-12
+"UC008IHS.1-new","Striatum",-12
+"5133400J02RIK-new","Striatum",-12
+"PHLDA2","Striatum",-12
+"AF357359","Striatum",1.5051
+"GAB1","Striatum",12.0768
+"SFMBT2","Striatum",-11
+"CD81","Striatum",16
+"PHF17","Striatum",12.6582
+"TSSC4","Striatum",13.4226
+"DACT2-new","Striatum",12.0582
+"SLC22A2","Striatum",-12
+"TSSC5","Striatum",-0.30103
+"SLC22A3","Striatum",0.62812
+"KLF14","Striatum",-12
+"ATP10A","Striatum",-0.54777
+"DCN","Striatum",12.1543
+"PON2","Striatum",12.9015
+"PON3","Striatum",-11
+"AMPD3","Striatum",12.9427
+"GABRB3","Striatum",14.5818
+"GATM","Striatum",14.3069
+"TBC1D12","Striatum",-0.86171
+"DIO3","Striatum",-0.30103
+"NAP1L4","Striatum",0.50973
+"MSUIT","Striatum",-12
+"ASCL2","Striatum",-12
+"OSBPL5","Striatum",11.6302
+"TNFRSF23","Striatum",-0.30103
+"AIRN","Striatum",-0.60206
+"HTR2A","Striatum",-0.30103
+"MAPT","Striatum",15.1711
+"MKRN1-PS1","Striatum",0.30103
+"DLX5","Striatum",12.3569
+"IGF2R","Striatum",11.708
+"TRY4-new","Striatum",-12
+"TSPAN32","Striatum",-0.12494
+"ZIM2","Striatum",-12
+"PEC3","e17.5 Placenta (ref)",-12
+"UBE2NL","e17.5 Placenta (ref)",-12
+"TRAPPC9","e17.5 Placenta (ref)",0.8
+"EIF2C2","e17.5 Placenta (ref)",1.03
+"MIR344D-3","e17.5 Placenta (ref)",-12
+"MIR344G","e17.5 Placenta (ref)",-12
+"A930009L07RIK","e17.5 Placenta (ref)",-12
+"KCNK9","e17.5 Placenta (ref)",-12
+"RASGRF1","e17.5 Placenta (ref)",-12
+"INPP5F","e17.5 Placenta (ref)",12.2244
+"NAP1L5","e17.5 Placenta (ref)",-12
+"USP29","e17.5 Placenta (ref)",-10
+"HERC3-new","e17.5 Placenta (ref)",2.11
+"GM9801-new","e17.5 Placenta (ref)",-12
+"BEGAIN","e17.5 Placenta (ref)",-12
+"PX00010K13","e17.5 Placenta (ref)",-2.6
+"PEG13","e17.5 Placenta (ref)",-5.1
+"1110006E14RIK","e17.5 Placenta (ref)",-12
+"MBII-343","e17.5 Placenta (ref)",-12
+"MIRG","e17.5 Placenta (ref)",10
+"ZDBF2","e17.5 Placenta (ref)",-0.5
+"IMPACT","e17.5 Placenta (ref)",-10
+"NDN","e17.5 Placenta (ref)",-2.6
+"NIBP","e17.5 Placenta (ref)",-0.5
+"AK139287","e17.5 Placenta (ref)",-12
+"CCDC40-AS","e17.5 Placenta (ref)",-12
+"PX00113D24","e17.5 Placenta (ref)",-12
+"PEC2","e17.5 Placenta (ref)",-12
+"ZIM3","e17.5 Placenta (ref)",-12
+"AK142849","e17.5 Placenta (ref)",-12
+"MKRN3","e17.5 Placenta (ref)",-12
+"IPW","e17.5 Placenta (ref)",-12
+"B830012L14RIK","e17.5 Placenta (ref)",0.67
+"ADAM23","e17.5 Placenta (ref)",-1.9
+"COMMD1","e17.5 Placenta (ref)",-12
+"UBE3A","e17.5 Placenta (ref)",-12
+"WARS","e17.5 Placenta (ref)",-12
+"BCL2L1","e17.5 Placenta (ref)",14.4629
+"BLCAP","e17.5 Placenta (ref)",-12
+"CALCR","e17.5 Placenta (ref)",-12
+"MAGEL2","e17.5 Placenta (ref)",-12
+"CDH15","e17.5 Placenta (ref)",-12
+"COPG2","e17.5 Placenta (ref)",-1
+"U80893","e17.5 Placenta (ref)",-12
+"NR_015479-new","e17.5 Placenta (ref)",-12
+"GRB10","e17.5 Placenta (ref)",-12
+"PEG10","e17.5 Placenta (ref)",-6.7
+"SGCE","e17.5 Placenta (ref)",-2.6
+"PEG1","e17.5 Placenta (ref)",14.9535
+"MCTS2","e17.5 Placenta (ref)",-12
+"H13","e17.5 Placenta (ref)",0.39
+"SNRPN","e17.5 Placenta (ref)",-12
+"ZRSR1","e17.5 Placenta (ref)",-12
+"MEG3","e17.5 Placenta (ref)",-12
+"RIAN","e17.5 Placenta (ref)",7.8
+"PEG3","e17.5 Placenta (ref)",-12
+"PLAGL1","e17.5 Placenta (ref)",-10
+"1110014L15RIK-new","e17.5 Placenta (ref)",-12
+"ASB4","e17.5 Placenta (ref)",1.76
+"ZIM1","e17.5 Placenta (ref)",-12
+"KLHDC10","e17.5 Placenta (ref)",-12
+"DLK1","e17.5 Placenta (ref)",-9.7
+"GNAS","e17.5 Placenta (ref)",8.57
+"PPP1R9A","e17.5 Placenta (ref)",5.29
+"PDE4D","e17.5 Placenta (ref)",1.54
+"A19","e17.5 Placenta (ref)",-12
+"ZFP264","e17.5 Placenta (ref)",-12
+"KCNQ1OT1","e17.5 Placenta (ref)",-10
+"AK050713","e17.5 Placenta (ref)",-12
+"RTL1","e17.5 Placenta (ref)",-3.1
+"CDKN1C","e17.5 Placenta (ref)",-12
+"PEG12","e17.5 Placenta (ref)",-12
+"KCNQ1","e17.5 Placenta (ref)",-9.4
+"NESPAS","e17.5 Placenta (ref)",-4.6
+"SLC38A4","e17.5 Placenta (ref)",-10
+"H19","e17.5 Placenta (ref)",-12
+"IGF2","e17.5 Placenta (ref)",-12
+"INS1","e17.5 Placenta (ref)",-12
+"TFPI2","e17.5 Placenta (ref)",-12
+"AK043599","e17.5 Placenta (ref)",-12
+"EDN3-new","e17.5 Placenta (ref)",-12
+"TMEM106A-new","e17.5 Placenta (ref)",13.3883
+"DDC","e17.5 Placenta (ref)",-12
+"RDM1","e17.5 Placenta (ref)",13.3116
+"TNK1-new","e17.5 Placenta (ref)",-12
+"TREM1-new","e17.5 Placenta (ref)",-12
+"2400006E01RIK-new","e17.5 Placenta (ref)",-12
+"IGF2AS","e17.5 Placenta (ref)",-12
+"UC008IHS.1-new","e17.5 Placenta (ref)",-12
+"5133400J02RIK-new","e17.5 Placenta (ref)",0.39
+"PHLDA2","e17.5 Placenta (ref)",-12
+"AF357359","e17.5 Placenta (ref)",-12
+"GAB1","e17.5 Placenta (ref)",-4
+"SFMBT2","e17.5 Placenta (ref)",-10
+"CD81","e17.5 Placenta (ref)",-12
+"PHF17","e17.5 Placenta (ref)",-5.9
+"TSSC4","e17.5 Placenta (ref)",-12
+"DACT2-new","e17.5 Placenta (ref)",-12
+"SLC22A2","e17.5 Placenta (ref)",-12
+"TSSC5","e17.5 Placenta (ref)",1.97
+"SLC22A3","e17.5 Placenta (ref)",6.92
+"KLF14","e17.5 Placenta (ref)",4.01
+"ATP10A","e17.5 Placenta (ref)",-12
+"DCN","e17.5 Placenta (ref)",-12
+"PON2","e17.5 Placenta (ref)",0.38
+"PON3","e17.5 Placenta (ref)",-12
+"AMPD3","e17.5 Placenta (ref)",-0.5
+"GABRB3","e17.5 Placenta (ref)",-12
+"GATM","e17.5 Placenta (ref)",-12
+"TBC1D12","e17.5 Placenta (ref)",-12
+"DIO3","e17.5 Placenta (ref)",-12
+"NAP1L4","e17.5 Placenta (ref)",15.18
+"MSUIT","e17.5 Placenta (ref)",-12
+"ASCL2","e17.5 Placenta (ref)",14.1592
+"OSBPL5","e17.5 Placenta (ref)",13.1799
+"TNFRSF23","e17.5 Placenta (ref)",-12
+"AIRN","e17.5 Placenta (ref)",-10
+"HTR2A","e17.5 Placenta (ref)",-12
+"MAPT","e17.5 Placenta (ref)",11.523
+"MKRN1-PS1","e17.5 Placenta (ref)",-12
+"DLX5","e17.5 Placenta (ref)",-12
+"IGF2R","e17.5 Placenta (ref)",13.9329
+"TRY4-new","e17.5 Placenta (ref)",-12
+"TSPAN32","e17.5 Placenta (ref)",-12
+"ZIM2","e17.5 Placenta (ref)",-12
+"PEC3","Pancreatic Islets",-12
+"UBE2NL","Pancreatic Islets",-12
+"TRAPPC9","Pancreatic Islets",1.0531
+"EIF2C2","Pancreatic Islets",1.2233
+"MIR344D-3","Pancreatic Islets",-4.9514
+"MIR344G","Pancreatic Islets",-0.69782
+"A930009L07RIK","Pancreatic Islets",-12
+"KCNK9","Pancreatic Islets",-12
+"RASGRF1","Pancreatic Islets",13.1239
+"INPP5F","Pancreatic Islets",-10
+"NAP1L5","Pancreatic Islets",-10
+"USP29","Pancreatic Islets",-6.0206
+"HERC3-new","Pancreatic Islets",-1.0342
+"GM9801-new","Pancreatic Islets",-12
+"BEGAIN","Pancreatic Islets",-0.67372
+"PX00010K13","Pancreatic Islets",-6.6227
+"PEG13","Pancreatic Islets",-10
+"1110006E14RIK","Pancreatic Islets",8.1278
+"MBII-343","Pancreatic Islets",10
+"MIRG","Pancreatic Islets",10
+"ZDBF2","Pancreatic Islets",-10
+"IMPACT","Pancreatic Islets",-10
+"NDN","Pancreatic Islets",-6.6227
+"NIBP","Pancreatic Islets",-2.6283
+"AK139287","Pancreatic Islets",-12
+"CCDC40-AS","Pancreatic Islets",-11
+"PX00113D24","Pancreatic Islets",-7.5257
+"PEC2","Pancreatic Islets",-12
+"ZIM3","Pancreatic Islets",-1.5051
+"AK142849","Pancreatic Islets",-12
+"MKRN3","Pancreatic Islets",-12
+"IPW","Pancreatic Islets",-12
+"B830012L14RIK","Pancreatic Islets",0.30103
+"ADAM23","Pancreatic Islets",-11
+"COMMD1","Pancreatic Islets",13.6735
+"UBE3A","Pancreatic Islets",12.0944
+"WARS","Pancreatic Islets",1.8603
+"BCL2L1","Pancreatic Islets",13.7633
+"BLCAP","Pancreatic Islets",0.4391
+"CALCR","Pancreatic Islets",-12
+"MAGEL2","Pancreatic Islets",-12
+"CDH15","Pancreatic Islets",-12
+"COPG2","Pancreatic Islets",12.8653
+"U80893","Pancreatic Islets",-12
+"NR_015479-new","Pancreatic Islets",0.67372
+"GRB10","Pancreatic Islets",7.2247
+"PEG10","Pancreatic Islets",-12
+"SGCE","Pancreatic Islets",-8.2807
+"PEG1","Pancreatic Islets",-2.93
+"MCTS2","Pancreatic Islets",-0.46376
+"H13","Pancreatic Islets",1.0151
+"SNRPN","Pancreatic Islets",-10
+"ZRSR1","Pancreatic Islets",-10
+"MEG3","Pancreatic Islets",10
+"RIAN","Pancreatic Islets",10
+"PEG3","Pancreatic Islets",-10
+"PLAGL1","Pancreatic Islets",-9.3319
+"1110014L15RIK-new","Pancreatic Islets",10
+"ASB4","Pancreatic Islets",-11
+"ZIM1","Pancreatic Islets",10
+"KLHDC10","Pancreatic Islets",0.55824
+"DLK1","Pancreatic Islets",-0.60206
+"GNAS","Pancreatic Islets",15.3747
+"PPP1R9A","Pancreatic Islets",-0.34948
+"PDE4D","Pancreatic Islets",-0.46992
+"A19","Pancreatic Islets",-0.30103
+"ZFP264","Pancreatic Islets",-12
+"KCNQ1OT1","Pancreatic Islets",-10
+"AK050713","Pancreatic Islets",-12
+"RTL1","Pancreatic Islets",-12
+"CDKN1C","Pancreatic Islets",0.60206
+"PEG12","Pancreatic Islets",-12
+"KCNQ1","Pancreatic Islets",0.61363
+"NESPAS","Pancreatic Islets",-12
+"SLC38A4","Pancreatic Islets",14.5285
+"H19","Pancreatic Islets",-12
+"IGF2","Pancreatic Islets",-0.94584
+"INS1","Pancreatic Islets",16
+"TFPI2","Pancreatic Islets",11.5351
+"AK043599","Pancreatic Islets",-12
+"EDN3-new","Pancreatic Islets",-11
+"TMEM106A-new","Pancreatic Islets",0.84424
+"DDC","Pancreatic Islets",-0.75845
+"RDM1","Pancreatic Islets",12.481
+"TNK1-new","Pancreatic Islets",12.6913
+"TREM1-new","Pancreatic Islets",-12
+"2400006E01RIK-new","Pancreatic Islets",-11
+"IGF2AS","Pancreatic Islets",-12
+"UC008IHS.1-new","Pancreatic Islets",-11
+"5133400J02RIK-new","Pancreatic Islets",-12
+"PHLDA2","Pancreatic Islets",-12
+"AF357359","Pancreatic Islets",0.30103
+"GAB1","Pancreatic Islets",11.4543
+"SFMBT2","Pancreatic Islets",-11
+"CD81","Pancreatic Islets",-0.32706
+"PHF17","Pancreatic Islets",12.5938
+"TSSC4","Pancreatic Islets",14.8329
+"DACT2-new","Pancreatic Islets",13.1659
+"SLC22A2","Pancreatic Islets",-11
+"TSSC5","Pancreatic Islets",1.1443
+"SLC22A3","Pancreatic Islets",-11
+"KLF14","Pancreatic Islets",-12
+"ATP10A","Pancreatic Islets",-11
+"DCN","Pancreatic Islets",13.9409
+"PON2","Pancreatic Islets",12.5292
+"PON3","Pancreatic Islets",11.5235
+"AMPD3","Pancreatic Islets",-11
+"GABRB3","Pancreatic Islets",0.95556
+"GATM","Pancreatic Islets",13.9115
+"TBC1D12","Pancreatic Islets",11.1514
+"DIO3","Pancreatic Islets",-12
+"NAP1L4","Pancreatic Islets",13.8969
+"MSUIT","Pancreatic Islets",-12
+"ASCL2","Pancreatic Islets",-12
+"OSBPL5","Pancreatic Islets",12.1757
+"TNFRSF23","Pancreatic Islets",11.5125
+"AIRN","Pancreatic Islets",-2.4082
+"HTR2A","Pancreatic Islets",-12
+"MAPT","Pancreatic Islets",12.9538
+"MKRN1-PS1","Pancreatic Islets",-11
+"DLX5","Pancreatic Islets",-12
+"IGF2R","Pancreatic Islets",10
+"TRY4-new","Pancreatic Islets",0.38825
+"TSPAN32","Pancreatic Islets",-0.12494
+"ZIM2","Pancreatic Islets",-12
+"PEC3","MEFs (ref)",-12
+"UBE2NL","MEFs (ref)",-12
+"TRAPPC9","MEFs (ref)",-12
+"EIF2C2","MEFs (ref)",13.5886
+"MIR344D-3","MEFs (ref)",-12
+"MIR344G","MEFs (ref)",-12
+"A930009L07RIK","MEFs (ref)",-12
+"KCNK9","MEFs (ref)",-12
+"RASGRF1","MEFs (ref)",-12
+"INPP5F","MEFs (ref)",14.4902
+"NAP1L5","MEFs (ref)",-12
+"USP29","MEFs (ref)",-12
+"HERC3-new","MEFs (ref)",12.6959
+"GM9801-new","MEFs (ref)",-12
+"BEGAIN","MEFs (ref)",-12
+"PX00010K13","MEFs (ref)",-10
+"PEG13","MEFs (ref)",-3.9
+"1110006E14RIK","MEFs (ref)",-12
+"MBII-343","MEFs (ref)",-12
+"MIRG","MEFs (ref)",10
+"ZDBF2","MEFs (ref)",-9.5
+"IMPACT","MEFs (ref)",-10
+"NDN","MEFs (ref)",-10
+"NIBP","MEFs (ref)",-2.6
+"AK139287","MEFs (ref)",-12
+"CCDC40-AS","MEFs (ref)",-12
+"PX00113D24","MEFs (ref)",-2.1
+"PEC2","MEFs (ref)",-12
+"ZIM3","MEFs (ref)",-12
+"AK142849","MEFs (ref)",0.9
+"MKRN3","MEFs (ref)",-12
+"IPW","MEFs (ref)",-12
+"B830012L14RIK","MEFs (ref)",-12
+"ADAM23","MEFs (ref)",13.0864
+"COMMD1","MEFs (ref)",0.59
+"UBE3A","MEFs (ref)",1.02
+"WARS","MEFs (ref)",-12
+"BCL2L1","MEFs (ref)",14.6533
+"BLCAP","MEFs (ref)",15.3495
+"CALCR","MEFs (ref)",-12
+"MAGEL2","MEFs (ref)",-12
+"CDH15","MEFs (ref)",-12
+"COPG2","MEFs (ref)",-12
+"U80893","MEFs (ref)",-12
+"NR_015479-new","MEFs (ref)",12.9324
+"GRB10","MEFs (ref)",-12
+"PEG10","MEFs (ref)",-10
+"SGCE","MEFs (ref)",-10
+"PEG1","MEFs (ref)",-12
+"MCTS2","MEFs (ref)",-12
+"H13","MEFs (ref)",-12
+"SNRPN","MEFs (ref)",-10
+"ZRSR1","MEFs (ref)",-12
+"MEG3","MEFs (ref)",10
+"RIAN","MEFs (ref)",10
+"PEG3","MEFs (ref)",-10
+"PLAGL1","MEFs (ref)",-10
+"1110014L15RIK-new","MEFs (ref)",1.5
+"ASB4","MEFs (ref)",5.63
+"ZIM1","MEFs (ref)",-12
+"KLHDC10","MEFs (ref)",-12
+"DLK1","MEFs (ref)",-1.7
+"GNAS","MEFs (ref)",-1.5
+"PPP1R9A","MEFs (ref)",-12
+"PDE4D","MEFs (ref)",12.6569
+"A19","MEFs (ref)",-12
+"ZFP264","MEFs (ref)",-12
+"KCNQ1OT1","MEFs (ref)",-12
+"AK050713","MEFs (ref)",10
+"RTL1","MEFs (ref)",10
+"CDKN1C","MEFs (ref)",10
+"PEG12","MEFs (ref)",-10
+"KCNQ1","MEFs (ref)",-10
+"NESPAS","MEFs (ref)",-4.8
+"SLC38A4","MEFs (ref)",-10
+"H19","MEFs (ref)",-12
+"IGF2","MEFs (ref)",-12
+"INS1","MEFs (ref)",-12
+"TFPI2","MEFs (ref)",-12
+"AK043599","MEFs (ref)",-12
+"EDN3-new","MEFs (ref)",-12
+"TMEM106A-new","MEFs (ref)",-12
+"DDC","MEFs (ref)",-0.4
+"RDM1","MEFs (ref)",11.8889
+"TNK1-new","MEFs (ref)",-12
+"TREM1-new","MEFs (ref)",-12
+"2400006E01RIK-new","MEFs (ref)",-12
+"IGF2AS","MEFs (ref)",-12
+"UC008IHS.1-new","MEFs (ref)",-12
+"5133400J02RIK-new","MEFs (ref)",-12
+"PHLDA2","MEFs (ref)",-12
+"AF357359","MEFs (ref)",-12
+"GAB1","MEFs (ref)",12.8352
+"SFMBT2","MEFs (ref)",11.1709
+"CD81","MEFs (ref)",-12
+"PHF17","MEFs (ref)",11.9248
+"TSSC4","MEFs (ref)",-12
+"DACT2-new","MEFs (ref)",-12
+"SLC22A2","MEFs (ref)",-12
+"TSSC5","MEFs (ref)",-12
+"SLC22A3","MEFs (ref)",-12
+"KLF14","MEFs (ref)",-12
+"ATP10A","MEFs (ref)",11.3703
+"DCN","MEFs (ref)",0.35
+"PON2","MEFs (ref)",12.0933
+"PON3","MEFs (ref)",-12
+"AMPD3","MEFs (ref)",12.2872
+"GABRB3","MEFs (ref)",-12
+"GATM","MEFs (ref)",-12
+"TBC1D12","MEFs (ref)",11.999
+"DIO3","MEFs (ref)",-12
+"NAP1L4","MEFs (ref)",14.981
+"MSUIT","MEFs (ref)",-12
+"ASCL2","MEFs (ref)",-12
+"OSBPL5","MEFs (ref)",13.1345
+"TNFRSF23","MEFs (ref)",-12
+"AIRN","MEFs (ref)",-12
+"HTR2A","MEFs (ref)",11.3106
+"MAPT","MEFs (ref)",-12
+"MKRN1-PS1","MEFs (ref)",-12
+"DLX5","MEFs (ref)",-12
+"IGF2R","MEFs (ref)",10
+"TRY4-new","MEFs (ref)",-12
+"TSPAN32","MEFs (ref)",-12
+"ZIM2","MEFs (ref)",-12
+"PEC3","Bladder",-12
+"UBE2NL","Bladder",-12
+"TRAPPC9","Bladder",-12
+"EIF2C2","Bladder",-11
+"MIR344D-3","Bladder",-0.60206
+"MIR344G","Bladder",-0.90309
+"A930009L07RIK","Bladder",-12
+"KCNK9","Bladder",-12
+"RASGRF1","Bladder",-12
+"INPP5F","Bladder",12.617
+"NAP1L5","Bladder",-12
+"USP29","Bladder",-12
+"HERC3-new","Bladder",0.26869
+"GM9801-new","Bladder",-12
+"BEGAIN","Bladder",-12
+"PX00010K13","Bladder",-12
+"PEG13","Bladder",-12
+"1110006E14RIK","Bladder",7.2247
+"MBII-343","Bladder",8.4288
+"MIRG","Bladder",10
+"ZDBF2","Bladder",-2.7093
+"IMPACT","Bladder",-10
+"NDN","Bladder",-6.3625
+"NIBP","Bladder",-10
+"AK139287","Bladder",-12
+"CCDC40-AS","Bladder",-12
+"PX00113D24","Bladder",-12
+"PEC2","Bladder",-12
+"ZIM3","Bladder",-12
+"AK142849","Bladder",-12
+"MKRN3","Bladder",-12
+"IPW","Bladder",-12
+"B830012L14RIK","Bladder",2.7093
+"ADAM23","Bladder",12.0952
+"COMMD1","Bladder",-0.16273
+"UBE3A","Bladder",0.43143
+"WARS","Bladder",0.36056
+"BCL2L1","Bladder",13.3626
+"BLCAP","Bladder",12.0965
+"CALCR","Bladder",-12
+"MAGEL2","Bladder",-12
+"CDH15","Bladder",-12
+"COPG2","Bladder",13.5648
+"U80893","Bladder",-12
+"NR_015479-new","Bladder",-12
+"GRB10","Bladder",10
+"PEG10","Bladder",-10
+"SGCE","Bladder",-10
+"PEG1","Bladder",-4.5154
+"MCTS2","Bladder",-4.8165
+"H13","Bladder",1.0005
+"SNRPN","Bladder",-10
+"ZRSR1","Bladder",-10
+"MEG3","Bladder",10
+"RIAN","Bladder",10
+"PEG3","Bladder",-8.7299
+"PLAGL1","Bladder",-10
+"1110014L15RIK-new","Bladder",1.8062
+"ASB4","Bladder",1.0342
+"ZIM1","Bladder",-12
+"KLHDC10","Bladder",0.40253
+"DLK1","Bladder",-7.2247
+"GNAS","Bladder",15.645
+"PPP1R9A","Bladder",12.138
+"PDE4D","Bladder",12.5906
+"A19","Bladder",-12
+"ZFP264","Bladder",-12
+"KCNQ1OT1","Bladder",-10
+"AK050713","Bladder",0.30103
+"RTL1","Bladder",-11
+"CDKN1C","Bladder",-12
+"PEG12","Bladder",-12
+"KCNQ1","Bladder",-11
+"NESPAS","Bladder",-12
+"SLC38A4","Bladder",-2.1072
+"H19","Bladder",1.5051
+"IGF2","Bladder",-0.50515
+"INS1","Bladder",-12
+"TFPI2","Bladder",-11
+"AK043599","Bladder",-12
+"EDN3-new","Bladder",0.43976
+"TMEM106A-new","Bladder",2.2841
+"DDC","Bladder",11.5498
+"RDM1","Bladder",13.6757
+"TNK1-new","Bladder",0.34315
+"TREM1-new","Bladder",-12
+"2400006E01RIK-new","Bladder",-12
+"IGF2AS","Bladder",-12
+"UC008IHS.1-new","Bladder",-12
+"5133400J02RIK-new","Bladder",-12
+"PHLDA2","Bladder",12.1622
+"AF357359","Bladder",-12
+"GAB1","Bladder",-0.68814
+"SFMBT2","Bladder",-0.51767
+"CD81","Bladder",16
+"PHF17","Bladder",12.7819
+"TSSC4","Bladder",0.93692
+"DACT2-new","Bladder",0.60206
+"SLC22A2","Bladder",-12
+"TSSC5","Bladder",1.1483
+"SLC22A3","Bladder",-11
+"KLF14","Bladder",-12
+"ATP10A","Bladder",0.32732
+"DCN","Bladder",16
+"PON2","Bladder",13.7718
+"PON3","Bladder",12.9864
+"AMPD3","Bladder",11.9832
+"GABRB3","Bladder",-11
+"GATM","Bladder",11.7032
+"TBC1D12","Bladder",11.7077
+"DIO3","Bladder",-12
+"NAP1L4","Bladder",14.1404
+"MSUIT","Bladder",-12
+"ASCL2","Bladder",-12
+"OSBPL5","Bladder",13.0509
+"TNFRSF23","Bladder",-11
+"AIRN","Bladder",-10
+"HTR2A","Bladder",-12
+"MAPT","Bladder",0.40906
+"MKRN1-PS1","Bladder",-12
+"DLX5","Bladder",-12
+"IGF2R","Bladder",10
+"TRY4-new","Bladder",-12
+"TSPAN32","Bladder",-0.12494
+"ZIM2","Bladder",-12
+"PEC3","Lung",0
+"UBE2NL","Lung",-12
+"TRAPPC9","Lung",1.7549
+"EIF2C2","Lung",11.8263
+"MIR344D-3","Lung",-0.30103
+"MIR344G","Lung",-0.90309
+"A930009L07RIK","Lung",-12
+"KCNK9","Lung",-12
+"RASGRF1","Lung",-11
+"INPP5F","Lung",-0.81648
+"NAP1L5","Lung",-1.5051
+"USP29","Lung",-12
+"HERC3-new","Lung",11.0879
+"GM9801-new","Lung",-12
+"BEGAIN","Lung",-11
+"PX00010K13","Lung",-10
+"PEG13","Lung",-10
+"1110006E14RIK","Lung",1.9689
+"MBII-343","Lung",0.60206
+"MIRG","Lung",1.5051
+"ZDBF2","Lung",-12
+"IMPACT","Lung",-10
+"NDN","Lung",-10
+"NIBP","Lung",-10
+"AK139287","Lung",-11
+"CCDC40-AS","Lung",11.6449
+"PX00113D24","Lung",-0.30103
+"PEC2","Lung",-12
+"ZIM3","Lung",-12
+"AK142849","Lung",0.30103
+"MKRN3","Lung",-0.90309
+"IPW","Lung",-12
+"B830012L14RIK","Lung",0.50515
+"ADAM23","Lung",-2.7514
+"COMMD1","Lung",0.65554
+"UBE3A","Lung",-0.4109
+"WARS","Lung",13.8697
+"BCL2L1","Lung",15.1017
+"BLCAP","Lung",13.5193
+"CALCR","Lung",-11
+"MAGEL2","Lung",-12
+"CDH15","Lung",-11
+"COPG2","Lung",12.8593
+"U80893","Lung",-12
+"NR_015479-new","Lung",11.5697
+"GRB10","Lung",10
+"PEG10","Lung",-3.6124
+"SGCE","Lung",-10
+"PEG1","Lung",-3.7995
+"MCTS2","Lung",-2.6798
+"H13","Lung",10
+"SNRPN","Lung",-10
+"ZRSR1","Lung",-10
+"MEG3","Lung",10
+"RIAN","Lung",9.633
+"PEG3","Lung",-10
+"PLAGL1","Lung",-10
+"1110014L15RIK-new","Lung",-11
+"ASB4","Lung",-11
+"ZIM1","Lung",-12
+"KLHDC10","Lung",12.3888
+"DLK1","Lung",-0.12494
+"GNAS","Lung",0.69211
+"PPP1R9A","Lung",12.2202
+"PDE4D","Lung",11.5042
+"A19","Lung",-12
+"ZFP264","Lung",-12
+"KCNQ1OT1","Lung",-10
+"AK050713","Lung",-12
+"RTL1","Lung",-11
+"CDKN1C","Lung",2.93
+"PEG12","Lung",-3.3113
+"KCNQ1","Lung",12.4204
+"NESPAS","Lung",-12
+"SLC38A4","Lung",11.3254
+"H19","Lung",4.1797
+"IGF2","Lung",-8.2905
+"INS1","Lung",-12
+"TFPI2","Lung",-0.46376
+"AK043599","Lung",-12
+"EDN3-new","Lung",13.162
+"TMEM106A-new","Lung",12.0329
+"DDC","Lung",11.1427
+"RDM1","Lung",13.7092
+"TNK1-new","Lung",12.8466
+"TREM1-new","Lung",-0.61363
+"2400006E01RIK-new","Lung",-12
+"IGF2AS","Lung",-12
+"UC008IHS.1-new","Lung",-12
+"5133400J02RIK-new","Lung",-12
+"PHLDA2","Lung",11.0461
+"AF357359","Lung",-12
+"GAB1","Lung",0.31448
+"SFMBT2","Lung",0.40311
+"CD81","Lung",15.9749
+"PHF17","Lung",11.7981
+"TSSC4","Lung",13.2996
+"DACT2-new","Lung",-0.43917
+"SLC22A2","Lung",-12
+"TSSC5","Lung",1.1443
+"SLC22A3","Lung",11.3504
+"KLF14","Lung",-12
+"ATP10A","Lung",11.4204
+"DCN","Lung",14.2606
+"PON2","Lung",13.752
+"PON3","Lung",13.1364
+"AMPD3","Lung",0.32136
+"GABRB3","Lung",0.30103
+"GATM","Lung",11.3309
+"TBC1D12","Lung",11.0527
+"DIO3","Lung",-0.12494
+"NAP1L4","Lung",14.3396
+"MSUIT","Lung",-0.12494
+"ASCL2","Lung",-12
+"OSBPL5","Lung",13.397
+"TNFRSF23","Lung",-11
+"AIRN","Lung",-3.0103
+"HTR2A","Lung",-12
+"MAPT","Lung",14.388
+"MKRN1-PS1","Lung",-0.30103
+"DLX5","Lung",-12
+"IGF2R","Lung",10
+"TRY4-new","Lung",-12
+"TSPAN32","Lung",11.6363
+"ZIM2","Lung",-12
+"PEC3","Duodenum",-12
+"UBE2NL","Duodenum",-12
+"TRAPPC9","Duodenum",0.56672
+"EIF2C2","Duodenum",0.30103
+"MIR344D-3","Duodenum",-0.30103
+"MIR344G","Duodenum",-0.90309
+"A930009L07RIK","Duodenum",-12
+"KCNK9","Duodenum",-12
+"RASGRF1","Duodenum",-12
+"INPP5F","Duodenum",12.6183
+"NAP1L5","Duodenum",-3.9134
+"USP29","Duodenum",-0.90309
+"HERC3-new","Duodenum",0.79286
+"GM9801-new","Duodenum",-12
+"BEGAIN","Duodenum",-11
+"PX00010K13","Duodenum",-7.5257
+"PEG13","Duodenum",-10
+"1110006E14RIK","Duodenum",0.30103
+"MBII-343","Duodenum",5.4185
+"MIRG","Duodenum",3.6124
+"ZDBF2","Duodenum",-1.2041
+"IMPACT","Duodenum",-10
+"NDN","Duodenum",-7.5257
+"NIBP","Duodenum",-10
+"AK139287","Duodenum",-12
+"CCDC40-AS","Duodenum",-12
+"PX00113D24","Duodenum",-4.5154
+"PEC2","Duodenum",-12
+"ZIM3","Duodenum",-12
+"AK142849","Duodenum",-12
+"MKRN3","Duodenum",-12
+"IPW","Duodenum",-12
+"B830012L14RIK","Duodenum",-12
+"ADAM23","Duodenum",-0.24973
+"COMMD1","Duodenum",0.16273
+"UBE3A","Duodenum",12.3819
+"WARS","Duodenum",13.9683
+"BCL2L1","Duodenum",-1.016
+"BLCAP","Duodenum",13.6817
+"CALCR","Duodenum",-12
+"MAGEL2","Duodenum",-12
+"CDH15","Duodenum",-12
+"COPG2","Duodenum",0.34803
+"U80893","Duodenum",-12
+"NR_015479-new","Duodenum",0.43976
+"GRB10","Duodenum",4.1398
+"PEG10","Duodenum",-1.2041
+"SGCE","Duodenum",-10
+"PEG1","Duodenum",-0.47911
+"MCTS2","Duodenum",-1.9689
+"H13","Duodenum",1.7659
+"SNRPN","Duodenum",-10
+"ZRSR1","Duodenum",-9.633
+"MEG3","Duodenum",10
+"RIAN","Duodenum",10
+"PEG3","Duodenum",-10
+"PLAGL1","Duodenum",-10
+"1110014L15RIK-new","Duodenum",-12
+"ASB4","Duodenum",8.8475
+"ZIM1","Duodenum",-12
+"KLHDC10","Duodenum",13.1362
+"DLK1","Duodenum",-0.30103
+"GNAS","Duodenum",1.6634
+"PPP1R9A","Duodenum",0.90471
+"PDE4D","Duodenum",11.9967
+"A19","Duodenum",-12
+"ZFP264","Duodenum",-12
+"KCNQ1OT1","Duodenum",-6.0382
+"AK050713","Duodenum",-12
+"RTL1","Duodenum",-12
+"CDKN1C","Duodenum",1.6105
+"PEG12","Duodenum",-0.30103
+"KCNQ1","Duodenum",13.582
+"NESPAS","Duodenum",-12
+"SLC38A4","Duodenum",-1.8313
+"H19","Duodenum",6.6227
+"IGF2","Duodenum",-1.8062
+"INS1","Duodenum",-12
+"TFPI2","Duodenum",-11
+"AK043599","Duodenum",-12
+"EDN3-new","Duodenum",2.0132
+"TMEM106A-new","Duodenum",4.0622
+"DDC","Duodenum",14.6961
+"RDM1","Duodenum",13.6553
+"TNK1-new","Duodenum",0.27699
+"TREM1-new","Duodenum",0.12494
+"2400006E01RIK-new","Duodenum",-12
+"IGF2AS","Duodenum",-12
+"UC008IHS.1-new","Duodenum",-12
+"5133400J02RIK-new","Duodenum",-12
+"PHLDA2","Duodenum",11.3349
+"AF357359","Duodenum",-12
+"GAB1","Duodenum",12.4955
+"SFMBT2","Duodenum",-0.64481
+"CD81","Duodenum",15.9517
+"PHF17","Duodenum",-0.56494
+"TSSC4","Duodenum",14.022
+"DACT2-new","Duodenum",11.7456
+"SLC22A2","Duodenum",-12
+"TSSC5","Duodenum",0.32028
+"SLC22A3","Duodenum",-11
+"KLF14","Duodenum",-12
+"ATP10A","Duodenum",-0.34803
+"DCN","Duodenum",-12
+"PON2","Duodenum",14.8037
+"PON3","Duodenum",12.4939
+"AMPD3","Duodenum",12.861
+"GABRB3","Duodenum",-0.59189
+"GATM","Duodenum",11.8943
+"TBC1D12","Duodenum",-0.30103
+"DIO3","Duodenum",-12
+"NAP1L4","Duodenum",-0.40575
+"MSUIT","Duodenum",-12
+"ASCL2","Duodenum",12.144
+"OSBPL5","Duodenum",13.0447
+"TNFRSF23","Duodenum",12.031
+"AIRN","Duodenum",-4.2144
+"HTR2A","Duodenum",0.30103
+"MAPT","Duodenum",0.38608
+"MKRN1-PS1","Duodenum",-11
+"DLX5","Duodenum",-12
+"IGF2R","Duodenum",10
+"TRY4-new","Duodenum",-12
+"TSPAN32","Duodenum",0.30103
+"ZIM2","Duodenum",-12
+"PEC3","White Adipose",-12
+"UBE2NL","White Adipose",-12
+"TRAPPC9","White Adipose",-12
+"EIF2C2","White Adipose",0.30103
+"MIR344D-3","White Adipose",-12
+"MIR344G","White Adipose",-12
+"A930009L07RIK","White Adipose",-12
+"KCNK9","White Adipose",-12
+"RASGRF1","White Adipose",-12
+"INPP5F","White Adipose",12.2232
+"NAP1L5","White Adipose",-12
+"USP29","White Adipose",-12
+"HERC3-new","White Adipose",12.4392
+"GM9801-new","White Adipose",-12
+"BEGAIN","White Adipose",-0.12494
+"PX00010K13","White Adipose",-12
+"PEG13","White Adipose",-12
+"1110006E14RIK","White Adipose",3.0103
+"MBII-343","White Adipose",3.0103
+"MIRG","White Adipose",1.2041
+"ZDBF2","White Adipose",-0.30103
+"IMPACT","White Adipose",-10
+"NDN","White Adipose",-10
+"NIBP","White Adipose",-3.6987
+"AK139287","White Adipose",-12
+"CCDC40-AS","White Adipose",-12
+"PX00113D24","White Adipose",-12
+"PEC2","White Adipose",-12
+"ZIM3","White Adipose",-12
+"AK142849","White Adipose",-12
+"MKRN3","White Adipose",-12
+"IPW","White Adipose",-12
+"B830012L14RIK","White Adipose",0.60206
+"ADAM23","White Adipose",12.0025
+"COMMD1","White Adipose",-0.20548
+"UBE3A","White Adipose",13.3317
+"WARS","White Adipose",13.2684
+"BCL2L1","White Adipose",0.37416
+"BLCAP","White Adipose",2.8405
+"CALCR","White Adipose",-12
+"MAGEL2","White Adipose",-12
+"CDH15","White Adipose",-12
+"COPG2","White Adipose",1.6567
+"U80893","White Adipose",-12
+"NR_015479-new","White Adipose",-12
+"GRB10","White Adipose",10
+"PEG10","White Adipose",-10
+"SGCE","White Adipose",-10
+"PEG1","White Adipose",-10
+"MCTS2","White Adipose",-10
+"H13","White Adipose",9.5701
+"SNRPN","White Adipose",-10
+"ZRSR1","White Adipose",-10
+"MEG3","White Adipose",10
+"RIAN","White Adipose",10
+"PEG3","White Adipose",-10
+"PLAGL1","White Adipose",-10
+"1110014L15RIK-new","White Adipose",0
+"ASB4","White Adipose",0.30103
+"ZIM1","White Adipose",0.30103
+"KLHDC10","White Adipose",13.3198
+"DLK1","White Adipose",-12
+"GNAS","White Adipose",15.896
+"PPP1R9A","White Adipose",12.2135
+"PDE4D","White Adipose",0.53813
+"A19","White Adipose",-12
+"ZFP264","White Adipose",-12
+"KCNQ1OT1","White Adipose",-6.6807
+"AK050713","White Adipose",-12
+"RTL1","White Adipose",-12
+"CDKN1C","White Adipose",1.5051
+"PEG12","White Adipose",-12
+"KCNQ1","White Adipose",-0.40311
+"NESPAS","White Adipose",-12
+"SLC38A4","White Adipose",-12
+"H19","White Adipose",-12
+"IGF2","White Adipose",-0.30103
+"INS1","White Adipose",-12
+"TFPI2","White Adipose",-11
+"AK043599","White Adipose",-12
+"EDN3-new","White Adipose",-12
+"TMEM106A-new","White Adipose",0.89147
+"DDC","White Adipose",-12
+"RDM1","White Adipose",13.1799
+"TNK1-new","White Adipose",-0.96108
+"TREM1-new","White Adipose",-12
+"2400006E01RIK-new","White Adipose",-12
+"IGF2AS","White Adipose",-12
+"UC008IHS.1-new","White Adipose",-12
+"5133400J02RIK-new","White Adipose",-12
+"PHLDA2","White Adipose",-12
+"AF357359","White Adipose",-12
+"GAB1","White Adipose",11.9477
+"SFMBT2","White Adipose",-0.43976
+"CD81","White Adipose",16
+"PHF17","White Adipose",1.1476
+"TSSC4","White Adipose",13.248
+"DACT2-new","White Adipose",-0.20548
+"SLC22A2","White Adipose",-11
+"TSSC5","White Adipose",1.2041
+"SLC22A3","White Adipose",13.4553
+"KLF14","White Adipose",0.30103
+"ATP10A","White Adipose",12.8554
+"DCN","White Adipose",16
+"PON2","White Adipose",13.8715
+"PON3","White Adipose",14.2463
+"AMPD3","White Adipose",12.9533
+"GABRB3","White Adipose",-12
+"GATM","White Adipose",11.6847
+"TBC1D12","White Adipose",0.26446
+"DIO3","White Adipose",-12
+"NAP1L4","White Adipose",14.3078
+"MSUIT","White Adipose",-12
+"ASCL2","White Adipose",-12
+"OSBPL5","White Adipose",12.6
+"TNFRSF23","White Adipose",-0.59908
+"AIRN","White Adipose",-3.3113
+"HTR2A","White Adipose",-12
+"MAPT","White Adipose",11.0274
+"MKRN1-PS1","White Adipose",-0.30103
+"DLX5","White Adipose",-12
+"IGF2R","White Adipose",10
+"TRY4-new","White Adipose",-12
+"TSPAN32","White Adipose",-11
+"ZIM2","White Adipose",-12
+"PEC3","Skeletal Muscle",-11
+"UBE2NL","Skeletal Muscle",-12
+"TRAPPC9","Skeletal Muscle",-11
+"EIF2C2","Skeletal Muscle",12.407
+"MIR344D-3","Skeletal Muscle",-12
+"MIR344G","Skeletal Muscle",-12
+"A930009L07RIK","Skeletal Muscle",-12
+"KCNK9","Skeletal Muscle",-12
+"RASGRF1","Skeletal Muscle",-12
+"INPP5F","Skeletal Muscle",-11
+"NAP1L5","Skeletal Muscle",-0.30103
+"USP29","Skeletal Muscle",-0.30103
+"HERC3-new","Skeletal Muscle",0.71274
+"GM9801-new","Skeletal Muscle",-12
+"BEGAIN","Skeletal Muscle",0.50515
+"PX00010K13","Skeletal Muscle",-5.4185
+"PEG13","Skeletal Muscle",-4.8165
+"1110006E14RIK","Skeletal Muscle",0.90309
+"MBII-343","Skeletal Muscle",1.2041
+"MIRG","Skeletal Muscle",2.1072
+"ZDBF2","Skeletal Muscle",-11
+"IMPACT","Skeletal Muscle",-7.6986
+"NDN","Skeletal Muscle",-5.4185
+"NIBP","Skeletal Muscle",-2.317
+"AK139287","Skeletal Muscle",-12
+"CCDC40-AS","Skeletal Muscle",-12
+"PX00113D24","Skeletal Muscle",-0.30103
+"PEC2","Skeletal Muscle",-12
+"ZIM3","Skeletal Muscle",-12
+"AK142849","Skeletal Muscle",-12
+"MKRN3","Skeletal Muscle",-12
+"IPW","Skeletal Muscle",-12
+"B830012L14RIK","Skeletal Muscle",0.30103
+"ADAM23","Skeletal Muscle",-0.30103
+"COMMD1","Skeletal Muscle",1.0275
+"UBE3A","Skeletal Muscle",12.0216
+"WARS","Skeletal Muscle",12.599
+"BCL2L1","Skeletal Muscle",12.6028
+"BLCAP","Skeletal Muscle",13.384
+"CALCR","Skeletal Muscle",-11
+"MAGEL2","Skeletal Muscle",-12
+"CDH15","Skeletal Muscle",12.6835
+"COPG2","Skeletal Muscle",0.22316
+"U80893","Skeletal Muscle",-12
+"NR_015479-new","Skeletal Muscle",11.6335
+"GRB10","Skeletal Muscle",10
+"PEG10","Skeletal Muscle",-1.8062
+"SGCE","Skeletal Muscle",-6.3216
+"PEG1","Skeletal Muscle",-0.79047
+"MCTS2","Skeletal Muscle",-2.7093
+"H13","Skeletal Muscle",10
+"SNRPN","Skeletal Muscle",-10
+"ZRSR1","Skeletal Muscle",-10
+"MEG3","Skeletal Muscle",10
+"RIAN","Skeletal Muscle",10
+"PEG3","Skeletal Muscle",-10
+"PLAGL1","Skeletal Muscle",-7.5257
+"1110014L15RIK-new","Skeletal Muscle",-11
+"ASB4","Skeletal Muscle",-11
+"ZIM1","Skeletal Muscle",0.67372
+"KLHDC10","Skeletal Muscle",12.1113
+"DLK1","Skeletal Muscle",-2.1072
+"GNAS","Skeletal Muscle",0.69522
+"PPP1R9A","Skeletal Muscle",-11
+"PDE4D","Skeletal Muscle",12.9687
+"A19","Skeletal Muscle",-12
+"ZFP264","Skeletal Muscle",-12
+"KCNQ1OT1","Skeletal Muscle",-10
+"AK050713","Skeletal Muscle",-12
+"RTL1","Skeletal Muscle",1.2041
+"CDKN1C","Skeletal Muscle",3.183
+"PEG12","Skeletal Muscle",-11
+"KCNQ1","Skeletal Muscle",0.43976
+"NESPAS","Skeletal Muscle",-12
+"SLC38A4","Skeletal Muscle",-10
+"H19","Skeletal Muscle",10
+"IGF2","Skeletal Muscle",-10
+"INS1","Skeletal Muscle",-12
+"TFPI2","Skeletal Muscle",-11
+"AK043599","Skeletal Muscle",-12
+"EDN3-new","Skeletal Muscle",0.381
+"TMEM106A-new","Skeletal Muscle",-11
+"DDC","Skeletal Muscle",-12
+"RDM1","Skeletal Muscle",13.4023
+"TNK1-new","Skeletal Muscle",-11
+"TREM1-new","Skeletal Muscle",-12
+"2400006E01RIK-new","Skeletal Muscle",-12
+"IGF2AS","Skeletal Muscle",-0.30103
+"UC008IHS.1-new","Skeletal Muscle",-12
+"5133400J02RIK-new","Skeletal Muscle",-12
+"PHLDA2","Skeletal Muscle",-12
+"AF357359","Skeletal Muscle",-12
+"GAB1","Skeletal Muscle",11.9618
+"SFMBT2","Skeletal Muscle",-12
+"CD81","Skeletal Muscle",14.4723
+"PHF17","Skeletal Muscle",11.4695
+"TSSC4","Skeletal Muscle",11.7963
+"DACT2-new","Skeletal Muscle",11.3232
+"SLC22A2","Skeletal Muscle",-12
+"TSSC5","Skeletal Muscle",-12
+"SLC22A3","Skeletal Muscle",-11
+"KLF14","Skeletal Muscle",-12
+"ATP10A","Skeletal Muscle",-11
+"DCN","Skeletal Muscle",0.55521
+"PON2","Skeletal Muscle",12.5172
+"PON3","Skeletal Muscle",12.5179
+"AMPD3","Skeletal Muscle",11.106
+"GABRB3","Skeletal Muscle",-12
+"GATM","Skeletal Muscle",11.5611
+"TBC1D12","Skeletal Muscle",-11
+"DIO3","Skeletal Muscle",-11
+"NAP1L4","Skeletal Muscle",-0.80658
+"MSUIT","Skeletal Muscle",0.30103
+"ASCL2","Skeletal Muscle",-12
+"OSBPL5","Skeletal Muscle",-0.60489
+"TNFRSF23","Skeletal Muscle",-11
+"AIRN","Skeletal Muscle",-0.727
+"HTR2A","Skeletal Muscle",-12
+"MAPT","Skeletal Muscle",12.7768
+"MKRN1-PS1","Skeletal Muscle",-12
+"DLX5","Skeletal Muscle",-12
+"IGF2R","Skeletal Muscle",10
+"TRY4-new","Skeletal Muscle",-12
+"TSPAN32","Skeletal Muscle",-11
+"ZIM2","Skeletal Muscle",-12
+"PEC3","Skin",-12
+"UBE2NL","Skin",-12
+"TRAPPC9","Skin",0.40265
+"EIF2C2","Skin",-0.30103
+"MIR344D-3","Skin",-12
+"MIR344G","Skin",-12
+"A930009L07RIK","Skin",-12
+"KCNK9","Skin",-12
+"RASGRF1","Skin",-2.4082
+"INPP5F","Skin",12.2886
+"NAP1L5","Skin",-12
+"USP29","Skin",-12
+"HERC3-new","Skin",12.069
+"GM9801-new","Skin",-12
+"BEGAIN","Skin",-11
+"PX00010K13","Skin",-2.7093
+"PEG13","Skin",-2.1072
+"1110006E14RIK","Skin",0.30103
+"MBII-343","Skin",3.9134
+"MIRG","Skin",0.30103
+"ZDBF2","Skin",-0.90309
+"IMPACT","Skin",-8.5846
+"NDN","Skin",-2.7093
+"NIBP","Skin",-1.2029
+"AK139287","Skin",-12
+"CCDC40-AS","Skin",-12
+"PX00113D24","Skin",-1.5051
+"PEC2","Skin",-12
+"ZIM3","Skin",-12
+"AK142849","Skin",-12
+"MKRN3","Skin",-12
+"IPW","Skin",-12
+"B830012L14RIK","Skin",0.30103
+"ADAM23","Skin",11.2483
+"COMMD1","Skin",-12
+"UBE3A","Skin",-1.2291
+"WARS","Skin",-1.1588
+"BCL2L1","Skin",13.3222
+"BLCAP","Skin",13.8023
+"CALCR","Skin",-11
+"MAGEL2","Skin",-12
+"CDH15","Skin",-11
+"COPG2","Skin",1.2493
+"U80893","Skin",-12
+"NR_015479-new","Skin",-0.51742
+"GRB10","Skin",0.30103
+"PEG10","Skin",-0.90309
+"SGCE","Skin",-8.4288
+"PEG1","Skin",-9.4381
+"MCTS2","Skin",-8.1278
+"H13","Skin",0.51956
+"SNRPN","Skin",-8.7299
+"ZRSR1","Skin",-8.7299
+"MEG3","Skin",10
+"RIAN","Skin",10
+"PEG3","Skin",-0.90309
+"PLAGL1","Skin",-10
+"1110014L15RIK-new","Skin",2.7093
+"ASB4","Skin",-11
+"ZIM1","Skin",-12
+"KLHDC10","Skin",-0.47315
+"DLK1","Skin",-12
+"GNAS","Skin",1.0503
+"PPP1R9A","Skin",11.1579
+"PDE4D","Skin",-0.89952
+"A19","Skin",-12
+"ZFP264","Skin",-12
+"KCNQ1OT1","Skin",-10
+"AK050713","Skin",-12
+"RTL1","Skin",-12
+"CDKN1C","Skin",-12
+"PEG12","Skin",-12
+"KCNQ1","Skin",0.30103
+"NESPAS","Skin",-12
+"SLC38A4","Skin",-10
+"H19","Skin",10
+"IGF2","Skin",-12
+"INS1","Skin",-12
+"TFPI2","Skin",-0.30103
+"AK043599","Skin",-12
+"EDN3-new","Skin",-11
+"TMEM106A-new","Skin",12.856
+"DDC","Skin",-12
+"RDM1","Skin",-0.2818
+"TNK1-new","Skin",13.5552
+"TREM1-new","Skin",-12
+"2400006E01RIK-new","Skin",-12
+"IGF2AS","Skin",-12
+"UC008IHS.1-new","Skin",-12
+"5133400J02RIK-new","Skin",-12
+"PHLDA2","Skin",-12
+"AF357359","Skin",-12
+"GAB1","Skin",0.26777
+"SFMBT2","Skin",-12
+"CD81","Skin",15.4492
+"PHF17","Skin",-0.27959
+"TSSC4","Skin",13.2689
+"DACT2-new","Skin",-12
+"SLC22A2","Skin",0.30103
+"TSSC5","Skin",1.1746
+"SLC22A3","Skin",12.7252
+"KLF14","Skin",-12
+"ATP10A","Skin",12.0325
+"DCN","Skin",-0.37805
+"PON2","Skin",13.7953
+"PON3","Skin",13.0826
+"AMPD3","Skin",12.6767
+"GABRB3","Skin",-12
+"GATM","Skin",11.8822
+"TBC1D12","Skin",11.5156
+"DIO3","Skin",-12
+"NAP1L4","Skin",14.2663
+"MSUIT","Skin",-12
+"ASCL2","Skin",-0.30103
+"OSBPL5","Skin",-0.47711
+"TNFRSF23","Skin",-1.0468
+"AIRN","Skin",-0.90309
+"HTR2A","Skin",-12
+"MAPT","Skin",11.7153
+"MKRN1-PS1","Skin",-11
+"DLX5","Skin",-0.30103
+"IGF2R","Skin",7.4598
+"TRY4-new","Skin",-12
+"TSPAN32","Skin",-0.30103
+"ZIM2","Skin",-12
+"PEC3","Heart",-12
+"UBE2NL","Heart",-12
+"TRAPPC9","Heart",-12
+"EIF2C2","Heart",-0.30103
+"MIR344D-3","Heart",-12
+"MIR344G","Heart",-12
+"A930009L07RIK","Heart",-12
+"KCNK9","Heart",-12
+"RASGRF1","Heart",-12
+"INPP5F","Heart",0.30103
+"NAP1L5","Heart",-12
+"USP29","Heart",-12
+"HERC3-new","Heart",12.4926
+"GM9801-new","Heart",-12
+"BEGAIN","Heart",-12
+"PX00010K13","Heart",-12
+"PEG13","Heart",-12
+"1110006E14RIK","Heart",0.30103
+"MBII-343","Heart",0.60206
+"MIRG","Heart",0.60206
+"ZDBF2","Heart",-0.60206
+"IMPACT","Heart",-2.6429
+"NDN","Heart",-0.727
+"NIBP","Heart",-3.316
+"AK139287","Heart",-12
+"CCDC40-AS","Heart",-12
+"PX00113D24","Heart",-3.9134
+"PEC2","Heart",-12
+"ZIM3","Heart",-12
+"AK142849","Heart",-12
+"MKRN3","Heart",-12
+"IPW","Heart",-12
+"B830012L14RIK","Heart",-12
+"ADAM23","Heart",-11
+"COMMD1","Heart",14.1653
+"UBE3A","Heart",12.9872
+"WARS","Heart",12.5682
+"BCL2L1","Heart",12.2986
+"BLCAP","Heart",11.7974
+"CALCR","Heart",-12
+"MAGEL2","Heart",-12
+"CDH15","Heart",-12
+"COPG2","Heart",-1.7806
+"U80893","Heart",-12
+"NR_015479-new","Heart",-12
+"GRB10","Heart",6.9664
+"PEG10","Heart",-1.5051
+"SGCE","Heart",-10
+"PEG1","Heart",-7.8268
+"MCTS2","Heart",-7.5257
+"H13","Heart",5.3683
+"SNRPN","Heart",-10
+"ZRSR1","Heart",-8.7299
+"MEG3","Heart",2.4984
+"RIAN","Heart",9.0309
+"PEG3","Heart",-1.5051
+"PLAGL1","Heart",-10
+"1110014L15RIK-new","Heart",-12
+"ASB4","Heart",11.305
+"ZIM1","Heart",-12
+"KLHDC10","Heart",12.5883
+"DLK1","Heart",-12
+"GNAS","Heart",15.5881
+"PPP1R9A","Heart",11.4245
+"PDE4D","Heart",11.8496
+"A19","Heart",-12
+"ZFP264","Heart",-12
+"KCNQ1OT1","Heart",-1.454
+"AK050713","Heart",-12
+"RTL1","Heart",-12
+"CDKN1C","Heart",0.96108
+"PEG12","Heart",-12
+"KCNQ1","Heart",3.2829
+"NESPAS","Heart",-12
+"SLC38A4","Heart",-2.93
+"H19","Heart",5.7196
+"IGF2","Heart",-2.1072
+"INS1","Heart",-12
+"TFPI2","Heart",-11
+"AK043599","Heart",-12
+"EDN3-new","Heart",-11
+"TMEM106A-new","Heart",1.3141
+"DDC","Heart",-0.90309
+"RDM1","Heart",13.6783
+"TNK1-new","Heart",-12
+"TREM1-new","Heart",-12
+"2400006E01RIK-new","Heart",-12
+"IGF2AS","Heart",-12
+"UC008IHS.1-new","Heart",-12
+"5133400J02RIK-new","Heart",-12
+"PHLDA2","Heart",-12
+"AF357359","Heart",-12
+"GAB1","Heart",11.8374
+"SFMBT2","Heart",-11
+"CD81","Heart",-0.30103
+"PHF17","Heart",-0.30103
+"TSSC4","Heart",0.73131
+"DACT2-new","Heart",-12
+"SLC22A2","Heart",-12
+"TSSC5","Heart",-12
+"SLC22A3","Heart",-11
+"KLF14","Heart",-12
+"ATP10A","Heart",-0.30103
+"DCN","Heart",16
+"PON2","Heart",12.4072
+"PON3","Heart",11.7956
+"AMPD3","Heart",12.7138
+"GABRB3","Heart",-11
+"GATM","Heart",11.5812
+"TBC1D12","Heart",11.2571
+"DIO3","Heart",-12
+"NAP1L4","Heart",0.57295
+"MSUIT","Heart",-12
+"ASCL2","Heart",-12
+"OSBPL5","Heart",-0.53412
+"TNFRSF23","Heart",-11
+"AIRN","Heart",-2.1072
+"HTR2A","Heart",-12
+"MAPT","Heart",0.60583
+"MKRN1-PS1","Heart",-12
+"DLX5","Heart",-12
+"IGF2R","Heart",10
+"TRY4-new","Heart",-12
+"TSPAN32","Heart",-0.46376
+"ZIM2","Heart",-12
+"PEC3","Stomach",-12
+"UBE2NL","Stomach",-12
+"TRAPPC9","Stomach",-11
+"EIF2C2","Stomach",11.5286
+"MIR344D-3","Stomach",-12
+"MIR344G","Stomach",-12
+"A930009L07RIK","Stomach",-12
+"KCNK9","Stomach",-12
+"RASGRF1","Stomach",-0.90309
+"INPP5F","Stomach",11.333
+"NAP1L5","Stomach",-0.64481
+"USP29","Stomach",-0.60206
+"HERC3-new","Stomach",11.9639
+"GM9801-new","Stomach",-12
+"BEGAIN","Stomach",-0.30103
+"PX00010K13","Stomach",-0.96108
+"PEG13","Stomach",-2.7093
+"1110006E14RIK","Stomach",0.60206
+"MBII-343","Stomach",-12
+"MIRG","Stomach",1.2041
+"ZDBF2","Stomach",-12
+"IMPACT","Stomach",-4.1067
+"NDN","Stomach",-0.96108
+"NIBP","Stomach",-5.1992
+"AK139287","Stomach",-12
+"CCDC40-AS","Stomach",-12
+"PX00113D24","Stomach",-12
+"PEC2","Stomach",-12
+"ZIM3","Stomach",-12
+"AK142849","Stomach",-12
+"MKRN3","Stomach",-12
+"IPW","Stomach",-12
+"B830012L14RIK","Stomach",-12
+"ADAM23","Stomach",-11
+"COMMD1","Stomach",0.381
+"UBE3A","Stomach",11.6102
+"WARS","Stomach",13.1872
+"BCL2L1","Stomach",13.2034
+"BLCAP","Stomach",13.0755
+"CALCR","Stomach",-12
+"MAGEL2","Stomach",-12
+"CDH15","Stomach",-12
+"COPG2","Stomach",12.5835
+"U80893","Stomach",-12
+"NR_015479-new","Stomach",-11
+"GRB10","Stomach",1.8062
+"PEG10","Stomach",-0.727
+"SGCE","Stomach",-5.1175
+"PEG1","Stomach",-11
+"MCTS2","Stomach",-0.12494
+"H13","Stomach",5.9645
+"SNRPN","Stomach",-5.7196
+"ZRSR1","Stomach",-8.7299
+"MEG3","Stomach",10
+"RIAN","Stomach",3.6124
+"PEG3","Stomach",-10
+"PLAGL1","Stomach",-10
+"1110014L15RIK-new","Stomach",-12
+"ASB4","Stomach",-12
+"ZIM1","Stomach",-12
+"KLHDC10","Stomach",0.52146
+"DLK1","Stomach",-1.2041
+"GNAS","Stomach",0.43422
+"PPP1R9A","Stomach",-0.41774
+"PDE4D","Stomach",-11
+"A19","Stomach",-12
+"ZFP264","Stomach",-12
+"KCNQ1OT1","Stomach",-10
+"AK050713","Stomach",-12
+"RTL1","Stomach",-12
+"CDKN1C","Stomach",0.96108
+"PEG12","Stomach",-0.60206
+"KCNQ1","Stomach",13.993
+"NESPAS","Stomach",-12
+"SLC38A4","Stomach",-11
+"H19","Stomach",3.0103
+"IGF2","Stomach",-0.87477
+"INS1","Stomach",-12
+"TFPI2","Stomach",-11
+"AK043599","Stomach",-12
+"EDN3-new","Stomach",-11
+"TMEM106A-new","Stomach",-11
+"DDC","Stomach",11.067
+"RDM1","Stomach",12.2101
+"TNK1-new","Stomach",12.1924
+"TREM1-new","Stomach",-12
+"2400006E01RIK-new","Stomach",-12
+"IGF2AS","Stomach",-0.30103
+"UC008IHS.1-new","Stomach",-12
+"5133400J02RIK-new","Stomach",-12
+"PHLDA2","Stomach",12.134
+"AF357359","Stomach",-12
+"GAB1","Stomach",11.8832
+"SFMBT2","Stomach",-12
+"CD81","Stomach",14.649
+"PHF17","Stomach",-0.30103
+"TSSC4","Stomach",12.3363
+"DACT2-new","Stomach",-0.30103
+"SLC22A2","Stomach",-12
+"TSSC5","Stomach",1.5823
+"SLC22A3","Stomach",-0.30103
+"KLF14","Stomach",-12
+"ATP10A","Stomach",-11
+"DCN","Stomach",13.6482
+"PON2","Stomach",13.9173
+"PON3","Stomach",12.3705
+"AMPD3","Stomach",11.6477
+"GABRB3","Stomach",-11
+"GATM","Stomach",-0.37416
+"TBC1D12","Stomach",-11
+"DIO3","Stomach",-12
+"NAP1L4","Stomach",13.5909
+"MSUIT","Stomach",-12
+"ASCL2","Stomach",-12
+"OSBPL5","Stomach",12.0309
+"TNFRSF23","Stomach",-11
+"AIRN","Stomach",-0.90309
+"HTR2A","Stomach",-12
+"MAPT","Stomach",-11
+"MKRN1-PS1","Stomach",-11
+"DLX5","Stomach",-0.30103
+"IGF2R","Stomach",10
+"TRY4-new","Stomach",-10
+"TSPAN32","Stomach",-0.30103
+"ZIM2","Stomach",-12
+"PEC3","Thymus",-12
+"UBE2NL","Thymus",-12
+"TRAPPC9","Thymus",0.69371
+"EIF2C2","Thymus",12.0068
+"MIR344D-3","Thymus",-12
+"MIR344G","Thymus",-12
+"A930009L07RIK","Thymus",-12
+"KCNK9","Thymus",-12
+"RASGRF1","Thymus",-11
+"INPP5F","Thymus",12.592
+"NAP1L5","Thymus",-12
+"USP29","Thymus",-12
+"HERC3-new","Thymus",13.0184
+"GM9801-new","Thymus",-12
+"BEGAIN","Thymus",-11
+"PX00010K13","Thymus",-0.60206
+"PEG13","Thymus",-2.1072
+"1110006E14RIK","Thymus",0.30103
+"MBII-343","Thymus",1.2041
+"MIRG","Thymus",1.454
+"ZDBF2","Thymus",-11
+"IMPACT","Thymus",-3.992
+"NDN","Thymus",-0.60206
+"NIBP","Thymus",-2.1986
+"AK139287","Thymus",-12
+"CCDC40-AS","Thymus",-11
+"PX00113D24","Thymus",-12
+"PEC2","Thymus",-12
+"ZIM3","Thymus",-12
+"AK142849","Thymus",-12
+"MKRN3","Thymus",-12
+"IPW","Thymus",-12
+"B830012L14RIK","Thymus",0.90309
+"ADAM23","Thymus",-0.55279
+"COMMD1","Thymus",13.8334
+"UBE3A","Thymus",-1.0732
+"WARS","Thymus",-0.65787
+"BCL2L1","Thymus",14.6101
+"BLCAP","Thymus",0.90309
+"CALCR","Thymus",-12
+"MAGEL2","Thymus",-12
+"CDH15","Thymus",-11
+"COPG2","Thymus",13.1527
+"U80893","Thymus",-12
+"NR_015479-new","Thymus",11.7986
+"GRB10","Thymus",0.30103
+"PEG10","Thymus",-0.30103
+"SGCE","Thymus",-3.0103
+"PEG1","Thymus",11.632
+"MCTS2","Thymus",-0.30103
+"H13","Thymus",13.4315
+"SNRPN","Thymus",-0.90309
+"ZRSR1","Thymus",-0.90309
+"MEG3","Thymus",10
+"RIAN","Thymus",8.4025
+"PEG3","Thymus",-0.90309
+"PLAGL1","Thymus",-8.1714
+"1110014L15RIK-new","Thymus",-12
+"ASB4","Thymus",-11
+"ZIM1","Thymus",-12
+"KLHDC10","Thymus",-0.30103
+"DLK1","Thymus",-7.1843
+"GNAS","Thymus",-0.27171
+"PPP1R9A","Thymus",-11
+"PDE4D","Thymus",12.8069
+"A19","Thymus",-12
+"ZFP264","Thymus",-12
+"KCNQ1OT1","Thymus",-10
+"AK050713","Thymus",-12
+"RTL1","Thymus",0.30103
+"CDKN1C","Thymus",0.90309
+"PEG12","Thymus",-12
+"KCNQ1","Thymus",-11
+"NESPAS","Thymus",-12
+"SLC38A4","Thymus",-0.30103
+"H19","Thymus",4.8165
+"IGF2","Thymus",-0.60206
+"INS1","Thymus",-12
+"TFPI2","Thymus",-11
+"AK043599","Thymus",-12
+"EDN3-new","Thymus",0.30103
+"TMEM106A-new","Thymus",12.2555
+"DDC","Thymus",-11
+"RDM1","Thymus",13.4229
+"TNK1-new","Thymus",12.4039
+"TREM1-new","Thymus",-12
+"2400006E01RIK-new","Thymus",-12
+"IGF2AS","Thymus",-12
+"UC008IHS.1-new","Thymus",-12
+"5133400J02RIK-new","Thymus",-12
+"PHLDA2","Thymus",-12
+"AF357359","Thymus",-12
+"GAB1","Thymus",11.0233
+"SFMBT2","Thymus",-11
+"CD81","Thymus",15.1061
+"PHF17","Thymus",12.971
+"TSSC4","Thymus",13.6423
+"DACT2-new","Thymus",12.6864
+"SLC22A2","Thymus",-12
+"TSSC5","Thymus",0.30103
+"SLC22A3","Thymus",-11
+"KLF14","Thymus",-12
+"ATP10A","Thymus",13.1686
+"DCN","Thymus",14.8244
+"PON2","Thymus",12.8504
+"PON3","Thymus",11.4863
+"AMPD3","Thymus",-0.30103
+"GABRB3","Thymus",-0.60206
+"GATM","Thymus",0.20548
+"TBC1D12","Thymus",-11
+"DIO3","Thymus",-12
+"NAP1L4","Thymus",-0.57863
+"MSUIT","Thymus",-12
+"ASCL2","Thymus",-12
+"OSBPL5","Thymus",11.2361
+"TNFRSF23","Thymus",-11
+"AIRN","Thymus",-1.454
+"HTR2A","Thymus",-12
+"MAPT","Thymus",-11
+"MKRN1-PS1","Thymus",-12
+"DLX5","Thymus",-12
+"IGF2R","Thymus",4.3567
+"TRY4-new","Thymus",-12
+"TSPAN32","Thymus",13.6642
+"ZIM2","Thymus",-12
+"PEC3","Kidney",0
+"UBE2NL","Kidney",-12
+"TRAPPC9","Kidney",0.8319
+"EIF2C2","Kidney",11.5538
+"MIR344D-3","Kidney",-12
+"MIR344G","Kidney",-12
+"A930009L07RIK","Kidney",-12
+"KCNK9","Kidney",-12
+"RASGRF1","Kidney",-12
+"INPP5F","Kidney",12.7824
+"NAP1L5","Kidney",-1.5051
+"USP29","Kidney",-12
+"HERC3-new","Kidney",12.1339
+"GM9801-new","Kidney",-12
+"BEGAIN","Kidney",-11
+"PX00010K13","Kidney",-12
+"PEG13","Kidney",-5.7196
+"1110006E14RIK","Kidney",-12
+"MBII-343","Kidney",-12
+"MIRG","Kidney",-12
+"ZDBF2","Kidney",-12
+"IMPACT","Kidney",-10
+"NDN","Kidney",-12
+"NIBP","Kidney",-2.1018
+"AK139287","Kidney",-11
+"CCDC40-AS","Kidney",-12
+"PX00113D24","Kidney",-1.8062
+"PEC2","Kidney",-12
+"ZIM3","Kidney",-12
+"AK142849","Kidney",-12
+"MKRN3","Kidney",-12
+"IPW","Kidney",-12
+"B830012L14RIK","Kidney",-12
+"ADAM23","Kidney",-0.30103
+"COMMD1","Kidney",0.25298
+"UBE3A","Kidney",12.2493
+"WARS","Kidney",12.8858
+"BCL2L1","Kidney",14.4441
+"BLCAP","Kidney",13.367
+"CALCR","Kidney",-11
+"MAGEL2","Kidney",-12
+"CDH15","Kidney",-12
+"COPG2","Kidney",12.3946
+"U80893","Kidney",-12
+"NR_015479-new","Kidney",0.30103
+"GRB10","Kidney",6.9664
+"PEG10","Kidney",-0.60206
+"SGCE","Kidney",-3.9134
+"PEG1","Kidney",11.3716
+"MCTS2","Kidney",-2.1072
+"H13","Kidney",10
+"SNRPN","Kidney",-10
+"ZRSR1","Kidney",-9.1269
+"MEG3","Kidney",0.90309
+"RIAN","Kidney",-12
+"PEG3","Kidney",-10
+"PLAGL1","Kidney",-9.3638
+"1110014L15RIK-new","Kidney",-11
+"ASB4","Kidney",-12
+"ZIM1","Kidney",0.60206
+"KLHDC10","Kidney",13.115
+"DLK1","Kidney",-12
+"GNAS","Kidney",0.30103
+"PPP1R9A","Kidney",11.3036
+"PDE4D","Kidney",11.7612
+"A19","Kidney",-12
+"ZFP264","Kidney",-12
+"KCNQ1OT1","Kidney",-10
+"AK050713","Kidney",-12
+"RTL1","Kidney",-12
+"CDKN1C","Kidney",0.90309
+"PEG12","Kidney",-0.30103
+"KCNQ1","Kidney",12.5757
+"NESPAS","Kidney",-12
+"SLC38A4","Kidney",-0.16273
+"H19","Kidney",0.30103
+"IGF2","Kidney",-0.60206
+"INS1","Kidney",-12
+"TFPI2","Kidney",-11
+"AK043599","Kidney",-12
+"EDN3-new","Kidney",11.5903
+"TMEM106A-new","Kidney",13.4918
+"DDC","Kidney",13.6201
+"RDM1","Kidney",13.5144
+"TNK1-new","Kidney",11.917
+"TREM1-new","Kidney",-12
+"2400006E01RIK-new","Kidney",-12
+"IGF2AS","Kidney",-12
+"UC008IHS.1-new","Kidney",-12
+"5133400J02RIK-new","Kidney",-12
+"PHLDA2","Kidney",-0.67947
+"AF357359","Kidney",-12
+"GAB1","Kidney",-0.38194
+"SFMBT2","Kidney",-12
+"CD81","Kidney",-0.59378
+"PHF17","Kidney",-0.71927
+"TSSC4","Kidney",-0.53099
+"DACT2-new","Kidney",13.2839
+"SLC22A2","Kidney",15.8376
+"TSSC5","Kidney",5.16
+"SLC22A3","Kidney",-11
+"KLF14","Kidney",-12
+"ATP10A","Kidney",-0.16273
+"DCN","Kidney",13.4539
+"PON2","Kidney",12.1722
+"PON3","Kidney",11.1723
+"AMPD3","Kidney",11.9906
+"GABRB3","Kidney",-11
+"GATM","Kidney",15.5183
+"TBC1D12","Kidney",-0.4387
+"DIO3","Kidney",-12
+"NAP1L4","Kidney",14.014
+"MSUIT","Kidney",-12
+"ASCL2","Kidney",-12
+"OSBPL5","Kidney",12.2757
+"TNFRSF23","Kidney",0.64481
+"AIRN","Kidney",-0.30103
+"HTR2A","Kidney",-12
+"MAPT","Kidney",14.3227
+"MKRN1-PS1","Kidney",-12
+"DLX5","Kidney",-12
+"IGF2R","Kidney",9.9328
+"TRY4-new","Kidney",-12
+"TSPAN32","Kidney",-0.30103
+"ZIM2","Kidney",-12
+"PEC3","Liver",-11
+"UBE2NL","Liver",-12
+"TRAPPC9","Liver",-11
+"EIF2C2","Liver",-11
+"MIR344D-3","Liver",-12
+"MIR344G","Liver",-12
+"A930009L07RIK","Liver",-12
+"KCNK9","Liver",-12
+"RASGRF1","Liver",-12
+"INPP5F","Liver",11.5287
+"NAP1L5","Liver",-12
+"USP29","Liver",-12
+"HERC3-new","Liver",-0.24973
+"GM9801-new","Liver",-12
+"BEGAIN","Liver",-12
+"PX00010K13","Liver",-0.90309
+"PEG13","Liver",-2.4082
+"1110006E14RIK","Liver",-12
+"MBII-343","Liver",0
+"MIRG","Liver",-12
+"ZDBF2","Liver",-0.30103
+"IMPACT","Liver",-2.8899
+"NDN","Liver",-0.90309
+"NIBP","Liver",-1.2304
+"AK139287","Liver",0.12494
+"CCDC40-AS","Liver",-0.30103
+"PX00113D24","Liver",-0.30103
+"PEC2","Liver",-12
+"ZIM3","Liver",-12
+"AK142849","Liver",-12
+"MKRN3","Liver",-12
+"IPW","Liver",-12
+"B830012L14RIK","Liver",-12
+"ADAM23","Liver",11.1564
+"COMMD1","Liver",14.3845
+"UBE3A","Liver",11.9197
+"WARS","Liver",12.0623
+"BCL2L1","Liver",13.4046
+"BLCAP","Liver",0.61363
+"CALCR","Liver",-12
+"MAGEL2","Liver",-12
+"CDH15","Liver",0.56159
+"COPG2","Liver",12.3167
+"U80893","Liver",-12
+"NR_015479-new","Liver",-11
+"GRB10","Liver",0.21269
+"PEG10","Liver",-0.30103
+"SGCE","Liver",-8.4288
+"PEG1","Liver",11.1785
+"MCTS2","Liver",-4.1398
+"H13","Liver",10
+"SNRPN","Liver",-10
+"ZRSR1","Liver",-10
+"MEG3","Liver",10
+"RIAN","Liver",9.633
+"PEG3","Liver",-3.3113
+"PLAGL1","Liver",-2.1072
+"1110014L15RIK-new","Liver",-11
+"ASB4","Liver",-11
+"ZIM1","Liver",-12
+"KLHDC10","Liver",12.4389
+"DLK1","Liver",-12
+"GNAS","Liver",14.4493
+"PPP1R9A","Liver",-11
+"PDE4D","Liver",-11
+"A19","Liver",-12
+"ZFP264","Liver",-12
+"KCNQ1OT1","Liver",-10
+"AK050713","Liver",-12
+"RTL1","Liver",-11
+"CDKN1C","Liver",-12
+"PEG12","Liver",-0.30103
+"KCNQ1","Liver",-11
+"NESPAS","Liver",-12
+"SLC38A4","Liver",15.504
+"H19","Liver",3.0103
+"IGF2","Liver",-0.30103
+"INS1","Liver",-12
+"TFPI2","Liver",12.6138
+"AK043599","Liver",-12
+"EDN3-new","Liver",-12
+"TMEM106A-new","Liver",11.1799
+"DDC","Liver",14.5627
+"RDM1","Liver",-0.63979
+"TNK1-new","Liver",-11
+"TREM1-new","Liver",-12
+"2400006E01RIK-new","Liver",-12
+"IGF2AS","Liver",-12
+"UC008IHS.1-new","Liver",-12
+"5133400J02RIK-new","Liver",-12
+"PHLDA2","Liver",0.48972
+"AF357359","Liver",-12
+"GAB1","Liver",-0.63884
+"SFMBT2","Liver",-11
+"CD81","Liver",0.93523
+"PHF17","Liver",-0.6242
+"TSSC4","Liver",12.7446
+"DACT2-new","Liver",12.6973
+"SLC22A2","Liver",-12
+"TSSC5","Liver",15.0123
+"SLC22A3","Liver",5.441
+"KLF14","Liver",-12
+"ATP10A","Liver",-11
+"DCN","Liver",-1.48
+"PON2","Liver",12.7934
+"PON3","Liver",13.3043
+"AMPD3","Liver",-0.30103
+"GABRB3","Liver",-11
+"GATM","Liver",11.4614
+"TBC1D12","Liver",-0.69354
+"DIO3","Liver",-12
+"NAP1L4","Liver",13.4779
+"MSUIT","Liver",-12
+"ASCL2","Liver",-12
+"OSBPL5","Liver",-11
+"TNFRSF23","Liver",0.50515
+"AIRN","Liver",-12
+"HTR2A","Liver",-12
+"MAPT","Liver",-11
+"MKRN1-PS1","Liver",-12
+"DLX5","Liver",-12
+"IGF2R","Liver",10
+"TRY4-new","Liver",-12
+"TSPAN32","Liver",0.60206
+"ZIM2","Liver",-12
+"PEC3","Whole Bone Marrow",-12
+"UBE2NL","Whole Bone Marrow",-12
+"TRAPPC9","Whole Bone Marrow",-11
+"EIF2C2","Whole Bone Marrow",-0.50515
+"MIR344D-3","Whole Bone Marrow",-12
+"MIR344G","Whole Bone Marrow",-12
+"A930009L07RIK","Whole Bone Marrow",-12
+"KCNK9","Whole Bone Marrow",-12
+"RASGRF1","Whole Bone Marrow",-12
+"INPP5F","Whole Bone Marrow",11.4727
+"NAP1L5","Whole Bone Marrow",-12
+"USP29","Whole Bone Marrow",-12
+"HERC3-new","Whole Bone Marrow",0.30103
+"GM9801-new","Whole Bone Marrow",-12
+"BEGAIN","Whole Bone Marrow",-12
+"PX00010K13","Whole Bone Marrow",-12
+"PEG13","Whole Bone Marrow",-12
+"1110006E14RIK","Whole Bone Marrow",-12
+"MBII-343","Whole Bone Marrow",-12
+"MIRG","Whole Bone Marrow",-12
+"ZDBF2","Whole Bone Marrow",-12
+"IMPACT","Whole Bone Marrow",-12
+"NDN","Whole Bone Marrow",-12
+"NIBP","Whole Bone Marrow",-11
+"AK139287","Whole Bone Marrow",-12
+"CCDC40-AS","Whole Bone Marrow",-12
+"PX00113D24","Whole Bone Marrow",-12
+"PEC2","Whole Bone Marrow",-12
+"ZIM3","Whole Bone Marrow",-12
+"AK142849","Whole Bone Marrow",-12
+"MKRN3","Whole Bone Marrow",-12
+"IPW","Whole Bone Marrow",-12
+"B830012L14RIK","Whole Bone Marrow",-12
+"ADAM23","Whole Bone Marrow",-12
+"COMMD1","Whole Bone Marrow",-12
+"UBE3A","Whole Bone Marrow",12.0512
+"WARS","Whole Bone Marrow",0.25722
+"BCL2L1","Whole Bone Marrow",-0.37802
+"BLCAP","Whole Bone Marrow",-11
+"CALCR","Whole Bone Marrow",-12
+"MAGEL2","Whole Bone Marrow",-12
+"CDH15","Whole Bone Marrow",-12
+"COPG2","Whole Bone Marrow",-12
+"U80893","Whole Bone Marrow",-12
+"NR_015479-new","Whole Bone Marrow",-12
+"GRB10","Whole Bone Marrow",-12
+"PEG10","Whole Bone Marrow",-12
+"SGCE","Whole Bone Marrow",-12
+"PEG1","Whole Bone Marrow",0.30103
+"MCTS2","Whole Bone Marrow",-12
+"H13","Whole Bone Marrow",12.3132
+"SNRPN","Whole Bone Marrow",-12
+"ZRSR1","Whole Bone Marrow",-12
+"MEG3","Whole Bone Marrow",-12
+"RIAN","Whole Bone Marrow",-12
+"PEG3","Whole Bone Marrow",-12
+"PLAGL1","Whole Bone Marrow",1.2041
+"1110014L15RIK-new","Whole Bone Marrow",11.1125
+"ASB4","Whole Bone Marrow",-12
+"ZIM1","Whole Bone Marrow",-12
+"KLHDC10","Whole Bone Marrow",-0.45481
+"DLK1","Whole Bone Marrow",-12
+"GNAS","Whole Bone Marrow",-0.51305
+"PPP1R9A","Whole Bone Marrow",0.51767
+"PDE4D","Whole Bone Marrow",-11
+"A19","Whole Bone Marrow",-12
+"ZFP264","Whole Bone Marrow",-12
+"KCNQ1OT1","Whole Bone Marrow",3.9134
+"AK050713","Whole Bone Marrow",-12
+"RTL1","Whole Bone Marrow",-11
+"CDKN1C","Whole Bone Marrow",-12
+"PEG12","Whole Bone Marrow",-12
+"KCNQ1","Whole Bone Marrow",-12
+"NESPAS","Whole Bone Marrow",-12
+"SLC38A4","Whole Bone Marrow",-12
+"H19","Whole Bone Marrow",-12
+"IGF2","Whole Bone Marrow",-12
+"INS1","Whole Bone Marrow",-12
+"TFPI2","Whole Bone Marrow",-12
+"AK043599","Whole Bone Marrow",-12
+"EDN3-new","Whole Bone Marrow",-12
+"TMEM106A-new","Whole Bone Marrow",-0.76479
+"DDC","Whole Bone Marrow",-12
+"RDM1","Whole Bone Marrow",-4.5154
+"TNK1-new","Whole Bone Marrow",-4.2755
+"TREM1-new","Whole Bone Marrow",10
+"2400006E01RIK-new","Whole Bone Marrow",-12
+"IGF2AS","Whole Bone Marrow",-12
+"UC008IHS.1-new","Whole Bone Marrow",-12
+"5133400J02RIK-new","Whole Bone Marrow",-12
+"PHLDA2","Whole Bone Marrow",-12
+"AF357359","Whole Bone Marrow",-12
+"GAB1","Whole Bone Marrow",-11
+"SFMBT2","Whole Bone Marrow",-12
+"CD81","Whole Bone Marrow",13.5391
+"PHF17","Whole Bone Marrow",-0.44364
+"TSSC4","Whole Bone Marrow",13.6189
+"DACT2-new","Whole Bone Marrow",-12
+"SLC22A2","Whole Bone Marrow",-12
+"TSSC5","Whole Bone Marrow",-12
+"SLC22A3","Whole Bone Marrow",-11
+"KLF14","Whole Bone Marrow",-12
+"ATP10A","Whole Bone Marrow",-1.5051
+"DCN","Whole Bone Marrow",0.30103
+"PON2","Whole Bone Marrow",12.4277
+"PON3","Whole Bone Marrow",-11
+"AMPD3","Whole Bone Marrow",-0.38487
+"GABRB3","Whole Bone Marrow",-12
+"GATM","Whole Bone Marrow",-0.51767
+"TBC1D12","Whole Bone Marrow",-12
+"DIO3","Whole Bone Marrow",-12
+"NAP1L4","Whole Bone Marrow",-0.30103
+"MSUIT","Whole Bone Marrow",-12
+"ASCL2","Whole Bone Marrow",-12
+"OSBPL5","Whole Bone Marrow",-12
+"TNFRSF23","Whole Bone Marrow",-0.30103
+"AIRN","Whole Bone Marrow",-12
+"HTR2A","Whole Bone Marrow",-12
+"MAPT","Whole Bone Marrow",-11
+"MKRN1-PS1","Whole Bone Marrow",-0.30103
+"DLX5","Whole Bone Marrow",-12
+"IGF2R","Whole Bone Marrow",-2.1072
+"TRY4-new","Whole Bone Marrow",-12
+"TSPAN32","Whole Bone Marrow",13.5089
+"ZIM2","Whole Bone Marrow",-12
+"PEC3","Spleen",11.2257
+"UBE2NL","Spleen",-12
+"TRAPPC9","Spleen",-11
+"EIF2C2","Spleen",-0.77949
+"MIR344D-3","Spleen",-12
+"MIR344G","Spleen",-12
+"A930009L07RIK","Spleen",-12
+"KCNK9","Spleen",-12
+"RASGRF1","Spleen",0.30103
+"INPP5F","Spleen",12.353
+"NAP1L5","Spleen",-12
+"USP29","Spleen",-12
+"HERC3-new","Spleen",11.2564
+"GM9801-new","Spleen",-12
+"BEGAIN","Spleen",-11
+"PX00010K13","Spleen",-12
+"PEG13","Spleen",-2.4082
+"1110006E14RIK","Spleen",-12
+"MBII-343","Spleen",-12
+"MIRG","Spleen",-12
+"ZDBF2","Spleen",-12
+"IMPACT","Spleen",-0.42371
+"NDN","Spleen",-12
+"NIBP","Spleen",-8.7333
+"AK139287","Spleen",0.30103
+"CCDC40-AS","Spleen",-12
+"PX00113D24","Spleen",-12
+"PEC2","Spleen",-12
+"ZIM3","Spleen",-12
+"AK142849","Spleen",-12
+"MKRN3","Spleen",-12
+"IPW","Spleen",-12
+"B830012L14RIK","Spleen",-12
+"ADAM23","Spleen",-0.78022
+"COMMD1","Spleen",-12
+"UBE3A","Spleen",0.33907
+"WARS","Spleen",12.0801
+"BCL2L1","Spleen",-0.30103
+"BLCAP","Spleen",12.528
+"CALCR","Spleen",-12
+"MAGEL2","Spleen",-12
+"CDH15","Spleen",-12
+"COPG2","Spleen",-0.20548
+"U80893","Spleen",-12
+"NR_015479-new","Spleen",-11
+"GRB10","Spleen",0.60206
+"PEG10","Spleen",-0.30103
+"SGCE","Spleen",-4.2144
+"PEG1","Spleen",11.2375
+"MCTS2","Spleen",0
+"H13","Spleen",12.5459
+"SNRPN","Spleen",-0.90309
+"ZRSR1","Spleen",-1.2041
+"MEG3","Spleen",1.4853
+"RIAN","Spleen",-12
+"PEG3","Spleen",-1.2041
+"PLAGL1","Spleen",-0.60206
+"1110014L15RIK-new","Spleen",12.834
+"ASB4","Spleen",-12
+"ZIM1","Spleen",-12
+"KLHDC10","Spleen",11.4187
+"DLK1","Spleen",-11
+"GNAS","Spleen",1.1702
+"PPP1R9A","Spleen",11.1361
+"PDE4D","Spleen",0.40265
+"A19","Spleen",-12
+"ZFP264","Spleen",-12
+"KCNQ1OT1","Spleen",-10
+"AK050713","Spleen",-11
+"RTL1","Spleen",-11
+"CDKN1C","Spleen",0.30103
+"PEG12","Spleen",-0.60206
+"KCNQ1","Spleen",-11
+"NESPAS","Spleen",-12
+"SLC38A4","Spleen",-12
+"H19","Spleen",-12
+"IGF2","Spleen",-3.9134
+"INS1","Spleen",-12
+"TFPI2","Spleen",-12
+"AK043599","Spleen",-12
+"EDN3-new","Spleen",-11
+"TMEM106A-new","Spleen",11.4753
+"DDC","Spleen",-12
+"RDM1","Spleen",13.3872
+"TNK1-new","Spleen",11.5918
+"TREM1-new","Spleen",-11
+"2400006E01RIK-new","Spleen",-12
+"IGF2AS","Spleen",-12
+"UC008IHS.1-new","Spleen",-12
+"5133400J02RIK-new","Spleen",-12
+"PHLDA2","Spleen",-12
+"AF357359","Spleen",-12
+"GAB1","Spleen",-0.39012
+"SFMBT2","Spleen",0.43976
+"CD81","Spleen",14.9891
+"PHF17","Spleen",11.9803
+"TSSC4","Spleen",13.2033
+"DACT2-new","Spleen",-0.96108
+"SLC22A2","Spleen",-12
+"TSSC5","Spleen",0.30103
+"SLC22A3","Spleen",11.1553
+"KLF14","Spleen",-12
+"ATP10A","Spleen",-11
+"DCN","Spleen",12.6466
+"PON2","Spleen",12.3387
+"PON3","Spleen",-12
+"AMPD3","Spleen",0.21843
+"GABRB3","Spleen",-12
+"GATM","Spleen",0.30103
+"TBC1D12","Spleen",-11
+"DIO3","Spleen",-12
+"NAP1L4","Spleen",13.6743
+"MSUIT","Spleen",-12
+"ASCL2","Spleen",-12
+"OSBPL5","Spleen",0.30103
+"TNFRSF23","Spleen",-11
+"AIRN","Spleen",-12
+"HTR2A","Spleen",-12
+"MAPT","Spleen",11.7287
+"MKRN1-PS1","Spleen",-11
+"DLX5","Spleen",-12
+"IGF2R","Spleen",1.8062
+"TRY4-new","Spleen",-12
+"TSPAN32","Spleen",0.48869
+"ZIM2","Spleen",-12
+"PEC3","Testes",-12
+"UBE2NL","Testes",-12
+"TRAPPC9","Testes",-11
+"EIF2C2","Testes",0.30103
+"MIR344D-3","Testes",-11
+"MIR344G","Testes",-11
+"A930009L07RIK","Testes",-12
+"KCNK9","Testes",-12
+"RASGRF1","Testes",11.5138
+"INPP5F","Testes",11.9507
+"NAP1L5","Testes",-12
+"USP29","Testes",-11
+"HERC3-new","Testes",11.2427
+"GM9801-new","Testes",-12
+"BEGAIN","Testes",11.3439
+"PX00010K13","Testes",-12
+"PEG13","Testes",-12
+"1110006E14RIK","Testes",-12
+"MBII-343","Testes",-11
+"MIRG","Testes",12.2214
+"ZDBF2","Testes",-0.75852
+"IMPACT","Testes",-1.9458
+"NDN","Testes",-0.43976
+"NIBP","Testes",12.6477
+"AK139287","Testes",-12
+"CCDC40-AS","Testes",14.2299
+"PX00113D24","Testes",-11
+"PEC2","Testes",-12
+"ZIM3","Testes",11.1209
+"AK142849","Testes",-12
+"MKRN3","Testes",-11
+"IPW","Testes",-12
+"B830012L14RIK","Testes",-12
+"ADAM23","Testes",-11
+"COMMD1","Testes",0.24414
+"UBE3A","Testes",12.7795
+"WARS","Testes",13.0233
+"BCL2L1","Testes",14.2413
+"BLCAP","Testes",12.6801
+"CALCR","Testes",-12
+"MAGEL2","Testes",-12
+"CDH15","Testes",0.18293
+"COPG2","Testes",13.7623
+"U80893","Testes",-12
+"NR_015479-new","Testes",-12
+"GRB10","Testes",12.0566
+"PEG10","Testes",-10
+"SGCE","Testes",-5.6866
+"PEG1","Testes",-0.50515
+"MCTS2","Testes",-0.69152
+"H13","Testes",12.7887
+"SNRPN","Testes",11.9146
+"ZRSR1","Testes",-3.2642
+"MEG3","Testes",10
+"RIAN","Testes",0.46289
+"PEG3","Testes",-11
+"PLAGL1","Testes",-10
+"1110014L15RIK-new","Testes",-12
+"ASB4","Testes",12.3979
+"ZIM1","Testes",-11
+"KLHDC10","Testes",13.3144
+"DLK1","Testes",-0.30103
+"GNAS","Testes",13.3961
+"PPP1R9A","Testes",0.41129
+"PDE4D","Testes",-11
+"A19","Testes",13.0514
+"ZFP264","Testes",11.0465
+"KCNQ1OT1","Testes",-11
+"AK050713","Testes",-12
+"RTL1","Testes",-12
+"CDKN1C","Testes",-0.20548
+"PEG12","Testes",-0.30103
+"KCNQ1","Testes",-11
+"NESPAS","Testes",-11
+"SLC38A4","Testes",-11
+"H19","Testes",-11
+"IGF2","Testes",-0.37416
+"INS1","Testes",-12
+"TFPI2","Testes",-12
+"AK043599","Testes",-12
+"EDN3-new","Testes",-12
+"TMEM106A-new","Testes",12.5978
+"DDC","Testes",-11
+"RDM1","Testes",11.3982
+"TNK1-new","Testes",-11
+"TREM1-new","Testes",0.59533
+"2400006E01RIK-new","Testes",-0.30103
+"IGF2AS","Testes",0.30103
+"UC008IHS.1-new","Testes",11.6619
+"5133400J02RIK-new","Testes",11.1922
+"PHLDA2","Testes",-12
+"AF357359","Testes",-12
+"GAB1","Testes",-0.27915
+"SFMBT2","Testes",12.5463
+"CD81","Testes",-0.28711
+"PHF17","Testes",-0.36987
+"TSSC4","Testes",-0.66397
+"DACT2-new","Testes",0.68305
+"SLC22A2","Testes",-12
+"TSSC5","Testes",0.30103
+"SLC22A3","Testes",-11
+"KLF14","Testes",-12
+"ATP10A","Testes",13.2819
+"DCN","Testes",13.3147
+"PON2","Testes",12.7305
+"PON3","Testes",11.2779
+"AMPD3","Testes",-11
+"GABRB3","Testes",-11
+"GATM","Testes",14.4815
+"TBC1D12","Testes",0.44223
+"DIO3","Testes",-11
+"NAP1L4","Testes",0.46498
+"MSUIT","Testes",-0.30103
+"ASCL2","Testes",0.30103
+"OSBPL5","Testes",-0.74427
+"TNFRSF23","Testes",-0.16273
+"AIRN","Testes",-12
+"HTR2A","Testes",-12
+"MAPT","Testes",0.66243
+"MKRN1-PS1","Testes",-11
+"DLX5","Testes",11.2401
+"IGF2R","Testes",3.2626
+"TRY4-new","Testes",-12
+"TSPAN32","Testes",-12
+"ZIM2","Testes",-11
