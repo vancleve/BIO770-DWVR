@@ -1,0 +1,112 @@
+---
+title: "Wrangle author data from Jevin et al. 2013"
+output: html_document
+---
+
+Load up the libraries.
+```{r}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(purrr)
+library(ggplot2)
+```
+
+Read in the bare data that Jevin West sent me.
+```{r}
+gender = read_tsv("gender_by_decade_first_last_jstor.txt")
+glimpse(gender)
+```
+
+Whoa. That is some seriously untidy data. Per Jevin's email, a single year means authorships up to and including that year starting at the year 1900. A date range means all authorships in those years (inclusive of the endpoints). Thus, all those columns really only tell us four things:
+
+1. Placement in author list (anywhere, first, or last)
+2. Gender (male or female)
+3. Starting year of author count (1900 when not specified as range)
+4. Ending year of author count
+
+To tidy the data then, we need to `gather` it up. There are some other columns that we don't want to gather and we exlcude those from the gather.
+```{r}
+gender_t1 = gather(gender, type_year, authorships, -cluster, -label, -paperN)
+gender_t1
+```
+
+We call the column that collects the old variables `type_year` and it contains the four pieces of information described above. We need to `separate` that column to get that information tidy. First let's split off the first part of the data, which is the author position and gender, from the year. This next bit uses some magic from regular expressions
+```{r}
+gender_t2 = separate(gender_t1, 
+                     col = type_year, 
+                     sep = "(?=[:digit:])",
+                     into = c("type", "years"),
+                     extra = "merge")
+gender_t2
+```
+To see that this worked, let's looked at what is in the `years` column
+```{r}
+unique(gender_t2$years)
+```
+Ok, that worked. However, we need to separate again since both `type` and `years` both contain two pieces of information. Let's first work on `years`. The function `separate` won't work here because we have to impute the starting year in the cases where there is no "_" to split the data on. We write two functions that do this and give them to `mutate` that adds the new columns.
+```{r}
+firstYear = function(xstr) {
+  if (grepl("_", xstr)){
+    return(strsplit(xstr, "_")[[1]][1])
+  }
+  else {
+    return("1900")
+  }
+}
+secondYear = function(xstr) {
+  if (grepl("_", xstr)){
+    return(strsplit(xstr, "_")[[1]][2])
+  }
+  else {
+    return(xstr)
+  }
+}
+
+gender_t3 = mutate(rowwise(gender_t2), startYear = firstYear(years), endYear = secondYear(years))
+gender_t3 = select(gender_t3, -years)
+gender_t3
+```
+
+Finally, we need to separate the `type` column and impute the author position when it's not specified.
+```{r}
+authorPosition = function(type) {
+  if (type == "men" | type == "women") {
+    return("anywhere")
+  }
+  else {
+    strsplit(type, "(?=F)|(?=M)", perl = TRUE)[[1]][1]
+  }
+}
+genderType = function(type) {
+  if (type == "men" | type == "women") {
+    return(type)
+  }
+  else {
+    genderabbrv = strsplit(type, "(?=F)|(?=M)", perl = TRUE)[[1]][2]
+    if (genderabbrv == "F") {
+      return("women")
+    }
+    else {
+      return("men")
+    }
+  }
+}
+
+gender_tidy = mutate(gender_t3, authorPos = authorPosition(type), gender = genderType(type))
+gender_tidy = select(gender_tidy, -type)
+```
+And now the data are tidy!
+
+Let's plot some of these data!
+```{r}
+ggplot(filter(gender_tidy, 
+              cluster != "JSTOR", 
+              !grepl(":", cluster), 
+              authorPos == "anywhere", 
+              startYear == "1900", 
+              endYear == "2012")) +
+  geom_point(aes(x = authorships, y = label, color = gender))
+```
+
+
