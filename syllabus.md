@@ -120,12 +120,12 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 |    2 | 8/31            | Intro to R: data types, flow control, and functions |                                                                                   |
 |    3 | 9/7             | Vectors, slicing, and map(ping)                     |                                                                                   |
 |    4 | 9/14            | Getting data into R with data.frames                |                                                                                   |
-|    5 | 9/21            | `dplyr` and tidy data                               |                                                                                   |
-|    6 | 9/28            | `ggplot2`: intro                                    |                                                                                   |
-|    7 | 10/5            | `ggplot2`: plot types                               |                                                                                   |
+|    5 | 9/21            | Tidy Data                                           |                                                                                   |
+|    6 | 9/28            | Introduction to plotting and `ggplot2`              |                                                                                   |
+|    7 | 10/5            | More `ggplot2`: plot types                          |                                                                                   |
 |      | 10/12           | **No class**                                        | (Van Cleve at Georgia Tech)                                                       |
-|    8 | 10/19           | `ggplot2`: finessing figures                        |                                                                                   |
-|    9 | 10/26           | Colors and heatmaps                                 |                                                                                   |
+|    8 | 10/19           | Finessing plots in `ggplot2`                        |                                                                                   |
+|    9 | 10/26           | Heat maps, countour maps, and colors                |                                                                                   |
 |   10 | 11/2            | Networks                                            |                                                                                   |
 |   11 | 11/9            | Text manipulation: regular expressions              |                                                                                   |
 |   12 | 11/16           | Work on your own data / figures                     |                                                                                   |
