@@ -2,7 +2,7 @@
 title: 'Introduction to plotting and `ggplot2`'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 21th September 2016
+date: 28th September 2016
 ---
 
 ```{r setup, include=FALSE}
@@ -217,7 +217,6 @@ Here, `facet_grid` arranges the plots nicely in a grid. Positive values of expre
 
 
 # Lab ![](assets/beaker.png)
-
 
 ### Problems
 

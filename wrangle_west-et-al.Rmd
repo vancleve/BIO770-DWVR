@@ -93,14 +93,14 @@ genderType = function(type) {
   }
 }
 
-gender_tidy = mutate(gender_t3, authorPos = authorPosition(type), gender = genderType(type))
-gender_tidy = select(gender_tidy, -type)
+gender = mutate(gender_t3, authorPos = authorPosition(type), gender = genderType(type))
+gender = select(gender, -type)
 ```
 And now the data are tidy!
 
 Let's plot some of these data!
 ```{r}
-ggplot(filter(gender_tidy, 
+ggplot(filter(gender, 
               cluster != "JSTOR", 
               !grepl(":", cluster), 
               authorPos == "anywhere", 
@@ -109,4 +109,13 @@ ggplot(filter(gender_tidy,
   geom_point(aes(x = authorships, y = label, color = gender))
 ```
 
+Write the tidy data to a file.
+```{r}
+write.csv(gender_tidy, file = "gender_by_decade_first_last_jstor_tidy.csv", row.names = FALSE)
+```
+
+If we need to load these data back into R, we can just do the following,
+```{r}
+gender = read_csv("gender_by_decade_first_last_jstor_tidy.csv")
+```
 
