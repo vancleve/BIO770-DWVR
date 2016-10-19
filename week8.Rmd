@@ -1,0 +1,316 @@
+---
+title: 'Finessing plots in `ggplot2`'
+author: "Jeremy Van Cleve"
+output: html_document
+date: 19th October 2016
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Outline for today
+
+- Principles of displaying data
+- Modifying plot elements
+- Themes
+
+# Principles of displaying data
+
+While there is a lot of art in designing figures to display data, there is also some science. Researchers interested in designing effective figures have found some helpful rules of thumb that take advantage of simple intuitions as well as empirical results from psychology and neuroscience.
+
+## More data. Less ink.
+
+In his 1983 book, "The Visual Display of Quantitative Information", Edward Tufte states that
+
+> Data-ink is the non-erasable core of the graphic, the non-redundant ink arranged in response to variation in the numbers represented
+
+and emphasizes that the "redundant data-ink" should be minimized. In other words, use as few visual elements as necessary to display your data. For example, a bar chart simply shows the relative magnitude of different factors, and thus needs only bars lined up next to one another for visual comparison. Yet, many bar charts come with "chart junk", which are elements that are unnecessary for displaying the data. The example below shows how removing "chart junk" can make a bar chart much simpler, easier to read, and even more attractive (at least in terms of elegance and simplicity).
+
+![http://blog.darkhorseanalytics.com/data-looks-better-naked](assets/data-ink.gif)
+
+This rule can and should be applied to tables as well. The example below shows how removing the chart junk from the table can make it visually much simpler and easier to read without losing the ability to easily distinguish rows or compare across columns. The example also displays some useful rules for tables, such as removing unnecessary horizontal lines, aligning text and numbers correctly, and using row spacing to help distinguish rows.
+
+![http://blog.darkhorseanalytics.com/clear-off-the-table](assets/clear-off-the-table.gif)
+
+## Visual properties of graphical elements
+
+Nobel prize-winning work in neuroscience by David Hubel and Torsten Wiesel (among others) showed that the visual cortex is designed to recognize certain basic visual features, such as orientation and contrast that distinguishes edges. These basic features are then assembled into more complex visual objects in other brain regions. Knowing that some visual features may be more "basic" than others with respect to how they are processed by the brain means that you can leverage those features to make graphics easier to read.
+
+An example of how some visual elements are more basic than others comes from the work by William Cleveland and Robert McGill on the speed and accuracy that people have in distinguishing specific graphical elements [^1]. The table below shows these elements and their rank from most to least accurately distinguishable.
+
+|Rank | Graphical element |
+|-----+-------------------|
+| 1   | Positions on a common scale |
+| 2   | Positions on the same but nonaligned scales |
+| 3   | Lengths |
+| 4   | Angles, slopes |
+| 5   | Area |
+| 6   | Volume, color saturation |
+| 7   | Color hue |
+
+The figure below gives you a sense of what each of these elements are.
+
+![Graphical elements from hardest to easiest to distinguish](assets/visual_tasks.png)
+
+As an example, a pie chart, which uses angles to indicate the relative size of a category, can be harder to read than a bar chart, which uses positions on a common scale
+
+![Pie vs. bar chart](assets/pie_bar_chart.png)
+
+## Gestalt principles
+
+Gestalt ("shape" in German) principles come from German psychologists in the early 20th century who tried to come up with the rules for perception. These rules are built on common sense intuitions and can be useful in composing figures, particularly with respect to grouping related parts of a figure. The general rule is that objects that look alike, are close to one another, connected by lines or enclosed together belong together somehow.
+
+1. **Similarity**. Objects with similar color, shape, or orientation are grouped together. 
+
+![Grouping by similar color, shape, etc.](assets/similarity.png)
+
+2. **Proximity**. Objects close to each other are grouped together.
+
+![Grouping by proximity](assets/proximity.png)
+
+3. **Connection**. Objects linked to each other are grouped together.
+4. **Enclosure**. Objects enclosed together are grouped together.
+
+![Connection via lines and enclosure via circle](assets/lines_enclosure.png)
+
+# Modifying plot elements
+
+With all the basic tools of `ggplot2`, you can already implement many of the visual design principles described above. The remaining changes you might need to make include altering the labels, annotations, coordinate system or scaling, color scaling, or plot size.
+
+## Labels
+
+You have already seen how to add simple labels to simple plots, but now you will add labels to `ggplot2` plots. Adding labels in `ggplot2` is accomplished with the `labs()` function. For example, if you load and plot the recent polling data, you can add a title easily
+
+```{r, message = FALSE}
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+polls = read_csv("USPresPolls_538dotcom_18Oct2016.csv")
+
+augNowPolls = filter(polls, endDate > "2016-08-01", polltypeA == "now")
+augNowPollsPlot = ggplot(augNowPolls, aes(x = endDate, y = adj_pct, color = choice)) 
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) + 
+  labs(title = "Clinton and Trump polling data in 2016")
+```
+
+You can also add a `subtitle`, which is additional detail below the title, and a `caption`, which should describe the data in the plot. These features are only available in `ggplot` 2.2.0 and higher.
+
+```{r, eval=FALSE}
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) + 
+  labs(title = "Clinton and Trump polling data in 2016",
+       subtitle = "Clinton has lead since August",
+       caption = "Polls adjusted under the 538 'now' model")
+```
+
+Labels can also be added to the axes and the legend.
+
+```{r}
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) + 
+  labs(title = "Clinton and Trump polling data in 2016",
+       x = "Date", y = "Adjusted polling percentage", color = "Candidate")
+```
+
+Mathematical symbols can be added by using `quote()` instead of the quotation characters "". Check `?plotmath` for options. For example,
+
+```{r}
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) + 
+  labs(title = quote(integral(f(x)*dx, a, b)),
+       x = quote(x[y]^z),
+       y = quote(frac(y,x) == frac(alpha, beta)))
+```
+
+
+## Annotations
+
+Adding annotations to plots can be very important and people often do this in programs such as Adobe Illustrator. However, taking the plot to another program makes generating the figure much more complicated and breaks the "reproducible science" method using RMarkdown where any change in the data can easily be converted into updated figures and documents.
+
+One way to add text to a plot is with `geom_text`, which is like `geom_point`, but has a `label` option. For example, you can label the maximum polling percentages for each candidate. The code below first groups the data by choice, since you want to use a label for each candidate. Then, it filters the rows to include only the ones that rank first when sorted into descending order based on `adj_pct`. Finally, it uses this data table for the `geom_text`.
+
+```{r}
+maxpolls = 
+  filter(
+      group_by(augNowPolls, choice), 
+      row_number(desc(adj_pct)) == 1)
+
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) + 
+  geom_text(aes(label = choice), data = maxpolls)
+```
+
+Often, you may want to put a piece of text in a specific location in the plot. You still need to create a new data table for this that has the right names for the x and y variables.
+
+```{r}
+label = tibble(endDate = max(augNowPolls$endDate), adj_pct = max(augNowPolls$adj_pct), choice = "Clinton", label = "The 2016 horse race is almost over")
+  
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) + 
+  geom_text(aes(label = label), data = label, vjust = "top", hjust = "right")
+```
+
+You can set the vertical (`vjust`) and horizontal (`hjust`) rustication above using the options below.
+
+![Combinations of horizontal and vertical justification options](assets/just.png)
+
+## Coordinate systems
+
+Coordinate systems in `ggplot2` can be complex, but usually you will only want to flip the `x` and `y` axes with `coord_flip()` as in previous examples.
+
+```{r}
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) + 
+  coord_flip()
+```
+
+There is a coordinate system for "polar" coordinates that effectively produces a pie chart. Since pie charts are bad (see above), avoid this unless your data really are in polar coordinates.
+
+You can use a coordinate transform to put the `x`, `y`, or both axes on a log scale. The function to accomplish this is `coord_trans()` where function names are given for the `x` and `y` arguments (e.g, `log10`).
+
+```{r}
+library(gapminder)
+
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(aes(color = continent)) +
+  geom_smooth(method = "lm") +
+  coord_trans(x = "log10", y = "log10")
+```
+
+Above, you can notice that the straight line (since "lm" was used to plot the line) is curved, which indicates that the line was fit on the untransformed data. Below, you will see how to change the scales to a log scale so that the line is fit on the transformed data.
+
+## Scales 
+
+Scales control how the data maps to aesthetics, which includes whether the data is on an arithmetic or log scale, how data maps to colors, and how the scale values themselves are displayed (i.e., the tick marks). By default, `ggplot2` takes
+
+```{r, eval = FALSE}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(aes(color = continent)) 
+```
+
+and adds
+
+```{r, eval = FALSE}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(aes(color = continent)) +
+  scale_x_continuous() +
+  scale_y_continuous() +
+  scale_colour_discrete()
+```
+
+You can alter properties of these scales including where tick marks are, the labels of those marks, etc. Modifying the x-tick spacing and getting ride of the y-labels looks like this:
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(aes(color = continent)) +
+  scale_x_continuous(breaks = seq(10000, 100000, by = 10000)) +
+  scale_y_continuous(labels = NULL)
+```
+
+Changing the scales to log values can be done with the `scale_x_log10` and `scale_y_log10` functions.
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(aes(color = continent)) +
+  scale_x_log10() +
+  scale_y_log10() +
+  geom_smooth(method = "lm")
+```
+
+Above, you can see that the fit "lm" line is straight, which means it was applied to the transformed data.
+
+Finally, you can change the color scale for the discrete variables plotted. One common alternative set of color scales are the "ColorBrewer" (<http://colorbrewer2.org/>) scales that are designed to work well with color blind folks and can be loaded with `library(RColorBrewer)`.
+
+```{r}
+library(RColorBrewer)
+
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(aes(color = continent)) +
+  scale_x_log10() + scale_y_log10() +
+  scale_colour_brewer(palette = "Dark2")
+```
+
+You can also set the color scale manually, which is nice for making Hillary polls blue and Trump polls red.
+
+```{r}
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) +
+  scale_colour_manual(values = c(Clinton = "blue", Trump = "red"))
+```
+
+### Zooming
+
+You can "zoom" by either taking a subset of the data and plotting that or by changing the x and y limits in the coordinate system. The latter option is better for really "zooming" into a region whereas the former is better when you care only about that subset. To do the latter,
+
+```{r}
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(aes(color = continent)) +
+  coord_cartesian(xlim = c(1000, 2000), ylim = c(50, 70))
+```
+
+# Themes
+
+More generally, you can modify non-data elements of the plot with a theme. There are eight themes included with `ggplot2`:
+
+![`ggplot2` themes](assets/ggplot-themes.png)
+
+Applying them just requires adding the specific function:
+
+```{r}
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) +
+  scale_colour_manual(values = c(Clinton = "blue", Trump = "red")) +
+  theme_bw()
+```
+
+Hadley Wickham has some text defending the default theme with the gray background. I won't detail his reasons since I think that theme is frankly ugly and the gray background is "chart junk". 
+
+## Claus O. Wilke theme (`cowplot`)
+
+Claus O. Wilke, an evolutionary biologist at UT Austin, has put together a theme that he describes as
+
+> a publication-ready theme for ggplot2, one that requires a minimum amount of fiddling with sizes of axis labels, plot backgrounds, etc.
+
+Once you load the package, the theme becomes the default.
+
+```{r}
+library(cowplot)
+
+augNowPollsPlot + 
+  geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5) +
+  scale_colour_manual(values = c(Clinton = "blue", Trump = "red")) 
+```
+
+The theme is meant to work well with saving figures (next class session), adding annotations (does not require creating a data table), and placing subplots in arbitrary arrangements in the plot. For more information, check out <https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html>.
+
+[^1]: Cleveland, W.S. & McGill, R. *Science* **229**, 828–833 (1985).
+
+# Lab ![](assets/beaker.png)
+
+### Problems
+
+1. Create a plot from any of the datasets we have used previously that includes the following
+    a. Color that corresponds to some variable in the data
+    b. Descriptive labels for the axes and title
+    c. Appropriate tick mark breaks and labels (only if defaults are bad)
+    d. Non-ggplot2 default theme (pick your favorite)
+    e. Bonus 2 points: change color of the x and y tick labels to blue
+    
+2. Find a bad figure in a scientific paper in your field
+    a. Save the figure and include it as a .jpg or .png with your .Rmd and load the figure into your .Rmd file as an image.
+    b. Describe what is wrong with the figure using graphics principles discussed today.
+    c. Describe how you would fix the figure.
+    d. Bonus 5 points: load in the data and actually fixing the figure!
