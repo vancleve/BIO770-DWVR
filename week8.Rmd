@@ -20,6 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 1. Start thinking about data to use and plots to make for lightning talk. Feel free to e-mail me if you want to run your ideas by me.
 2. For the homework, label your answers clearly with the question number (or as some folks already do, restate each part of the question as you answer it).
+3. Again, do not use absolute path names for loading data files. Use relative paths. Absolute paths will cause you problems when you move your folders around! (not to mention slowing down the grading process)
 
 # Principles of displaying data
 
