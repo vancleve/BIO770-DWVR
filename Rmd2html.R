@@ -24,6 +24,7 @@ Rmd_files = list.files(pattern = "\\.rmd", ignore.case = TRUE, recursive = TRUE)
 ## quit if it finds errors or missing files
 html_with_errors = rmarkdown::html_document(self_contained = FALSE)
 html_with_errors$knitr$opts_chunk$error = TRUE
+html_with_errors$knitr$opts_chunk$R.options = list(max.print=200)
 
 for (rmd in Rmd_files) {
     ## render html files to current folder using custom html document

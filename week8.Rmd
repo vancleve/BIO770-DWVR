@@ -11,9 +11,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Outline for today
 
+- Reminders
 - Principles of displaying data
 - Modifying plot elements
 - Themes
+
+# Reminders
+
+1. Start thinking about data to use and plots to make for lightning talk. Feel free to e-mail me if you want to run your ideas by me.
+2. For the homework, label your answers clearly with the question number (or as some folks already do, restate each part of the question as you answer it).
 
 # Principles of displaying data
 
