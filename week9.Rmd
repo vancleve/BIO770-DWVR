@@ -1,0 +1,307 @@
+---
+title: 'Heat maps, countour maps, and colors'
+author: "Jeremy Van Cleve"
+output: html_document
+date: 26th October 2016
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Outline for today
+
+- A splash of color theory
+- Plotting 2D heat maps in `ggplot`
+- Saving plots
+
+# A splash of color theory
+
+Recall the table from the work of Cleveland and McGill on distinguishing graphical elements from most to least accurately distinguishable.
+
+|Rank | Graphical element |
+|-----+-------------------|
+| 1   | Positions on a common scale |
+| 2   | Positions on the same but nonaligned scales |
+| 3   | Lengths |
+| 4   | Angles, slopes |
+| 5   | Area |
+| 6   | Volume, color saturation |
+| 7   | Color hue |
+
+The last two items, color saturation (dark to light) and hue, are the only color items. Even though color can be the most difficult to distinguish, a well designed color map that takes advantage of how humans perceive color can be used to display data as accurately as possible.
+
+In order to really get a sense for how important color maps can be, take a look at the Mona Lisa using the standard color map in some software packages (e.g., MATLAB), "jet". Here is the "jet" color map
+```{r, message = FALSE}
+library(imager)
+
+jet.colors <-
+  colorRampPalette(c("#00007F", "blue", "#007FFF", "cyan",
+                     "#7FFF7F", "yellow", "#FF7F00", "red", "#7F0000"))
+image(1,1:100,matrix(1:100, nrow=1), col = jet.colors(100))
+```
+
+and the Mona Lisa using that color map
+```{r}
+graymona = as.matrix(grayscale(load.image("assets/mona-lisa_color.jpg")))
+image(graymona[,ncol(graymona):1], col = jet.colors(100))
+```
+
+If that doesn't make you nauseous, it should. Any guesses for what color map would be better? Grayscale, correct! Here is the grayscale color map
+```{r}
+image(1,1:100,matrix(1:100, nrow=1), col = gray.colors(100))
+```
+
+and the Mona Lisa with the grayscale color map
+```{r}
+image(graymona[,ncol(graymona):1], col = gray.colors(100))
+```
+
+Ok, so "jet" Mona is ugly and "gray" Mona is better, but how does this matter is "real-world" settings? Take the a study from Borkin et al. (2011) that employed different color maps in software cardiologists use to look for arteries that are at risk for disease formation. 
+
+![Figure 1 from Borkin et al. 2011 showsing "jet" (A) and more uniform colormap (B) for stress in an artery.](assets/borkin_etal_2011_fig1.png)
+
+The figure below shows that doctors over 50% better at finding high risk arteries with the better (i.e., not "jet") color map. The wrong colors can hurt!
+
+![Figure 7 from Borkin et al. 2011 showing the percent low stress (high risk) regions identified.](assets/borkin_etal_2011_fig7.png)
+
+## Picking a better colormap
+
+What criteria should you use to pick a better (i.e., "safer"!) color map? Here are some reasonable ones; the color map should
+
+1. Have colors and be pretty
+2. Accurately represents the data ("perpetually uniform")
+3. Print well in black and white
+4. Be accessible to colorblind viewers
+
+## Color theory
+
+Picking a better color map that is "perpetually uniform", which means that humans distinguish the colors in the same way the colors map to different numerical values, requires knowing a little bit about "color theory". Transforming data to something you see involves the following pathway:
+
+Data ——> RGB values ——> Monitor ——> Light ——> Retina ——> Brain
+
+1. Light ——> Retina
+
+    - Cone cells in the retina perceive color and come in three types with three absorption spectra (long/medium/short, LMS)
+
+    ![Figure 1.1A from Sharpe et al. (1999)](assets/sharpe_etal_1999_fig1.1a.png)
+
+    - However, light is a collection of photos on different wavelengths.
+    - A light source hitting the eye then produces a combination of LMS values. 
+    - Multiple light sources could produce the same LMS values in the retina!
+    - CIE XYZ maps the sensitivities of human eye to three axes
+    
+    ![CIE 1931 color space chromaticity diagram with wavelength in blue.](assets/cie_diagram.png)
+
+2. RGB values ——> Monitor
+
+    - Monitors display a subset of the above values.
+    
+3. Retina ——> Brain
+
+    - The brain processes colors differently depending on their context
+    
+    ![Is the dress white and gold or blue and black??? <https://en.wikipedia.org/wiki/The_dress>](assets/dress.png)
+    
+    - Luckily, folks interested in color have some nice color models that attempt to take into account these perceptual issues. This results in a sort of "color blob" or perceived colors. The vertical axis is dark to light, another axis is blue to yellow, and the last axis is red to green. It should be clear from the image below that some colors are perceived as "brighter" than others and the color model helps account for these kinds of effects.
+    
+    ![CIECAM02 color model](assets/color_blob.gif)
+    
+    - Using the above color model allows one to choose colors are equally distinguishable perceptually and these colors can then be used for adjacent numerical values in a color map.
+
+## Evaluating a few colormaps
+
+![Perceptual uniformity, grayscale, and colorblind simulation of jet colormap](assets/eval_jet.png)
+
+![Perceptual uniformity, grayscale, and colorblind simulation of grayscale colormap](assets/eval_gray.png)
+
+## Making the default colormap
+
+- To be colorblind friendly, use blue/yellow axis instead of red/green
+- To be grayscale friendly, use dark to light
+- Must be dark blue to light yellow  
+  (no variation in the blob in the light blue to dark yellow direction)
+
+## Viridis
+
+Through the work of some procrastinating graduate students (Stéfan van der Walt and Nathaniel Smith, <https://www.youtube.com/watch?v=xAoljeRJ3lU>) who use the programming language **Python**, a color map was created that satisfies the above criteria and is perceptually uniform. The color map is called **viridis**.
+
+- Latin for green
+- Also it could be named after *Dendroaspis viridis* (western green mamba)
+
+![](assets/dendroaspis_viridis.jpg)
+
+From the figure below, you can see that viridis is much better than jet and prettier than grayscale.
+
+![Perceptual uniformity, grayscale, and colorblind simulation of viridis colormap](assets/eval_viridis.png)
+
+Plotting Mona Lisa with viridis looks like this.
+```{r}
+library(viridis)
+
+image(graymona[,ncol(graymona):1], col = viridis(100))
+```
+
+The same folks who made viridis also made some other perceptually uniform color maps in case you need some additional options: "magma", "plasma", and "inferno".
+```{r}
+image(graymona[,ncol(graymona):1], col = magma(100))
+image(graymona[,ncol(graymona):1], col = plasma(100))
+image(graymona[,ncol(graymona):1], col = inferno(100))
+```
+
+# Plotting 2D heatmaps in `ggplot`
+
+Images are just one kind of 2D gridded color plot. More generally, you can plot two variables on an x-y grid and use color for third variable. 
+
+## Raster plots
+
+A grid of pixels, or a "raster" image, can be plotted with the `geom_raster()` function.
+
+```{r}
+library(readr)
+library(ggplot2)
+
+ggplot(faithfuld, aes(x = eruptions, y = waiting)) +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis() # viridis colormap
+  
+```
+
+The `faithfuld` data are used above, which are length of eruptions and waiting time until the next eruptions for the "Old Faithful" geyser in Yellowstone National Park. The `d` part of the data set indicates its an estimate of the probability density for each eruption length and waiting time combination.
+```{r}
+summary(faithfuld)
+
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis()
+```
+
+The pixelation above is natural due to the scale of the data, but you can smooth this by "interpolating" with the `interpolate` option.
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density), interpolate = TRUE) +
+  scale_fill_viridis()
+```
+
+If you don't want the squares to be of equal size or want to draw rectangles of any size, then you can use either `geom_tile()` or `geom_rect()`.
+
+## Adding contours
+
+You can also add a contour plot on top of the heat map. The `geom_contour()` function needs to know what the `z` variable or height is as well as the `x` and `y` variables.
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis() +
+  geom_contour(aes(z = density), color = "white")
+```
+
+The contours can be colored by their level as well.
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis() +
+  geom_contour(aes(z = density, color = ..level..)) +
+  scale_color_viridis(option = "magma")
+```
+
+Finally, you can specify contours at specific levels with the `breaks` option.
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis() +
+  geom_contour(aes(z = density), breaks=c(0.01, 0.02, 0.03))
+```
+
+## Histograms and density estimates
+
+The `faithfuld` data are kernel density estimates from a list of eruption times and waiting times
+```{r}
+head(faithful)
+```
+
+These data can be displayed with a 2D histogram using `geom_bin2d()`
+```{r}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  geom_bin2d() +
+  scale_fill_viridis()
+```
+
+or using possibly aesthetically more pleasing hexagonal bins with `geom_hex()`
+```{r}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  geom_hex() +
+  scale_fill_viridis()
+```
+
+Obtaining a kernel density estimate from these data can be done with the function `geom_density_2d()`, which produces contours by default.
+```{r}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  geom_density_2d() +
+  geom_point() +
+  scale_fill_viridis()
+```
+
+To get the full density values that you can plot like a heat map, you have to turn the contours off and then set the `geom` parameter of `stat_density_2d` to "raster".
+```{r}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  stat_density_2d(geom = "raster", aes(fill = ..density..), contour = FALSE) +
+  geom_point() +
+  scale_fill_viridis()
+```
+
+# Saving plots
+
+One of the most important things you will do with your plots is save them. In `ggplot2`, the function `ggsave()` will save the most recent plot to disk. The last name you give the fill determines the file type.
+```{r, eval=FALSE}
+ggsave("faithful.jpg")
+```
+
+You can also save a specific plot that you have saved.
+```{r, eval = FALSE}
+fp = ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density), interpolate = TRUE) +
+  scale_fill_viridis()
+
+ggsave("faithful.jpg", fp)
+```
+
+## Sizing plots
+
+The size of the figure will be taken from the size of the "device", which is technically means that it will have some default value. You can change this by specifying options to `ggsave()` such as
+
+- width, height: plot dimensions
+- scale: multiplicative scaling factor for plot size
+- dpi: resolution used for raster outputs
+
+## Vector vs raster graphics
+
+It should be clear by now that "raster" graphics are those that plot data as individual pixels. You can save your plots as "raster" data too, which simply means an image format like ".png" or ".jpg". This is great for heat maps and color gradients, but it can be awful for smooth line plots and fonts. In addition, raster formats can results in large file sizes if you need the figure to print at a large size.
+
+The solution to this is to use a "vector" graphics format such as ".pdf", ".eps", or ".svg". These formats save the curves as points and equations that are then drawn on screen. Thus, these plots can have a small file size while allowing one to continuously zoom into the plot. To see what a plot saved as ".pdf" looks like, save a contour plot.
+```{r, eval=FALSE}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  geom_density_2d() +
+  geom_point()
+
+ggsave("faithful.pdf")
+```
+
+One word of warning here is that saving a heat map as a ".pdf" may still result in a raster graphic since elements of the graphic cannot be produced as points and lines.
+
+# Lab ![](assets/beaker.png)
+
+### Problems
+
+1. Create a heat map of the "babak-etal-2015_imprinted-mouse_tidy.csv" data.
+    - Use a perceptually uniform color map
+    - Resize the figure so the tick labels are readable
+    - Add appropriate plot title and axes labels
+    - Save the figure as ".pdf" and **include the .pdf** in the **.zip** that you submit
+    
+2. Create a density plot using the "USPresPolls_538dotcom_26Oct2016.csv" data with the following characteristics:
+    - x-axis: endDate
+    - y-axis: difference between Hillary and Trump adj_pct for "now" polltypeA
+    - 2D heat map via a kernel density estimate
+    - Use a perceptually uniform color map
+    - Save the figure as ".pdf" and **include the .pdf** in the **.zip** that you submit
+    - Hint: you have seen how to wrangle the data this way in previous class sessions.
