@@ -166,21 +166,21 @@ In the previous examples, strings were matched directly and entirely; either the
 
 Like the quote characters and backslash, regex have special characters that are meant to represent something other than the character itself. The metacharacters are: '. \\ | ( [ { ^ $ * + ?'. To see how some of them work, you can use the function `str_view_all()`, which shows visually all places where a regex matches a string.
 
-- ".": match any character
+- `.`: match any character
     ```{r}
     str_view_all("some characters #*$#(", ".") #
     ```
-- "^": match at the beginning of the string
+- `^`: match at the beginning of the string
     ```{r}
     str_view_all(c("trump", "gingrich is a troll", "travesty"), "^tr")
     ```
-- "$": match at the end of the string
+- `$`: match at the end of the string
     ```{r}
     str_view_all(c("trump", "gingrich is a sycophant", "travesty"), "p$")
     ```
-- "|, []": creating alternatives and character classes; see below
-- "*, +, ?, {}": quantifiers; see below
-- "()": create "groups"; see below
+- `|`, `[]`: creating alternatives and character classes; see below
+- `*`, `+`, `?`, `{}`: quantifiers; see below
+- `()`: create "groups"; see below
 
 # Regex: character classes
 
@@ -200,7 +200,7 @@ str_view_all("we have to go back to our abc's to figure out what happened in 201
 
 Finally, there are some handy character classes that are built into regex. For example,
 
--  "\\d", "\\D", "\\s", "\\S", and "\\w" represent any decimal digit, not a digit, a space character, not a space character, and a ‘word’ character, respectively
+-  `\d`, `\D`, `\s`, `\S`, and `\w` represent any decimal digit, not a digit, a space character, not a space character, and a ‘word’ character, respectively
     ```{r}
     # we need the extra "\" so that the "\" is actually included in the string!
     str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\d") 
@@ -209,7 +209,7 @@ Finally, there are some handy character classes that are built into regex. For e
     str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\S")
     str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\w")
     ```
-- "\\b" and "\\B": matches the empty string at either edge of a word, or not at the edge of a word, respectively. The example below shows how this allows you to match the character "h" either at the edge of a word or within a word.
+- `\b` and `\B`: matches the empty string at either edge of a word, or not at the edge of a word, respectively. The example below shows how this allows you to match the character "h" either at the edge of a word or within a word.
     ```{r}
     str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\bh") 
     str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\Bh")
@@ -217,23 +217,23 @@ Finally, there are some handy character classes that are built into regex. For e
 
 Other built in character classes are specified with "[::]" or ranges such as [a-z]. Some of these include
 
-- "[:digit:]": same as "\\d" and [0-9].
-- "[:lower:]": lower-case letters, equivalent to [a-z].
-- "[:upper:]": upper-case letters, equivalent to [A-Z].
-- "[:alpha:]": alphabetic characters, equivalent to [A-z].
-- "[:alnum:]": alphanumeric characters, equivalent to [A-z0-9].
-- "[:blank:]": blank characters, i.e. space and tab.
-- "[:space:]": space characters: tab, newline, vertical tab, form feed, carriage return, space.
-- "[:punct:]": punctuation characters, ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [  ] ^ _ ` { | } ~.
+- `[:digit:]`: same as `\d` and [0-9].
+- `[:lower:]`: lower-case letters, equivalent to [a-z].
+- `[:upper:]`: upper-case letters, equivalent to [A-Z].
+- `[:alpha:]`: alphabetic characters, equivalent to [A-z].
+- `[:alnum:]`: alphanumeric characters, equivalent to [A-z0-9].
+- `[:blank:]`: blank characters, i.e. space and tab.
+- `[:space:]`: space characters: tab, newline, vertical tab, form feed, carriage return, space.
+- `[:punct:]`: punctuation characters, ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [  ] ^ _ ` { | } ~.
 
 # Regex: quantifiers
 
 One of the most important pieces of a regex pattern is a "quantifier" that denotes how many times each piece of the pattern show match. There are four basic quantifiers:
 
-- "*": match zero or more times
-- "+": match one or more times
-- "?": match zero or one times
-- "{n}", "{n,}", or "{n,m}": match n times, at least n times, or between n and m times.
+- `*`: match zero or more times
+- `+`: match one or more times
+- `?`: match zero or one times
+- `{n}`, `{n,}`, or `{n,m}`: match n times, at least n times, or between n and m times.
 
 ```{r}
 str_view("we have to go back to our abc's to figure out what happened in 2016!!!!", "!!+")
