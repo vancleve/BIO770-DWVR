@@ -120,10 +120,9 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 | 10   | 11/2            | Networks                                            |                                                                                   |
 | 11   | 11/9            | Text manipulation: regular expressions              |                                                                                   |
 | 12   | 11/16           | Work on your own data / figures                     |                                                                                   |
-| 13   | 11/16           | Work on your own data / figures                     |                                                                                   |
 |      | 11/23           | **No class**                                        | Thanksgiving Break                                                                |
-| 14   | 11/30           | Lighting talks                                      |                                                                                   |
-| 15   | 12/7            | Lighting talks                                      |                                                                                   |
+| 13   | 11/30           | Lighting talks                                      |                                                                                   |
+| 14   | 12/7            | Lighting talks                                      |                                                                                   |
 |      |                 |                                                     |                                                                                   |
 
 Course policies
