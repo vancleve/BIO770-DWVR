@@ -65,6 +65,7 @@ Each week will consist of a short introduction and interactive demonstration of 
 |                |     | Due by end of last day of class (12/7)    |
 
 The assessment portion of the course has three components. 
+
 1. Class attendance. 
 2. Completion of the lab component that we begin in class. This must be turned in as an R Markdown document. If there are datasets that are required for the analysis (other than datasets provided as part of the lab), these should be provided along with the R Markdown file by adding all the files to a single compressed `zip` file. The `Rmd` or `zip` file should then be uploaded to the Canvas course website: <https://uk.instructure.com/courses/1843807>.
 3. Lightning talk final presentation. The last two classes will be devoted to short four minute presentations of **three** figures that present data from a single dataset of your choice. The figures should be "publication quality" in terms of aesthetics (labeling, font size, colors, etc) but do not need a caption (that's what the talk is for!). The R Markdown source code and any necessary data files must be submitted to the Canvas website as a `zip` file; compiling the R Markdown file should produce the figures as they were presented during the lightning talk. If you want a challenge, you can even write your slides in R Markdown too!
