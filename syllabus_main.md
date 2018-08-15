@@ -1,4 +1,4 @@
-# BIO 770 – Data Wrangling and Visualization Using R – Fall 2016 #
+# BIO 770 – Data Wrangling and Visualization Using R – Fall 2018 #
 \setlength{\LTleft}{0pt}
 
 ![](assets/us_unemployment.png){ width=50% }\	
@@ -6,17 +6,17 @@
 # Course information #
 
 |                    |                                                               |
-|--------------------+---------------------------------------------------------------|
+|--------------------|---------------------------------------------------------------|
 | **Instructor**     | Dr. Jeremy Van Cleve                                          |
 | **E-mail**         | <jvancleve@uky.edu>                                           |
 | **Phone**          | (859) 218-3020                                                |
-| **Office**         | 105A MDR3                                                     |
+| **Office**         | 216 THM                                                       |
 | **Office hours**   | By appointment                                                |
 |                    |                                                               |
-| **Class Time**     | W 12 – 1 PM                                                   |
-| **Class Location** | ASB 231                                                       |
+| **Class Time**     | W 1 – 2 PM                                                   |
+| **Class Location** | JSB 103                                                       |
 | **Website**        | <https://github.com/vancleve/BIO770-DWVR> (github website)    |
-|                    | <https://uk.instructure.com/courses/1843807> (Canvas website) |
+|                    | <https://uk.instructure.com/courses/1918933> (Canvas website) |
 
 # Course description #
 
