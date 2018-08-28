@@ -11,11 +11,11 @@ syllabus.html: syllabus.md
 
 tex: syllabus.tex
 syllabus.tex: syllabus.md
-	$(PANDOC) syllabus.md --latex-engine=xelatex -V geometry:"margin=1in" -V fontsize:"10pt" -s -o syllabus.tex
+	$(PANDOC) syllabus.md --pdf-engine=xelatex -V geometry:"margin=1in" -V fontsize:"10pt" -s -o syllabus.tex
 
 pdf: syllabus.pdf
 syllabus.pdf: syllabus.md
-	$(PANDOC) syllabus.md --latex-engine=xelatex -V geometry:"margin=1in" -V fontsize:"10pt" -o syllabus.pdf
+	$(PANDOC) syllabus.md --pdf-engine=xelatex -V geometry:"margin=1in" -V fontsize:"10pt" -o syllabus.pdf
 
 syllabus.md: syllabus_main.md syllabus_classes.md syllabus_policies.md
 	cat syllabus_main.md syllabus_classes.md syllabus_policies.md > syllabus.md
