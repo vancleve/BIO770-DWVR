@@ -29,8 +29,9 @@ knitr::opts_chunk$set(echo = TRUE)
 If you haven't already, download R and R studio
 
 - To download R, go here: <https://mirrors.nics.utk.edu/cran/>
-- To download RStudio, go here <https://www.rstudio.com/products/rstudio/download/preview/>
-    - Note: this is the "preview version", which is preferable. The "preview version" includes something called an "R Notebook", which is basically a more interactive way to use R Markdown. I'll be using this during the class.
+- To download RStudio, go here <https://www.rstudio.com/products/rstudio/download/>  \
+  or here <https://www.rstudio.com/products/rstudio/download/preview/>
+  - Note: Either the regular or "preview version" is fine. The "preview version" includes some new features, so feel free to get it if you'd like to play with them.
 
 ## Installing
 
