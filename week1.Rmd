@@ -2,11 +2,8 @@
 title: 'BIO 770: Data Wrangling and Analysis Using R'
 author: "Jeremy Van Cleve"
 output: html_document
+date: 29th August 2018
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 # Outline for today
 
@@ -40,6 +37,13 @@ If you need directions, especially for how update your packages if you already h
 
 Otherwise, proceed with your installing normal if you haven't already.
 
+## Tidyverse
+
+Many of the packages that packages that we will use have been helpfully collected together into a metapackage called `tidyverse`. Install this first thing by typing the following at the console:
+```{r, eval=FALSE}
+install.packages("tidyverse")
+```
+
 ## Running RStudio
 
 ### What is RStudio?
@@ -53,6 +57,7 @@ RStudio is an Integrated Development Environment (IDE) for the R programming lan
 5. View help files (see "Help")
 6. Installing/updating R packages (see "Tools" menu)
 7. Debugging (see "Debug" menu)
+8. Projects (see "File" and "Tools")
 
 When using RStudio, I encourage you to:
 
@@ -63,6 +68,7 @@ When using RStudio, I encourage you to:
     - Command/Control+Enter (MAC/PC): Run selected lines
     - Shift+Command/Control+Enter: Run current "chunk" (R Notebook only)
     - etc
+3. Use a Project for all assignments in the course (save them in a single directory or its subdirectories).
 
 For example, to generate 10 random numbers between 0 and 1 we can easily run the following code:
  
@@ -73,12 +79,12 @@ runif(10)
 To make sure you can do run the above, you want to run the following code that installs R Markdown:
 
 ```{r eval=FALSE}
-install.packages("rmarkdown", dependencies = TRUE)
+install.packages("rmarkdown")
 ```
 
 For a cheatsheet on RStudio, go here:
 
-<https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf>
+<https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf>
 
 ## What is R?
 
@@ -124,7 +130,7 @@ First, this whole document is R Markdown, so you can quickly see examples of the
 - Links use angle brackets \<\>: <https://www.r-project.org/>
 - Links with different text use `[text](http://link.to.something)`
 - Images use `![](path.to.image)`
-- For more details, see [R Markdown cheat sheet](http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+- For more details, see [R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
 
 
 ## R Markdown: a way to mix text (Markdown) and R code (R)
@@ -141,14 +147,28 @@ Place code inline with a single back ticks. The first back tick must be followed
 
 You can control how the **chunks** work by adding options like `echo=FALSE` to hide the code when you create the HTML
 
-```{r echo=TRUE}
+```{r}
 runif(10)
 ```
+or you can add the option `eval=FALSE` so that the code isn't evaluated (see the `install.packages` lines in this `.Rmd`)
 
-You can do plots too. Let's do one whose "name" is "cool_plot" and is just a bunch (1000) of normally distributed numbers (mean=0, std=1):
+You can do plots too. Let's do one whose "name" is "cool_plot" (you can see the name in the `R Markdown` output, which is useful for debugging) and is just a bunch (1000) of normally distributed numbers (mean=0, std=1):
 
-```{r cool_plot, echo=TRUE}
+```{r cool_plot}
 plot(rnorm(1000, 0, 1))
+```
+
+Now, lets do something a little more interesting. We can pull in data from a website and plot it on the fly. For example, here are disapproval numbers for Donald Trump from <https://projects.fivethirtyeight.com/trump-approval-ratings/>:
+```{r message=FALSE}
+library(tidyverse)
+library(lubridate)
+
+dt = read_csv("https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv")
+dt$date = mdy(dt$modeldate)
+ggplot(data=dt, aes(x=date, y=disapprove_estimate)) + 
+  geom_ribbon(aes(ymin=disapprove_lo, ymax=disapprove_hi), fill = "grey70") + 
+  geom_point() + 
+  ylim(20,80)
 ```
 
 More about R Markdown can be found in the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
@@ -158,7 +178,11 @@ More about R Markdown can be found in the [R Markdown Reference Guide](https://w
 #### Write a paragraph about what kind of data you are thinking of analyzing and visualizing
 
 + Create your own R Markdown document.
-+ Use some Markdown elements to structure your document.
 + Give the document a title and author.
++ Use some Markdown elements to structure your document. Include the following:
+  - headings
+  - a link
+  - an image
+  - some bold or italic text
 + Make sure you can get proper HTML in RStudio.
 + Remember to upload the file with a ".Rmd" suffix to Canvas.

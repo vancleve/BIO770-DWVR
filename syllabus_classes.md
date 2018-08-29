@@ -12,14 +12,14 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 | 3    | 9/12            | Vectors, slicing, and map(ping)                     |                                                                                   |
 | 4    | 9/19            | Getting data into R with data.frames                |                                                                                   |
 | 5    | 9/26            | Tidy Data                                           |                                                                                   |
-| 6    | 10/3            | Introduction to plotting and `ggplot2`              |                                                                                   |
-| 7    | 10/10           | More `ggplot2`: plot types                          |                                                                                   |
-| 8    | 10/17           | Finessing plots in `ggplot2`                        |                                                                                   |
-| 9    | 10/24           | Heat maps, countour maps, and colors                |                                                                                   |
-| 10   | 10/31           | Networks                                            |                                                                                   |
-| 11   | 11/7            | Text manipulation: regular expressions              |                                                                                   |
-| 12   | 11/14           | Work on your own data / figures                     |                                                                                   |
+| 6    | 10/3            | Text manipulation: regular expressions              |                                                                                   |
+| 7    | 10/10           | Introduction to plotting and `ggplot2`              |                                                                                   |
+| 8    | 10/17           | Plot types in `ggplot2`                             |                                                                                   |
+| 9    | 10/24           | Principles of displaying data & how to modify plots |                                                                                   |
+| 10   | 10/31           | Colors and heat maps                                |                                                                                   |
+| 11   | 11/7            | Visualizing lots of data                            |                                                                                   |
+| 12   | 11/14           | Networks                                            |                                                                                   |
 |      | 11/21           | **No class**                                        | Thanksgiving Break                                                                |
 | 13   | 11/28           | Lighting talks                                      |                                                                                   |
 | 14   | 12/5            | Lighting talks                                      |                                                                                   |
-|      |                 |                                                     |                                                                                   |
+

@@ -1,7 +1,7 @@
 # BIO 770 – Data Wrangling and Visualization Using R – Fall 2018 #
 \setlength{\LTleft}{0pt}
 
-![](assets/us_unemployment.png){ width=50% }\	
+![](assets/clinton_lead_2016.png){ width=50% }\	
 
 # Course information #
 
@@ -31,9 +31,8 @@ analyzing and visualizing data. As R and other scripting languages
 become more popular, so do tools the tools required to document,
 maintain, share, and replicate analyses and visualization. These
 activities constitute the notions of "literate programming" and
-"reproducible research", and we will use some of these tools, which
-include [`markdown`](https://daringfireball.net/projects/markdown/),
-[`git`](https://git-scm.com/), and others.
+"reproducible research", and we will use some of these tools
+(particularly  [`R Markdown`](https://rmarkdown.rstudio.com/)).
 
 Prerequisites: None.
 
@@ -43,7 +42,7 @@ Prerequisites: None.
 2. Create [R Markdown](http://rmarkdown.rstudio.com/) documents that
    explain and reproduce analyses
 3. Wrangle and manipulate data by slicing matrices and by using the
-   `dplyr` and `tidyr` packages
+   `dplyr`, `tidyr`, and other `tidyverse` packages
 4. Plotting using the [`ggplot2`](http://ggplot2.org/) package
 5. Visualize multidimensional data using 2D/3D plots, networks,
    and other tools
@@ -96,9 +95,11 @@ The assessment portion of the course has three components.
 
 There are some recent books on data science and visualization (all written in `RMarkdown`!) that cover much of the material in the course.
 
+- Wickham, Hadley and Grolemund, Garrett. 2016. R for Data Science. O'Reilly. <http://r4ds.had.co.nz/>
 - Wilke, Claus O. 2018. Fundamentals of Data Visualization. <https://serialmentor.com/dataviz/>
 - Healy, Kieran. 2018. Data Visualization: A Practical Introduction. <http://socviz.co/>
 - Ismay, Chester and Kim, Albert Y. 2018. An Introduction to Statistical and Data Sciences via R. <https://moderndive.com/>
+- Silge, Julia and Robinson, David. 2018. Text Mining with R: A Tidy Approach. <https://www.tidytextmining.com/>
 
 The following are some popular books on R. PDFs are available for "check out" on the [Canvas website](https://uk.instructure.com/courses/1843807/modules) under "Modules: References".
 
@@ -110,7 +111,6 @@ The following are some popular books on R. PDFs are available for "check out" on
 - Zelterman, Daniel. 2015. Applied Multivariate Statistics with R. Springer
 - Phillips, Nathaniel. 2016. YaRrr! The Pirate’s Guide to R. <http://nathanieldphillips.com/thepiratesguidetor/>
 - Wickham, Hadley. 2016. ggplot2. Springer
-- Wickham, Hadley and Grolemund, Garrett. 2016. R for Data Science. O'Reilly. <http://r4ds.had.co.nz/> (no PDF but full book on website)
 
 ## Internet ##
 
@@ -118,7 +118,6 @@ The following are some popular books on R. PDFs are available for "check out" on
 - Try R (<http://tryr.codeschool.com/>). An interactive online R tutorial.
 - FlowingData (<http://flowingdata.com/>). Articles, examples, and tutorials on data visualization by Nathan Yau.
 - Other data visualization and wrangling courses:
-    - "Data Visualization" by Kieran Healy (Duke): <http://vissoc.co/>
     - "Visualizing Data" by Chris Adolph (UWashington): <http://faculty.washington.edu/cadolph/index.php?page=22>
     - "Data wrangling, exploration, and analysis with R" by Jenny Bryan (UBC): <http://stat545.com/>
 
@@ -135,17 +134,17 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 | 3    | 9/12            | Vectors, slicing, and map(ping)                     |                                                                                   |
 | 4    | 9/19            | Getting data into R with data.frames                |                                                                                   |
 | 5    | 9/26            | Tidy Data                                           |                                                                                   |
-| 6    | 10/3            | Introduction to plotting and `ggplot2`              |                                                                                   |
-| 7    | 10/10           | More `ggplot2`: plot types                          |                                                                                   |
-| 8    | 10/17           | Finessing plots in `ggplot2`                        |                                                                                   |
-| 9    | 10/24           | Heat maps, countour maps, and colors                |                                                                                   |
-| 10   | 10/31           | Networks                                            |                                                                                   |
-| 11   | 11/7            | Text manipulation: regular expressions              |                                                                                   |
-| 12   | 11/14           | Work on your own data / figures                     |                                                                                   |
+| 6    | 10/3            | Text manipulation: regular expressions              |                                                                                   |
+| 7    | 10/10           | Introduction to plotting and `ggplot2`              |                                                                                   |
+| 8    | 10/17           | Plot types in `ggplot2`                             |                                                                                   |
+| 9    | 10/24           | Principles of displaying data & how to modify plots |                                                                                   |
+| 10   | 10/31           | Colors and heat maps                                |                                                                                   |
+| 11   | 11/7            | Visualizing lots of data                            |                                                                                   |
+| 12   | 11/14           | Networks                                            |                                                                                   |
 |      | 11/21           | **No class**                                        | Thanksgiving Break                                                                |
 | 13   | 11/28           | Lighting talks                                      |                                                                                   |
 | 14   | 12/5            | Lighting talks                                      |                                                                                   |
-|      |                 |                                                     |                                                                                   |
+
 
 # Course policies #
 
