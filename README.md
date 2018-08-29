@@ -55,17 +55,18 @@ demonstration of the concepts and tools for that week followed a short
 lab where students apply the concepts and tools. There may be
 preliminary readings to do before class for some weeks (see “Topic
 schedule” below); please make sure to do those so that we make the most
-of time in class.
+of time in
+class.
 
 # Assessment
 
-|                |     |                                           |
-| -------------- | --- | ----------------------------------------- |
-| Attendance     | 20% | One absence permitted without penalty     |
-| Lab work       | 40% | Submitted as R Markdown before next class |
-|                |     | One missing lab permitted without penalty |
-| Lightning talk | 40% | 4 min presentation and source for figures |
-|                |     | Due by end of last day of class (12/7)    |
+|                |     |                                                |
+| -------------- | --- | ---------------------------------------------- |
+| Attendance     | 20% | One absence permitted without penalty          |
+| Lab work       | 40% | Submitted as R Markdown before next class      |
+|                |     | One missing lab permitted without penalty      |
+| Lightning talk | 40% | 4 min presentation and source for all analyses |
+|                |     | Due by end of last day of class (12/7)         |
 
 The assessment portion of the course has three components.
 
@@ -87,6 +88,25 @@ The assessment portion of the course has three components.
     compiling the R Markdown file should produce the figures as they
     were presented during the lightning talk. If you want a challenge,
     you can even write your slides in R Markdown too\!
+
+## Tips for making sure I can run your R code.
+
+  - Create a separate folder for each assignment and put the `.Rmd` and
+    all the necessary files (data files, images, etc) in that folder.
+  - Zip the contents of that folder (or the folder itself) and submit
+    that to Canvas.
+  - Use *relative* directories when pointing to files. Relative
+    directories begin simply the name of the file or subdirectory of the
+    current directory (I use relative directories in all the course
+    `.Rmd`). That is, avoid directories like
+    `C:\Documents\student\R\stuff\stuff.jpg` and instead simply put
+    `stuff.jpg` if its in the same directory as the `.Rmd`.
+  - Make sure your analyses run without errors and your `.Rmd` can be
+    knit into a `.html` file successfully by first typing
+    `rm(list=ls())` and then knitting the file. This will start your
+    workspace from scratch and is also a good way of preventing the
+    problem where an analysis worked when you closed R but now doesn’t
+    when you reopen it.
 
 # Getting help (i.e., uh, how do I…?)
 
@@ -114,6 +134,16 @@ The assessment portion of the course has three components.
 # Useful resources
 
 ## Books
+
+There are some recent books on data science and visualization (all
+written in `RMarkdown`\!) that cover much of the material in the course.
+
+  - Wilke, Claus O. 2018. Fundamentals of Data Visualization.
+    <https://serialmentor.com/dataviz/>
+  - Healy, Kieran. 2018. Data Visualization: A Practical Introduction.
+    <http://socviz.co/>
+  - Ismay, Chester and Kim, Albert Y. 2018. An Introduction to
+    Statistical and Data Sciences via R. <https://moderndive.com/>
 
 The following are some popular books on R. PDFs are available for “check
 out” on the [Canvas

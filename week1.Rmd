@@ -155,7 +155,7 @@ More about R Markdown can be found in the [R Markdown Reference Guide](https://w
 
 # Lab ![](assets/beaker.png)
 
-#### Write a few sentences about what kind of data you are thinking of analyzing and visualizing
+#### Write a paragraph about what kind of data you are thinking of analyzing and visualizing
 
 + Create your own R Markdown document.
 + Use some Markdown elements to structure your document.

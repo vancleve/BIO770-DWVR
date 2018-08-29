@@ -13,7 +13,7 @@
 | **Office**         | 216 THM                                                       |
 | **Office hours**   | By appointment                                                |
 |                    |                                                               |
-| **Class Time**     | W 1 – 2 PM                                                   |
+| **Class Time**     | W 1 – 2 PM                                                    |
 | **Class Location** | JSB 103                                                       |
 | **Website**        | <https://github.com/vancleve/BIO770-DWVR> (github website)    |
 |                    | <https://uk.instructure.com/courses/1918933> (Canvas website) |
@@ -56,19 +56,26 @@ Each week will consist of a short introduction and interactive demonstration of 
 
 # Assessment #
 
-|                |     |                                           |
-|----------------+-----+-------------------------------------------|
-| Attendance     | 20% | One absence permitted without penalty     |
-| Lab work       | 40% | Submitted as R Markdown before next class |
-|                |     | One missing lab permitted without penalty |
-| Lightning talk | 40% | 4 min presentation and source for figures |
-|                |     | Due by end of last day of class (12/7)    |
+|                |     |                                                |
+|----------------|-----|------------------------------------------------|
+| Attendance     | 20% | One absence permitted without penalty          |
+| Lab work       | 40% | Submitted as R Markdown before next class      |
+|                |     | One missing lab permitted without penalty      |
+| Lightning talk | 40% | 4 min presentation and source for all analyses |
+|                |     | Due by end of last day of class (12/7)         |
 
 The assessment portion of the course has three components. 
 
 1. Class attendance. 
 2. Completion of the lab component that we begin in class. This must be turned in as an R Markdown document. If there are datasets that are required for the analysis (other than datasets provided as part of the lab), these should be provided along with the R Markdown file by adding all the files to a single compressed `zip` file. The `Rmd` or `zip` file should then be uploaded to the Canvas course website: <https://uk.instructure.com/courses/1843807>.
 3. Lightning talk final presentation. The last two classes will be devoted to short four minute presentations of **three** figures that present data from a single dataset of your choice. The figures should be "publication quality" in terms of aesthetics (labeling, font size, colors, etc) but do not need a caption (that's what the talk is for!). The R Markdown source code and any necessary data files must be submitted to the Canvas website as a `zip` file; compiling the R Markdown file should produce the figures as they were presented during the lightning talk. If you want a challenge, you can even write your slides in R Markdown too!
+
+## Tips for making sure I can run your R code.
+
+- Create a separate folder for each assignment and put the `.Rmd` and all the necessary files (data files, images, etc) in that folder.
+- Zip the contents of that folder (or the folder itself) and submit that to Canvas.
+- Use *relative* directories when pointing to files. Relative directories begin simply the name of the file or subdirectory of the current directory (I use relative directories in all the course `.Rmd`). That is, avoid directories like `C:\Documents\student\R\stuff\stuff.jpg` and instead simply put `stuff.jpg` if its in the same directory as the `.Rmd`.
+- Make sure your analyses run without errors and your `.Rmd` can be knit into a `.html` file successfully by first typing `rm(list=ls())` and then knitting the file. This will start your workspace from scratch and is also a good way of preventing the problem where an analysis worked when you closed R but now doesn't when you reopen it.
 
 # Getting help (i.e., uh, how do I...?) #
 
@@ -86,6 +93,12 @@ The assessment portion of the course has three components.
 # Useful resources #
 
 ## Books ##
+
+There are some recent books on data science and visualization (all written in `RMarkdown`!) that cover much of the material in the course.
+
+- Wilke, Claus O. 2018. Fundamentals of Data Visualization. <https://serialmentor.com/dataviz/>
+- Healy, Kieran. 2018. Data Visualization: A Practical Introduction. <http://socviz.co/>
+- Ismay, Chester and Kim, Albert Y. 2018. An Introduction to Statistical and Data Sciences via R. <https://moderndive.com/>
 
 The following are some popular books on R. PDFs are available for "check out" on the [Canvas website](https://uk.instructure.com/courses/1843807/modules) under "Modules: References".
 
