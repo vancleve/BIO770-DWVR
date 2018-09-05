@@ -180,6 +180,7 @@ website](https://uk.instructure.com/courses/1843807/modules) under
         <http://faculty.washington.edu/cadolph/index.php?page=22>
       - “Data wrangling, exploration, and analysis with R” by Jenny
         Bryan (UBC): <http://stat545.com/>
+  - DataCamp interactive courses. <http://www.datacamp.com>
 
 # Topic schedule
 
