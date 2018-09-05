@@ -228,20 +228,51 @@ print(rvals)
 
 # Lab ![](assets/beaker.png)
 
-#### Write a function that plots a line with different levels of "noise"
+#### Write a function that plots a date slice of congressional polling data
 
-1. Use the following to create 100 points of "data". Note how we "named" each of the elements in our list ("x" and "y"). This will be important for much of what we do in R.
+1. Use the following code to import the data analysis libraries and the voter polling data from <https://projects.fivethirtyeight.com/congress-generic-ballot-polls/>. We'll select out the "Voter" subgroup since its most relevant (and some of the other data is odd, which you can see by plotting all of it).
 
-```{r}
-data = list(x = 1:100, y = 1:100 + runif(100, max = 10))
+```{r, message=FALSE}
+library(tidyverse)
+library(lubridate)
+
+congress = read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_topline.csv")
+congress$date = mdy(congress$modeldate)
+voters = filter(congress, subgroup=="Voters")
 ```
 
-2. Try plotting the data
+2. Try plotting the data `voters`
 
 ```{r}
-plot(data)
+plot(voters$date, voters$dem_estimate)
 ```
 
-3. Now, write a function that plots data with more or less "noise" by changing the argument given to the `runif`
+3. Write a function that has the following three arguments and plots the `voters` data between two dates:
+    (i) the data you want to plot
+    (ii) a beginning date
+    (iii) an ending date
+ 
+4. This function should plot the data **only** between the beginning and ending date. Thanks to the `lubridate` and `dplyr` packages, this isn't too hard. You can use the following code to get a "slice" of the date between two dates (e.g., "2018-01-01" and "2018-08-01"):
+```{r}
+my_slice = filter(voters, date > "2018-01-01" & date < "2018-08-01")
+```
+  Plotting this slice shows that it works.
+```{r}
+plot(my_slice$date, my_slice$dem_estimate)
+```
 
-4. If you're feeling adventurous, use a different random number distribution (like a normal distribution) and add parameters to control the shape of the noise added to the plot.
+This is the kind of plot that your function should produce when you run it. That is, if you run `my_function(voters, "2018-01-01", "2018-08-01")`, you will get the above plot.
+
+# Preview
+
+Once we get some more plotting and slicing under our belts, we'll be able to make the graph fancier so that it looks much closer to the [FiveThirtyEight](<https://projects.fivethirtyeight.com/congress-generic-ballot-polls/>) version.
+```{r, message=FALSE}
+congress = read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_topline.csv")
+congress$date = mdy(congress$modeldate)
+ggplot(data=filter(congress, subgroup=="Voters"), aes(x=date)) + 
+  geom_ribbon(aes(ymin=dem_lo, ymax=dem_hi), fill = "#008fd5", alpha=0.15) + 
+  geom_line(aes(y=dem_estimate), color="#008fd5") + 
+  geom_ribbon(aes(ymin=rep_lo, ymax=rep_hi), fill = "#ff2700", alpha=0.15) + 
+  geom_line(aes(y=rep_estimate), color="#ff2700") + 
+  ylim(20,60) + theme_bw()
+```
