@@ -48,7 +48,9 @@ install.packages("tidyverse")
 
 ### What is RStudio?
 
-RStudio is an Integrated Development Environment (IDE) for the R programming language. While you can write R code in any text editor you like and then run that code with the R interpreter, there are many things that an IDE can do that help you be more efficient when programming.
+RStudio is an Integrated Development Environment (IDE) for the R programming language. 
+
+While you can write R code in any text editor you like and then run that code with the R interpreter, there are many things that an IDE can do that help you be more efficient when programming.
 
 1. Syntax highlighting (e.g., see the markdown!)
 2. File/project organization (see "Files" pane)
