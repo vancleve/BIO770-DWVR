@@ -28,7 +28,7 @@ except you've specified that there are a certain number of rows and columns:
 matx = matrix(vec, nrow = 4, ncol = 4)
 matx
 ```
-Notice how the vector "filled" each column of the matrix. This is because R is a "column-major" language. Some languages, such as C and Python, and have row-major order.
+Notice how the vector "filled" each column of the matrix. This is because R is a "column-major" language (Fortran, MATLAB, and Julia are other column-major langauges). Some languages, such as C and Python, and have row-major order.
 
 Since you often deal with matrices and matrix-like objects, R has two functions to give you the number of rows and columns. Also, the length of the matrix is just the rows times the columns.
 ```{r}
@@ -42,7 +42,11 @@ Likewise, you can convert the vector to a 2x2 array:
 arr = array(vec, dim = c(4,4))
 arr
 ```
-Two-dimensional arrays are exactly the same as matrices. 
+Two-dimensional arrays are exactly the same as matrices:
+```{r}
+str(matx)
+str(arr)
+```
 
 In the above, the `dim` argument specifies the dimensionality of the array. Thus, you can convert the vector to a multidimensional array of 2x2x2x2 as well:
 ```{r}
@@ -67,7 +71,7 @@ You can also get a *"slice"* of the matrix by using the colon operator:
 ```{r}
 rmatx[2,1:5]
 ```
-yields the first five elements of the second row. Note that within the entry for the column element, you actually gave R a vector. Thus, you can give any list of indices in any order you choose. For example,
+yields the first five elements of the second row. Note that within the entry for the column element, you actually used a **vector for the index**. Thus, you can give any list of indices in any order you choose. For example,
 ```{r}
 rmatx[c(1,3,5,7,9),c(2,4,6,8,10)]
 ```
@@ -76,7 +80,8 @@ returns a slice of the matrix with only the odd rows and even columns. You can k
 rmatx[4,]
 ```
 
-In general, slicing an array involves giving a list of indices for each dimension of the array. The magic of data wrangling comes in the many creative ways one can create these lists of indices and thus the slices that contain exactly the subset of the data that you want.
+In general, slicing an array involves giving a list of indices for each dimension of the array.  
+**The magic of data wrangling comes in the many creative ways one can create these lists of indices and thus the slices that contain exactly the subset of the data that you want.**
 
 ## Slicing lists
 
@@ -116,7 +121,9 @@ x$a
     ```
     gives the even rows and even columns.
     
-- Logical vectors selects elements of the matrix where the index vector is TRUE. **This is one of the most useful ways to index.** If you want to get only the rolls of the die that were less than 10, then you create a matrix of logicals
+- Logical vectors selects elements of the matrix where the index vector is TRUE.  
+  **This is one of the most useful ways to index.**  
+  If you want to get only the rolls of the die that were less than 10, then you create a matrix of logicals
     ```{r}
     rmatx < 10
     ```
@@ -124,9 +131,13 @@ x$a
     ```{r}
     rmatx[rmatx < 10]
     ```
-    Notice here that you get a vector back, not a matrix. This is because when you give a single index to a matrix, it treats the matrix like a vector with the first column first, then the second column, etc. It also makes sense that you don't get a matrix back since the "< 10" condition could be met anywhere any number of times in the matrix (no guarantee that the result would be square like a matrix).
+    Notice here that you get a vector back, not a matrix. This is because when you give a single index to a matrix, it treats the matrix like a vector with the first column first, then the second column, etc (i.e., column-major order). It also makes sense that you don't get a matrix back since the "< 10" condition could be met anywhere any number of times in the matrix (i.e., no guarantee that the result would be square like a matrix).
     
-    You could also just slice rows based on columns. For example, to get all rows with a fourth column whose roll is less than 10.
+    You could also just slice rows based on columns (or vice versa). This is the kind of slicing we'll often do on a data table since we will want all rows (say, results from different experiments) who column (say, factor in the experiment) matches a certain condition. For example, suppose we want to get all rows of the matrix `rmatx` with a fourth column whose roll is less than 10. We first slice the fourth column with `rmatx[,4]` and then compare it to 10,
+    ```{r}
+    rmatx[,4] < 10
+    ```
+    Note that we get a vector of boolean values indicating whether the element in that row of the fourth column is less than 10. To get only those rows of the matrix `rmatx`, we then use this vector to slice the matrix:
     ```{r}
     rmatx[rmatx[,4] < 10,]
     ```
@@ -139,54 +150,65 @@ In R, there are actually many `apply` functions since there are different types 
 ```{r}
 ??base::apply
 ```
-searches for all functions with "apply" in the description in the "base" package. The easiest one to start with is `sapply`, which applies a function to each element of a vector or list and returns the output as a vector or matrix if possible. For example, you could sum each vector in the list you created above.
+searches for all functions with "apply" in the description in the "base" package. 
+
+If you have a list, the easiest apply functin is `sapply`, which applies a function to each element of a vector or list and returns the output as a vector or matrix if possible. For example, you could sum each vector in the list you created above using the `sum` function.
 ```{r}
-str(sapply(x, sum))
+x
+sapply(x, sum)
 ```
 Note that `sapply` gave you back a vector but with each element named according to the names of the list elements (handy!). 
 
-If you want to use apply over a matrix, the `apply` function is required. The number of die rolls less than 10 in each row of your die roll matrix would then be
+If you want to use apply over a matrix, the `apply` function is required. To add all the elements in each row (dimension 1) or column (dimension 2) of the matrix `matx`, you can try
 ```{r}
+matx
+apply(matx, 1, sum)
+```
+However, you can do more complicated things by making custom functions and "applying" them. For example, in order to get the number of die rolls less than 10 in each row of your die roll matrix, you could try
+```{r}
+rmatx
 apply(rmatx, 1, function(x) sum(x < 10))
 ```
-where you actually have a small "anonymous" (unnamed) function here that gets a logical vector for each row, TRUE for > 10 and FALSE for <= 10, and sums that vector (TRUE = 1 and FALSE = 0).
+where you have a small "anonymous" (unnamed) function here that gets a logical vector for each row, TRUE for > 10 and FALSE for <= 10, and sums that vector (TRUE = 1 and FALSE = 0).
 
 # Lab ![](assets/beaker.png)
 
-Now let's slice some real DATA. The following blog post and Rmd file  
-<https://www.r-statistics.com/2016/08/presidential-election-predictions-2016/>  
-<https://github.com/hardin47/prediction2016/blob/master/predblog.Rmd>  
-describe how to get national polling data from the site <http://www.fivethirtyeight.com/> for the purpose of a competition run by the American Statistical Association. Using the methods there, you can get those data by downloading the files `USPresPolls_538dotcom_07Sep2016_D.csv` and `USPresPolls_538dotcom_07Sep2016_R.csv` from the course github site and importing them:
-```{r}
-dpolls = read.csv("USPresPolls_538dotcom_07Sep2016_D.csv", as.is = TRUE)
-rpolls = read.csv("USPresPolls_538dotcom_07Sep2016_R.csv", as.is = TRUE)
+Now let's slice some real **DATA**. We'll return to the congressional polling data from <http://projects.fivethirtyeight.com/congress-generic-ballot-polls>. Below we load the data and add a column (which you should recognize now as being really an element of a list!) for a properly formatted start and end dates (dates of the poll). Finally, we select the polls up through the end of August.
+```{r, message=FALSE}
+library(tidyverse)
+library(lubridate)
+
+congress = read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv")
+congress$startdate = mdy(congress$startdate)
+congress$enddate = mdy(congress$enddate)
+
+polls = congress[congress$enddate < "2018-09-01",]
 ```
 
-Let's see what these data are.
-```{r}
-str(dpolls)
-```
 You can get the first few rows with
-```{r, eval=FALSE}
-head(dpolls)
+```{r}
+head(polls)
 ```
 or the last few rows with
-```{r, eval=FALSE}
-tail(dpolls)
+```{r}
+tail(congress)
 ```
 
 The data are saved as a `data.frame`, which is a special kind of list that we will discuss in more detail next week. For the moment, you can practice slicing the data.frame as if it were a matrix. 
 
-Keep in mind that each row is a different poll (i.e., a poll by some agency at a specific date) that measures the support for the Democratic candidate (Clinton, "_D" file) or the Republication candidate (Trump, "_R" file) under the fivethirtyeight.com "now-case" model that tries to predict "who would win an election today".
+Keep in mind that each row is a different poll (i.e., a poll by some agency during a specific period) that measures the support for Democrats (`dem`) or Republicans (`rep`) in the 2018 midterm elections.
 
 ### Problems
 
-Load the `.csv` file and show the R code in your `.Rmd` file for each of the following problems.
+Load the `.csv` file using the code above (which selects polls through the end of August) and show the R code in your `.Rmd` file for each of the following problems. You should be able to use a few lines of R code to obtain the answer directly (i.e., you shouldn't just scroll though the data table and give the answer by hand).
 
 1. How many polls have a sample size greater than 1000? (hint: slice rows based on columns)
 
-2. Which pollster has the largest sample size? (hint: use the `max` function and slice the rows with that value)
+2. Which pollster has the largest sample size? (hint: use the `max` function and slice the rows with that value. hint: add `na.rm=TRUE` as an argument to `max`)
 
-3. How many polls show Hillary with more than 40% of the vote if people voted today? (use the "adj_pct" column, which is the fivethirtyeight.com "now-cast" prediction)
+3. Which pollster **did not** provide a sample size for one of its polls? This is the poll you avoided in the above question with the `na.rm=TRUE` argument.  
+    Hint: R puts a special data value called `NA` in places where there is missing data. To find such values, use the `is.na` function.
 
-4. How many polls show Hillary leading Trump? (hint: comparing vectors and matrices is just like comparing numbers: use >, <, etc)
+4. How many polls show the "adjusted_dem" (fivethirtyeight's adjustment of the poll result based on lots of stuff) to be less than "adjusted_rep"? 
+
+5. Which poll shows the greatest split between the adjusted values in favor of the Republicans?
