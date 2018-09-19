@@ -2,12 +2,8 @@
 title: 'Getting data into R with data.frames'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 14th September 2016
+date: 19th September 2018
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 # Outline for today
 
@@ -72,7 +68,7 @@ You can reverse the sort order by setting the argument `decreasing = TRUE`.
 
 ### Sorting
 
-Often, you will want to sort not only a vector by the rows of a data matrix based on some column of the matrix. Thus, you need the list of positions each row will go to (e.g., row 1 to row 10, etc). To obtain this, you can use the `order` function
+Often, you will want to sort not only a vector by the rows of a data matrix based on some column of the matrix. Thus, you need the list of positions each row will go to (e.g., row 1 to row 10 because its 10th in the sorted order, etc). To obtain this, you can use the `order` function
 ```{r}
 order(svec)
 ```
@@ -81,8 +77,9 @@ which output precisely that list of indices. If you stick these indices back int
 svec[ order(svec) ]
 sort(svec)
 ```
-If you have a matrix of random values, 
+You can also use the "sort order" of one column to order the rows of a whole matrix or data table. For example, using a matrix of random values, 
 ```{r}
+set.seed(42)
 rmatx = matrix(sample(1:20, 36, replace = TRUE), nrow = 6, ncol = 6)
 rmatx
 ```
@@ -118,6 +115,7 @@ To give a vector names, simply assign the name when creating the vector
 ```{r}
 named_svec = c(s1 = "hello", s2 = "world", s3 = "goodbye", s4 = "grand", s5 = "planet")
 named_svec
+str(named_svec)
 ```
 and you can recover those names with the `names` function
 ```{r}
@@ -132,17 +130,27 @@ Finally, you can return a version of the vector with the names stripped using th
 ```{r}
 unname(named_svec)
 ```
-or get rid of them entirely by assigning `names` to `NULL`
+though note that this hasn't changed the original vector:
+```{r}
+named_svec
+```
+Finally, you can get rid of the names entirely by assigning `names` to `NULL`
 ```{r}
 names(named_svec) = NULL
-svec
+named_svec
 ```
+Just as reminder, while we can name elements of vectors, they still have to hold the same data type, unlike lists that can hold anything.
+```{r}
+str(list(a=1, b="two"))
+str(c(a=1, b="two"))
+```
+
 
 # Factors
 
 A special object that you will see when dealing with data frames is called a "factor". A factor is a vector that can contain only predefined values and essentially stores categorical data (e.g., "tall", "medium", and "short" for plant height). Factors have a "levels" attribute that lists the allowable values. For example
 ```{r}
-fac_factor = factor(c("Van Cleve", "Seifert", "Linnen", "Weisrock", "Smith", "Santollo"))
+fac_factor = factor(c("Famulski", "Van Cleve", "Seifert", "Santollo", "Duncan", "Schneider"))
 fac_factor
 ```
 If you try to set an element of the factor object to a value outside of `levels`, you will receive a warning
@@ -154,11 +162,13 @@ and the element will be converted to the `NA` value, which is used for missing d
 
 Many R functions that read data tables take advantage of this behavior of factors so that columns may only contain certain values and the other values are missing data. This occurs when the function runs into a column with string data and the R function will often convert that column to a factor. Some of the functions that read data tables have nice arguments that let you tell them that specific strings, say "-", represent missing data and should be be converted to `NA`. 
 
+While useful, factors are extremely annoying when your data are converted to them when you don't expect it: <https://simplystatistics.org/2015/07/24/stringsasfactors-an-unauthorized-biography/>.
+
 # Data frames
 
-Finally we have reached data frames. Data frames are the most common way of storing data in R. Essentially, a data frame is a list object containing vectors of equal length (i.e., the number of rows of the table). Thus, data frames have properties such as `length()`, `rnow()`, `ncol()` `colnames()`, and `rownames()`.
+Finally we have reached data frames. Data frames are the **most common way of storing data in R**. Essentially, a data frame is a list object containing vectors of equal length (i.e., the number of rows of the table). Put another way, a data frame is a `list` version of a matrix. Thus, data frames have properties such as `length()`, `rnow()`, `ncol()` `colnames()`, and `rownames()`.
 
-Creating a data frame is like creating a list:
+Creating a data frame is like creating a list where you name your elements, which here are columns (data not guaranteed to be accurate...):
 ```{r}
 dframe = data.frame(height_rank = 1:4, last_name = c("Van Cleve", "Linnen", "Seifert", "Pendergast"), first_name = c("Jeremy", "Catherine", "Ashley", "Julie"))
 dframe
@@ -169,67 +179,69 @@ dframe$first_name
 dframe$last_name
 ```
 
-Adding columns to a data frame is done with `cbind` (column bind)
+Adding columns to a data frame is done with `cbind` (column bind), which glues together columns,
 ```{r}
 cbind(dframe, building = c("MDR3", "THM", "THM", "THM"))
 ```
-and adding rows with `rbind`
+and adding rows with `rbind`, which glues together rows,
 ```{r}
 rbind(dframe, data.frame(height_rank = 0, last_name = "Smith", first_name = "Jeramiah"))
+```
+Again, note that each of these commands returned a **new** `data.frame` and the original is unchanged until we explicitly save back to that variable name:
+```{r}
+dframe
 ```
 
 # Reading data tables
 
-Now that you know about data frames, you can start using some nice R functions to read in data. You have already done this with the polling data from last week. Before loading in these data, obtain the following packages (they are nice for reading csv and excel files)
-```{r, eval = FALSE}
-install.packages("readr")
-install.packages("readxl")
-```
-and load them
+Now that you know about data frames, you can start using some nice R functions to read in data. You have already done this with data from the homework from last week. Before loading in these data, load the following packages (they are nice for reading csv and excel files)
 ```{r}
-library(readr)
-library(readxl)
+library(tidyverse) # loads the `readr` package that loads things like csv files
+library(readxl) # package for reading Excel files
 ```
 
-Now, you can use the `read_csv` function to get the data table. Instead of loading the two separate tables from last week, load the single master table that generated each of the those prior tables:
+Now, you can use the `read_csv` function to get the data table from last week.
 ```{r}
-polls = read_csv("USPresPolls_538dotcom_07Sep2016.csv")
+congress = read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv")
 ```
-Notice that `read_csv` gives you some nice output telling us about the table you just read. This master table has the polling data for both Hillary and Trump. To see this, check out the "party" and "choice" columns:
-```{r}
-str(polls$party)
-str(polls$choice)
-```
+Notice that `read_csv` gives you some nice output telling us about the table you just read. This function and others like it (i.e., from the `readr` and `readxl` packages) do a lot for you automatically and have many nice features, some of which we'll cover later.
 
-Finally, loading excel files in no harder. To load some data from a RNA-seq paper on genomic imprinting (Babak et al. 2015. Nat Gen, <http://dx.doi.org/10.1038/ng.3274>), get the `babak-etal-2015_imprinted-mouse.xlsx` file and load it with `read_excel`
+Loading excel files in no harder. We'll load some data from a RNA-seq paper on genomic imprinting (Babak et al. 2015. Nat Gen, <http://dx.doi.org/10.1038/ng.3274>), `babak-etal-2015_imprinted-mouse.xlsx`, with `read_excel`
 ```{r}
 imprint = read_excel("babak-etal-2015_imprinted-mouse.xlsx", na = "NaN")
 ```
-Note that you have to tell the function what strings correspond to `NA` ("NaN" in this case). The first column are the gene names for each row
+Note that you have to tell the function what strings in the Excel spreadsheet correspond to `NA` or missing data ("NaN" in this case). The first column are the gene names for each row
 ```{r}
 imprint$Genes
 ```
 and the column names are the tissue type that RNA expression was measured in
 ```{r}
-colnames(imprint)[-1]
+colnames(imprint)
 ```
-where the first element is dropped because it is the column name of the "Genes" column. You will manipulate these data later when we talk about tidy data and `dplyr`.
+where the first element is the column name of the "Genes" column. You will manipulate these data later when we talk about tidy data and `dplyr`.
 
 # Lab ![](assets/beaker.png)
 
-Now that you have all the essential elements of slicing (more elements require specialized functions in packages like `dplyr`), you can do more sophisticated things with the polling data.
+Now that you have all the essential elements of slicing (more elements require specialized functions in packages like `dplyr`), you can do more sophisticated things with the polling data from last week, which you should load like this:
+```{r}
+library(lubridate)
+
+congress = read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv")
+congress$startdate = mdy(congress$startdate)
+congress$enddate = mdy(congress$enddate)
+
+polls = congress[congress$enddate < "2018-09-01",]
+```
 
 ### Problems
-
-1. The polling data from last week was separated into two files, one for Hillary and one for Trump, and each file only contained data for the "now" poll type, which is one of the predictive models that the website [FiveThirtyEight](http://fivethirtyeight.com/features/a-users-guide-to-fivethirtyeights-2016-general-election-forecast/) uses to "adjust" the polling data. 
-
-    Create a slice of the `polls` data frame that only contains rows with results for Hillary and for the polling model "now". This should be exactly the data in the file `USPresPolls_538dotcom_07Sep2016_D.csv`. Do the same thing for results for Trump and the "now" polling model. Save both slices for later use. Hint: use the "&" operator to combine logical statements.
     
-2. Sort the Hillary data from Problem 1 according to the name of the pollster.
+1. Sort the whole `polls` data frame according to the name of the pollster.
 
-3. Sort the Hillary and Trump data from Problem 1 according to the "end date"", earliest to latest.
+2. Sort the `polls` data frame according to the "samplesize", **highest to lowest.**
 
-4. Plot the margin between Hillary and Trump percentages (use the column "adj_pct") with the polls sorted according to "end date"", earliest to latest.
+3. Suppose now that you would like to know how the "grade" of the polls, which is how fivethirtyeight.com labels the accuracy and reliability of a poll, relates to the sample size. Naively, you could just try to plot using the `plot` function `plot(x,y)` where `x` is the grade of the polls and `y` is the sample size. What happens when you try this?
+
+4. Assuming that the previous "naive" solution didn't work, think about what kind of R data type (hint: introduced this week) might be appropriate for working with data like `polls$grade`. You can actually convert `polls$grade` to this data type with `as.X` where `X` is the data type you think is the right one. Try now plotting with `plot(x,y)` where `x` is this converted grade column and `y` is the sample size column. R should do something very helpful here that helps you figure out how grade and sample size are related. How are they related???
 
 * Challenge problem (+3 extra credit)
 
