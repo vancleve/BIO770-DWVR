@@ -2,7 +2,7 @@
 title: 'Tidy Data'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 21th September 2016
+date: 25th September 2018
 ---
 
 ```{r setup, include=FALSE}
@@ -30,8 +30,8 @@ Hadley Wickham points out the nice connection between the above quote and data f
     Phase 2. The input and formatting of data into your analysis tool (e.g., R). This might involve minimal changing of the "format" or a great deal of reshaping of the data.
     
 Working backward, you do the least work on data formatting if you choose to save your data initially in a format that is easiest to analyze with R. Since we will use the graphing package, `ggplot2`, by Hadley Wickham, we will use the data format, **tidy data**, that he advocates. To get a sense for what his format is and why it might be useful, consider some different ways to organize data on tuberculosis (TB) cases where you have three variables, *country*, *year*, and *population*, for each measurement of *cases*. First, each variable including *cases* could have its own column:
-```{r}
-library(tidyr)
+```{r, message=FALSE}
+library(tidyverse)
 table1
 ```
 Here, each row represents one time you measured the TB cases. Alternatively, you could have each row represent a country with columns for different years. This means you need a table that measures the *cases* and one that measures the *population*:
@@ -40,7 +40,7 @@ table4a # cases
 table4b # population
 ```
 
-The latter format is actually the way we formatted the polling data from week 3 where we had one table for Hillary polls and one for Trump polls. The former format is the one we had for week 4 where a single table had both Hillary and Trump data. To see why the latter format might get cumbersome, suppose that we had polling data for all the candidates from the 2016 Republican primary, which started with 17 candidates (!). Using the latter format, we would need 17 tables to contain all the data, and would have to juggle between them as we compared polls between different candidates. With the first format, we can include all the candidates in a single table. The first format is the **tidy** format. 
+To see why the this format might get cumbersome, you just have to suppose you want to add more variables: each new variable requires a new table. Moreover, if you are interested in just one variable and how it changes across country and year, you are fine. But if you want to look across variables, say correlate population and caseload over time, then you have to slice two different tables. If you want to manipulate three variables, then you have to manipulate three different tables, etc. With the first format, we can include all the variables in a single table. The first format is the **tidy** format. 
 
 # One format to rule them all: tidy data
 
@@ -55,19 +55,14 @@ Visually, this looks like
 
 The primary benefit of tidy data is that every variable is a vector (column), which means that slicing data is just slicing columns. Though this may become complicated when the number of variables is large, there are some helper functions that will make slicing tidy data much easier. The slicing functions come from the package `dplyr` and the plotting package `ggplot2` assumes tidy data.
 
-To give a flavor of the power of tidy data and `ggplot2`, you can easily (once you know more about ggplot2 and dplyr!) plot the polling data for Clinton and Trump (note that we are using 'up-to-date' date) on the same figure:
-```{r}
-library(readr)
-library(ggplot2)
+To give a flavor of the power of tidy data and `ggplot2`, you can easily (once you know more about ggplot2 and dplyr!) lots of data. For example, the "GWAS Catalog" keeps track of the SNPs associated with traits in GWAS studies. We can download these data, take a reasonable subset to play with (the 40 diseases with the most SNPS), and plot some things. For example, here are SNPs associated with colon cancer and prostate cancer:
+```{r, message=FALSE}
+# https://www.ebi.ac.uk/gwas/docs/file-downloads
+# we'll load a subset of these data; namely, the 40 diseases with the most SNPs in the database
 
-polls = read_csv("USPresPolls_538dotcom_21Sep2016.csv")
-
-ggplot(subset(polls, ((polltypeA == "now") & (endDate > "2016-08-01"))), 
-                         aes(y=adj_pct, x=endDate, group=choice, color=choice)) + 
-  geom_point() + geom_line() +
-  labs(title = "Vote percentage by date\n", 
-     y = "Percent Vote if Election Today", x = "Poll Date", 
-     color = "Candidate")
+gwas = read_tsv("gwas_catalog_v1.0.2-associations_e93_r2018-09-18_top40.tsv")
+filter(gwas, `DISEASE/TRAIT` == 'Prostate cancer' | `DISEASE/TRAIT` == "Colorectal cancer" | `DISEASE/TRAIT` == "Breast cancer") %>% 
+  ggplot(aes(x=CHR_POS)) + geom_point(aes(y=PVALUE_MLOG, color=`DISEASE/TRAIT`))
 ```
 
 # Making tidy data
@@ -92,7 +87,9 @@ table4b
 ```
 The problem with `table4a` and `table4b` is that the variable *year* is spread across multiple columns. Thus, you need to `gather` it together. The columns `1999` and `2000` will be gathered as values of the variable *year*, which is called the `key`. The first table contains the number of cases
 ```{r}
-# note that backticks `` here. we need them since the column names start with a number.
+# note that backticks `` here. we need them since the column names start with a number 
+# (i.e, this allows us to break normal R naming rulues!).
+
 tidy4a = gather(table4a, `1999`, `2000`, key = "year", value = "cases") 
 tidy4a
 ```
@@ -103,7 +100,6 @@ tidy4b
 ```
 To join these two results together, you use the function `left_join`
 ```{r}
-library(dplyr)
 left_join(tidy4a, tidy4b)
 ```
 which is the same as the first table (rows are sorted differently though)
@@ -118,7 +114,7 @@ The following table is *untidy*
 ```{r}
 table2
 ```
-because observations (i.e, every year) are spread across multiple rows. To tidy it, identify the column that names the variables, which in this case is `type`, and then the column with the values, which is `count:
+because observations (i.e, every year) are spread across multiple rows. To tidy it, identify the column that names the variables, which in this case is `type`, and then the column with the values, which is `count`:
 ```{r}
 spread(table2, key = type, value = count)
 ```
@@ -136,73 +132,88 @@ To read more about these, see Chapter 12 in "R for Data Science" (<http://r4ds.h
 
 Now that you have made your data tidy, you probably want to slice and dice it. The `dplyr` package has handy functions for doing just this. Generally, `dplyr` is useful for doing the following five things
 
-1. Pick observations by their values (`filter()`).
+1. Pick observations (i.e., rows) by their values for specific variables: **`filter()`**.
 2. Reorder the rows (`arrange()`).
-3. Pick variables by their names (`select()`).
-4. Create new variables with functions of existing variables (`mutate()`).
-5. Collapse many values down to a single summary (`summarise()`).
+3. Pick variables (i.e., columns) by their names: **`select()`**.
+4. Create new variables with functions of existing variables: **`mutate()`**.
+5. Collapse many values down to a single summary: **`summarise()`**.
 
 Each of the functions above works in a similar way.
 
-- The first argument is the data frame (*tidy* of course)
-- The subsequent arguments describe what to do with the data frame. You can refer to columns in the data frame directly without using $.
+- The first argument is the data frame (in a *tidy* format of course)
+- The subsequent arguments describe what to do with the data frame. You can refer to columns in the data frame directly without using `$`.
 - The result is a new data frame.
 
-The polling data you loaded above will be handy here to demonstrate each of the five tasks.
+We'll use the GWAS data you loaded above to demonstrate each of the five tasks.
 
 ## Filtering rows with `filter()`
 
-Your last assignment included slicing the polling data to include only the Hillary rows from the "now" model. You can do this with `filter`
+Let's look at the GWAS data with `glimpse` (which is from `tidyverse`). 
 ```{r}
-filter(polls, choice == "Clinton", polltypeA == "now")
+glimpse(gwas)
+```
+Each observation (row) is a SNP from a GWAS study and we information on its location, the disease/trait associated, etc. Let's filter just SNPs for colorectal cancer
+```{r}
+filter(gwas, `DISEASE/TRAIT` == 'Colorectal cancer')
+```
+We could apply another filter by just adding an argument, such as having a -log(p-value) (higher values of this mean more significant!) of greater than 10
+```{r}
+filter(gwas, `DISEASE/TRAIT` == 'Colorectal cancer', PVALUE_MLOG > 10)
 ```
 Note that `filter` combines consecutive arguments using the "&". You could equivalently give a single argument with the "&" to get the same slice
 ```{r}
-filter(polls, choice == "Clinton" & polltypeA == "now")
+filter(gwas, `DISEASE/TRAIT` == 'Colorectal cancer' & PVALUE_MLOG > 10)
 ```
 
 ## Arrange rows with `arrange()`
 
-The function `arrange` just sorts the rows based on the columns you specify. For example, to sort the polls by the `endDate`,
+The function `arrange` just sorts the rows based on the columns you specify. For example, to sort the colorectal cancer SNPs by `CHR_POS` (position on the chromosome),
 ```{r}
-arrange(polls, endDate)
+colocancer = filter(gwas, `DISEASE/TRAIT` == 'Colorectal cancer')
+arrange(colocancer, CHR_POS)$CHR_POS
 ```
 and use `desc` to make the sort a descending one,
 ```{r}
-arrange(polls, desc(endDate))
+arrange(colocancer, desc(CHR_POS))$CHR_POS
 ```
 
 ## Select columns with select()
 
-The `select` function simple selects specific columns (i.e., variables). To get only the candidate, `adj_pct` (adjusted percentage), candidate, and poll end date, 
+The `select` function simple selects specific columns (i.e., variables). To get only the disease, chromosome position, and -log(p-value) from the full data,
 ```{r}
-select(polls, choice, endDate, adj_pct)
+select(gwas, `DISEASE/TRAIT`, CHR_POS, PVALUE_MLOG)
 ```
 
 ## Add new variables with mutate()
 
-You may want to add new variables that are functions of other variables. For example, you could create a column that measures how much the adjusted percentage differs from the raw polling value:
+You may want to add new variables that are functions of other variables. For example, you could create a column for the p-value from the `PVALUE_MLOG` (there is already one in the table, but we'll make another)
 ```{r}
-sm_polls = select(polls, choice, endDate, pct, adj_pct) # just get a small set of columns 
-mutate(sm_polls, pct_diff = pct - adj_pct)
+sm_gwas = select(gwas, `DISEASE/TRAIT`, CHR_POS, PVALUE_MLOG, `P-VALUE`)
+mutate(sm_gwas, new_p_value = 10^(-PVALUE_MLOG))
 ```
 
 ## Summaries with `summarise()`
 
 The function `summarise` (damn British spelling, though the American one works too apparently) collapses the data frame to a single row:
 ```{r}
-summarize(polls, mean_pct = mean(pct)) # see, America!!!
+summarize(gwas, mean_mlog_p_value = mean(PVALUE_MLOG)) 
 ```
-This isn't terribly useful until you use the `group_by` function to do the summarize action on data by "group", which you specify according to values of variables. To see the average for each candidate, group by `choice`,
+This isn't terribly useful until you use the `group_by` function to do the summarize action on data by "group", which you specify according to values of variables. To see the average for each disease, group by `DISEASE/TRAIT`,
 ```{r}
-grouped_polls = group_by(polls, choice)
-summarize(grouped_polls, mean_pct = mean(adj_pct))
+grouped_gwas = group_by(gwas, `DISEASE/TRAIT`)
+summarize(grouped_gwas, mean_mlog_p_value = mean(PVALUE_MLOG))
 ```
-or add the polling model type (`polltypeA`),
+or add the journal the study was published in
 ```{r}
-grouped_polls = group_by(polls, choice, polltypeA)
-summarize(grouped_polls, mean_pct = mean(adj_pct))
+grouped_gwas = group_by(gwas, `DISEASE/TRAIT`, JOURNAL)
+meanp = summarize(grouped_gwas, mean_mlog_p_value = mean(PVALUE_MLOG))
+meanp
 ```
+Finally, let's sort by the disease and p-value to see the pattern with the journal a little better
+```{r}
+arrange(meanp, `DISEASE/TRAIT`, desc(mean_mlog_p_value))
+```
+
 
 [^1]: Wickham, Hadley. 2014. J Stat Softw, 59:1--23. DOI: [10.18637/jss.v059.i10](http://dx.doi.org/10.18637/jss.v059.i10)
 
@@ -212,7 +223,7 @@ summarize(grouped_polls, mean_pct = mean(adj_pct))
 
 ### Problems
 
-1. Using the polling data, produce a data table that shows the **mean**, **maximum**, and **minimum** `adj_pct` for each combination of pollster, candidate, and polling mode type (`polltypeA`).
+1. Using the GWAS data, produce a data table that shows the **mean**, **maximum**, **minimum**, and **variance** of `PVALUE_MLOG` for each combination of disease and journal.
 
 2. Recall the gene expression last that was briefly introduced last week:
     ```{r}
@@ -226,7 +237,7 @@ summarize(grouped_polls, mean_pct = mean(adj_pct))
     
     You will need the `gather` function. The first trick here will be first to identify "observation" and then the "key", which is the variable that changes across each observation and which is "gathered". 
     
-    The second trick is specifying the columns across which you need to gather. A hint for the second trick is that you can specify the columns you don't want with the "-" sign. That is, with the polling data, for example, every column except `choice` would be `-choice`.
+    The second trick is specifying the columns across which you need to gather. A hint for the second trick is that you can specify the columns you don't want with the "-" sign. That is, with the GWAS data, for example, every column except `PVALUE_MLOG` would be `-PVALUE_MLOG`.
     
     The answer will be deceivingly simple! This is the elegance / frustration of R. 
     

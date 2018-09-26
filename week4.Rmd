@@ -22,11 +22,16 @@ Last time, we covered much of the basics of slicing matrices but there are still
 Not only can you extract a slice of a matrix to analyze or plot but you can also assign values to that slice. First, create a matrix of all zeros to manipulate:
 ```{r}
 allz = matrix(0, nrow = 6, ncol = 6)
+allz
 ```
 As before, you slice the first row.
 ```{r}
 allz[1,]
 ```
+```{r}
+allz[2,3] = 6
+```
+
 However, you can also assign values to it.
 ```{r}
 allz[1,] = 1:6
@@ -60,7 +65,7 @@ sort(rvec)
 or character values
 ```{r}
 svec = c("hello", "world", "goodbye", "grand", "planet")
-sort(svec)
+sort(svec, decreasing=TRUE)
 ```
 You can reverse the sort order by setting the argument `decreasing = TRUE`.
 
@@ -70,6 +75,7 @@ You can reverse the sort order by setting the argument `decreasing = TRUE`.
 
 Often, you will want to sort not only a vector by the rows of a data matrix based on some column of the matrix. Thus, you need the list of positions each row will go to (e.g., row 1 to row 10 because its 10th in the sorted order, etc). To obtain this, you can use the `order` function
 ```{r}
+svec
 order(svec)
 ```
 which output precisely that list of indices. If you stick these indices back into the vector, you will obtain the original `sort` operation
@@ -89,6 +95,7 @@ order(rmatx[,1])
 ```
 and using the indices to order the rows
 ```{r}
+rmatx
 rmatx[ order(rmatx[,1]), ]
 ```
 
@@ -97,12 +104,13 @@ rmatx[ order(rmatx[,1]), ]
 Recall that you can slice by creating a logical condition (generating `TRUE` and `FALSE` values) and use that in the index of a matrix. Sometimes, you want the actual indices of the elements of that matrix that are sliced; i.e., you want the indices of the elements where the conditions is `TRUE`. To get these indices, you use the `which` function. For example, the logical and index vectors are
 ```{r}
 rmatx[,1] > 10
-which(rmatx[,1] > 10)
 ```
 and the slices are
 ```{r}
 rmatx[ rmatx[,1] > 10, ]
 rmatx[ which( rmatx[,1] > 10 ), ]
+
+rmatx[which.max(rmatx[,1]), ]
 ```
 
 Finally, there some special versions of the `which` function that give you the first index of the max or min element of a vector, `which.max` and `which.min`. Those would have been helpful last week. Doh!
@@ -113,6 +121,7 @@ One topic to cover before introducing data frames concerns names and attributes.
 
 To give a vector names, simply assign the name when creating the vector
 ```{r}
+l = list(a = 1, b = "one hundred")
 named_svec = c(s1 = "hello", s2 = "world", s3 = "goodbye", s4 = "grand", s5 = "planet")
 named_svec
 str(named_svec)
@@ -123,12 +132,14 @@ names(named_svec)
 ```
 You can also set the names afterwards by assigning to `names`:
 ```{r}
+svec
 names(svec) = c("s1", "s2", "s3", "s4", "s5")
 svec
 ```
 Finally, you can return a version of the vector with the names stripped using the function `uname`
 ```{r}
-unname(named_svec)
+unnamed_svec = unname(named_svec)
+unnamed_svec
 ```
 though note that this hasn't changed the original vector:
 ```{r}
@@ -223,7 +234,8 @@ where the first element is the column name of the "Genes" column. You will manip
 # Lab ![](assets/beaker.png)
 
 Now that you have all the essential elements of slicing (more elements require specialized functions in packages like `dplyr`), you can do more sophisticated things with the polling data from last week, which you should load like this:
-```{r}
+```{r, message=FALSE}
+library(tidyverse)
 library(lubridate)
 
 congress = read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv")
