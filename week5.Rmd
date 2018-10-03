@@ -133,7 +133,7 @@ To read more about these, see Chapter 12 in "R for Data Science" (<http://r4ds.h
 Now that you have made your data tidy, you probably want to slice and dice it. The `dplyr` package has handy functions for doing just this. Generally, `dplyr` is useful for doing the following five things
 
 1. Pick observations (i.e., rows) by their values for specific variables: **`filter()`**.
-2. Reorder the rows (`arrange()`).
+2. Reorder the rows: **`arrange()`**.
 3. Pick variables (i.e., columns) by their names: **`select()`**.
 4. Create new variables with functions of existing variables: **`mutate()`**.
 5. Collapse many values down to a single summary: **`summarise()`**.

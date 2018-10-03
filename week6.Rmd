@@ -2,7 +2,7 @@
 title: 'Introduction to plotting and `ggplot2`'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 28th September 2016
+date: 3rd October 2018
 ---
 
 ```{r setup, include=FALSE}
@@ -19,10 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 For the Lab Problems
 
-1. Don't print long data tables. Check your knit html for this.
-2. When loading files, put the data file is in the same directory as the `.Rmd`. Don't put any other directory information. That is:
-    - **this**: `dpolls = read.csv("USPresPolls_538dotcom_07Sep2016_D.csv")`
-    - *not this*: `dpolls = read.csv("my/home/folder/USPresPolls_538dotcom_07Sep2016_D.csv")`
+- Check the GitHub site for updates to the lecture .Rmd files before attempting the homeworks.
 
 # Plotting with R `base` graphics
 
@@ -32,13 +29,12 @@ Why do you even want to plot things?
 - See patterns / do comparisons
 - Data presentation
 
-
 The base package (basic functions included with R and automatically loaded) includes plotting functions that can be useful. As you will quickly see however, the limits of these functions become evident quickly and more advanced plotting functions are required. The package of functions we will use come from Hadley Wickham's `ggplot2`.
 
 Before plotting, you need some data. A common dataset used in data exploration courses in R is the "Gapminder" data, which is a collection of time series data for countries.
-```{r}
+```{r, message=FALSE}
 library(gapminder)
-library(dplyr)
+library(tidyverse)
 glimpse(gapminder)  # like a better version of `str()`, sorta
 ```
 The data covers the statistics listed above for
@@ -142,7 +138,7 @@ That was also very tedious. Not only that, notice that the y-axes have different
 
 The `ggplot2` package is built on the idea that graphics have can have a "grammar", or set or rules, that specifies how they can and should be constructed. Implementing these rules not only makes creating graphics easier, but it makes such graphics consistent and clear. Wickham borrows this idea from the book, "The Grammar of Graphics"" by Wilkinson, Anand, and Grossman (2005)[^1]. While this structure may seem a bit artificial at first, it makes creating graphics very modular and building up complex graphics much easier.
 
-To understand how `ggplot2` works, first consider the following example replicates your life expectancy by year plot above:
+To understand how `ggplot2` works, first consider how the following example replicates your life expectancy by year plot above:
 ```{r}
 library(ggplot2)
 ggplot(data = gapminder) + 
@@ -196,7 +192,6 @@ The first argument to `facet_wrap()` is a "formula", which refers to how one wri
 Adding an additional facet is possible to make a grid of plots. To see an example, load the genomic imprinting data from the Babak et al. (2015) study (this time in tidy format),
 
 ```{r}
-library(readr)
 imprint = read_csv("babak-etal-2015_imprinted-mouse_tidy.csv", na = "NA")
 ```
 and plot a histogram of the expression values for a subset of the data (four genes and four tissues)
@@ -220,12 +215,10 @@ Here, `facet_grid` arranges the plots nicely in a grid. Positive values of expre
 
 ### Problems
 
-1. Use recent polling data (`USPresPolls_538dotcom_28Sep2016.csv`): 
-    - Create a plot with `ggplot()` that shows the `adj_pct` for both Clinton and Trump for the "now" `polltypeA`
-    - Use both points and lines connecting those points
-    - Make Clinton and Trump data each a different color
-    - Make the size of the points in proportion to the weighting each poll gets in the FiveThirtyEight model (given in column `wtnow`)
-    
+1. Use GWAS data from last week (`gwas_catalog_v1.0.2-associations_e93_r2018-09-18_top40.tsv`): 
+    - Create a plot with `ggplot()` that shows the `PVALUE_MLOG` as a function of `CHR_POS` for **two** different values of `DISEASE/TRAIT` (pick your favorites!)
+    - Make the points for each disease/trait a different color
+
 2. Use the `gapminder` data:
     - Create a line plot with `ggplot()` that shows life expectancy on the y-axis and time on the x-axis.
     - Make each line represent a **country**   
