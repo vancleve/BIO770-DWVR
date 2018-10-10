@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Announcements
 
-
+- Don't put "/Users/vancleve/science/teaching/current_class" in your `read_csv` functions
 
 # Outline for today
 
