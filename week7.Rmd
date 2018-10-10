@@ -2,7 +2,7 @@
 title: 'More `ggplot2`: plot types'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 5th October 2016
+date: 10th October 2018
 ---
   
 ```{r setup, include=FALSE}
