@@ -135,10 +135,10 @@ The following is the preliminary schedule of topics and will be adjusted as the 
 | 3    | 9/12            | Vectors, slicing, and map(ping)                     |                                                                                   |
 | 4    | 9/19            | Getting data into R with data.frames                |                                                                                   |
 | 5    | 9/26            | Tidy Data                                           |                                                                                   |
-| 6    | 10/3            | Text manipulation: regular expressions              |                                                                                   |
-| 7    | 10/10           | Introduction to plotting and `ggplot2`              |                                                                                   |
-| 8    | 10/17           | Plot types in `ggplot2`                             |                                                                                   |
-| 9    | 10/24           | Principles of displaying data & how to modify plots |                                                                                   |
+| 6    | 10/3            | Introduction to plotting and `ggplot2`              |                                                                                   |
+| 7    | 10/10           | Plot types in `ggplot2`                             |                                                                                   |
+| 8    | 10/17           | Principles of displaying data & how to modify plots |                                                                                   |
+| 9    | 10/24           | Text manipulation: regular expressions              |                                                                                   |
 | 10   | 10/31           | Colors and heat maps                                |                                                                                   |
 | 11   | 11/7            | Visualizing lots of data                            |                                                                                   |
 | 12   | 11/14           | Networks                                            |                                                                                   |

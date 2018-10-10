@@ -11,10 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Announcements
 
-- No class next week
+
 
 # Outline for today
 
+- Using the the funky "pipe" to combine tidy slicing/plotting operations
 - Smoothed line plots
 - Plotting distributions
     - Bar plots
@@ -23,32 +24,61 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The power of a package like `ggplot2` is not in the fact that it can do many different kinds of plots but rather that creating these plots is a logical processes. Changing from one plot type to another often simply requires just changing the "geometry" object and potentially the "aesthetics", or how variables map to different parts of the geometry. 
 
-Nevertheless, `ggplot2` does allow one to create many different kinds of plots and understanding how to use these plots and when they are useful is instructive for using other visualization packages in R and other languages
+Nevertheless, `ggplot2` does allow one to create many different kinds of plots and understanding how to use these plots and when they are useful is instructive for using other visualization packages in R and other languages.
+
+Before launching into this, we'll introduce a useful object that I should have really introduced earlier since it makes multiple slicing and plotting operations look more logical.
+
+# Using the pipe %>% for combining operations
+
+To see how to use the pipe `%>%`, lets first load the <https://fivethirtyeight.com/> aggregated polling data for the 2016 US Presidential election.
+```{r, message=FALSE}
+library(tidyverse)
+library(lubridate)
+
+# get rid of mcmullin (who was that guy?) and some excess columns
+polls = select(read_csv("president_general_polls_2016.csv"), -rawpoll_mcmullin, -adjpoll_mcmullin, -multiversions, -url)
+polls$startdate = mdy(polls$startdate)
+polls$enddate = mdy(polls$enddate)
+glimpse(polls)
+```
+What about these data aren't tidy? What variable is spread across the columns???
+```{r}
+
+```
+
+Those tidying operations can be put together with the pipe operator `%>%`. The pipe allows you to easily chain together operations so that its easier to read them from left to right. For example, 
+```{r}
+polls %>% select(state)
+```
+uses `select` to get the `state` column. Effectively, the pipe takes what is on the left and uses it as the first argument, which is the **data** or **input**, for what is on the right. Thus, you can add another pipe to do another operation:
+```{r}
+polls %>% select(state) %>% distinct()
+```
+The rule of thumb then is that if you want to write a command with a pipe, take the first argument out of the function, put it on the left separated by the pipe. Likewise, to get rid of the pipe, take the input on the left and put it in the first argument of the function on the right of the pipe and delete the pipe. 
+
+Using the pipe, we can simplify the look of our operations to tidy the polling data:
+```{r}
+
+```
+
 
 # Smoothed line plots
 
-In previous weeks, you have produced simple scatter and line plots. For example, plot the most recent polling data for the 2016 US Presidential election.
+In previous weeks, you have produced simple scatter and line plots. With these polling data nice and tidy, we can produce a scatter plot with `geom_point`.
 ```{r}
-library(readr)
-library(tidyr)
-library(dplyr)
-library(ggplot2)
-
-polls = read_csv("USPresPolls_538dotcom_05Oct2016.csv")
-
-augNowPolls = filter(polls, endDate > "2016-08-01", polltypeA == "now")
-augNowPollsPlot = ggplot(augNowPolls, aes(x = endDate, y = adj_pct, color = choice)) 
-augNowPollsPlot + geom_point()
+# use only high quality national polls
+tpollsUS2016a = tpolls %>% filter(startdate > "2016-07-01", poll_type == "adj", state == "U.S.", grade %in% c("A", "A-", "A+", "B+"))
+tpplot = tpollsUS2016a %>% ggplot(aes(x=startdate, y=poll, color=candidate))
+tpplot + geom_point()
 ```
-
-Producing a line through these points isn't that helpful in showing a trend.
+We can produce a line through the points by adding `geom_line`. Producing a line through these points isn't that helpful in showing a trend.
 ```{r}
-augNowPollsPlot + geom_point() + geom_line()
+tpplot + geom_point() + geom_line()
 ```
 
 Rather, you want a trend line like a linear regression. R has a very sophisticated regression framework but accessing it in `ggplot2` only requires using the `geom_smooth()` function.
 ```{r}
-augNowPollsPlot + 
+tpplot + 
   geom_point(alpha = 0.3) + # alpha controls transparency: 0 = clear; 1 = opaque
   geom_smooth(lwd = 1.5) # lwd = line width
 ```
@@ -57,21 +87,21 @@ Obviously, `geom_smooth()` produced a nice smooth line, but it's not linear. Tak
 
 Looking more closely at the help, `geom_smooth()` uses the `method = loess`, which fits a polynomial (default is a quadratic) to each point of the data using least squares. To fit instead a simple straight line, change `method = "lm"`, which just uses the linear model `lm()` function:
 ```{r}
-augNowPollsPlot + 
+tpplot + 
   geom_point(alpha = 0.3) +
   geom_smooth(lwd = 1.5, method = 'lm')
 ```
 
 Returning to the default `loess` regression line, you can make the line smoother or more "wiggly" by changing the `span` argument, which is the fraction of points used to fit each local regression. For example, changing the `span` from the default of 0.75 to 0.1 produces
 ```{r}
-augNowPollsPlot + 
+tpplot + 
   geom_point(alpha = 0.3) + 
   geom_smooth(lwd = 1.5, span = 0.1)
 ```
 
 Another default of the `geom_smooth()` function is to produce a 95% confidence interval, which is represented in the gray bands. To get rid of this, just set `se = FALSE`:
 ```{r}
-augNowPollsPlot + 
+tpplot + 
   geom_point(alpha = 0.3) +
   geom_smooth(lwd = 1.5, method = 'lm', se = FALSE)
 ```
@@ -84,50 +114,48 @@ Almost certainly, your data will contain multiple samples or replicates of a mea
 
 If your data has discrete categories (i.e., "categorical" data), then you may want a simple bar plot. As an example, create a new data table with a column that has `TRUE` for when Hillary is leading in a poll and `FALSE` for when Trump is leading.
 ```{r}
-augNowAdjPolls = 
-  mutate(
-    spread(
-      select(augNowPolls, -party, -pct), # get rid of "redundant" columns
-      key = choice, 
-      value = adj_pct), 
-    HillaryLeading = Clinton > Trump)
+modpolls = 
+tpollsUS2016a %>% 
+  filter(poll_type == "adj", state == "U.S.") %>% 
+  spread(key = candidate, value = poll) %>%
+  mutate(HillaryLeading = clinton > trump)
 
-augNowAdjPolls
+modpolls
 ```
 
 Each row of this table is now a different poll. Plot these data in a bar plot using `geom_bar()`, which uses the `count` statistic on the data and thus plots the number of polls where Hillary is leading (in the `adj_pct` at least).
 ```{r}
-ggplot(augNowAdjPolls) +
+ggplot(modpolls) +
   geom_bar(aes(x = HillaryLeading))
 ```
 
 Is it possible that even after the FiveThirtyEight correction that goes into the `adj_pct` variable, some polls disproportionately show Hillary or Trump winning? To start getting a sense of this, you can color the portion of the bar according the the pollster easily by just adding the `fill = pollster` aesthetic. This produces a so-called "stacked" bar plot.
 ```{r}
-ggplot(augNowAdjPolls) +
+ggplot(modpolls) +
   geom_bar(aes(x = HillaryLeading, fill = pollster))
 ```
 
 You can see patterns in the data better by slicing. For example, look at the pollsters with sample sizes less than 1000
 ```{r}
-ggplot(filter(augNowAdjPolls, sampleSize < 1000)) +
+ggplot(filter(modpolls, samplesize < 1000)) +
   geom_bar(aes(x = HillaryLeading, fill = pollster))
 ```
 
-or greater than 2000.
+or greater than 1000.
 ```{r}
-ggplot(filter(augNowAdjPolls, sampleSize > 2000)) +
+ggplot(filter(modpolls, samplesize > 1000)) +
   geom_bar(aes(x = HillaryLeading, fill = pollster))
 ```
 
 If you do not want the bars stacked by rather placed side by side, use `position = "dodge"` in `geom_bar()`:
 ```{r}
-ggplot(filter(augNowAdjPolls, sampleSize > 2000)) +
+ggplot(filter(modpolls, samplesize > 1000)) +
   geom_bar(aes(x = HillaryLeading, fill = pollster), position = "dodge")
 ```
 
 Other options for `position` are `identity`, which just places the bars on top of each other (use the `alpha` option to make the bars easier to see in this case), and `fill`, which makes the bars of equal height and the y-axis measure the fraction in each category.
 ```{r}
-ggplot(filter(augNowAdjPolls, sampleSize > 2000)) +
+ggplot(filter(modpolls, samplesize > 1000)) +
   geom_bar(aes(x = HillaryLeading, fill = pollster), position = "fill")
 ```
 
@@ -135,44 +163,44 @@ ggplot(filter(augNowAdjPolls, sampleSize > 2000)) +
 
 When your data are continuous, a histogram or similar plot is often useful. For example, you can add a column to the previous table that measure the margin or difference between the Hillary and Trump poll numbers.
 ```{r}
-augNowAdjPolls = mutate(augNowAdjPolls, HillaryMargin = Clinton - Trump)
-augNowAdjPolls
+modpolls = mutate(modpolls, HillaryMargin = clinton - trump)
+modpolls
 ```
 
 To get a histogram of the margin, use the `geom_histogram` function.
 ```{r}
-ggplot(augNowAdjPolls) +
+ggplot(modpolls) +
   geom_histogram(aes(x = HillaryMargin))
 ```
 
 You can add additional information, like which polls have large or small sample sizes (e.g, over or under 2000)
 ```{r}
-ggplot(augNowAdjPolls) +
-  geom_histogram(aes(x = HillaryMargin, fill = sampleSize > 2000))
+ggplot(modpolls) +
+  geom_histogram(aes(x = HillaryMargin, fill = samplesize > 1000))
 ```
 
-This defaults to a stacked histogram, so switch to `identity` to better see how the two sample size categories compare
+This defaults to a stacked histogram, so switch to `identity` to better see how the two sample size categories compare (using `alpha` to get some transparency)
 ```{r}
-ggplot(augNowAdjPolls) +
-  geom_histogram(aes(x = HillaryMargin, fill = sampleSize > 2000), position = "identity")
+ggplot(modpolls) +
+  geom_histogram(aes(x = HillaryMargin, fill = samplesize > 1000), position = "identity", alpha = 0.75)
 ```
 
 You can just draw lines instead of filled bars using `geom_freqpoly()`
 ```{r}
-ggplot(augNowAdjPolls) +
-  geom_freqpoly(aes(x = HillaryMargin, color = sampleSize > 2000))
+ggplot(modpolls) +
+  geom_freqpoly(aes(x = HillaryMargin, color = samplesize > 1000))
 ```
 
 You have probably noticed that R keeps reminding you to adjust the `binwidth`. This is simply the width of the bins on the x-axis. For example, a binwidth of one percentage point yields
 ```{r}
-ggplot(augNowAdjPolls) +
-  geom_freqpoly(aes(x = HillaryMargin, color = sampleSize > 2000), binwidth = 1)
+ggplot(modpolls) +
+  geom_freqpoly(aes(x = HillaryMargin, color = samplesize > 1000), binwidth = 1)
 ```
 
 Suppose that you want to smooth the above plot so that it looks like some continuous distribution. The statistical method used to do this is called a "kernel density estimate" or KDE. Essentially, a basic KDE tries to combine Gaussian distributions together in a way to approximate empirical distribution. The geometry function to use for a KDE is `geom_density`.
 ```{r}
-ggplot(augNowAdjPolls) +
-  geom_density(aes(x = HillaryMargin, fill = sampleSize > 2000), alpha = 0.3)
+ggplot(modpolls) +
+  geom_density(aes(x = HillaryMargin, fill = samplesize > 1000), alpha = 0.3)
 ```
 
 Notice how the heights of the curves have shifted. This is because the area under the curve of the KDE must sum to one and the y-axis measures the density, or approximately the probability, of a specific HillaryMargin. The histogram can be normalized too by dividing each curve by the total number of polls.
@@ -181,20 +209,20 @@ Notice how the heights of the curves have shifted. This is because the area unde
 
 Suppose now that you want to plot the distribution of Hillary's margin for each pollster.
 ```{r}
-ggplot(augNowAdjPolls) +
+ggplot(modpolls) +
   geom_histogram(aes(x = HillaryMargin, color = pollster, fill = pollster), alpha = 0.3)
 ```
 
 Yikes. Too many pollsters. You need a more condensed way to plot the distribution of margins for each pollster. First, you can just plot the points directly.
 ```{r}
-ggplot(augNowAdjPolls) +
+ggplot(modpolls) +
   geom_point(aes(x = pollster, y = HillaryMargin)) + 
   coord_flip() # coordinate flip makes reading the poll names easier
 ```
 
 This is better, but some of the pollsters have quite a few polls and the points overlap. To get around this, you can use `geom_jitter()`, which spreads the points out (and some `alpha`).
 ```{r}
-ggplot(augNowAdjPolls, aes(x = pollster, y = HillaryMargin)) +
+ggplot(modpolls, aes(x = pollster, y = HillaryMargin)) +
   geom_jitter(alpha = 0.5) +
   coord_flip()
 ```
@@ -204,28 +232,29 @@ That is an improvement, but it's still hard to see patterns because the points a
 
 For the data on Hillary's margin by pollster, the box plots are:
 ```{r}
-ggplot(augNowAdjPolls, aes(x = pollster, y = HillaryMargin)) +
+ggplot(modpolls, aes(x = pollster, y = HillaryMargin)) +
   geom_boxplot() +
   coord_flip()
 ```
 
 The box plots make it much easier to see the central tendency (median) as well as how dispersed each distribution is. For example, the above plot reveals that the Marist College and ABC News polls (among others) tend to lean towards Hillary while the IBD/TIPP poll tends to lean Trump. Clearly some of these polls don't have many records in the data, which makes it hard to see the outlier records. To highlight the outliers, you can change their color with `outlier.color`.
 ```{r}
-ggplot(augNowAdjPolls, aes(x = pollster, y = HillaryMargin)) +
+ggplot(modpolls, aes(x = pollster, y = HillaryMargin)) +
   geom_boxplot(outlier.color = "red") +
   coord_flip()
 ```
 
 Finally, it's easier to read the box plots if they are organized by the median value. To do this, you the `reorder` function for the x-axis in the aesthetic argument and replace `x = pollster` with `x = reorder(pollster, HillaryMargin, FUN = median)`. 
 ```{r}
-ggplot(augNowAdjPolls, aes(x = reorder(pollster, HillaryMargin, FUN = median), y = HillaryMargin)) +
+ggplot(modpolls, aes(x = reorder(pollster, HillaryMargin, FUN = median), y = HillaryMargin)) +
   geom_boxplot(outlier.color = "red") +
   coord_flip()
 ```
 
 Finally, a variant of the box plot is called a "violin plot". Violin plots show the probability density using KDE.
 ```{r}
-ggplot(augNowAdjPolls, aes(x = sampleSize > 2000, y = HillaryMargin)) +
+modpolls %>% 
+ggplot(aes(x = grade, y = HillaryMargin)) +
   geom_violin() +
   coord_flip()
 ```

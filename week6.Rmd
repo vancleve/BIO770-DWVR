@@ -40,6 +40,7 @@ glimpse(gapminder)  # like a better version of `str()`, sorta
 The data covers the statistics listed above for
 ```{r}
 str(gapminder$country)
+gapminder$country
 ```
 142 countries.
 
@@ -69,6 +70,7 @@ usukjpcn = filter(gapminder,
             | country == "United Kingdom" 
             | country == "Japan" 
             | country == "China" )
+usukjpcn
 
 plot(usukjpcn$year, usukjpcn$lifeExp, 
      xlab = "Year", ylab = "Life expectancy", main = plottitle,
@@ -83,6 +85,7 @@ usukjpcn = droplevels(usukjpcn)
 plot(usukjpcn$year, usukjpcn$lifeExp, 
      xlab = "Year", ylab = "Life expectancy", main = plottitle,
      col = usukjpcn$country)
+levels(usukjpcn$country)
 
 legend('bottomright', legend = levels(usukjpcn$country), col = 1:4, pch = 1)
 ```
@@ -156,7 +159,8 @@ Each `geom()` function takes a `mapping` argument that defines how variables map
 In addition to the `x` and `y` axes, you can map variables to the color of the point. Above, you did this using the `country` variable. Now, repeat this with `ggplot()`.
 ```{r}
 ggplot(data = usukjpcn) + 
-  geom_point(mapping = aes(x = year, y = lifeExp, color = country))
+  geom_point(mapping = aes(x = year, y = lifeExp, color = country)) +
+  geom_line(mapping = aes(x = year, y = lifeExp, color = country))
 ```
 
 The above code with `ggplot2` is both simpler and easier to read than the code creating the similar plot with the basic `plot()` function.
@@ -197,11 +201,12 @@ imprint = read_csv("babak-etal-2015_imprinted-mouse_tidy.csv", na = "NA")
 and plot a histogram of the expression values for a subset of the data (four genes and four tissues)
 ```{r}
 fourgenes = filter(imprint, 
-                   (Genes == "IGF2" | Genes == "GRB10" | Genes == "MEG2" | Genes == "PEG3") &
+                   (Genes == "IGF2" | Genes == "GRB10" | Genes == "MEG3" | Genes == "PEG3") &
                      (tissue == "Preoptic Area (ref)" | tissue == "Hypothalamus" | 
                      tissue == "e17.5 Brain" | tissue == "e9.5 Yolk Sac" ))
-ggplot(data = fourgenes, aes(expression)) +
-  geom_histogram() +
+
+ggplot(data = fourgenes) +
+  geom_histogram(aes(expression)) +
   facet_grid(Genes ~ tissue)
 ```
 
