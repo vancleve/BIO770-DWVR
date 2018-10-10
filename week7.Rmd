@@ -43,7 +43,8 @@ glimpse(polls)
 ```
 What about these data aren't tidy? What variable is spread across the columns???
 ```{r}
-
+t = gather(polls, key=candidate, value=poll, rawpoll_clinton, rawpoll_trump, rawpoll_johnson, adjpoll_clinton, adjpoll_trump, adjpoll_johnson)
+t = separate(t, candidate, into=c("poll_type", "candidate"), sep="poll_")
 ```
 
 Those tidying operations can be put together with the pipe operator `%>%`. The pipe allows you to easily chain together operations so that its easier to read them from left to right. For example, 
@@ -58,7 +59,10 @@ The rule of thumb then is that if you want to write a command with a pipe, take 
 
 Using the pipe, we can simplify the look of our operations to tidy the polling data:
 ```{r}
-
+tpolls = 
+  polls %>% 
+  gather(key=candidate, value=poll, rawpoll_clinton, rawpoll_trump, rawpoll_johnson, adjpoll_clinton, adjpoll_trump, adjpoll_johnson) %>% 
+  separate(candidate, into=c("poll_type", "candidate"), sep="poll_")
 ```
 
 
@@ -125,7 +129,7 @@ modpolls
 
 Each row of this table is now a different poll. Plot these data in a bar plot using `geom_bar()`, which uses the `count` statistic on the data and thus plots the number of polls where Hillary is leading (in the `adj_pct` at least).
 ```{r}
-ggplot(modpolls) +
+modpolls %>% ggplot() +
   geom_bar(aes(x = HillaryLeading))
 ```
 
@@ -182,7 +186,7 @@ ggplot(modpolls) +
 This defaults to a stacked histogram, so switch to `identity` to better see how the two sample size categories compare (using `alpha` to get some transparency)
 ```{r}
 ggplot(modpolls) +
-  geom_histogram(aes(x = HillaryMargin, fill = samplesize > 1000), position = "identity", alpha = 0.75)
+  geom_histogram(aes(x = HillaryMargin, fill = samplesize > 1000), position = "identity", alpha = 0.5)
 ```
 
 You can just draw lines instead of filled bars using `geom_freqpoly()`
