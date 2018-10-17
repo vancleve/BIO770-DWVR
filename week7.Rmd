@@ -35,10 +35,7 @@ To see how to use the pipe `%>%`, lets first load the <https://fivethirtyeight.c
 library(tidyverse)
 library(lubridate)
 
-# get rid of mcmullin (who was that guy?) and some excess columns
-polls = select(read_csv("president_general_polls_2016.csv"), -rawpoll_mcmullin, -adjpoll_mcmullin, -multiversions, -url)
-polls$startdate = mdy(polls$startdate)
-polls$enddate = mdy(polls$enddate)
+polls = read_csv("president_general_polls_2016.csv")
 glimpse(polls)
 ```
 What about these data aren't tidy? What variable is spread across the columns???

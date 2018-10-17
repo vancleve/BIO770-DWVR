@@ -2,7 +2,7 @@
 title: 'Finessing plots in `ggplot2`'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 19th October 2016
+date: 17th October 2018
 ---
   
 ```{r setup, include=FALSE}
@@ -19,8 +19,6 @@ knitr::opts_chunk$set(echo = TRUE)
 # Reminders
 
 1. Start thinking about data to use and plots to make for lightning talk. Feel free to e-mail me if you want to run your ideas by me.
-2. For the homework, label your answers clearly with the question number (or as some folks already do, restate each part of the question as you answer it).
-3. Again, do not use absolute path names for loading data files. Use relative paths. Absolute paths will cause you problems when you move your folders around! (not to mention slowing down the grading process)
 
 # Principles of displaying data
 
@@ -28,7 +26,7 @@ While there is a lot of art in designing figures to display data, there is also 
 
 ## More data. Less ink.
 
-In his 1983 book, "The Visual Display of Quantitative Information", Edward Tufte states that
+In his book, "The Visual Display of Quantitative Information"[^1], Edward Tufte states that
 
 > Data-ink is the non-erasable core of the graphic, the non-redundant ink arranged in response to variation in the numbers represented
 
@@ -44,7 +42,9 @@ This rule can and should be applied to tables as well. The example below shows h
 
 Nobel prize-winning work in neuroscience by David Hubel and Torsten Wiesel (among others) showed that the visual cortex is designed to recognize certain basic visual features, such as orientation and contrast that distinguishes edges. These basic features are then assembled into more complex visual objects in other brain regions. Knowing that some visual features may be more "basic" than others with respect to how they are processed by the brain means that you can leverage those features to make graphics easier to read.
 
-An example of how some visual elements are more basic than others comes from the work by William Cleveland and Robert McGill on the speed and accuracy that people have in distinguishing specific graphical elements [^1]. The table below shows these elements and their rank from most to least accurately distinguishable.
+![Orientation columns are sensitive to visual input in a certain direction.](assets/visual_pinwheel.png)
+
+An example of how some visual elements are more basic than others comes from the work by William Cleveland and Robert McGill on the speed and accuracy that people have in distinguishing specific graphical elements [^2]. The table below shows these elements and their rank from most to least accurately distinguishable.
 
 |Rank | Graphical element |
 |-----+-------------------|
@@ -81,56 +81,70 @@ Gestalt ("shape" in German) principles come from German psychologists in the ear
 
 ![Connection via lines and enclosure via circle](assets/lines_enclosure.png)
 
+## (Bad) Examples
+
+In "The Visual Display of Quantitative Information", Tufte said of this graphic
+
+> This may well be the worst graphic ever to find its way into print"
+
+![Graphic from the magazine *American Education*.](assets/chart_junk.jpg)
+
+Here is another example to get one's blood boiling from (ironically) a 2012 report on "World Happiness".
+
+![Figure 11/12(?) from World Happiness Report (2012), editted by Helliwell et al.](assets/3d-column-chart-of-awesome.png)
+
 # Modifying plot elements
 
-With all the basic tools of `ggplot2`, you can already implement many of the visual design principles described above. The remaining changes you might need to make include altering the labels, annotations, coordinate system or scaling, color scaling, or plot size.
+With all the basic tools of `ggplot2`, you can already implement many of the visual design principles described above. The remaining changes you might need to make include altering the **labels**, **annotations**, **coordinate system or scaling**, **color scaling**, or **plot size**.
 
 ## Labels
 
 You have already seen how to add simple labels to simple plots, but now you will add labels to `ggplot2` plots. Adding labels in `ggplot2` is accomplished with the `labs()` function. For example, if you load and plot the recent polling data, you can add a title easily
 
 ```{r, message = FALSE}
-library(readr)
-library(dplyr)
-library(ggplot2)
+library(tidyverse)
 
-polls = read_csv("USPresPolls_538dotcom_18Oct2016.csv")
+polls = read_csv("president_general_polls_2016.csv")
 
-augNowPolls = filter(polls, endDate > "2016-08-01", polltypeA == "now")
-augNowPollsPlot = ggplot(augNowPolls, aes(x = endDate, y = adj_pct, color = choice)) 
-augNowPollsPlot + 
-  geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) + 
-  labs(title = "Clinton and Trump polling data in 2016")
+# make polls tidy...and choose only one polling model ("polls-plus")
+tpolls = 
+  polls %>% 
+  filter(type == "polls-plus") %>%
+  gather(key=candidate, value=poll, rawpoll_clinton, rawpoll_trump, rawpoll_johnson, adjpoll_clinton, adjpoll_trump, adjpoll_johnson) %>% 
+  separate(candidate, into=c("poll_type", "candidate"), sep="poll_")
+
+# get a manageable subset of polls
+tpollsUS2016a = tpolls %>% filter(startdate > "2016-07-01", poll_type == "adj", state == "U.S.", grade %in% c("A", "A-", "A+", "B+"))
+tpplot = tpollsUS2016a %>% ggplot(aes(x=startdate, y=poll, color=candidate))
+tpplot + geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5, span = 0.1) +
+  labs(title = "2016 Presidential Election Polling Data")
 ```
 
 You can also add a `subtitle`, which is additional detail below the title, and a `caption`, which should describe the data in the plot. These features are only available in `ggplot` 2.2.0 and higher.
 
 ```{r, eval=FALSE}
-augNowPollsPlot + 
-  geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) + 
-  labs(title = "Clinton and Trump polling data in 2016",
-       subtitle = "Clinton has lead since August",
-       caption = "Polls adjusted under the 538 'now' model")
+tpplot + geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5, span = 0.1) +
+  labs(title = "2016 Presidential Election Polling Data",
+       subtitle = "Only high quality polls included",
+       caption = "Despite Trump's Electoral College victory, polling never really put him ahead")
 ```
 
 Labels can also be added to the axes and the legend.
 
 ```{r}
-augNowPollsPlot + 
-  geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) + 
-  labs(title = "Clinton and Trump polling data in 2016",
+tpplot + geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5, span = 0.1) +
+  labs(title = "2016 Presidential Election Polling Data",
        x = "Date", y = "Adjusted polling percentage", color = "Candidate")
 ```
 
 Mathematical symbols can be added by using `quote()` instead of the quotation characters "". Check `?plotmath` for options. For example,
 
 ```{r}
-augNowPollsPlot + 
-  geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) + 
+tpplot + geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5, span = 0.1) +
   labs(title = quote(integral(f(x)*dx, a, b)),
        x = quote(x[y]^z),
        y = quote(frac(y,x) == frac(alpha, beta)))
@@ -139,34 +153,33 @@ augNowPollsPlot +
 
 ## Annotations
 
-Adding annotations to plots can be very important and people often do this in programs such as Adobe Illustrator. However, taking the plot to another program makes generating the figure much more complicated and breaks the "reproducible science" method using RMarkdown where any change in the data can easily be converted into updated figures and documents.
+Adding annotations to plots can be very important and people often do this in programs such as Adobe Illustrator. However, taking the plot to another program makes generating the figure much more complicated and breaks the "reproducible science" method using RMarkdown where any change in the data should easily be converted into updated figures and documents.
 
 One way to add text to a plot is with `geom_text`, which is like `geom_point`, but has a `label` option. For example, you can label the maximum polling percentages for each candidate. The code below first groups the data by choice, since you want to use a label for each candidate. Then, it filters the rows to include only the ones that rank first when sorted into descending order based on `adj_pct`. Finally, it uses this data table for the `geom_text`.
 
 ```{r}
-maxpolls = 
-  filter(
-      group_by(augNowPolls, choice), 
-      row_number(desc(adj_pct)) == 1)
+maxpolls = tpollsUS2016a %>% group_by(candidate) %>% filter(row_number(desc(poll)) == 1)
 
-augNowPollsPlot + 
-  geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) + 
-  geom_text(aes(label = choice), data = maxpolls)
+tpollsUS2016a %>% ggplot(aes(x=startdate, y=poll)) +
+  geom_point(aes(color=candidate), alpha = 0.3) + 
+  geom_smooth(aes(color=candidate), lwd = 1.5, span = 0.1) +
+  geom_text(aes(label = c("Clinton max", "Trump max", "Johnson max")), data = maxpolls)
 ```
 
-Often, you may want to put a piece of text in a specific location in the plot. You still need to create a new data table for this that has the right names for the x and y variables.
+Often, you may want to put a piece of text in a specific location in the plot. You need to create a new data table for this that has the right names for the x and y variables. This is because `ggplot2` **only** understands how to plot dataframes, not other things. This is both the source of its power and limitations. For reference, `tibble` is the `tidyverse` function for easily creating dataframes.
 
 ```{r}
-label = tibble(endDate = max(augNowPolls$endDate), adj_pct = max(augNowPolls$adj_pct), choice = "Clinton", label = "The 2016 horse race is almost over")
-  
-augNowPollsPlot + 
-  geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) + 
+library(lubridate)
+label = tibble(startdate = ymd("2016-09-01"), poll = 20, candidate = "clinton", label = "This is a label in the middle of the plot")
+
+tpollsUS2016a %>% 
+  ggplot(aes(x=startdate, y=poll)) +
+  geom_point(aes(color=candidate), alpha = 0.3) + 
+  geom_smooth(aes(color=candidate), lwd = 1.5, span = 0.1) +
   geom_text(aes(label = label), data = label, vjust = "top", hjust = "right")
 ```
 
-You can set the vertical (`vjust`) and horizontal (`hjust`) rustication above using the options below.
+The text has a "justification" in reference to the (x,y) location of the point you specify. You can set the vertical (`vjust`) and horizontal (`hjust`) justication above using the options below. By setting "top" and "right" as above, the coordinate is at the top and right of the text, which means the text is below and to the left of the point.
 
 ![Combinations of horizontal and vertical justification options](assets/just.png)
 
@@ -175,9 +188,8 @@ You can set the vertical (`vjust`) and horizontal (`hjust`) rustication above us
 Coordinate systems in `ggplot2` can be complex, but usually you will only want to flip the `x` and `y` axes with `coord_flip()` as in previous examples.
 
 ```{r}
-augNowPollsPlot + 
-  geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) + 
+tpplot + geom_point(alpha = 0.3) + 
+  geom_smooth(lwd = 1.5, span = 0.1) +
   coord_flip()
 ```
 
@@ -194,11 +206,11 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
   coord_trans(x = "log10", y = "log10")
 ```
 
-Above, you can notice that the straight line (since "lm" was used to plot the line) is curved, which indicates that the line was fit on the untransformed data. Below, you will see how to change the scales to a log scale so that the line is fit on the transformed data.
+Above, you can notice that the straight line (since "lm" was used to plot the line) is curved, which indicates that the line was fit on the untransformed data (i.e., a straight line plotted on a log-log plot is curved). Below, you will see how to change the scales to a log scale so that the line is fit on the transformed data.
 
 ## Scales 
 
-Scales control how the data maps to aesthetics, which includes whether the data is on an arithmetic or log scale, how data maps to colors, and how the scale values themselves are displayed (i.e., the tick marks). By default, `ggplot2` takes
+Scales control how the data maps to aesthetics, which includes whether the data is on an arithmetic or log scale, how data maps to colors, and how the scale values themselves are displayed (i.e., the tick marks). By default, `ggplot2` takes the scatter plot below
 
 ```{r, eval = FALSE}
 ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) + 
@@ -250,10 +262,10 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 You can also set the color scale manually, which is nice for making Hillary polls blue and Trump polls red.
 
 ```{r}
-augNowPollsPlot + 
+tpplot + 
   geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) +
-  scale_colour_manual(values = c(Clinton = "blue", Trump = "red"))
+  geom_smooth(lwd = 1.5, span = 0.1) +
+  scale_colour_manual(values = c(clinton = "blue", trump = "red", johnson = "gold"))
 ```
 
 ### Zooming
@@ -275,10 +287,10 @@ More generally, you can modify non-data elements of the plot with a theme. There
 Applying them just requires adding the specific function:
 
 ```{r}
-augNowPollsPlot + 
+tpplot + 
   geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) +
-  scale_colour_manual(values = c(Clinton = "blue", Trump = "red")) +
+  geom_smooth(lwd = 1.5, span = 0.1) +
+  scale_colour_manual(values = c(clinton = "blue", trump = "red", johnson = "gold")) +
   theme_bw()
 ```
 
@@ -295,22 +307,23 @@ Once you load the package, the theme becomes the default.
 ```{r}
 library(cowplot)
 
-augNowPollsPlot + 
+tpplot + 
   geom_point(alpha = 0.3) + 
-  geom_smooth(lwd = 1.5) +
-  scale_colour_manual(values = c(Clinton = "blue", Trump = "red")) 
+  geom_smooth(lwd = 1.5, span = 0.1) +
+  scale_colour_manual(values = c(clinton = "blue", trump = "red", johnson = "gold"))
 ```
 
-The theme is meant to work well with saving figures (next class session), adding annotations (does not require creating a data table), and placing subplots in arbitrary arrangements in the plot. For more information, check out <https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html>.
+The theme is meant to work well with saving figures (coming in another class session), adding annotations (`cowplot` does not require creating a data table), and placing subplots in arbitrary arrangements in the plot. For more information, check out <https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html>.
 
-[^1]: Cleveland, W.S. & McGill, R. *Science* **229**, 828–833 (1985).
+[^1]: Tufte, E.R. "The Visual Display of Quantitative Information". Graphic Press: Cheshire, Connecticut (2001).
+[^2]: Cleveland, W.S. & McGill, R. *Science* **229**, 828–833 (1985).
 
 # Lab ![](assets/beaker.png)
 
 ### Problems
 
 1. Create a plot from any of the datasets we have used previously that includes the following
-    a. Color that corresponds to some variable in the data
+    a. Use color to represent the value of some variable in the data
     b. Descriptive labels for the axes and title
     c. Appropriate tick mark breaks and labels (only if defaults are bad)
     d. Non-ggplot2 default theme (pick your favorite)
