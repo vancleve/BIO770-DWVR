@@ -170,13 +170,13 @@ Often, you may want to put a piece of text in a specific location in the plot. Y
 
 ```{r}
 library(lubridate)
-label = tibble(startdate = ymd("2016-09-01"), poll = 20, candidate = "clinton", label = "This is a label in the middle of the plot")
+label = tibble(startdate = ymd("2016-09-01"), poll = 25, candidate = "clinton", label = "This is a label in the middle of the plot")
 
 tpollsUS2016a %>% 
   ggplot(aes(x=startdate, y=poll)) +
   geom_point(aes(color=candidate), alpha = 0.3) + 
   geom_smooth(aes(color=candidate), lwd = 1.5, span = 0.1) +
-  geom_text(aes(label = label), data = label, vjust = "top", hjust = "right")
+  geom_text(aes(label = label), data = label, vjust = "bottom", hjust = "center")
 ```
 
 The text has a "justification" in reference to the (x,y) location of the point you specify. You can set the vertical (`vjust`) and horizontal (`hjust`) justication above using the options below. By setting "top" and "right" as above, the coordinate is at the top and right of the text, which means the text is below and to the left of the point.

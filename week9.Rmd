@@ -1,307 +1,303 @@
 ---
-title: 'Heat maps, countour maps, and colors'
+title: 'Text manipulation: regular expressions'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 26th October 2016
+date: 24th October 2018
 ---
   
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Reminders
+
+ - **Think about data to use and plots to make for lightning talk**. 
+ - E-mail me if you want to discuss your ideas.
+
+
 # Outline for today
 
-- A splash of color theory
-- Plotting 2D heat maps in `ggplot`
-- Saving plots
+- Text basics
+- Basic string manipulation using `stringr`
+- Regular expressions: basics
+- Regex: character classes
+- Regex: quantifiers
+- Regex: grouping
+- Regex: replacing matches
+- Regex: practice!
 
-# A splash of color theory
+# Text basics
 
-Recall the table from the work of Cleveland and McGill on distinguishing graphical elements from most to least accurately distinguishable.
+Working with text and strings can feel like the most boring and tedious aspect of data analysis and wrangling, but it is often important and sometimes the most crucial element. Not only are data sets often untidy, but they are also often full of quirks related to how the data was initially entered. For example, *categorical variables*, like a country name, might be mixed with *numerical variables*, such as dates or population sizes, and these must then be separated intelligently in order to be further analyzed in R. **String** analysis tools are crucial for this task. The first tool you will use includes functions from the `stringr` package. The second tool, more difficult but arguably the most crucial, is the "regular expression", which is the like a Swiss Army knife for finding patterns in text.
 
-|Rank | Graphical element |
-|-----+-------------------|
-| 1   | Positions on a common scale |
-| 2   | Positions on the same but nonaligned scales |
-| 3   | Lengths |
-| 4   | Angles, slopes |
-| 5   | Area |
-| 6   | Volume, color saturation |
-| 7   | Color hue |
+## `stringr`
 
-The last two items, color saturation (dark to light) and hue, are the only color items. Even though color can be the most difficult to distinguish, a well designed color map that takes advantage of how humans perceive color can be used to display data as accurately as possible.
+R comes with some base functions for manipulating text, but these can be inconsistent in terms of their arguments and their outputs. As normal for material in this course, Hadley Wickham comes to the rescue with a package, `stringr` (loaded when you load `tidyverse`) that provides some basic function for manipulating strings and for using regular expressions. All the functions start with `str_`, which makes seeing a list of them easy using the "tab complete" functionality in RStudio. While it is certainly useful to learn the base packages for string manipulation, the hope is that learning a simpler framework with `stringr` can make the concepts easier so that if you need to understand how to work one of the base functions, the task will be easier.
 
-In order to really get a sense for how important color maps can be, take a look at the Mona Lisa using the standard color map in some software packages (e.g., MATLAB), "jet". Here is the "jet" color map
-```{r, message = FALSE}
-library(imager)
+## Encoding
 
-jet.colors <-
-  colorRampPalette(c("#00007F", "blue", "#007FFF", "cyan",
-                     "#7FFF7F", "yellow", "#FF7F00", "red", "#7F0000"))
-image(1,1:100,matrix(1:100, nrow=1), col = jet.colors(100))
-```
+Computers store information in bits and while it can seems intuitive to convert bits to numbers (go from base 2 to base 10), converting bits to text requires some arbitrary choices. How many characters can convert to bits? Which special characters (e.g., ?, !, ^, etc) do you include beyond numbers and digits? Once you settle on which characters to include, you can simply list them in a table with the corresponding binary value that represents them. Initially, since English speakers were the dominant users of computers, this table, or "encoding", was called ASCII and encoding only 128 characters (CS challenge: how many bits do you need to encode 128 characters?).
 
-and the Mona Lisa using that color map
-```{r}
-graymona = as.matrix(grayscale(load.image("assets/mona-lisa_color.jpg")))
-image(graymona[,ncol(graymona):1], col = jet.colors(100))
-```
+![ASCII chart from 1972](assets/ASCII.png)
 
-If that doesn't make you nauseous, it should. Any guesses for what color map would be better? Grayscale, correct! Here is the grayscale color map
-```{r}
-image(1,1:100,matrix(1:100, nrow=1), col = gray.colors(100))
-```
+Since 128 characters is not enough to encode characters found in many foreign languages (particularly those with non-Roman characters), other encodings exist that do much better. The main encoding using on the internet now is "Unicode", which contains a repertoire of more than 128,000 characters covering 135 modern and historic scripts. The most common variant of Unicode is "UTF-8", which was designed for backward compatibility with ASCII.
 
-and the Mona Lisa with the grayscale color map
-```{r}
-image(graymona[,ncol(graymona):1], col = gray.colors(100))
-```
+As more and more computer software moves to use UTF-8 as the default encoding, encoding will become something users don't have to worry about. However, some software, including older R functions, may read into text expecting ASCII or some limited encoding when text is actually UTF-8. This means that some or all of the text will look mangled, say like this:
 
-Ok, so "jet" Mona is ugly and "gray" Mona is better, but how does this matter is "real-world" settings? Take the a study from Borkin et al. (2011) that employed different color maps in software cardiologists use to look for arteries that are at risk for disease formation. 
+> ÉGÉìÉRÅ[ÉfÉBÉìÉOÇÕìÔÇµÇ≠Ç»Ç¢
 
-![Figure 1 from Borkin et al. 2011 showsing "jet" (A) and more uniform colormap (B) for stress in an artery.](assets/borkin_etal_2011_fig1.png)
+There are some ways to fix this kind of problem. Jeny Bryan discusses some of these solutions here <http://stat545.com/block032_character-encoding.html> and more generally gives some examples of how to convert from one encoding to another. For the purpose of learning more about text wrangling, assume that everything is in UTF-8 and that you do not have to convert anything. You may run into problems and need to google/pray to the R gods, but its a small price to pay for the generality of unicode. For more on encodings than you probably want to know, try this article: <http://kunststube.net/encoding/>.
 
-The figure below shows that doctors over 50% better at finding high risk arteries with the better (i.e., not "jet") color map. The wrong colors can hurt!
+## Creating strings: quotes and special characters
 
-![Figure 7 from Borkin et al. 2011 showing the percent low stress (high risk) regions identified.](assets/borkin_etal_2011_fig7.png)
+You've already been creating strings all over the place, but we'll step through things a bit more methodically here.
 
-## Picking a better colormap
-
-What criteria should you use to pick a better (i.e., "safer"!) color map? Here are some reasonable ones; the color map should
-
-1. Have colors and be pretty
-2. Accurately represents the data ("perpetually uniform")
-3. Print well in black and white
-4. Be accessible to colorblind viewers
-
-## Color theory
-
-Picking a better color map that is "perpetually uniform", which means that humans distinguish the colors in the same way the colors map to different numerical values, requires knowing a little bit about "color theory". Transforming data to something you see involves the following pathway:
-
-Data ——> RGB values ——> Monitor ——> Light ——> Retina ——> Brain
-
-1. Light ——> Retina
-
-    - Cone cells in the retina perceive color and come in three types with three absorption spectra (long/medium/short, LMS)
-
-    ![Figure 1.1A from Sharpe et al. (1999)](assets/sharpe_etal_1999_fig1.1a.png)
-
-    - However, light is a collection of photos on different wavelengths.
-    - A light source hitting the eye then produces a combination of LMS values. 
-    - Multiple light sources could produce the same LMS values in the retina!
-    - CIE XYZ maps the sensitivities of human eye to three axes
-    
-    ![CIE 1931 color space chromaticity diagram with wavelength in blue.](assets/cie_diagram.png)
-
-2. RGB values ——> Monitor
-
-    - Monitors display a subset of the above values.
-    
-3. Retina ——> Brain
-
-    - The brain processes colors differently depending on their context
-    
-    ![Is the dress white and gold or blue and black??? <https://en.wikipedia.org/wiki/The_dress>](assets/dress.png)
-    
-    - Luckily, folks interested in color have some nice color models that attempt to take into account these perceptual issues. This results in a sort of "color blob" or perceived colors. The vertical axis is dark to light, another axis is blue to yellow, and the last axis is red to green. It should be clear from the image below that some colors are perceived as "brighter" than others and the color model helps account for these kinds of effects.
-    
-    ![CIECAM02 color model](assets/color_blob.gif)
-    
-    - Using the above color model allows one to choose colors are equally distinguishable perceptually and these colors can then be used for adjacent numerical values in a color map.
-
-## Evaluating a few colormaps
-
-![Perceptual uniformity, grayscale, and colorblind simulation of jet colormap](assets/eval_jet.png)
-
-![Perceptual uniformity, grayscale, and colorblind simulation of grayscale colormap](assets/eval_gray.png)
-
-## Making the default colormap
-
-- To be colorblind friendly, use blue/yellow axis instead of red/green
-- To be grayscale friendly, use dark to light
-- Must be dark blue to light yellow  
-  (no variation in the blob in the light blue to dark yellow direction)
-
-## Viridis
-
-Through the work of some procrastinating graduate students (Stéfan van der Walt and Nathaniel Smith, <https://www.youtube.com/watch?v=xAoljeRJ3lU>) who use the programming language **Python**, a color map was created that satisfies the above criteria and is perceptually uniform. The color map is called **viridis**.
-
-- Latin for green
-- Also it could be named after *Dendroaspis viridis* (western green mamba)
-
-![](assets/dendroaspis_viridis.jpg)
-
-From the figure below, you can see that viridis is much better than jet and prettier than grayscale.
-
-![Perceptual uniformity, grayscale, and colorblind simulation of viridis colormap](assets/eval_viridis.png)
-
-Plotting Mona Lisa with viridis looks like this.
-```{r}
-library(viridis)
-
-image(graymona[,ncol(graymona):1], col = viridis(100))
-```
-
-The same folks who made viridis also made some other perceptually uniform color maps in case you need some additional options: "magma", "plasma", and "inferno".
-```{r}
-image(graymona[,ncol(graymona):1], col = magma(100))
-image(graymona[,ncol(graymona):1], col = plasma(100))
-image(graymona[,ncol(graymona):1], col = inferno(100))
-```
-
-# Plotting 2D heatmaps in `ggplot`
-
-Images are just one kind of 2D gridded color plot. More generally, you can plot two variables on an x-y grid and use color for third variable. 
-
-## Raster plots
-
-A grid of pixels, or a "raster" image, can be plotted with the `geom_raster()` function.
+Creating strings is easy: just use quotes, single or double.
 
 ```{r}
-library(readr)
-library(ggplot2)
+iamstring = "I am very worried about the country right now."
+alsostring = 'So very very worried'
 
-ggplot(faithfuld, aes(x = eruptions, y = waiting)) +
-  geom_raster(aes(fill = density)) +
-  scale_fill_viridis() # viridis colormap
-  
+print(iamstring)
+print(alsostring)
 ```
 
-The `faithfuld` data are used above, which are length of eruptions and waiting time until the next eruptions for the "Old Faithful" geyser in Yellowstone National Park. The `d` part of the data set indicates its an estimate of the probability density for each eruption length and waiting time combination.
+Including a quote within a string is easy if you mix the quote styles.
+
 ```{r}
-summary(faithfuld)
-
-ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
-  geom_raster(aes(fill = density)) +
-  scale_fill_viridis()
+print("A 'quote' within a quote")
+print('Another "quote" within a quote')
 ```
 
-The pixelation above is natural due to the scale of the data, but you can smooth this by "interpolating" with the `interpolate` option.
+Note in the second example how R converted the single quotes defining the string to double quotes and put backslashes before the double quotes inside the string? This is how you can tell R to ignore the special function some characters have. Within a double quoted string, a double quote would mean "end of the string". Putting a backslash before the double quote says "this is just a double quote character." Generally, putting a backslash before a character in a string "*escapes*" the character. Other special "escape characters", which are often characters you can't type with the keyboard easily, include tab, "\t", and the end-of-line character, "\n".
+
 ```{r}
-ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
-  geom_raster(aes(fill = density), interpolate = TRUE) +
-  scale_fill_viridis()
+cat("at a tab separates this\tand\tthis\n")
+cat("\n")
+cat("creating multiple lines\nis easy with end-of-line\ncharacter")
 ```
 
-If you don't want the squares to be of equal size or want to draw rectangles of any size, then you can use either `geom_tile()` or `geom_rect()`.
+# Basic string manipulation using `stringr`
 
-## Adding contours
+First, load `stringr` via `tidyverse.
 
-You can also add a contour plot on top of the heat map. The `geom_contour()` function needs to know what the `z` variable or height is as well as the `x` and `y` variables.
 ```{r}
-ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
-  geom_raster(aes(fill = density)) +
-  scale_fill_viridis() +
-  geom_contour(aes(z = density), color = "white")
+library(tidyverse)
 ```
 
-The contours can be colored by their level as well.
+### Length
+
+The function `str_length()` not only tells you how a string is,
 ```{r}
-ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
-  geom_raster(aes(fill = density)) +
-  scale_fill_viridis() +
-  geom_contour(aes(z = density, color = ..level..)) +
-  scale_color_viridis(option = "magma")
+str_length("ugh. so disappointed. so very disappointed.")
 ```
-
-Finally, you can specify contours at specific levels with the `breaks` option.
+but it "threads" over vectors and will tell you how long each string is in a vector.
 ```{r}
-ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
-  geom_raster(aes(fill = density)) +
-  scale_fill_viridis() +
-  geom_contour(aes(z = density), breaks=c(0.01, 0.02, 0.03))
+whysosad = c("trump", "gingrich", "giuliani")
+str_length(whysosad)
 ```
 
-## Histograms and density estimates
+### Combining strings
 
-The `faithfuld` data are kernel density estimates from a list of eruption times and waiting times
+Putting strings together is done using `str_c()` where the "c=concatenate" (again, R, use more characters for this word!).
 ```{r}
-head(faithful)
+str_c("x", "y", "z", "w")
 ```
-
-These data can be displayed with a 2D histogram using `geom_bin2d()`
+To put characters separating the strings, add the `sep` argument:
 ```{r}
-ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
-  geom_bin2d() +
-  scale_fill_viridis()
+str_c("x", "y", "z", "w", sep = " is a character and ")
 ```
-
-or using possibly aesthetically more pleasing hexagonal bins with `geom_hex()`
+`str_c` is also "vectorized" and threads over vectors,
 ```{r}
-ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
-  geom_hex() +
-  scale_fill_viridis()
+str_c("prefix-", c("a", "b", "c"), "-suffix")
 ```
+which can a very handy way to avoid writing `for` loops. 
 
-Obtaining a kernel density estimate from these data can be done with the function `geom_density_2d()`, which produces contours by default.
+Combined strings can be collapsed into a single string with the `collapse` argument.
 ```{r}
-ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
-  geom_density_2d() +
-  geom_point() +
-  scale_fill_viridis()
+str_c(c("x", "y", "z", "w")) # just a vector still!
+str_c(c("x", "y", "z", "w"), collapse = ", ") # now, a single string
+
 ```
 
-To get the full density values that you can plot like a heat map, you have to turn the contours off and then set the `geom` parameter of `stat_density_2d` to "raster".
+### Detecting a string
+
+Use `str_detect` to see if a string is contained in a vector of strings. Use `str_subset` to return the vector containing only those strings that match
 ```{r}
-ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
-  stat_density_2d(geom = "raster", aes(fill = ..density..), contour = FALSE) +
-  geom_point() +
-  scale_fill_viridis()
+# vector of strings from tidyverse
+fruit
+
+str_detect(fruit, "fruit")
+
+# get the subset that match
+my_fruit <- str_subset(fruit, "fruit")
+print(my_fruit)
+
 ```
 
-# Saving plots
+### Splitting a string
 
-One of the most important things you will do with your plots is save them. In `ggplot2`, the function `ggsave()` will save the most recent plot to disk. The last name you give the fill determines the file type.
-```{r, eval=FALSE}
-ggsave("faithful.jpg")
+Passing a delimiter to `str_split()` will split strings or vectors of strings based on the delimiter:
+```{r}
+str_split(my_fruit, " ") # split on a space
 ```
 
-You can also save a specific plot that you have saved.
-```{r, eval = FALSE}
-fp = ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
-  geom_raster(aes(fill = density), interpolate = TRUE) +
-  scale_fill_viridis()
+### Subsetting a string
 
-ggsave("faithful.jpg", fp)
+You can pull out parts of a string with `str_sub()`, which is also vectorized,
+
+```{r}
+x <- c("Trump", "Gingrich", "Giuliani")
+str_sub(x, 1, 3)
+
+# negative numbers count backwards from end
+str_sub(x, -3, -1)
+```
+and works for assignment too,
+```{r}
+str_sub(x, 1, 3) = "XXX"
+print(x)
 ```
 
-## Sizing plots
+### Replacing a substring within a string
 
-The size of the figure will be taken from the size of the "device", which is technically means that it will have some default value. You can change this by specifying options to `ggsave()` such as
-
-- width, height: plot dimensions
-- scale: multiplicative scaling factor for plot size
-- dpi: resolution used for raster outputs
-
-## Vector vs raster graphics
-
-It should be clear by now that "raster" graphics are those that plot data as individual pixels. You can save your plots as "raster" data too, which simply means an image format like ".png" or ".jpg". This is great for heat maps and color gradients, but it can be awful for smooth line plots and fonts. In addition, raster formats can results in large file sizes if you need the figure to print at a large size.
-
-The solution to this is to use a "vector" graphics format such as ".pdf", ".eps", or ".svg". These formats save the curves as points and equations that are then drawn on screen. Thus, these plots can have a small file size while allowing one to continuously zoom into the plot. To see what a plot saved as ".pdf" looks like, save a contour plot.
-```{r, eval=FALSE}
-ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
-  geom_density_2d() +
-  geom_point()
-
-ggsave("faithful.pdf")
+Replacing a substring can be done using `str_replace()`:
+```{r}
+str_replace(my_fruit, "fruit", "XXX")
+my_fruit # it didn't modify the original (as usual for most R functions)
 ```
 
-One word of warning here is that saving a heat map as a ".pdf" may still result in a raster graphic since elements of the graphic cannot be produced as points and lines.
+# Regular expressions: basics
+
+In the previous examples, strings were matched directly and entirely; either the who string (e.g, "fruit") matched some piece of the string exactly or it didn't match at all. Regular expressions ("regex"" for short) provide a syntax for constructing much more complicated ways to match strings than an exact match. Using a regular expression, you can construct a pattern that will only match dates (no matter the date!) or ones that will only match URLs (no matter the URL!). Needless to say, this can be extremely helpful when you have to modify/edit tons of data, but the drawback is the regular expressions have a steep learning curve.
+
+## Metacharacters
+
+Like the quote characters and backslash, regex have special characters that are meant to represent something other than the character itself. The metacharacters are: '. \\ | ( [ { ^ $ * + ?'. To see how some of them work, you can use the function `str_view_all()`, which shows visually all places where a regex matches a string.
+
+- `.`: match any character
+    ```{r}
+    str_view_all("some characters #*$#(", ".")
+    ```
+- `^`: match at the beginning of the string
+    ```{r}
+    str_view_all(c("trump", "gingrich is a troll", "travesty"), "^tr")
+    ```
+- `$`: match at the end of the string
+    ```{r}
+    str_view_all(c("trump", "gingrich is a sycophant", "travesty"), "p$")
+    ```
+- `|`, `[]`: creating alternatives and character classes; see below
+- `*`, `+`, `?`, `{}`: quantifiers; see below
+- `()`: create "groups"; see below
+
+# Regex: character classes
+
+Suppose that you want to match any of the characters "a" or "b"? The "|" operator, which is an "or" operator, works for this because it matches either pattern on its sides. For example,
+```{r}
+str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "a|b")
+```
+
+What about matching "a", "b", or "c"? A character class is used for this where "[abc]" denotes the class of characters "a", "b", and "c" and will matches any of those characters.
+```{r}
+str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "[abc]")
+```
+You can create an "inverted" character class that matches all characters except those specified by putting "^" in the class:
+```{r}
+str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "[^abc]")
+```
+
+Finally, there are some handy character classes that are built into regex. For example,
+
+-  `\d`, `\D`, `\s`, `\S`, and `\w` represent any decimal digit, not a digit, a space character, not a space character, and a ‘word’ character, respectively
+    ```{r}
+    # we need the extra "\" so that the "\" is actually included in the string!
+    str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\d") 
+    str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\D") 
+    str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\s")
+    str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\S")
+    str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\w")
+    ```
+- `\b` and `\B`: matches the empty string at either edge of a word, or not at the edge of a word, respectively. The example below shows how this allows you to match the character "h" either at the edge of a word or within a word.
+    ```{r}
+    str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\bh") 
+    str_view_all("we have to go back to our abc's to figure out what happened in 2016!!!!", "\\Bh")
+    ```
+
+Other built in character classes are specified with "[::]" or ranges such as [a-z]. Some of these include
+
+- `[:digit:]`: same as `\d` and [0-9].
+- `[:lower:]`: lower-case letters, equivalent to [a-z].
+- `[:upper:]`: upper-case letters, equivalent to [A-Z].
+- `[:alpha:]`: alphabetic characters, equivalent to [A-z].
+- `[:alnum:]`: alphanumeric characters, equivalent to [A-z0-9].
+- `[:blank:]`: blank characters, i.e. space and tab.
+- `[:space:]`: space characters: tab, newline, vertical tab, form feed, carriage return, space.
+- `[:punct:]`: punctuation characters, ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [  ] ^ _ ` { | } ~.
+
+# Regex: quantifiers
+
+One of the most important pieces of a regex pattern is a **quantifier** that denotes how many times each piece of the pattern show match. There are four basic quantifiers:
+
+- `*`: match zero or more times
+- `+`: match one or more times
+- `?`: match zero or one times
+- `{n}`, `{n,}`, or `{n,m}`: match n times, at least n times, or between n and m times.
+
+```{r}
+str_view("we have to go back to our abc's to figure out what happened in 2016!!!!", "!+")
+str_view("we have to go back to our abc's to figure out what happened in 2016!!!!", "!?")
+str_view("we have to go back to our abc's to figure out what happened in 2016!!!!", "!{3}")
+str_view("we have to go back to our abc's to figure out what happened in 2016!!!!", "!+?")
+```
+
+# Regex: grouping and detecting matches.
+
+Eventually you will want to extract pieces of a match. For example, if you try to match four digit years, you may want to know what years the regex matched. In order to extract this piece from a larger pattern, you can "group" the year part of the pattern.
+
+```{r}
+str_match("we have to go back to our abc's to figure out what happened in 2016!!!!", "(\\w+) +(\\d{4})")
+```
+
+The above example shows a match for a word followed by a four digit year. Using the `str_match()` function, you get the matched string and then the grouped expressions afterwards in columns two and three.
+
+If you want to a true/false for whether the pattern matched, you can use `str_detect()` instead of `str_match()`
+```{r}
+str_detect("we have to go back to our abc's to figure out what happened in 2016!!!!", "(\\w+) +(\\d{4})")
+```
+and `str_count()` to get the number of matches in the whole string
+```{r}
+str_count("we have to go back to our abc's to figure out what happened in 2016!!!!", "!{2}")
+```
+Note here that matches don't overlap; otherwise you would count more than 2 matches in the four exclamation points.
+
+# Regex: replacing matches
+
+Replacing text with regular expression involves supplying a pattern to match and a replacement string. For example, using `str_replace()`,
+```{r}
+str_replace("we have to go back to our abc's to figure out what happened in 2016!!!!", "(\\w+) +(\\d{4})", "in our dreams; thank god it wasn't real")
+```
+
+The groups can also be taken advantage of in the replacement where the variables (called "backreferences") "\\n" contain the nth saved or grouped part of the pattern.
+```{r}
+str_replace("we have to go back to our abc's to figure out what happened in 2016!!!!", "(\\w+) +(\\d{4})", "\\1 this awful time. I wish that \\2 hadn't happened.")
+```
+
+# Regex: practice!
+
+There are a couple of nice websites that allow you to easily construct a regex pattern and see how it matches text at the same time. This can be very useful when trying to construct a pattern to do a very specific job.
+
+- <http://regexr.com/>
+- <http://regex101.com/>
+
+This is a good places to learn the basics too in a more fun way:
+
+- <https://regexcrossword.com/challenges/tutorial>
 
 # Lab ![](assets/beaker.png)
 
 ### Problems
 
-1. Create a heat map of the "babak-etal-2015_imprinted-mouse_tidy.csv" data.
-    - Use a perceptually uniform color map
-    - Resize the figure so the tick labels are readable
-    - Add appropriate plot title and axes labels
-    - Save the figure as ".pdf" and **include the .pdf** in the **.zip** that you submit
-    
-2. Create a density plot using the "USPresPolls_538dotcom_26Oct2016.csv" data with the following characteristics:
-    - x-axis: endDate
-    - y-axis: difference between Hillary and Trump adj_pct for "now" polltypeA
-    - 2D heat map via a kernel density estimate
-    - Use a perceptually uniform color map
-    - Save the figure as ".pdf" and **include the .pdf** in the **.zip** that you submit
-    - Hint: you have seen how to wrangle the data this way in previous class sessions.
+1. Go to <https://regexcrossword.com/challenges/beginner>. Solve the first three puzzles and submit the answers to them.
+
+2. Write your own 2x2 regex crossword in the style of the puzzles in problem #1. Provide the puzzle and solution.
