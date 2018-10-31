@@ -1,8 +1,8 @@
 ---
-title: 'Networks'
+title: 'Heat maps, countour maps, and colors'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 2nd November 2016
+date: 26th October 2016
 ---
   
 ```{r setup, include=FALSE}
@@ -11,250 +11,318 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Outline for today
 
-- What is a network?
-- Networks in `igraph`
-- Reading networks into `igraph`
-- Plotting networks
-- Descriptive statistics of networks
+- A splash of color theory
+- Plotting 2D heat maps in `ggplot`
+- Saving plots
 
-# What is a network?
+# A splash of color theory
 
-Networks are increasingly useful tools for analyzing how the pieces of a system interact. Given the importance of both quantitative and visualization tools for analyzing networks, R is a natural environment for network analysis. Before describing what a network is more technically, it is important to give an intuitive definition and some examples.
+Recall the table from the work of Cleveland and McGill on distinguishing graphical elements from most to least accurately distinguishable.
 
-A network is simply a way to describe how things are connected. More specifically, a network is a collection of objects ("nodes" or "vertices") where lines ("edges") are drawn between nodes that are connected or that interact. Nodes can be of different types (e.g., males and females in a network of people) and edges can be "undirected" where connections are symmetric (e.g., people the same phone call) or "directed" where connections start at one node and stop at another (e.g., caller and receiver in a phone call). Finally, edges can be "weighted" instead of either being present or absent (e.g, the number of calls between the caller and receiver).
+|Rank | Graphical element |
+|-----+-------------------|
+| 1   | Positions on a common scale |
+| 2   | Positions on the same but nonaligned scales |
+| 3   | Lengths |
+| 4   | Angles, slopes |
+| 5   | Area |
+| 6   | Volume, color saturation |
+| 7   | Color hue |
 
-## Examples of networks
+The last two items, color saturation (dark to light) and hue, are the only color items. Even though color can be the most difficult to distinguish, a well designed color map that takes advantage of how humans perceive color can be used to display data as accurately as possible.
 
-Many kinds of data you have seen before are actually networks. Two of the most famous examples are of course the world wide web and the internet where the former consists of websites as nodes connected by links (directed edges) and the latter of computers connected by wifi, cables, and routers.
-
-![A classic movie about networks.](assets/net_movie.jpg)
-
-Since its so large, the internet is difficult to visualize, but the figure below attempts to do so.
-
-![The internet circa 2015 from http://www.opte.org/the-internet/](assets/internet_2015.jpg)
-
-Biologists have found tremendous use for networks from gene regulatory and co-expression networks
-```{r, message=FALSE, fig.cap = "Regulatory relationships in E. coli extracted from the RegulonDB database, see Kolaczyk and Csárdi, 2014, p. 117 [^1]"}
-library(sand)
-data(Ecoli.data)
-
-g.regDB <- graph.adjacency(regDB.adj, "undirected")
-plot(g.regDB, vertex.size=5, vertex.label=NA)
-```
-
-to social networks in animals such as dolphins where edges represent individuals who spend time together.
-```{r, fig.cap = "Bottlenose dolphin community of Doubtful Sound, New Zealand [^2]"}
-dolphin = read_graph("dolphins.tsv", format = "edgelist", directed = FALSE)
-
-plot(dolphin, vertex.size=5, vertex.label=NA)
-```
-
-There are many of other kinds of biological networks that one might analyze such as protein interaction networks, epidemiological contact networks for disease transmission, and metabolic networks. Though the kinds of analyses one might perform on a network often and should depend on the biology of the network in question, there are some common properties and statistics that are often used with networks. These common analyses are part of the field of "network science".
-
-# Networks in `igraph`
-
-There are a number of packages in R that are useful for network visualization and analysis. One commonly used package is called `igraph` and is described nicely in the authors of the package Kolaczyk and Csárdi in the book "Statistical Analysis of Network Data with R" [^1]. You will be briefly introduced to `igraph` here.
-
-## Creating a network
-
-Networks are also called "graphs" and creating a small graph in `igraph` simply entails listing all of the edges where an edge is denoted by two nodes and their undirected, directed, and/or weighted connection. 
-```{r}
-library(igraph)
-
-g1 = graph( edges = c(1,2, 2,3, 3,4, 4,2), directed = FALSE)
-plot(g1)
-
-g2 = graph.formula(1-2, 2-3, 3-4, 4-2)
-plot(g2)
-```
-
-Above, you can see how to create the same graph in two different ways, one with the `graph` function that takes a list of edges and one with the `graph.formula` function that takes each edge as an argument. Below, you can use the structure function `str` to get a summary of each graph, 
-```{r}
-str(g1)
-str(g2)
-```
-
-which shows that the graphs have the same list of edges. You can also create graphs with strings as node names instead of numbers
-```{r}
-g = graph( c("varun", "shishir", "varun", "tom", 
-             "shishir", "varun", "shishir", "tom",
-             "tom", "shishir", "tom", "varun"), 
-           isolates = c("ashely", "jeremy"))
-
-plot(g)
-```
-
-where the `isolates` arguments allows you to have unconnected nodes.
-
-## Edge, vertex, and network attributes
-
-Each graph object has a list of edges,
-```{r}
-E(g)
-```
-
-vertices,
-```{r}
-V(g)
-```
-
-and "adjacency matrix",
-```{r}
-g[] # or get.adjacency(g) or as_adjacency_matrix(g)
-```
-
-which is a matrix whose $(i,j)^{th}$ element is the strength of the edge between node $i$ and node $j$ and where zero strength is a lack of an edge.
-```{r}
-as.matrix(g[]) # as a normal matrix
-```
-
-Thus, undirected graphs have symmetric adjacency matrices. You can store networks as a list of edges, an adjacency matrix, or as an "adjacency list", which is a list of nodes where each element of the list is a list of other nodes that node is connected to:
-```{r}
-get.adjlist(g)
-```
-
-It is also simple to add attributes to the network, its edges, or its nodes. This is accomplished with the dollar sign "$" after the network object. For example, you can get the vertex names using
-```{r}
-V(g)$name
-```
-and set some attributes like "position"
-```{r}
-V(g)$position = c("student", "student", "postdoc", "faculty", "faculty")
-vertex_attr(g)
-```
-
-# Reading networks into `igraph`
-
-Creating networks explicitly is practical for small networks, but large networks will likely come from large data files that list edges or can the adjacency matrix. The dolphin social network was simply an edge list
-```{r}
-library(readr)
-
-dlist = read_tsv("dolphins.tsv", col_names = c("From", "To"))
-head(dlist)
-```
-
-Converting this edge list into a graph involves calling the `graph_from_data_frame()` function where `d` is the list of edges, which is actually a data frame:
-```{r}
-dg = graph_from_data_frame(d = dlist, directed = FALSE)
-
-plot(dg, vertex.size=8, vertex.label=NA)
-```
-
-The *E. coli* dataset was an adjacency matrix
-```{r}
-str(regDB.adj)
-```
-
-and it can be turned into a graph using the `graph_from_adjacency_matrix()` function:
-```{r}
-eg = graph_from_adjacency_matrix(regDB.adj, mode = "undirected")
-
-plot(eg, vertex.size=8, vertex.label=NA)
-```
-
-# Plotting networks
-
-There are a number of other parameters that one can use in `igraph` to alter how `plot` displays the network. To see some of these, load the social network derived from dominance behavior in a colony of 62 adult female Japanese macaques (*Macaca fuscata fuscata*)[^3]. The adjacency matrix is weighted since it shows the number of dominance encounters between two individuals.
+In order to really get a sense for how important color maps can be, lets look at the "jet" color map that used to be the standard color map in some software packages.
 ```{r, message = FALSE}
-macaques = read_delim("macaques.txt", " ", col_names = FALSE)
+library(tidyverse)
+library(imager)
 
-mg = graph_from_adjacency_matrix(as.matrix(macaques), mode = "undirected", weighted = TRUE)
-mg
+jet.colors <-
+  colorRampPalette(c("#00007F", "blue", "#007FFF", "cyan",
+                     "#7FFF7F", "yellow", "#FF7F00", "red", "#7F0000"))
+image(1,1:100,matrix(1:100, nrow=1), col = jet.colors(100), asp=1)
 ```
 
-From the description above, you can see that the macaques network has a `weight` attribute for the edges. You can use this to make the edges thicker and thinner. The color of the edges, the size of the nodes, and many other properties can be set directly to the graph; before, you altered the plot by adding additional parameters to the plot function itself. The `plot` function will automatically use attributes of the graph when plotting.
-```{r, fig.width=10}
-# set edge color, width, and curve
-E(mg)$color = "blue"
-E(mg)$curved = 0.15
-E(mg)$width = E(mg)$weight/2
+It seems inocurous enough in that one might assume red => high values (hot) and blue => low values (cold). However, to see that jet doesn't do a very good job at mapping high and low, one can use jet to visualize a photograph, which normally has light (hot) and dark (cold) regions. For example, here is the Mona Lisa using the jet color map.
 
-# set color of nodes
-V(mg)$color = "red"
-
-# set size of the node to its degree
-V(mg)$size = degree(mg)/5
-
-# get rid of vertex labels
-V(mg)$label = NA
-  
-plot(mg)
-```
-
-## Network layouts
-
-If you have tried plotting the same graph with exactly the same options, you might have noticed that the layout of the nodes and edges changes slightly every time. The reason for this is that `igraph` uses an algorithm to figure out how to layout the nodes and edges and that algorithm has some randomness built in. The `layout` argument to `plot` tells `igraph` which algorithm to use.
-```{r, fig.width=10}
-plot(mg, layout = layout_in_circle(mg), edge.width = 0.5)
-```
-
-The argument to `layout` just a list of coordinates for each node,
 ```{r}
-head(layout_in_circle(mg))
-```
-which means that you can technically place the nodes however you like.
-
-The fancy algorithms for layout typically work by treating the nodes as balls and the edges as springs and trying to calculate the positions of the nodes such that nodes with more edges or connections are pulled in more different directions. A couple popular algorithms are the "Fruchterman–Reingold" (`layout_with_fr`) and "Kamada and Kawai" (`layout_with_kk`) methods.
-```{r, fig.width=10}
-plot(mg, layout = layout_with_fr(mg))
+graymona = as.matrix(grayscale(load.image("assets/mona-lisa_color.jpg")))
+image(graymona[,ncol(graymona):1], col = jet.colors(100), asp=1)
 ```
 
-For larger graphs, the `layout_with_lgl` apparently works a little better.
-```{r, fig.width=10}
-plot(mg, layout = layout_with_lgl(mg))
-```
-
-# Descriptive statistics of networks
-
-## Degree distribution
-
-The most common quantitative measure of a network is its **degree distribution** where the degree of a node is how many edge connect to it. Much of "network science" begins with studying how different simple models that generate networks can also generate different classes of degree distributions. To say more about this is quite beyond the scope of this course, but for more see the book by Kolaczyk and Csárdi referenced above. Calculating and plotting the degree distribution is simple using `degree()` to calculate the degrees of every node but then plotting it with `ggplot` means you have to convert it to a data.frame:
+If that doesn't make you nauseous, it should. Any guesses for what color map would be better? Grayscale, correct! Here is the grayscale color map
 ```{r}
-library(ggplot2)
-
-ggplot( data.frame( freq = degree(mg) ) ) + geom_histogram(aes(x = freq)) 
+image(1,1:100,matrix(1:100, nrow=1), col = gray.colors(100))
 ```
 
-## Centrality
-
-One way to measure how important different nodes are is to calculate some measure of their "centrality". The degree of a node is the simplest measure of its centrality. Another measure is the "closeness centrality", which measures how close (in terms of number of hops across other nodes) a node is to all other nodes.
+and the Mona Lisa with the grayscale color map
 ```{r}
-ggplot( data.frame( freq = closeness(mg) ) ) + geom_histogram(aes(x = freq))
+image(graymona[,ncol(graymona):1], col = gray.colors(100), asp=1)
 ```
 
-"Betweenness" centrality measures the extent to which a vertex is located ‘between’ other pairs of vertices.
+Ok, so "jet" Mona is ugly and "gray" Mona is better, but how does this matter is "real-world" settings? Take the a study from Borkin et al. (2011) that employed different color maps in software cardiologists use to look for arteries that are at risk for disease formation. 
+
+![Figure 1 from Borkin et al. 2011 showsing "jet" (A) and more uniform colormap (B) for stress in an artery.](assets/borkin_etal_2011_fig1.png)
+
+The figure below shows that doctors over 50% better at finding high risk arteries with the better (i.e., not "jet") color map. The wrong colors can hurt!
+
+![Figure 7 from Borkin et al. 2011 showing the percent low stress (high risk) regions identified.](assets/borkin_etal_2011_fig7.png)
+
+## Picking a better colormap
+
+What criteria should you use to pick a better (i.e., "safer"!) color map? Here are some reasonable ones; the color map should
+
+1. Have colors and be pretty (duh)
+2. Accurately represent variation in the data ("perpetually uniform")
+3. Print well in black and white
+4. Be accessible to colorblind viewers
+
+## Color theory
+
+The biggest problem with the jet color map is that it is not "perceptually uniform". A perceptually uniform mapping maps numbers to colors so that humans can 
+differentiate colors in proportion to how different the numbers are that map them. In other words, a pair of numbers that are twice as far apart as another pair should map to colors that twice as easy to distinguish compared to colors for the other pair. Picking a better color map that is perpetually uniform requires knowing a little bit about "color theory". 
+
+Transforming data to something you see involves the following pathway:
+
+Data ——> RGB values ——> Monitor ——> Light ——> Retina ——> Brain
+
+0. Data ——> RGB values
+
+    - The color map.
+
+1. RGB values ——> Monitor
+
+    - Light is a collection of photons of different wavelengths.
+    - Monitors emit different intensities of photons of three different wavelength (red, green, and blue)
+
+2. Light ——> Retina
+
+    - Cone cells in the retina perceive color and come in three types with three absorption spectra (long/medium/short, LMS)
+
+    ![Figure 1.1A from Sharpe et al. (1999)](assets/sharpe_etal_1999_fig1.1a.png)
+
+    - A light source hitting the eye then produces a combination of LMS values. 
+    - Multiple light sources could produce the same LMS values in the retina!
+    - CIE XYZ maps the sensitivities of human eye to three axes
+    
+    ![CIE 1931 color space chromaticity diagram with wavelength in blue.](assets/cie_diagram.png)
+
+    
+3. Retina ——> Brain
+
+    - The brain processes colors differently depending on their context
+    
+    ![Is the dress white and gold or blue and black??? <https://en.wikipedia.org/wiki/The_dress>](assets/dress.png)
+    
+    - Luckily, folks interested in color have some nice color models that attempt to take into account these perceptual issues. This results in a sort of "color blob" or perceived colors. The vertical axis is dark to light, another axis is blue to yellow, and the last axis is red to green. It should be clear from the image below that some colors are perceived as "brighter" than others and the color model helps account for these kinds of effects.
+    
+    ![CIECAM02 color model](assets/color_blob.gif)
+    
+    - Using the above color model allows one to choose colors are equally distinguishable perceptually and these colors can then be used for adjacent numerical values in a color map.
+
+## Evaluating a few colormaps
+
+![Perceptual uniformity, grayscale, and colorblind simulation of jet colormap](assets/eval_jet.png)
+
+![Perceptual uniformity, grayscale, and colorblind simulation of grayscale colormap](assets/eval_gray.png)
+
+## Making the default colormap
+
+- To be colorblind friendly, use blue/yellow axis instead of red/green
+- To be grayscale friendly, use dark to light
+- Must be dark blue to light yellow  
+  (no variation in the blob in the light blue to dark yellow direction)
+
+## Viridis
+
+Through the work of some procrastinating graduate students (Stéfan van der Walt and Nathaniel Smith, <https://www.youtube.com/watch?v=xAoljeRJ3lU>) who use the programming language **Python**, a color map was created that satisfies the above criteria and is perceptually uniform. The color map is called **viridis**.
+
+- Latin for green
+- Also it could be named after *Dendroaspis viridis* (western green mamba)
+
+![](assets/dendroaspis_viridis.jpg)
+
+From the figure below, you can see that viridis is much better than jet and prettier than grayscale.
+
+![Perceptual uniformity, grayscale, and colorblind simulation of viridis colormap](assets/eval_viridis.png)
+
+Plotting Mona Lisa with viridis looks like this. OMG. So much better.
 ```{r}
-ggplot( data.frame( freq = betweenness(mg) ) ) + geom_histogram(aes(x = freq))
+library(viridis)
+
+image(graymona[,ncol(graymona):1], col = viridis(100), asp=1)
 ```
 
-Finally, "eigenvector" centrality measures how central a node is by how central the nodes are that are connected to it. This measure of centrality is very closely related to Google's "PageRank" measure that Google uses to rank websites for search.
+The same folks who made viridis also made some other perceptually uniform color maps in case you need some additional options: "magma", "plasma", and "inferno".
 ```{r}
-ggplot( data.frame( freq = eigen_centrality(mg)$vector ) ) + geom_histogram(aes(x = freq))
+image(graymona[,ncol(graymona):1], col = magma(100), asp=1)
+image(graymona[,ncol(graymona):1], col = plasma(100), asp=1)
+image(graymona[,ncol(graymona):1], col = inferno(100), asp=1)
 ```
 
+# Plotting 2D heatmaps in `ggplot`
+
+In the previous plots, we used the `image` function, which like most of R base graphics is very basic and ultimately boring. Lucky for us, images are just one kind of 2D gridded color plot and ggplot understands 2D very well. In other words, we can just plot two variables on an x-y grid and use color for third variable. 
+
+## Raster plots
+
+A grid of pixels, or a "raster" image, can be plotted with the `geom_raster()` function.
+
+```{r}
+ggplot(faithfuld, aes(x = eruptions, y = waiting)) + theme_bw() +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis() # viridis colormap
+```
+
+The `faithfuld` data are used above, which are length of eruptions and waiting time until the next eruptions for the "Old Faithful" geyser in Yellowstone National Park. The `d` part of the data set indicates its an estimate of the probability density for each eruption length and waiting time combination.
+```{r}
+summary(faithfuld)
+```
+
+The pixelation above is natural due to the scale of the data, but you can smooth this by "interpolating" with the `interpolate` option.
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density), interpolate = TRUE) +
+  scale_fill_viridis()
+```
+
+If you don't want the squares to be of equal size or want to draw rectangles of any size, then you can use either `geom_tile()` or `geom_rect()`.
+
+## Adding contours
+
+You can also add a contour plot on top of the heat map. The `geom_contour()` function needs to know what the `z` variable or height is as well as the `x` and `y` variables.
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis() +
+  geom_contour(aes(z = density), color = "white")
+```
+
+The contours can be colored by their level as well.
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis() +
+  geom_contour(aes(z = density, color = stat(level))) +
+  scale_color_viridis(option = "magma")
+```
+
+Finally, you can specify contours at specific levels with the `breaks` option.
+```{r}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density)) +
+  scale_fill_viridis() +
+  geom_contour(aes(z = density), breaks=c(0.01, 0.02, 0.03))
+```
+
+## Histograms and density estimates
+
+The `faithfuld` data are kernel density estimates (KDEs) from a list of eruption times and waiting times. Recall that KDEs are just a way of adding together normal distributions to approximate your data. The underlying data for the Old Faithful eruptions don't actually cover the whole range plotted above; rather they look like this:
+```{r}
+head(faithful)
+```
+
+These data can be displayed with a 2D histogram using `geom_bin2d()`
+```{r}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  geom_bin2d() +
+  scale_fill_viridis()
+```
+
+or using possibly aesthetically more pleasing hexagonal bins with `geom_hex()`
+```{r}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  geom_hex() +
+  scale_fill_viridis()
+```
+
+Obtaining a kernel density estimate from these data can be done with the function `geom_density_2d()`, which produces contours by default.
+```{r}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  geom_density_2d() +
+  geom_point() +
+  scale_fill_viridis()
+```
+
+To get the full density values that you can plot like a heat map, you need to swtich to the function `stat_density_2d`. The main difference between `stat_density_2d` and `geom_density_2d` is that `stat_density_2d` will give you access to the imputed "density" values generated from the KDE. Using `stat_density_2d` below, we turn the contours off and then set the `geom` parameter of `stat_density_2d` to "raster".
+```{r}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  stat_density_2d(geom = "raster", aes(fill = stat(density)), contour = FALSE) +
+  geom_point() +
+  scale_fill_viridis()
+```
+
+The upshot here is that you can use the `stat_density_2d` function to impute (or guesstimate) values you didn't actually measure using a KDE. Then you can plot a nice 2D heatmap. Fun!
+
+# Saving plots
+
+Its really shocking we've left this until now, but one of the most important things you will do with your plots is save them. In `ggplot2`, the function `ggsave()` will save the most recent plot to disk. The last name you give the file determines the file type.
+```{r, eval=FALSE}
+ggsave("faithful.jpg")
+```
+
+You can also save a specific plot that you have saved.
+```{r, eval = FALSE}
+fp = ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density), interpolate = TRUE) +
+  scale_fill_viridis()
+
+ggsave("faithful.jpg", fp)
+```
+
+## Sizing plots
+
+The size of the figure will be taken from the size of the "device", which means that it will have some default value. You can change this by specifying options to `ggsave()` such as
+
+- width, height: plot dimensions
+- scale: multiplicative scaling factor for plot size
+- dpi: resolution used for raster outputs (e.g., 300 for nice printed pictures)
+
+It can be helpful to see what the size of the plots are before saving them; for example, you may want to know the font size is right for the tick labels. To do this, you can give the `fig.width` and `fig.height` options to the `R chunk`. 
+
+```{r, fig.width=3, fig.height=2}
+ggplot(faithfuld, aes(waiting, eruptions)) + theme_bw() +
+  geom_raster(aes(fill = density), interpolate = TRUE) +
+  scale_fill_viridis()
+```
+
+
+## Vector vs raster graphics
+
+It should be clear by now that "raster" graphics are those that plot data as individual pixels. You can save your plots as "raster" data too, which simply means an image format like ".png" or ".jpg". This is great for heat maps and color gradients, but it can be awful for smooth line plots and fonts. In addition, raster formats can results in large file sizes if you need the figure to print at a large size.
+
+The solution to this is to use a "vector" graphics format such as ".pdf", ".eps", or ".svg". These formats save the curves as points and equations that are then drawn on screen. Thus, these plots can have a small file size while allowing one to continuously zoom into the plot. To see what a plot saved as ".pdf" looks like, save a contour plot.
+```{r, eval=FALSE}
+ggplot(faithful, aes(waiting, eruptions)) + theme_bw() +
+  geom_density_2d() +
+  geom_point()
+
+ggsave("faithful.pdf")
+```
+
+One word of warning here is that saving a heat map as a ".pdf" may still result in a raster graphic since elements of the graphic cannot be produced as points and lines.
 
 # Lab ![](assets/beaker.png)
 
 ### Problems
 
-1. Use the data file "rugosa_social_network.csv", which describes the social network of the sleepy lizard (*Tiliqua rugosa*)[^4] as an adjacency matrix 
-    - Read in the file (hint: you may need to be careful with which function and/or parameters you use here to get the matrix right)
-    - Plot the social network of the sleepy lizard
-    - Make the node size proportional to the eigenvalue centrality of the node
-    - What is the degree of the most highly connected lizard? Are there multiple lizards with this max degree?
+1. Create a heat map of the "babak-etal-2015_imprinted-mouse_tidy.csv" data.
+    - Use a perceptually uniform color map
+    - Resize the figure so the tick labels are readable
+    - Add appropriate plot title and axes labels
+    - Save the figure as ".pdf" and **include the .pdf** in the **.zip** that you submit
     
-2. Identify the dataset that you would like to use for your lightning talk
-    - Briefly describe the data
-    - Briefly describe each of the three figures you would like to make with these data
-    - Identify any major hurdles to wrangling or plotting these data
-    - You may change alter your dataset and figures for the final lightning talk, but use this as an opportunity to identify serious candidate dataset and figures.
+2. Load the GWAS data using the commands below:
 
+```{r, eval=FALSE}
+gwas = read_tsv("gwas_catalog_v1.0.2-associations_e93_r2018-09-18_top40.tsv", na=c("NA", "NR"))
+gwas = gwas %>% mutate(risk_allele_freq = parse_double(str_extract(gwas$`RISK ALLELE FREQUENCY`, "0\\.\\d+")))
+```
 
-[^1]: Kolaczyk, Eric D. and Csárdi, Gábor. 2014. Statistical Analysis of Network Data with R. Springer, New York, NY. <http://dx.doi.org/10.1007/978-1-4939-0983-4>. Github: <https://github.com/kolaczyk/sand>.
-
-[^2]: Lusseau, David, Schneider, Karsten, Boisseau, Oliver J., Haase, Patti, Slooten, Elisabeth, and Dawson, Steve M.. 2003. The bottlenose dolphin community of Doubtful Sound features a large proportion of long-lasting associations. Behav Ecol Sociobiol 54:396--405. <http://dx.doi.org/10.1007/s00265-003-0651-y>. Data at <http://konect.uni-koblenz.de/networks/dolphins>.
-
-[^3]: Takahata, Yukio. 1991. Diachronic changes in the dominance relations of adult female Japanese monkeys of the Arashiyama B group. The Monkeys of Arashiyama. State University of New York Press, Albany, pp 123--139. Data from <http://konect.uni-koblenz.de/networks/moreno_mac>.
-
-[^4]: Bull, C. M., Godfrey, S. S., and Gordon, D. M.. 2012. Social networks and the spread of Salmonella in a sleepy lizard population. Mol Ecol 21:4386--4392. <http://dx.doi.org/10.1111/j.1365-294X.2012.05653.x>
-
+    - Choose one **disease** to compare against "Height"
+    - For both your disease of choice and for "Height", create a 2D density plot (use the `stat_density_2d` function so that unknown values are imputed with a KDE)
+    - Plot `risk_allele_freq` on the x-axis and `PVALUE_MLOG` on the y-axis
+    - Use a perceptually uniform color map
+    - Add appropriate plot title and axes labels
+    - Save the figure as ".pdf" and **include the .pdf** in the **.zip** that you submit
+    - +2 Extra Credit: play with the limits of the y-axis to get a better view of the highly significant SNPs. \
+      What can you say about the difference between the allele frequency of significant SNPs for a disease and for height?

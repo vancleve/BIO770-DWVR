@@ -40,7 +40,7 @@ glimpse(gapminder)  # like a better version of `str()`, sorta
 The data covers the statistics listed above for
 ```{r}
 str(gapminder$country)
-gapminder$country
+levels(gapminder$country)
 ```
 142 countries.
 
