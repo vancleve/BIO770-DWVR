@@ -2,7 +2,7 @@
 title: 'Heat maps, countour maps, and colors'
 author: "Jeremy Van Cleve"
 output: html_document
-date: 26th October 2016
+date: 31th October 2018
 ---
   
 ```{r setup, include=FALSE}
