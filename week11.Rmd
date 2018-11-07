@@ -1,0 +1,176 @@
+---
+title: 'Visualizing lots of data'
+author: "Jeremy Van Cleve"
+output: html_document
+date: 7th November 2018
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Outline for today
+
+- Grids of plots
+- Principal component analysis (PCA) plots
+
+# Reminder
+
+- Schedule for lightning talks
+
+# Plotting data with many variables
+
+In many of the datasets that we've seen so far, we've already been faced with the problem that the data could be visualized in many different ways because they have many different variables. Some datasets were time series and it was clear that scatter plots or line plots were useful with time on the x-axis and multiple variables on the y-axis. For example, these polling data from the 2016 election are a nice time series where different variable include the poll numbers for the different candidates and other variables like the poll sample size (percent of max size from the dataset):
+
+```{r, message=FALSE}
+library(tidyverse)
+theme_set(theme_bw())
+
+polls = read_csv("president_general_polls_2016.csv")
+tpolls = 
+  polls %>% 
+  gather(key=candidate, value=poll, rawpoll_clinton, rawpoll_trump, rawpoll_johnson, adjpoll_clinton, adjpoll_trump, adjpoll_johnson) %>% 
+  separate(candidate, into=c("poll_type", "candidate"), sep="poll_")
+
+tpollsUS2016a = tpolls %>% filter(startdate > "2016-07-01", poll_type == "adj", state == "U.S.", grade %in% c("A", "A-", "A+", "B+"))
+tpollsUS2016a %>% ggplot(aes(x=enddate)) + geom_point(aes(y=poll, color=candidate)) + geom_line(aes(y=poll, color=candidate)) + geom_point(aes(y=100*samplesize/max(samplesize), color="sample size"))
+```
+
+However, our plots may have many variables and no single one of them, like time, stands out as one against which we would like to compare the others. In this case, how the variables correlate with one another may be important. For example, let's load a dataset from Keith Tarvin of Oberlin College on morphological measurements of blue jays.
+
+```{r}
+load("blue_jays.rda")
+
+glimpse(blue_jays)
+```
+
+There are 123 individuals in this dataset and the variables include bill depth, width, length, head size, mass, sex, etc. If we wanted to see how head size and body mass correlate, we could simply do a scatter plot.
+
+```{r}
+blue_jays %>% ggplot(aes(x=Mass, y=Head)) + geom_point()
+```
+
+It looks like head size and mass correlate positively, which makes sense. We know there are males and females, so we can add another variable by coloring the points by sex.
+```{r}
+blue_jays %>% ggplot(aes(x=Mass, y=Head)) + geom_point(aes(color=KnownSex))
+```
+
+## Grids of plots
+
+Ok, so male birds are larger and heavier in this population. But there are a bunch of other variables too; how do they correlate with mass and head size and with each other? How do they differ with sex? In other words, we would like to make a scatter for each pair of variables in the dataset. To do this, we can use the `facet` function like we did earlier in the semester but now in a more sophisticated way. First, a little reminder about how the `facet` function works in `ggplot`. Let's look back at the time that we used `facet_wrap` in Week 6.
+
+```{r}
+library(gapminder)
+
+usukjpcn = filter(gapminder, 
+            country == "United States" 
+            | country == "United Kingdom" 
+            | country == "Japan" 
+            | country == "China" )
+
+ggplot(data = usukjpcn) + 
+  geom_line(mapping = aes(x = year, y = lifeExp, color = country)) +
+  facet_wrap(~ country)
+```
+
+We first wrote `ggplot` commands like we wanted to plot `year` vs `lifeExp`. Then, we used the `facet_grid` function and told it we wanted a plot for each distinct value of the `country` variable. The output was then four plots, one for each country, with the same x- and y-axis. This actually only plots three variables, `year`, `lifeExp`, and `country`, and does not do a scatter plot for each pair of variable. However, with a little data wrangling, we can create a new data table that will work with `facet_grid`. 
+
+Looking at the example above, `facet_wrap` and `facet_grd` generate multiple plots with the same x- and y-axis so we need to collapse our data for the different morphological measurements into two columns. Recall from our lecture on tidying data that we can do this with `gather`.
+
+```{r}
+bgx = blue_jays %>% select(BirdID, KnownSex, Head, Mass, Skull) %>%
+  gather(key=var_x, value=val_x, Head:Skull)
+
+bgy = blue_jays %>% select(BirdID, KnownSex, Head, Mass, Skull) %>%
+  gather(key=var_y, value=val_y, Head:Skull)
+```
+
+In the table above, we've selected only four variables, sex, head size, mass, and skull size. In order to create scatter plots head size, mass, and skull size, we gathered them together where `var_x` tells us which variable we have and `val_x` the value of that variable. Likewise, we created an identical table with `var_y` and val_y` since we're going to plot each variable on the x- and y-axis. Next, we just join the two tables together.
+
+```{r}
+bg = left_join(bgx, bgy) 
+```
+
+Now, we can plot them with `facet_grid(var_y ~ var_x)`.
+
+```{r}
+bg %>% ggplot(aes(val_x, val_y, color = KnownSex)) + geom_point() + facet_grid(var_y ~ var_x, scales = "free") + labs(x = NULL, y = NULL)
+```
+
+Viola! We can see now that males are generally larger across all these variables, and that they all positively correlate with each other. In ecology, these kind of correlations with different morphological measurements is studied in the field of "allometry".
+
+## Principal component analysis (PCA) plots
+
+Recall that the blue jay dataset has more than just the three variables above. What if it had 10 more variables? Or 100 more? We couldn't easily interpret a 100x100 grid of scatter plots to understand how the variables relate to one another or whether there are different patterns for males and females. A very useful statistical tools used in these circumstances is called a *principal component analysis*, which is a type of *dimensionality reduction*. Dimensionality reduction uses the fact that there are often lots of correlations in high-dimensional data and thus there are "effectively" many fewer important dimensions that capture the independent variation of the whole dataset. For example, in the blue jay morphology data, we can see that many body measures are possitively correlated. Thus, if we know just body mass, we can make a good guess about what head size or skull size might be. We could even do a linear regression of head size against body mass and skull size against body mass and then use body mass to predict both of those variables. If we do this kind of linear analysis, adding together variables and weighting them with coefficient, and make sure the weight sum of variables explains as much variation in the data as possible, we end up with a PCA. A PCA not only gives you a new variable that explains a lot of variation, it also gives you as many new variables as you had old variables where each new one after the first explains less variation in the data than the new variable before it. 
+
+Let's see an example of PCA. We can use the `prcomp` function is R to generate the principal components.
+
+```{r}
+bpca = blue_jays %>% select(-BirdID, -KnownSex, -Sex) %>% prcomp()
+
+cbind(blue_jays, bpca$x) %>% ggplot(aes(x=PC1, y=PC2)) + geom_point(aes(color=KnownSex))
+```
+
+This plot shows all the bird samples plotted on the two first principal components. You can immediately see that males and females are roughly two different clouds of points, which accords with our prior knowledge that the sexes differ in body morphology. To see how much of the variance each PC explains, we look at the `summary`.
+
+```{r}
+summary(bpca)
+```
+
+The first component explains almost 90% of the variance and the second component only 8%. To see 
+
+This gives the percent variance explained by each of the principal components. To see how each PC is composed of the underlying variables, we look at the `rotation` value:
+```{r}
+bpca$rotation
+```
+
+This shows that the first PC is mostly body mass and that the rest of the variable all are positively correlated with body mass (PCs can be all multiplied by a negative, so what matters is the relative sign). We can also plot what the variables are as a function of the first two PCs.
+
+```{r}
+as.data.frame(bpca$rotation) %>% 
+  mutate(feature=rownames(bpca$rotation)) %>% 
+  ggplot(aes(x=PC1, y=PC2)) + 
+  geom_point(aes(color=feature)) + geom_text(aes(label=feature), size=3, position=position_jitter(width=0.05,height=0.05))
+```
+
+This just shows that mass dominates PC1 whereas PC2 measures how the rest of the variables all negatively correlate with mass once you take into account PC1.
+
+Finally, let's do a PCA for data that doesn't have such clear group as sex. One example are the gene expression data from the genomic imprinting dataset. Here, we'll do a PCA using the `Genes` as variables. This entails using `spread` to put the `Genes` as variables or columns.
+
+```{r}
+library(readxl)
+
+imprint = read_csv("babak-etal-2015_imprinted-mouse_tidy.csv")
+
+imprint_t = imprint %>% spread(Genes, expression) %>% na.omit()
+ipca = imprint_t %>% select(-tissue)%>% prcomp()
+
+data.frame(tissue=imprint_t$tissue, ipca$x) %>% ggplot(aes(x=PC1, y=PC2)) + 
+  geom_point() + 
+  geom_text(aes(label=tissue), size=2.5, position=position_jitter(width=2,height=5))
+```
+
+We can see from the PCA that some tissues group together naturally (brain tissues) and others not as much. This could be the beginning of an investigation about whether there are biological reasons these other tissues groups the way they do. We can use summary to see how strong the first few PCs are.
+
+```{r}
+summary(ipca)
+```
+
+The first PC only captures 21% of the variance and the second captures 12%. Thus, we need more the PCs in this dataset to describe a significant amount of the variance. Finally, we can plot how the genes make up the first two PCs. Then, we could use this information to see if the biological function of these genes explains how the tissues group along PC1 and PC2.
+
+```{r}
+data.frame(gene=rownames(ipca$rotation), ipca$rotation) %>%
+  ggplot(aes(x=PC1, y=PC2)) + 
+  geom_point() + geom_text(aes(label=gene), size=2.5, position=position_jitter(width=0.015,height=0.03))
+```
+
+
+# Lab ![](assets/beaker.png)
+
+### Problems
+
+1. Using the `gapminder` data:
+    - Perform a principal components analysis using the variables `lifeExp`, `year`, `pop`, and `gdpPercap`. 
+    - Plot all the points on a scatter plot with the the x- and y-axis corresponding to the first two principal components (PC1 and PC2). 
+    - Color the points according to `year`. Set the shape of the point (square, circle, etc) according to `continent`.
+    - What patterns do you observe if any?
